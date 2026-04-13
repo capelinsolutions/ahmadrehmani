@@ -1,4 +1,5 @@
-import { ShieldCheck, Eye, Star } from "lucide-react";
+import { ShieldCheck, Star } from "lucide-react";
+import drRehmaniPhoto from "@/assets/dr-rehmani.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const credentials = [
@@ -19,13 +20,13 @@ const AboutSection = () => {
           {/* Left - Photo placeholder */}
           <div className="fade-up relative">
             <div
-              className="w-full rounded-2xl flex items-center justify-center"
+              className="w-full rounded-2xl overflow-hidden"
               style={{
                 aspectRatio: "4/5",
                 background: "linear-gradient(135deg, #0B1F4B, #0E7A6E)",
               }}
             >
-              <Eye className="w-24 h-24 text-primary-foreground/20" />
+              <img src={drRehmaniPhoto} alt="Dr. Ahmad Rehmani, D.O. — Board-Certified Vitreoretinal Specialist" className="w-full h-full object-cover object-top" loading="lazy" />
             </div>
             <div className="absolute bottom-4 right-4 bg-background rounded-xl px-5 py-3 shadow-lg flex items-center gap-3">
               <ShieldCheck className="w-6 h-6 text-accent" />
