@@ -1,4 +1,5 @@
-import { ShieldCheck, Eye, Star } from "lucide-react";
+import { ShieldCheck, Star } from "lucide-react";
+import drRehmaniPhoto from "@/assets/dr-rehmani.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const credentials = [
