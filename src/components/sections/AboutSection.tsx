@@ -11,7 +11,7 @@ const credentials = [
   { label: "Research", value: "Sub-Investigator on 28 U.S. Clinical Trials in retinal disease (Eylea, Vabysmo, Susvimo, RGX-314 and more)" },
 ];
 
-const chips = ["U.S. Health News Top Choice", "Percy Dutton Prize", "Keidaean Honor Society", "Magna Cum Laude", "Chief Resident", "5.0 Google Rated"];
+const chips = ["UTMB Fellowship-Trained", "28 Clinical Trials", "Former UTMB Faculty", "Percy Dutton Prize", "Chief Resident", "5.0 Google Rated"];
 
 const AboutSection = () => {
   const ref = useScrollAnimation();
@@ -56,7 +56,7 @@ const AboutSection = () => {
                 Unlike a general ophthalmologist or optometrist, Dr. Rehmani focuses solely on complex retinal conditions — macular degeneration, diabetic retinopathy, retinal detachment, retinal tears, and vitreous hemorrhage. As a former Clinical Assistant Professor at UTMB and a sub-investigator on 28 active U.S. clinical trials, he brings academic-level expertise and the latest treatments directly to patients in the Northwest Houston corridor.
               </p>
               <p>
-                Patients consistently describe their experience as warm, thorough, and confidence-inspiring — reflected in his perfect 5.0 Google rating and U.S. Health News Patient Top Choice recognition.
+                Patients consistently describe their experience as warm, thorough, and confidence-inspiring — reflected in his perfect 5.0 Google rating and recognition as a sub-investigator on 28 active U.S. clinical trials advancing the future of retinal care.
               </p>
             </div>
 
