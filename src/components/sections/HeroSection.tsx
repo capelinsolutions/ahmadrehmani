@@ -1,4 +1,4 @@
-import { Phone, Star, ShieldCheck, MapPin, ChevronDown } from "lucide-react";
+import { Phone, Star, ShieldCheck, MapPin, ChevronDown, Award } from "lucide-react";
 
 const HeroSection = () => (
   <section
@@ -22,26 +22,25 @@ const HeroSection = () => (
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-gold/20 border border-gold/30 rounded-pill px-4 py-1.5">
             <Star className="w-4 h-4 text-gold-light fill-gold-light" />
-            <span className="text-gold-light text-sm font-body font-medium">U.S. News Patients' Top Choice · 5.0 Google Rating</span>
+            <span className="text-gold-light text-sm font-body font-medium">U.S. Health News Top Choice · 5.0 Google Rating</span>
           </div>
 
           <h1 className="font-display text-primary-foreground leading-[1.15]" style={{ fontSize: "clamp(40px, 5vw, 62px)" }}>
-            Wayne NJ's Most Trusted{" "}
-            <span className="text-gold-light">Retina Specialist</span>{" "}
-            Now Serving Cypress, TX
+            Cypress, TX's Fellowship-Trained{" "}
+            <span className="text-gold-light">Retina Specialist</span>
           </h1>
 
           <p className="text-primary-foreground/75 text-lg font-body leading-relaxed max-w-xl">
-            Board-certified vitreoretinal specialist Dr. Ahmad Rehmani offers expert care for macular degeneration, diabetic retinopathy, retinal detachment, and cataract surgery. Medicare and major insurance accepted.
+            Dr. Ahmad Rehmani, D.O. — owner of <strong className="text-primary-foreground">North Houston Retina</strong> — delivers UTMB fellowship-trained care for macular degeneration, diabetic retinopathy, retinal detachment, and complex vitreoretinal surgery. Now welcoming new patients across Cypress, Bridgeland, Katy, and Northwest Houston.
           </p>
 
           <div className="flex flex-wrap gap-4">
             <a
-              href="tel:+19739873380"
+              href="tel:+13465870223"
               className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-6 py-3 rounded-lg font-body font-semibold text-base transition-colors"
             >
               <Phone className="w-5 h-5" />
-              Call (973) 987-3380
+              Call (346) 587-0223
             </a>
             <a
               href="#services"
@@ -54,9 +53,9 @@ const HeroSection = () => (
           {/* Trust indicators */}
           <div className="flex flex-wrap gap-6 pt-4">
             {[
-              { icon: Star, value: "5.0 / 5.0", label: "155+ Google Reviews", bg: "bg-gold/20" },
-              { icon: ShieldCheck, value: "Board Certified", label: "Vitreoretinal Specialist", bg: "bg-accent/20" },
-              { icon: MapPin, value: "2 Locations", label: "Wayne NJ · Cypress TX", bg: "bg-gold/20" },
+              { icon: Star, value: "5.0 / 5.0", label: "Google Rated", bg: "bg-gold/20" },
+              { icon: ShieldCheck, value: "UTMB Fellowship", label: "Vitreoretinal Trained", bg: "bg-accent/20" },
+              { icon: Award, value: "28 Clinical Trials", label: "Sub-Investigator", bg: "bg-gold/20" },
             ].map((item) => (
               <div key={item.label} className="flex items-center gap-3">
                 <div className={`w-10 h-10 rounded-lg ${item.bg} flex items-center justify-center`}>
@@ -94,15 +93,16 @@ const HeroSection = () => (
                     <Star key={i} className="w-5 h-5 text-gold-light fill-gold-light" />
                   ))}
                 </div>
-                <p className="text-primary-foreground/60 text-sm font-body mt-1">155+ Google Reviews</p>
+                <p className="text-primary-foreground/60 text-sm font-body mt-1">Google Reviews · Cypress, TX</p>
               </div>
             </div>
 
             <ul className="space-y-3">
               {[
-                "U.S. News Patients' Top Choice Award",
-                "U.S. News Patients Recommend Award",
-                "Percy Dutton Prize — University of Rochester",
+                "U.S. Health News Patient Top Choice Doctor",
+                "Percy Dutton Lifetime Achievement Prize",
+                "Keidaean Honor Society — U. of Rochester",
+                "Chief Resident — St. John's Episcopal Hospital",
                 "Magna Cum Laude Graduate",
               ].map((award) => (
                 <li key={award} className="flex items-start gap-2 text-primary-foreground/80 text-sm font-body">

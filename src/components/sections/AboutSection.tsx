@@ -3,13 +3,15 @@ import drRehmaniPhoto from "@/assets/dr-rehmani.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const credentials = [
-  { label: "Undergraduate", value: "University of Rochester — Magna Cum Laude, Double BA: Biology & Religion" },
-  { label: "Medical Degree", value: "D.O. — NYIT College of Osteopathic Medicine" },
-  { label: "Subspecialty", value: "Vitreoretinal Disease & Surgery" },
-  { label: "Hospital Affiliations", value: "Hackensack University Medical Center · Clara Maass · Ramapo Valley Surgical" },
+  { label: "Undergraduate", value: "University of Rochester — Magna Cum Laude · B.A. Biology & Religion · Minor in Public Health" },
+  { label: "Medical Degree", value: "Doctor of Osteopathic Medicine — NYCOM (New York College of Osteopathic Medicine)" },
+  { label: "Residency", value: "Ophthalmology — St. John's Episcopal Hospital · Chief Resident 2019–2020" },
+  { label: "Fellowship", value: "Surgical Vitreoretinal Fellowship — UTMB (University of Texas Medical Branch), Houston" },
+  { label: "Academic Role", value: "Former Clinical Assistant Professor — UTMB" },
+  { label: "Research", value: "Sub-Investigator on 28 U.S. Clinical Trials in retinal disease (Eylea, Vabysmo, Susvimo, RGX-314 and more)" },
 ];
 
-const chips = ["U.S. News Top Choice", "Percy Dutton Prize", "5.0 Google Rating", "Hackensack Affiliated"];
+const chips = ["U.S. Health News Top Choice", "Percy Dutton Prize", "Keidaean Honor Society", "Magna Cum Laude", "Chief Resident", "5.0 Google Rated"];
 
 const AboutSection = () => {
   const ref = useScrollAnimation();
@@ -17,7 +19,7 @@ const AboutSection = () => {
     <section id="about" ref={ref} className="bg-background py-16 lg:py-24">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Left - Photo placeholder */}
+          {/* Left - Photo */}
           <div className="fade-up relative">
             <div
               className="w-full rounded-2xl overflow-hidden"
@@ -26,12 +28,12 @@ const AboutSection = () => {
                 background: "linear-gradient(135deg, #0B1F4B, #0E7A6E)",
               }}
             >
-              <img src={drRehmaniPhoto} alt="Dr. Ahmad Rehmani, D.O. — Board-Certified Vitreoretinal Specialist" className="w-full h-full object-cover object-top" loading="lazy" />
+              <img src={drRehmaniPhoto} alt="Dr. Ahmad Rehmani, D.O. — Fellowship-Trained Vitreoretinal Specialist, North Houston Retina, Cypress TX" className="w-full h-full object-cover object-top" loading="lazy" />
             </div>
             <div className="absolute bottom-4 right-4 bg-background rounded-xl px-5 py-3 shadow-lg flex items-center gap-3">
               <ShieldCheck className="w-6 h-6 text-accent" />
               <div>
-                <p className="font-body text-sm font-semibold text-foreground">Board Certified</p>
+                <p className="font-body text-sm font-semibold text-foreground">UTMB Fellowship-Trained</p>
                 <p className="font-body text-xs text-muted-foreground">Vitreoretinal Specialist</p>
               </div>
             </div>
@@ -42,16 +44,19 @@ const AboutSection = () => {
             <div>
               <span className="font-body text-sm text-accent font-semibold uppercase tracking-wider">About Dr. Rehmani</span>
               <h2 className="font-display text-foreground text-3xl lg:text-4xl font-bold mt-3 leading-tight">
-                The Most Trusted Retina Specialist in New Jersey & Houston, TX
+                The Dedicated Retina Specialist Serving Cypress & Northwest Houston
               </h2>
             </div>
 
             <div className="space-y-4 font-body text-gray-600 leading-[1.7]">
               <p>
-                Dr. Ahmad Rehmani is a board-certified ophthalmologist who has devoted his career to the subspecialty of vitreoretinal disease and surgery. Unlike general ophthalmologists, Dr. Rehmani focuses exclusively on the complex diseases of the retina and vitreous — offering the deepest level of expertise available for conditions like macular degeneration, diabetic retinopathy, retinal detachment, and advanced cataract care.
+                Dr. Ahmad Rehmani is the founder, owner, and physician of <strong className="text-foreground">North Houston Retina, PLLC</strong> in Cypress, TX. After completing his Surgical Vitreoretinal Fellowship at the University of Texas Medical Branch (UTMB) in Houston and serving as Chief Resident in Ophthalmology at St. John's Episcopal Hospital, Dr. Rehmani has dedicated his career exclusively to diseases and surgery of the retina and vitreous.
               </p>
               <p>
-                With over 11–20 years of experience and a perfect 5-star patient rating, Dr. Rehmani has earned recognition from U.S. News & World Report as a Patients' Top Choice — an award reflecting both exceptional clinical outcomes and a patient experience consistently described as warm, thorough, and confidence-inspiring.
+                Unlike a general ophthalmologist or optometrist, Dr. Rehmani focuses solely on complex retinal conditions — macular degeneration, diabetic retinopathy, retinal detachment, retinal tears, and vitreous hemorrhage. As a former Clinical Assistant Professor at UTMB and a sub-investigator on 28 active U.S. clinical trials, he brings academic-level expertise and the latest treatments directly to patients in the Northwest Houston corridor.
+              </p>
+              <p>
+                Patients consistently describe their experience as warm, thorough, and confidence-inspiring — reflected in his perfect 5.0 Google rating and U.S. Health News Patient Top Choice recognition.
               </p>
             </div>
 
@@ -70,7 +75,7 @@ const AboutSection = () => {
               <p className="font-display italic text-foreground leading-relaxed">
                 "My goal is to make the most advanced retinal care feel accessible — to explain complex diagnoses in plain language, and to treat every patient with the same urgency and compassion I would want for my own family."
               </p>
-              <cite className="font-body text-sm text-muted-foreground mt-3 block not-italic">— Dr. Ahmad Rehmani, D.O.</cite>
+              <cite className="font-body text-sm text-muted-foreground mt-3 block not-italic">— Dr. Ahmad Rehmani, D.O. · Owner, North Houston Retina</cite>
             </blockquote>
 
             {/* Chips */}

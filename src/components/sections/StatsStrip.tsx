@@ -2,9 +2,9 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const metrics = [
   { number: "5.0", label: "Google Star Rating" },
-  { number: "155+", label: "Verified Patient Reviews" },
-  { number: "15+", label: "Years of Expertise" },
-  { number: "2", label: "Clinic Locations (NJ & TX)" },
+  { number: "28", label: "U.S. Clinical Trials (Sub-Investigator)" },
+  { number: "10+", label: "Peer-Reviewed Publications" },
+  { number: "UTMB", label: "Vitreoretinal Fellowship Trained" },
 ];
 
 const StatsStrip = () => {

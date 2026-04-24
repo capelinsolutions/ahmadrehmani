@@ -5,42 +5,44 @@ const icons = [Eye, Paintbrush, Heart, Sun, Zap, ClipboardList];
 
 const services = [
   {
-    name: "Retinal Disease & Vitreoretinal Surgery",
-    badge: "Core Specialty",
-    tags: ["Retinal Detachment", "Vitrectomy", "Retinal Tears"],
-    description: "Dr. Rehmani's primary subspecialty. He treats a full range of complex retinal conditions using the latest surgical and laser techniques, including vitrectomy, scleral buckle, and pneumatic retinopexy for retinal detachments. Retinal detachment is a medical emergency — same-day evaluation available.",
-    cta: "Learn About Retinal Surgery",
-  },
-  {
     name: "Macular Degeneration (AMD) Treatment",
-    badge: "High Volume",
+    badge: "Core Specialty",
     tags: ["Wet AMD", "Dry AMD", "Anti-VEGF Injections"],
-    description: "Age-related macular degeneration (AMD) is a leading cause of vision loss in adults over 50. Dr. Rehmani specializes in anti-VEGF injection therapy (Eylea, Lucentis, Avastin) to preserve central vision in wet AMD, and monitors dry AMD with advanced retinal imaging. Medicare covered.",
+    description: "Age-related macular degeneration is a leading cause of vision loss in adults over 50. Dr. Rehmani specializes in anti-VEGF injection therapy (Eylea, Vabysmo, Lucentis, Avastin) to preserve and restore central vision in wet AMD, and monitors dry AMD with advanced OCT retinal imaging.",
     cta: "Learn About AMD Treatment",
   },
   {
     name: "Diabetic Retinopathy Treatment",
-    tags: ["Laser Treatment", "Injections", "Annual Monitoring"],
-    description: "Diabetes is the leading cause of blindness in working-age adults. Dr. Rehmani uses retinal laser therapy, anti-VEGF injections, and surgical vitrectomy to halt progression and preserve vision.",
+    badge: "High Volume",
+    tags: ["Anti-VEGF Injections", "Laser Treatment", "Annual Monitoring"],
+    description: "Diabetes is the leading cause of blindness in working-age adults. Dr. Rehmani uses anti-VEGF injections, retinal laser therapy, and surgical vitrectomy to halt progression and preserve vision. Every patient with diabetes needs an annual dilated retinal exam.",
     cta: "Learn About Diabetic Eye Disease",
   },
   {
-    name: "Cataract Surgery & Advanced Lens Implants",
-    tags: ["Phacoemulsification", "Premium IOLs", "Medicare Covered"],
-    description: "Modern cataract surgery with premium intraocular lens (IOL) options. Safe, outpatient procedure taking under 30 minutes — with most patients noticing improved vision the next day.",
-    cta: "Learn About Cataract Surgery",
+    name: "Retinal Detachment & Vitreoretinal Surgery",
+    badge: "Surgical",
+    tags: ["Vitrectomy", "Scleral Buckle", "Pneumatic Retinopexy"],
+    description: "Retinal detachment is a true medical emergency. As a UTMB fellowship-trained vitreoretinal surgeon, Dr. Rehmani performs the full range of retinal surgery — including pars plana vitrectomy, scleral buckle, and pneumatic retinopexy. Same-day evaluation available.",
+    cta: "Learn About Retinal Surgery",
   },
   {
-    name: "Glaucoma Diagnosis & Management",
-    tags: ["Pressure Control", "Visual Field Testing", "MIGS"],
-    description: "Comprehensive glaucoma evaluation including optic nerve imaging, visual field testing, and treatment through eye drops, laser therapy, or minimally invasive glaucoma surgery (MIGS).",
-    cta: "Learn About Glaucoma Care",
+    name: "Floaters, Flashes & Vitreous Hemorrhage",
+    tags: ["PVD Evaluation", "Retinal Tear Repair", "Laser Retinopexy"],
+    description: "A sudden increase in floaters or flashes of light may signal a posterior vitreous detachment (PVD), retinal tear, or vitreous hemorrhage — all require urgent evaluation by a retina specialist to prevent retinal detachment.",
+    cta: "Learn About Floaters & Flashes",
   },
   {
-    name: "Comprehensive Eye Exams & Second Opinions",
-    tags: ["Dilated Exam", "Retinal Imaging", "Second Opinion"],
-    description: "A comprehensive dilated eye exam is the most effective tool for detecting vision-threatening conditions before symptoms appear. Dr. Rehmani also offers specialist second opinions.",
-    cta: "Schedule an Exam",
+    name: "Comprehensive Retinal Imaging & Second Opinions",
+    tags: ["OCT Imaging", "Fundus Photography", "Specialist Second Opinion"],
+    description: "Dr. Rehmani uses the latest OCT (Optical Coherence Tomography) and widefield retinal imaging to detect vision-threatening conditions before symptoms appear. Specialist second opinions welcomed — bring any prior imaging or reports.",
+    cta: "Schedule an Evaluation",
+  },
+  {
+    name: "Clinical Trial Access",
+    badge: "Research",
+    tags: ["28 Active Trials", "Cutting-Edge Therapies", "Sub-Investigator"],
+    description: "Through Dr. Rehmani's role as sub-investigator on 28 active U.S. clinical trials in retinal disease, qualifying patients may gain early access to next-generation therapies for AMD and diabetic macular edema — including longer-acting injectables and gene-therapy approaches.",
+    cta: "Ask About Trial Eligibility",
   },
 ];
 
@@ -53,10 +55,10 @@ const ServicesSection = () => {
           <div className="max-w-2xl">
             <span className="font-body text-sm text-accent font-semibold uppercase tracking-wider">Expert Retinal Care</span>
             <h2 className="font-display text-foreground text-3xl lg:text-4xl font-bold mt-3 leading-tight">
-              Comprehensive Eye & Retina Services in NJ and Texas
+              Comprehensive Retina & Vitreous Services in Cypress, TX
             </h2>
             <p className="font-body text-gray-600 mt-4 leading-relaxed">
-              As a dedicated vitreoretinal specialist, Dr. Rehmani offers the most advanced non-surgical and surgical treatments for diseases of the retina, vitreous, and lens.
+              As a fellowship-trained vitreoretinal specialist, Dr. Rehmani offers the most advanced non-surgical and surgical treatments for diseases of the retina, vitreous, and macula — all in one Cypress location.
             </p>
           </div>
           <a
