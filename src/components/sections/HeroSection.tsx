@@ -1,18 +1,32 @@
 import { Phone, Star, ShieldCheck, MapPin, ChevronDown, Award } from "lucide-react";
+import clinicBg from "@/assets/clinic-hero-bg.jpg";
 
 const HeroSection = () => (
   <section
     id="hero"
     className="relative overflow-hidden"
-    style={{
-      background: "linear-gradient(135deg, #0B1F4B 0%, #132A60 50%, #0C2855 100%)",
-      minHeight: "88vh",
-    }}
+    style={{ minHeight: "88vh" }}
   >
+    {/* Background image */}
+    <div
+      className="absolute inset-0 bg-cover bg-center"
+      style={{ backgroundImage: `url(${clinicBg})` }}
+      aria-hidden="true"
+    />
+    {/* Dark navy overlay for legibility */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(135deg, rgba(11,31,75,0.92) 0%, rgba(19,42,96,0.88) 50%, rgba(12,40,85,0.92) 100%)",
+      }}
+      aria-hidden="true"
+    />
+
     {/* Background effects */}
     <div className="absolute inset-0 pointer-events-none">
-      <div className="absolute top-0 left-[10%] w-[500px] h-[500px] rounded-full opacity-15" style={{ background: "radial-gradient(circle, hsl(170 78% 27%), transparent)" }} />
-      <div className="absolute top-[-100px] right-[5%] w-[300px] h-[300px] rounded-full opacity-10" style={{ background: "radial-gradient(circle, hsl(37 56% 50%), transparent)" }} />
+      <div className="absolute top-0 left-[10%] w-[500px] h-[500px] rounded-full opacity-20" style={{ background: "radial-gradient(circle, hsl(170 78% 27%), transparent)" }} />
+      <div className="absolute top-[-100px] right-[5%] w-[300px] h-[300px] rounded-full opacity-15" style={{ background: "radial-gradient(circle, hsl(37 56% 50%), transparent)" }} />
     </div>
 
     <div className="container mx-auto px-4 py-16 lg:py-24 relative z-10">
