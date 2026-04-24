@@ -22,7 +22,7 @@ const HeroSection = () => (
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-gold/20 border border-gold/30 rounded-pill px-4 py-1.5">
             <Star className="w-4 h-4 text-gold-light fill-gold-light" />
-            <span className="text-gold-light text-sm font-body font-medium">U.S. Health News Top Choice · 5.0 Google Rating</span>
+            <span className="text-gold-light text-sm font-body font-medium">UTMB Fellowship-Trained · 5.0 Google Rating</span>
           </div>
 
           <h1 className="font-display text-primary-foreground leading-[1.15]" style={{ fontSize: "clamp(40px, 5vw, 62px)" }}>
@@ -99,11 +99,11 @@ const HeroSection = () => (
 
             <ul className="space-y-3">
               {[
-                "U.S. Health News Patient Top Choice Doctor",
-                "Percy Dutton Lifetime Achievement Prize",
-                "Keidaean Honor Society — U. of Rochester",
+                "UTMB Houston — Vitreoretinal Surgical Fellowship",
+                "Sub-Investigator — 28 Active U.S. Clinical Trials",
+                "Former Clinical Assistant Professor — UTMB",
                 "Chief Resident — St. John's Episcopal Hospital",
-                "Magna Cum Laude Graduate",
+                "Percy Dutton Lifetime Achievement Prize",
               ].map((award) => (
                 <li key={award} className="flex items-start gap-2 text-primary-foreground/80 text-sm font-body">
                   <Star className="w-4 h-4 text-gold-light mt-0.5 flex-shrink-0" />
