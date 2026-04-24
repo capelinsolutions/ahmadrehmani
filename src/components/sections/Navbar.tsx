@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Phone, Menu, X } from "lucide-react";
 
-const navLinks = ["About", "Services", "Locations", "Reviews", "Insurance", "FAQ", "Contact"];
+const navLinks = ["About", "Services", "Location", "Reviews", "Insurance", "FAQ", "Contact"];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -15,25 +15,21 @@ const Navbar = () => {
 
   const scrollTo = (id: string) => {
     setMobileOpen(false);
-    document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
+    const targetId = id.toLowerCase() === "location" ? "locations" : id.toLowerCase();
+    document.getElementById(targetId)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <nav
       role="navigation"
-      className={`sticky top-0 z-40 transition-all duration-300 ${
-        scrolled ? "shadow-md" : ""
-      }`}
-      style={{
-        background: "rgba(11,31,75,0.97)",
-        backdropFilter: "blur(12px)",
-      }}
+      className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? "shadow-md" : ""}`}
+      style={{ background: "rgba(11,31,75,0.97)", backdropFilter: "blur(12px)" }}
     >
       <div className="container mx-auto px-4 flex items-center justify-between h-16 lg:h-[72px]">
         {/* Logo */}
         <a href="#" className="flex flex-col" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-          <span className="font-display text-lg text-primary-foreground font-semibold leading-tight">Dr. Ahmad Rehmani</span>
-          <span className="font-body text-[11px] text-gold-light uppercase tracking-[0.12em]">Retina Specialist · NJ & TX</span>
+          <span className="font-display text-lg text-primary-foreground font-semibold leading-tight">Dr. Ahmad Rehmani, D.O.</span>
+          <span className="font-body text-[11px] text-gold-light uppercase tracking-[0.12em]">North Houston Retina · Cypress, TX</span>
         </a>
 
         {/* Desktop Links */}
@@ -51,9 +47,9 @@ const Navbar = () => {
 
         {/* Right side */}
         <div className="hidden lg:flex items-center gap-3">
-          <a href="tel:+19739873380" className="flex items-center gap-1.5 text-gold-light text-sm font-body font-medium">
+          <a href="tel:+13465870223" className="flex items-center gap-1.5 text-gold-light text-sm font-body font-medium">
             <Phone className="w-4 h-4" />
-            (973) 987-3380
+            (346) 587-0223
           </a>
           <a
             href="#contact"
@@ -88,11 +84,11 @@ const Navbar = () => {
             </button>
           ))}
           <a
-            href="tel:+19739873380"
+            href="tel:+13465870223"
             className="mt-6 bg-accent text-accent-foreground px-8 py-3 rounded-lg text-lg font-body font-semibold flex items-center gap-2"
           >
             <Phone className="w-5 h-5" />
-            Call (973) 987-3380
+            Call (346) 587-0223
           </a>
         </div>
       )}

@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from "react";
-import { Phone, MapPin, Globe, Send, CheckCircle, Instagram, Facebook, Star } from "lucide-react";
+import { Phone, MapPin, Globe, Send, CheckCircle, Instagram, Facebook, Star, Mail } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const ContactSection = () => {
@@ -27,6 +27,9 @@ const ContactSection = () => {
           <h2 className="font-display text-foreground text-3xl lg:text-4xl font-bold mt-3">
             Request an Appointment or Ask a Question
           </h2>
+          <p className="font-body text-muted-foreground mt-4 max-w-xl mx-auto">
+            Now welcoming new patients in Cypress, Bridgeland, Katy, and the Northwest Houston area.
+          </p>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-12 fade-up">
@@ -60,34 +63,23 @@ const ContactSection = () => {
                     <input id="email" type="email" placeholder="john@email.com" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 font-body text-sm focus:ring-2 focus:ring-accent focus:border-accent outline-none transition" />
                   </div>
                 </div>
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div>
-                    <label htmlFor="location" className="font-body text-[13px] text-foreground uppercase tracking-wider font-semibold block mb-1.5">Preferred Location *</label>
-                    <select id="location" required className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 font-body text-sm focus:ring-2 focus:ring-accent focus:border-accent outline-none transition">
-                      <option value="">Select location</option>
-                      <option>Wayne, NJ — 1 Corporate Drive</option>
-                      <option>Cypress, TX — 27700 NW Freeway</option>
-                      <option>No preference</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="service" className="font-body text-[13px] text-foreground uppercase tracking-wider font-semibold block mb-1.5">Reason for Visit</label>
-                    <select id="service" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 font-body text-sm focus:ring-2 focus:ring-accent focus:border-accent outline-none transition">
-                      <option value="">Select reason</option>
-                      <option>Macular Degeneration / AMD</option>
-                      <option>Diabetic Retinopathy</option>
-                      <option>Retinal Detachment / Emergency</option>
-                      <option>Cataract Surgery</option>
-                      <option>Glaucoma Evaluation</option>
-                      <option>Comprehensive Eye Exam</option>
-                      <option>Second Opinion</option>
-                      <option>Other / Not Sure</option>
-                    </select>
-                  </div>
+                <div>
+                  <label htmlFor="service" className="font-body text-[13px] text-foreground uppercase tracking-wider font-semibold block mb-1.5">Reason for Visit *</label>
+                  <select id="service" required className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 font-body text-sm focus:ring-2 focus:ring-accent focus:border-accent outline-none transition">
+                    <option value="">Select reason</option>
+                    <option>Macular Degeneration / AMD</option>
+                    <option>Diabetic Retinopathy</option>
+                    <option>Retinal Detachment / Emergency</option>
+                    <option>New Floaters or Flashes</option>
+                    <option>Comprehensive Retinal Exam</option>
+                    <option>Specialist Second Opinion</option>
+                    <option>Clinical Trial Inquiry</option>
+                    <option>Other / Not Sure</option>
+                  </select>
                 </div>
                 <div>
                   <label htmlFor="insurance" className="font-body text-[13px] text-foreground uppercase tracking-wider font-semibold block mb-1.5">Insurance Provider</label>
-                  <input id="insurance" type="text" placeholder="e.g. Medicare, Aetna, Blue Cross..." className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 font-body text-sm focus:ring-2 focus:ring-accent focus:border-accent outline-none transition" />
+                  <input id="insurance" type="text" placeholder="e.g. Aetna, Wellpoint, Multiplan, Medicare..." className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 font-body text-sm focus:ring-2 focus:ring-accent focus:border-accent outline-none transition" />
                 </div>
                 <div>
                   <label htmlFor="message" className="font-body text-[13px] text-foreground uppercase tracking-wider font-semibold block mb-1.5">Additional Information</label>
@@ -107,19 +99,19 @@ const ContactSection = () => {
           <div className="lg:col-span-2 space-y-6">
             <div className="space-y-5">
               {[
-                { icon: Phone, label: "Phone (NJ & TX)", value: "(973) 987-3380", href: "tel:+19739873380", sub: "Mon–Fri · 8:00 AM – 5:00 PM" },
-                { icon: MapPin, label: "Wayne, NJ", value: "1 Corporate Drive, Wayne, NJ 07470" },
-                { icon: MapPin, label: "Cypress, TX", value: "27700 NW Freeway, Cypress, TX 77433" },
-                { icon: Globe, label: "Website", value: "www.retinacenternj.com" },
+                { icon: Phone, label: "Phone", value: "(346) 587-0223", href: "tel:+13465870223", sub: "Mon–Fri · 8:00 AM – 5:00 PM" },
+                { icon: Mail, label: "Email", value: "ahmadsrehmani@gmail.com", href: "mailto:ahmadsrehmani@gmail.com" },
+                { icon: MapPin, label: "Office Address", value: "27700 Northwest Freeway, Suite 355, Cypress, TX 77433" },
+                { icon: Globe, label: "Practice", value: "North Houston Retina, PLLC" },
               ].map((item) => (
                 <div key={item.label} className="flex gap-3">
                   <div className="w-10 h-10 rounded-lg bg-accent-pale flex items-center justify-center shrink-0">
                     <item.icon className="w-5 h-5 text-accent" />
                   </div>
-                  <div>
+                  <div className="min-w-0">
                     <p className="font-body text-xs text-muted-foreground uppercase tracking-wider">{item.label}</p>
                     {item.href ? (
-                      <a href={item.href} className="font-body text-sm text-foreground font-medium hover:text-accent transition-colors">{item.value}</a>
+                      <a href={item.href} className="font-body text-sm text-foreground font-medium hover:text-accent transition-colors break-words">{item.value}</a>
                     ) : (
                       <p className="font-body text-sm text-foreground font-medium">{item.value}</p>
                     )}

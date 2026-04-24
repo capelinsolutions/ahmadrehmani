@@ -1,4 +1,4 @@
-import { Phone, MessageSquare } from "lucide-react";
+import { Phone, MessageSquare, MapPin, Clock } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const CTASection = () => {
@@ -23,14 +23,14 @@ const CTASection = () => {
               Ready to Protect Your Vision? Schedule Your Consultation Today.
             </h2>
             <p className="font-body text-primary-foreground/70 leading-relaxed">
-              Don't wait for vision problems to worsen. Whether you're managing a chronic retinal condition, need a specialist second opinion, or are experiencing new symptoms — Dr. Rehmani's team is ready to help. Medicare and major insurance accepted at both locations.
+              Don't wait for vision problems to worsen. Whether you're managing macular degeneration, diabetic eye disease, need a specialist second opinion, or are experiencing new flashes and floaters — Dr. Rehmani's Cypress team is ready to help. Same-day evaluation available for retinal emergencies.
             </p>
             <div className="flex flex-wrap gap-4">
               <a
-                href="tel:+19739873380"
+                href="tel:+13465870223"
                 className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-6 py-3 rounded-lg font-body font-semibold transition-colors"
               >
-                <Phone className="w-5 h-5" /> Call (973) 987-3380
+                <Phone className="w-5 h-5" /> Call (346) 587-0223
               </a>
               <button
                 onClick={() => scrollTo("contact")}
@@ -48,20 +48,34 @@ const CTASection = () => {
               border: "1px solid rgba(255,255,255,0.12)",
             }}
           >
-            {[
-              { label: "Wayne, NJ — Main Office", phone: "(973) 987-3380", hours: "Mon–Fri · 8:00 AM – 5:00 PM" },
-              { label: "Cypress, TX Office", phone: "(973) 987-3380", hours: "Call for current TX hours" },
-            ].map((loc) => (
-              <div key={loc.label} className="space-y-1">
-                <p className="font-body text-primary-foreground/60 text-xs uppercase tracking-wider">{loc.label}</p>
-                <a href="tel:+19739873380" className="font-body text-primary-foreground text-lg font-semibold block hover:text-accent-light transition-colors">
-                  {loc.phone}
-                </a>
-                <p className="font-body text-primary-foreground/50 text-sm">{loc.hours}</p>
+            <div>
+              <p className="font-body text-gold-light text-xs uppercase tracking-[0.12em] font-semibold">North Houston Retina, PLLC</p>
+              <p className="font-display text-primary-foreground text-2xl font-bold mt-1">Cypress, TX Office</p>
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <Phone className="w-5 h-5 text-accent-light mt-0.5 shrink-0" />
+                <div>
+                  <a href="tel:+13465870223" className="font-body text-primary-foreground text-lg font-semibold block hover:text-accent-light transition-colors">
+                    (346) 587-0223
+                  </a>
+                  <p className="font-body text-primary-foreground/50 text-xs">Direct office line</p>
+                </div>
               </div>
-            ))}
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-accent-light mt-0.5 shrink-0" />
+                <p className="font-body text-primary-foreground/80 text-sm">27700 Northwest Freeway, Suite 355<br />Cypress, TX 77433</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <Clock className="w-5 h-5 text-accent-light mt-0.5 shrink-0" />
+                <p className="font-body text-primary-foreground/80 text-sm">Monday – Friday · 8:00 AM – 5:00 PM</p>
+              </div>
+            </div>
+
             <div className="border-t border-white/10 pt-4">
-              <p className="font-body text-primary-foreground/50 text-sm">Medicare · Aetna · Cigna · BCBS · UHC</p>
+              <p className="font-body text-primary-foreground/50 text-xs uppercase tracking-wider mb-1">Insurance</p>
+              <p className="font-body text-primary-foreground/80 text-sm">Aetna · Wellpoint · Multiplan <span className="text-primary-foreground/50">(Medicare & MHMD coming soon)</span></p>
             </div>
           </div>
         </div>

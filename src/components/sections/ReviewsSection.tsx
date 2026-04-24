@@ -5,17 +5,17 @@ const reviews = [
   {
     text: "Dr. Rehmani is an exceptional physician. He took the time to explain my macular degeneration diagnosis in a way I could actually understand, and his injection treatment has genuinely slowed my vision loss. I feel completely confident in his care.",
     name: "Margaret R.",
-    location: "Google Review · Wayne, NJ",
+    location: "Google Review · Cypress, TX",
   },
   {
-    text: "Busy office with personable and efficient staff members. Dr. Rehmani is clearly an expert — he caught a retinal issue my previous doctor had missed for months. The team is warm, professional, and moved quickly. I've been a patient for three years and wouldn't go anywhere else.",
+    text: "Dr. Rehmani caught a retinal issue my optometrist had been monitoring for months. He explained everything clearly, the office is efficient, and the staff are warm and professional. So glad we have a true retina specialist in Cypress now.",
     name: "James T.",
-    location: "Google Review · Morris County, NJ",
+    location: "Google Review · Bridgeland, TX",
   },
   {
     text: "Always a pleasure — warm welcome, family-oriented, detailed and wonderful service. My father was referred here after a retinal detachment scare and Dr. Rehmani handled everything calmly and expertly. His explanation of the procedure gave us complete peace of mind.",
     name: "Sandra C.",
-    location: "Google Review · Passaic County, NJ",
+    location: "Google Review · Katy, TX",
   },
 ];
 
@@ -39,7 +39,7 @@ const ReviewsSection = () => {
                   <Star key={i} className="w-5 h-5 text-gold fill-gold" />
                 ))}
               </div>
-              <p className="font-body text-sm text-muted-foreground mt-0.5">155+ Google Reviews</p>
+              <p className="font-body text-sm text-muted-foreground mt-0.5">Google Verified · Cypress, TX</p>
             </div>
           </div>
         </div>
@@ -73,12 +73,12 @@ const ReviewsSection = () => {
 
         <div className="text-center mt-10 fade-up">
           <a
-            href="https://www.google.com/maps/place/Retina+Center+NJ"
+            href="https://www.google.com/maps/search/North+Houston+Retina+Cypress+TX"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-6 py-3 rounded-lg font-body font-semibold transition-colors"
           >
-            Read All 155+ Google Reviews
+            Read All Google Reviews
           </a>
         </div>
       </div>
