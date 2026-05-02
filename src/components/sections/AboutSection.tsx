@@ -88,6 +88,10 @@ const AboutSection = () => {
                 </span>
               ))}
             </div>
+
+            <Link to="/doctor/ahmad-rehmani" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-6 py-3 rounded-lg font-body font-semibold transition-colors text-sm">
+              View Full Profile →
+            </Link>
           </div>
         </div>
       </div>
