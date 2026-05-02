@@ -41,8 +41,8 @@ const DoctorProfile = () => {
           <div className="grid lg:grid-cols-[360px_1fr] gap-10 lg:gap-16 items-center">
             {/* Photo */}
             <div className="relative mx-auto lg:mx-0 w-72 lg:w-full">
-              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10" style={{ aspectRatio: "3/4" }}>
-                <img src={drHero} alt="Dr. Ahmad Rehmani, D.O. — Vitreoretinal Specialist at North Houston Retina" className="w-full h-full object-cover object-top" />
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+                <img src={drHero} alt="Dr. Ahmad Rehmani, D.O. — Vitreoretinal Specialist at North Houston Retina" className="w-full h-auto object-contain" />
               </div>
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground rounded-full px-5 py-2 flex items-center gap-2 shadow-lg">
                 <Star className="w-4 h-4 fill-current" />
@@ -142,8 +142,8 @@ const DoctorProfile = () => {
                       Dr. Rehmani is known for taking the time to explain complex diagnoses in plain language, ensuring every patient fully understands their condition and treatment options. Patients consistently describe their experience as warm, thorough, and confidence-inspiring.
                     </p>
                   </div>
-                  <div className="rounded-xl overflow-hidden shadow-lg" style={{ aspectRatio: "3/4" }}>
-                    <img src={drStanding} alt="Dr. Ahmad Rehmani at North Houston Retina clinic" className="w-full h-full object-cover" loading="lazy" />
+                  <div className="rounded-xl overflow-hidden shadow-lg">
+                    <img src={drStanding} alt="Dr. Ahmad Rehmani at North Houston Retina clinic" className="w-full h-auto object-contain" loading="lazy" />
                   </div>
                 </div>
               </section>
@@ -177,15 +177,15 @@ const DoctorProfile = () => {
               {/* Clinical Photo Gallery */}
               <section>
                 <SectionHeading icon={Stethoscope} title="In the Clinic" />
-                <div className="grid grid-cols-2 gap-4 mt-6">
-                  <div className="rounded-xl overflow-hidden shadow-md" style={{ aspectRatio: "4/3" }}>
-                    <img src={drExam} alt="Dr. Rehmani performing indirect ophthalmoscopy exam" className="w-full h-full object-cover" loading="lazy" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                  <div className="rounded-xl overflow-hidden shadow-md bg-muted">
+                    <img src={drExam} alt="Dr. Rehmani performing indirect ophthalmoscopy exam" className="w-full h-auto object-contain" loading="lazy" />
                   </div>
-                  <div className="rounded-xl overflow-hidden shadow-md" style={{ aspectRatio: "4/3" }}>
-                    <img src={drSlitLamp} alt="Dr. Rehmani performing slit lamp examination on a patient" className="w-full h-full object-cover" loading="lazy" />
+                  <div className="rounded-xl overflow-hidden shadow-md bg-muted">
+                    <img src={drSlitLamp} alt="Dr. Rehmani performing slit lamp examination on a patient" className="w-full h-auto object-contain" loading="lazy" />
                   </div>
-                  <div className="col-span-2 rounded-xl overflow-hidden shadow-md" style={{ aspectRatio: "16/7" }}>
-                    <img src={drPatient} alt="Dr. Rehmani consulting with a patient at North Houston Retina" className="w-full h-full object-cover object-center" loading="lazy" />
+                  <div className="col-span-1 sm:col-span-2 rounded-xl overflow-hidden shadow-md bg-muted">
+                    <img src={drPatient} alt="Dr. Rehmani consulting with a patient at North Houston Retina" className="w-full h-auto object-contain" loading="lazy" />
                   </div>
                 </div>
               </section>
