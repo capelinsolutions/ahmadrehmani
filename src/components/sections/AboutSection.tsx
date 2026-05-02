@@ -1,4 +1,5 @@
 import { ShieldCheck, Star } from "lucide-react";
+import { Link } from "react-router-dom";
 import drRehmaniPhoto from "@/assets/dr-rehmani.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
