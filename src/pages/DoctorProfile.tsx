@@ -177,15 +177,15 @@ const DoctorProfile = () => {
               {/* Clinical Photo Gallery */}
               <section>
                 <SectionHeading icon={Stethoscope} title="In the Clinic" />
-                <div className="grid grid-cols-2 gap-4 mt-6">
-                  <div className="rounded-xl overflow-hidden shadow-md" style={{ aspectRatio: "4/3" }}>
-                    <img src={drExam} alt="Dr. Rehmani performing indirect ophthalmoscopy exam" className="w-full h-full object-cover" loading="lazy" />
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                  <div className="rounded-xl overflow-hidden shadow-md bg-muted">
+                    <img src={drExam} alt="Dr. Rehmani performing indirect ophthalmoscopy exam" className="w-full h-auto object-contain" loading="lazy" />
                   </div>
-                  <div className="rounded-xl overflow-hidden shadow-md" style={{ aspectRatio: "4/3" }}>
-                    <img src={drSlitLamp} alt="Dr. Rehmani performing slit lamp examination on a patient" className="w-full h-full object-cover" loading="lazy" />
+                  <div className="rounded-xl overflow-hidden shadow-md bg-muted">
+                    <img src={drSlitLamp} alt="Dr. Rehmani performing slit lamp examination on a patient" className="w-full h-auto object-contain" loading="lazy" />
                   </div>
-                  <div className="col-span-2 rounded-xl overflow-hidden shadow-md" style={{ aspectRatio: "16/7" }}>
-                    <img src={drPatient} alt="Dr. Rehmani consulting with a patient at North Houston Retina" className="w-full h-full object-cover object-center" loading="lazy" />
+                  <div className="col-span-1 sm:col-span-2 rounded-xl overflow-hidden shadow-md bg-muted">
+                    <img src={drPatient} alt="Dr. Rehmani consulting with a patient at North Houston Retina" className="w-full h-auto object-contain" loading="lazy" />
                   </div>
                 </div>
               </section>
