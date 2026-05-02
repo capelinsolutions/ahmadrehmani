@@ -142,8 +142,8 @@ const DoctorProfile = () => {
                       Dr. Rehmani is known for taking the time to explain complex diagnoses in plain language, ensuring every patient fully understands their condition and treatment options. Patients consistently describe their experience as warm, thorough, and confidence-inspiring.
                     </p>
                   </div>
-                  <div className="rounded-xl overflow-hidden shadow-lg" style={{ aspectRatio: "3/4" }}>
-                    <img src={drStanding} alt="Dr. Ahmad Rehmani at North Houston Retina clinic" className="w-full h-full object-cover" loading="lazy" />
+                  <div className="rounded-xl overflow-hidden shadow-lg">
+                    <img src={drStanding} alt="Dr. Ahmad Rehmani at North Houston Retina clinic" className="w-full h-auto object-contain" loading="lazy" />
                   </div>
                 </div>
               </section>
