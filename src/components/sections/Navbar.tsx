@@ -73,32 +73,35 @@ const Navbar = () => {
 
       {/* Mobile overlay */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 top-16 z-50 flex flex-col items-center pt-10 gap-2 overflow-y-auto"
+        <div 
+          className="lg:hidden absolute left-0 right-0 top-full z-50 flex flex-col items-center py-6 gap-1 shadow-2xl border-t border-white/10"
           style={{ background: "rgb(11,31,75)" }}
         >
           {navLinks.map((link) => (
             <button
               key={link}
               onClick={() => scrollTo(link)}
-              className="w-4/5 text-lg text-primary-foreground/90 hover:text-primary-foreground hover:bg-white/10 font-body py-3 rounded-lg transition-colors border-b border-white/10 last:border-0"
+              className="w-full text-base text-primary-foreground/90 hover:text-primary-foreground hover:bg-white/10 font-body py-3.5 px-6 transition-colors text-left"
             >
               {link}
             </button>
           ))}
-          <a
-            href="tel:+13465870223"
-            className="mt-6 bg-accent text-accent-foreground px-8 py-3 rounded-lg text-lg font-body font-semibold flex items-center gap-2"
-          >
-            <Phone className="w-5 h-5" />
-            Call (346) 587-0223
-          </a>
-          <a
-            href="#contact"
-            onClick={(e) => { e.preventDefault(); scrollTo("contact"); }}
-            className="bg-white/10 text-primary-foreground px-8 py-3 rounded-lg text-lg font-body font-semibold"
-          >
-            Book Consultation
-          </a>
+          <div className="w-full px-6 pt-4 flex flex-col gap-3">
+            <a
+              href="tel:+13465870223"
+              className="bg-accent text-accent-foreground px-6 py-3 rounded-lg text-base font-body font-semibold flex items-center justify-center gap-2"
+            >
+              <Phone className="w-5 h-5" />
+              Call (346) 587-0223
+            </a>
+            <a
+              href="#contact"
+              onClick={(e) => { e.preventDefault(); scrollTo("contact"); }}
+              className="bg-white/10 text-primary-foreground px-6 py-3 rounded-lg text-base font-body font-semibold text-center"
+            >
+              Book Consultation
+            </a>
+          </div>
         </div>
       )}
     </nav>
