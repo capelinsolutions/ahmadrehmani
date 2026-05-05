@@ -73,12 +73,14 @@ const Navbar = () => {
 
       {/* Mobile overlay */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-0 top-16 z-50 bg-primary/98 flex flex-col items-center pt-12 gap-4">
+        <div className="lg:hidden fixed inset-0 top-16 z-50 flex flex-col items-center pt-10 gap-2 overflow-y-auto"
+          style={{ background: "rgb(11,31,75)" }}
+        >
           {navLinks.map((link) => (
             <button
               key={link}
               onClick={() => scrollTo(link)}
-              className="text-xl text-primary-foreground/90 hover:text-primary-foreground font-body py-2"
+              className="w-4/5 text-lg text-primary-foreground/90 hover:text-primary-foreground hover:bg-white/10 font-body py-3 rounded-lg transition-colors border-b border-white/10 last:border-0"
             >
               {link}
             </button>
@@ -89,6 +91,13 @@ const Navbar = () => {
           >
             <Phone className="w-5 h-5" />
             Call (346) 587-0223
+          </a>
+          <a
+            href="#contact"
+            onClick={(e) => { e.preventDefault(); scrollTo("contact"); }}
+            className="bg-white/10 text-primary-foreground px-8 py-3 rounded-lg text-lg font-body font-semibold"
+          >
+            Book Consultation
           </a>
         </div>
       )}
