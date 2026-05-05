@@ -75,9 +75,12 @@ const Footer = () => {
           <p className="font-body text-xs text-primary-foreground/40 text-center lg:text-left">
             © 2026 Dr. Ahmad Rehmani, D.O. — North Houston Retina, PLLC. All rights reserved. | Privacy Policy | Terms of Use | Accessibility
           </p>
-          <div className="inline-flex items-center gap-1.5 bg-accent/20 text-accent-light px-3 py-1.5 rounded-full">
-            <Lock className="w-3.5 h-3.5" />
-            <span className="font-body text-xs font-medium">HIPAA Compliant</span>
+          <div className="flex items-center gap-4">
+            <ThemeSwitcher />
+            <div className="inline-flex items-center gap-1.5 bg-accent/20 text-accent-light px-3 py-1.5 rounded-full">
+              <Lock className="w-3.5 h-3.5" />
+              <span className="font-body text-xs font-medium">HIPAA Compliant</span>
+            </div>
           </div>
         </div>
       </div>
