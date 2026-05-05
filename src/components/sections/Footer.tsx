@@ -1,4 +1,5 @@
 import { Lock } from "lucide-react";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const footerServices = ["Macular Degeneration (AMD)", "Diabetic Retinopathy", "Retinal Detachment & Surgery", "Floaters & Flashes", "Vitreous Hemorrhage", "Retinal Imaging (OCT)", "Clinical Trial Access"];
 const footerPractice = ["About Dr. Rehmani", "Cypress TX Office", "Insurance Accepted", "Patient Reviews", "FAQ", "Book Appointment"];
