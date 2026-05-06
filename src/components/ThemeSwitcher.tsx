@@ -11,7 +11,7 @@ const themes = [
 ] as const;
 
 const ThemeSwitcher = () => {
-  const [active, setActive] = useState(() => localStorage.getItem("site-theme") || "navy-teal");
+  const [active, setActive] = useState(() => localStorage.getItem("site-theme") || "high-contrast");
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
