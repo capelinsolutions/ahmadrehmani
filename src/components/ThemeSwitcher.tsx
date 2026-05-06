@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { Palette } from "lucide-react";
 
 const themes = [
-  { id: "navy-teal", label: "Navy & Teal", primary: "221 75% 17%", accent: "170 78% 27%", accentLight: "170 78% 35%", gold: "37 56% 50%", goldLight: "40 82% 68%", gray800: "220 26% 14%" },
-  { id: "midnight-emerald", label: "Midnight Emerald", primary: "210 60% 14%", accent: "152 68% 30%", accentLight: "152 68% 38%", gold: "45 70% 52%", goldLight: "48 85% 65%", gray800: "210 40% 12%" },
-  { id: "charcoal-copper", label: "Charcoal & Copper", primary: "230 20% 16%", accent: "18 65% 45%", accentLight: "18 65% 55%", gold: "30 60% 55%", goldLight: "32 75% 68%", gray800: "230 18% 12%" },
-  { id: "deep-ocean", label: "Deep Ocean", primary: "215 70% 20%", accent: "195 80% 35%", accentLight: "195 80% 45%", gold: "42 60% 50%", goldLight: "44 80% 65%", gray800: "215 50% 14%" },
+  { id: "navy-teal", label: "Navy & Teal", primary: "221 75% 17%", accent: "170 78% 27%", accentLight: "170 78% 35%", gold: "37 56% 50%", goldLight: "40 82% 68%", gray800: "220 26% 14%", swatch: ["#0b1f4b", "#0d8070", "#c5943a"] },
+  { id: "white", label: "White", primary: "220 20% 97%", accent: "210 60% 45%", accentLight: "210 60% 55%", gold: "37 56% 50%", goldLight: "40 82% 68%", gray800: "220 14% 92%", swatch: ["#f5f7fa", "#3b82c8", "#c5943a"] },
+  { id: "black", label: "Black", primary: "0 0% 7%", accent: "0 0% 45%", accentLight: "0 0% 60%", gold: "0 0% 70%", goldLight: "0 0% 80%", gray800: "0 0% 4%", swatch: ["#121212", "#737373", "#b3b3b3"] },
+  { id: "yellow", label: "Yellow", primary: "45 90% 48%", accent: "35 80% 35%", accentLight: "35 80% 45%", gold: "40 85% 55%", goldLight: "42 90% 65%", gray800: "40 50% 12%", swatch: ["#e6b800", "#a36b1a", "#d4a535"] },
 ] as const;
 
 const ThemeSwitcher = () => {
@@ -48,9 +48,9 @@ const ThemeSwitcher = () => {
               }`}
             >
               <div className="flex gap-1">
-                <span className="w-3 h-3 rounded-full" style={{ background: `hsl(${t.primary})` }} />
-                <span className="w-3 h-3 rounded-full" style={{ background: `hsl(${t.accent})` }} />
-                <span className="w-3 h-3 rounded-full" style={{ background: `hsl(${t.gold})` }} />
+                <span className="w-3 h-3 rounded-full border border-white/20" style={{ background: t.swatch[0] }} />
+                <span className="w-3 h-3 rounded-full border border-white/20" style={{ background: t.swatch[1] }} />
+                <span className="w-3 h-3 rounded-full border border-white/20" style={{ background: t.swatch[2] }} />
               </div>
               <span className="font-body text-xs font-medium">{t.label}</span>
             </button>
