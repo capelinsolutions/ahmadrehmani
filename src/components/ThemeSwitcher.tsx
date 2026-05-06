@@ -2,16 +2,16 @@ import { useState, useEffect } from "react";
 import { Palette } from "lucide-react";
 
 const themes = [
+  { id: "high-contrast", label: "White, Black & Yellow", primary: "0 0% 7%", accent: "50 100% 50%", accentLight: "50 100% 60%", gold: "50 100% 50%", goldLight: "50 100% 65%", gray800: "0 0% 5%" },
   { id: "navy-teal", label: "Navy & Teal", primary: "221 75% 17%", accent: "170 78% 27%", accentLight: "170 78% 35%", gold: "37 56% 50%", goldLight: "40 82% 68%", gray800: "220 26% 14%" },
   { id: "midnight-emerald", label: "Midnight Emerald", primary: "160 100% 10%", accent: "152 80% 35%", accentLight: "152 80% 45%", gold: "45 85% 55%", goldLight: "48 90% 68%", gray800: "160 40% 8%" },
   { id: "crimson-gold", label: "Crimson & Gold", primary: "0 60% 18%", accent: "0 72% 50%", accentLight: "0 72% 58%", gold: "42 90% 55%", goldLight: "44 95% 68%", gray800: "0 30% 12%" },
   { id: "royal-purple", label: "Royal Purple", primary: "270 60% 18%", accent: "270 70% 50%", accentLight: "270 70% 60%", gold: "38 80% 55%", goldLight: "40 90% 68%", gray800: "270 35% 12%" },
   { id: "deep-ocean", label: "Deep Ocean", primary: "215 70% 20%", accent: "195 90% 40%", accentLight: "195 90% 50%", gold: "42 75% 55%", goldLight: "44 85% 68%", gray800: "215 50% 14%" },
-  { id: "high-contrast", label: "High Contrast", primary: "0 0% 7%", accent: "50 100% 50%", accentLight: "50 100% 60%", gold: "50 100% 50%", goldLight: "50 100% 65%", gray800: "0 0% 5%" },
 ] as const;
 
 const ThemeSwitcher = () => {
-  const [active, setActive] = useState(() => localStorage.getItem("site-theme") || "navy-teal");
+  const [active, setActive] = useState(() => localStorage.getItem("site-theme") || "high-contrast");
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
