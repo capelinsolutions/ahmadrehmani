@@ -25,13 +25,13 @@
     --muted: 220 27% 96%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 170 78% 27%;
+    --accent: 50 100% 50%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 170 78% 35%;
-    --accent-pale: 168 60% 93%;
+    --accent-light: 50 100% 60%;
+    --accent-pale: 50 60% 93%;
 
-    --gold: 37 56% 50%;
-    --gold-light: 40 82% 68%;
+    --gold: 50 100% 50%;
+    --gold-light: 50 100% 65%;
 
     --destructive: 4 72% 46%;
     --destructive-foreground: 0 0% 100%;
