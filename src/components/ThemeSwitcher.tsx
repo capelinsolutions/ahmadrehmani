@@ -48,9 +48,9 @@ const ThemeSwitcher = () => {
               }`}
             >
               <div className="flex gap-1">
-                <span className="w-3 h-3 rounded-full" style={{ background: `hsl(${t.primary})` }} />
-                <span className="w-3 h-3 rounded-full" style={{ background: `hsl(${t.accent})` }} />
-                <span className="w-3 h-3 rounded-full" style={{ background: `hsl(${t.gold})` }} />
+                <span className="w-3 h-3 rounded-full border border-white/20" style={{ background: t.swatch[0] }} />
+                <span className="w-3 h-3 rounded-full border border-white/20" style={{ background: t.swatch[1] }} />
+                <span className="w-3 h-3 rounded-full border border-white/20" style={{ background: t.swatch[2] }} />
               </div>
               <span className="font-body text-xs font-medium">{t.label}</span>
             </button>
