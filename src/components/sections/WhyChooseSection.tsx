@@ -64,7 +64,7 @@ const WhyChooseSection = () => {
           {/* Right - stats card */}
           <div
             className="rounded-2xl p-8 space-y-6 fade-up"
-            style={{ background: "linear-gradient(135deg, #0B1F4B, #132A60)" }}
+            style={{ background: "linear-gradient(135deg, #000000, #1a1a1a)" }}
           >
             <h3 className="font-display text-primary-foreground text-xl font-semibold">Patient Outcome Indicators</h3>
             <div className="space-y-4">
@@ -79,7 +79,7 @@ const WhyChooseSection = () => {
                       className="h-full rounded-full"
                       style={{
                         width: m.width,
-                        background: "linear-gradient(90deg, hsl(170 78% 35%), hsl(40 82% 68%))",
+                        background: "linear-gradient(90deg, hsl(0 0% 7%), hsl(50 100% 50%))",
                       }}
                     />
                   </div>

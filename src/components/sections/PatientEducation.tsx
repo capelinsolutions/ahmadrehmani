@@ -9,7 +9,7 @@ const articles = [
     excerpt: "AMD affects the macula — the central part of your retina responsible for sharp, detailed vision. Learn to recognize the early signs of both dry and wet AMD.",
     readTime: "5 min read",
     icon: Eye,
-    gradient: "linear-gradient(135deg, #0B1F4B, #0E7A6E)",
+    gradient: "linear-gradient(135deg, #000000, #1a1a1a)",
   },
   {
     category: "Diabetic Eye Disease",
@@ -18,7 +18,7 @@ const articles = [
     excerpt: "High blood sugar damages the tiny blood vessels in your retina — often silently. Annual dilated retinal exams can detect damage early.",
     readTime: "6 min read",
     icon: Heart,
-    gradient: "linear-gradient(135deg, #0B1F4B, #0E7A6E)",
+    gradient: "linear-gradient(135deg, #000000, #1a1a1a)",
   },
   {
     category: "Warning Signs",
@@ -27,7 +27,7 @@ const articles = [
     excerpt: "A sudden increase in eye floaters, flashes of light, or a curtain-like shadow can be warning signs of retinal detachment — a sight-threatening emergency.",
     readTime: "4 min read",
     icon: AlertTriangle,
-    gradient: "linear-gradient(135deg, #0B1F4B, #C0392B)",
+    gradient: "linear-gradient(135deg, #000000, #C0392B)",
   },
 ];
 

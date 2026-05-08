@@ -39,7 +39,7 @@ const ThemeSwitcher = () => {
 
       {open && (
         <div className="absolute bottom-full mb-3 left-0 rounded-xl p-3 space-y-1 shadow-2xl border border-white/20 min-w-[220px]"
-          style={{ background: "rgb(11,31,75)" }}
+          style={{ background: "rgb(0,0,0)" }}
         >
           <p className="font-body text-[10px] text-primary-foreground/40 uppercase tracking-widest px-3 pb-1">Select Theme</p>
           {themes.map((t) => (
