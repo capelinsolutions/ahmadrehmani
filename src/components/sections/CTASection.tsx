@@ -12,9 +12,9 @@ const CTASection = () => {
     <section
       ref={ref}
       className="py-16 lg:py-24 relative overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #0B1F4B, #132A60)" }}
+      style={{ background: "linear-gradient(135deg, #000000, #1a1a1a)" }}
     >
-      <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] -translate-y-1/2 rounded-full opacity-10" style={{ background: "radial-gradient(circle, hsl(170 78% 27%), transparent)" }} />
+      <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] -translate-y-1/2 rounded-full opacity-10" style={{ background: "radial-gradient(circle, hsl(0 0% 15%), transparent)" }} />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center fade-up">

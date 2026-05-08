@@ -18,14 +18,14 @@ const HeroSection = () => (
       className="absolute inset-0"
       style={{
         background:
-          "linear-gradient(135deg, rgba(11,31,75,0.92) 0%, rgba(19,42,96,0.88) 50%, rgba(12,40,85,0.92) 100%)",
+          "linear-gradient(135deg, rgba(0,0,0,0.92) 0%, rgba(26,26,26,0.88) 50%, rgba(0,0,0,0.92) 100%)",
       }}
       aria-hidden="true"
     />
 
     {/* Background effects */}
     <div className="absolute inset-0 pointer-events-none">
-      <div className="absolute top-0 left-[10%] w-[500px] h-[500px] rounded-full opacity-20" style={{ background: "radial-gradient(circle, hsl(170 78% 27%), transparent)" }} />
+      <div className="absolute top-0 left-[10%] w-[500px] h-[500px] rounded-full opacity-20" style={{ background: "radial-gradient(circle, hsl(0 0% 15%), transparent)" }} />
       <div className="absolute top-[-100px] right-[5%] w-[300px] h-[300px] rounded-full opacity-15" style={{ background: "radial-gradient(circle, hsl(37 56% 50%), transparent)" }} />
     </div>
 
