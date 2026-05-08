@@ -23,7 +23,7 @@ const Navbar = () => {
     <nav
       role="navigation"
       className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? "shadow-md" : ""}`}
-      style={{ background: "rgba(11,31,75,0.97)", backdropFilter: "blur(12px)" }}
+      style={{ background: "rgba(0,0,0,0.97)", backdropFilter: "blur(12px)" }}
     >
       <div className="container mx-auto px-4 flex items-center justify-between h-16 lg:h-[72px]">
         {/* Logo */}
@@ -75,7 +75,7 @@ const Navbar = () => {
       {mobileOpen && (
         <div 
           className="lg:hidden absolute left-0 right-0 top-full z-50 flex flex-col items-center py-6 gap-1 shadow-2xl border-t border-white/10"
-          style={{ background: "rgb(11,31,75)" }}
+          style={{ background: "rgb(0,0,0)" }}
         >
           {navLinks.map((link) => (
             <button

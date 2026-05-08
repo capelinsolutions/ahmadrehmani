@@ -26,7 +26,7 @@ const AboutSection = () => {
               className="w-full rounded-2xl overflow-hidden"
               style={{
                 aspectRatio: "4/5",
-                background: "linear-gradient(135deg, #0B1F4B, #0E7A6E)",
+                background: "linear-gradient(135deg, #000000, #1a1a1a)",
               }}
             >
               <img src={drRehmaniPhoto} alt="Dr. Ahmad Rehmani, D.O. — Fellowship-Trained Vitreoretinal Specialist, North Houston Retina, Cypress TX" className="w-full h-full object-cover object-top" loading="lazy" />

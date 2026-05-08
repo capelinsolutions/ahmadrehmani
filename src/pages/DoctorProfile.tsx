@@ -36,7 +36,7 @@ const DoctorProfile = () => {
       </div>
 
       {/* Hero Banner */}
-      <section className="relative bg-gradient-to-br from-primary via-[#132A60] to-primary overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary via-[#1a1a1a] to-primary overflow-hidden">
         <div className="container mx-auto px-4 py-12 lg:py-20">
           <div className="grid lg:grid-cols-[360px_1fr] gap-10 lg:gap-16 items-center">
             {/* Photo */}
