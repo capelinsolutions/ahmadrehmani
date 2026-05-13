@@ -1,4 +1,8 @@
+// React hooks: `useState` tracks the active theme id and dropdown open state;
+// `useEffect` applies the selected theme's HSL values to CSS variables on <html>.
 import { useState, useEffect } from "react";
+
+// Lucide icon used as the trigger button glyph for the theme switcher.
 import { Palette } from "lucide-react";
 
 const themes = [
