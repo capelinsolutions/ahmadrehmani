@@ -7,6 +7,7 @@ import cmsLogo from "@/assets/insurance/cms.png";
 import bcbsLogo from "@/assets/insurance/bcbs.png";
 import cignaLogo from "@/assets/insurance/cigna.png";
 import uhcLogo from "@/assets/insurance/uhc.png";
+import chcLogo from "@/assets/insurance/community-health-choice.png";
 
 type Insurer = { name: string; note: string; logo: string };
 
@@ -22,7 +23,7 @@ const pendingInsurers: Insurer[] = [
   { name: "Blue Cross Blue Shield", note: "Via MHMD network", logo: bcbsLogo },
   { name: "Cigna", note: "Via MHMD network", logo: cignaLogo },
   { name: "UnitedHealthcare", note: "Via MHMD network", logo: uhcLogo },
-  { name: "Community Health Choice", note: "Via MHMD network", logo: "" },
+  { name: "Community Health Choice", note: "Via MHMD network", logo: chcLogo },
 ];
 
 const InsuranceCard = ({ ins, variant }: { ins: Insurer; variant: "accepted" | "pending" }) => (
