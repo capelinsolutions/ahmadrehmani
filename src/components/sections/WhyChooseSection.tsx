@@ -10,7 +10,7 @@ const features = [
   {
     icon: GraduationCap,
     title: "Academic & Fellowship-Trained",
-    description: "Surgical Vitreoretinal Fellowship at UTMB Houston, Chief Resident at St. John's Episcopal Hospital, and a former Clinical Assistant Professor at UTMB — bringing academic-level expertise to private practice in Cypress."
+    description: "Surgical Vitreoretinal Fellowship in Houston, Chief Resident at St. John's Episcopal Hospital, and a former Clinical Assistant Professor — bringing academic-level expertise to private practice in Cypress."
   },
   {
     icon: FlaskConical,

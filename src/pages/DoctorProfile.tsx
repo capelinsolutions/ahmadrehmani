@@ -17,7 +17,7 @@ const DoctorProfile = () => {
     <>
       <Helmet>
         <title>Dr. Ahmad Rehmani, D.O. — Board-Certified Retina Specialist | Cypress, TX</title>
-        <meta name="description" content="Meet Dr. Ahmad Rehmani, D.O. — fellowship-trained vitreoretinal specialist at North Houston Retina in Cypress, TX. UTMB fellowship, 28 clinical trials, 5.0 Google rating. Treating macular degeneration, diabetic retinopathy & retinal detachment." />
+        <meta name="description" content="Meet Dr. Ahmad Rehmani, D.O. — fellowship-trained vitreoretinal specialist at North Houston Retina in Cypress, TX. Vitreoretinal fellowship, 28 clinical trials, 5.0 Google rating. Treating macular degeneration, diabetic retinopathy & retinal detachment." />
         <link rel="canonical" href="https://www.northhoustonretina.com/doctor/ahmad-rehmani" />
       </Helmet>
 
@@ -63,7 +63,7 @@ const DoctorProfile = () => {
               </div>
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-                {["Fellowship-Trained", "28 Clinical Trials", "Former UTMB Faculty", "Chief Resident", "Founder — North Cypress Surgical Center"].map(badge => (
+                {["Fellowship-Trained", "28 Clinical Trials", "Former Clinical Professor", "Chief Resident", "Founder — North Cypress Surgical Center"].map(badge => (
                   <span key={badge} className="inline-flex items-center gap-1.5 bg-white/10 text-primary-foreground rounded-full px-4 py-1.5 text-xs font-body font-medium border border-white/10">
                     <BadgeCheck className="w-3.5 h-3.5 text-accent" />
                     {badge}
@@ -105,7 +105,7 @@ const DoctorProfile = () => {
             {[
               { value: "5.0", label: "Google Rating", sub: "44+ Reviews" },
               { value: "28", label: "Clinical Trials", sub: "Active U.S. Studies" },
-              { value: "UTMB", label: "Fellowship", sub: "Houston, TX" },
+              { value: "Vitreoretinal", label: "Fellowship", sub: "Houston, TX" },
               { value: "D.O.", label: "Board Certified", sub: "Vitreoretinal Surgery" },
             ].map(stat => (
               <div key={stat.label}>

@@ -15,7 +15,7 @@ const credentials = [
 const chips = [
   { label: "Fellowship-Trained", icon: Star },
   { label: "28 Clinical Trials", icon: Star },
-  { label: "Former UTMB Faculty", icon: Star },
+  { label: "Former Clinical Professor", icon: Star },
   { label: "Percy Dutton Prize", icon: Award },
   { label: "Chief Resident", icon: Star },
   { label: "5.0 Google Rated", icon: Star },
