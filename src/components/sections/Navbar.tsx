@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Phone, Menu, X } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -38,9 +39,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4 flex items-center justify-between h-16 lg:h-[72px]">
         {/* Logo / Wordmark — replace with image when uploaded */}
         <Link to="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center shrink-0">
-            <span className="font-display text-primary-foreground text-xl font-bold">R</span>
-          </div>
+          <img src={logo} alt="North Houston Retina logo" className="w-10 h-10 lg:w-12 lg:h-12 rounded-lg object-cover shrink-0" />
           <div className="flex flex-col">
             <span className="font-display text-base lg:text-lg text-primary-foreground font-semibold leading-tight">Dr. Ahmad Rehmani, D.O.</span>
             <span className="font-body text-[10px] lg:text-[11px] text-gold-light uppercase tracking-[0.12em]">North Houston Retina · Cypress, TX</span>
