@@ -1,12 +1,9 @@
 import { Phone, MessageSquare, MapPin, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const CTASection = () => {
   const ref = useScrollAnimation();
-
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section
@@ -32,12 +29,12 @@ const CTASection = () => {
               >
                 <Phone className="w-5 h-5" /> Call (346) 587-0223
               </a>
-              <button
-                onClick={() => scrollTo("contact")}
+              <Link
+                to="/contact"
                 className="inline-flex items-center gap-2 bg-primary-foreground text-primary hover:bg-primary-foreground/90 px-6 py-3 rounded-lg font-body font-semibold transition-colors"
               >
                 <MessageSquare className="w-5 h-5" /> Send Us a Message
-              </button>
+              </Link>
             </div>
           </div>
 
