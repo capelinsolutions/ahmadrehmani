@@ -1,20 +1,51 @@
 import { Phone, CheckCircle2, Clock } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const acceptedInsurers = [
-  { name: "Aetna", note: "Commercial plans" },
-  { name: "Wellpoint", note: "All major Wellpoint plans" },
-  { name: "Multiplan", note: "Multiplan / PHCS network" },
+type Insurer = { name: string; note: string; domain: string };
+
+const acceptedInsurers: Insurer[] = [
+  { name: "Aetna", note: "Commercial plans", domain: "aetna.com" },
+  { name: "Wellpoint", note: "All major Wellpoint plans", domain: "wellpoint.com" },
+  { name: "Multiplan / PHCS", note: "Multiplan / PHCS network", domain: "multiplan.com" },
 ];
 
-const pendingInsurers = [
-  { name: "Medicare", note: "Part A & B — pending credentialing" },
-  { name: "Medicare Advantage", note: "Part C plans — coming soon" },
-  { name: "Blue Cross Blue Shield", note: "Via MHMD network" },
-  { name: "Cigna", note: "Via MHMD network" },
-  { name: "United Healthcare", note: "Via MHMD network" },
-  { name: "Community Health Choice", note: "Via MHMD network" },
+const pendingInsurers: Insurer[] = [
+  { name: "Medicare", note: "Part A & B — pending credentialing", domain: "medicare.gov" },
+  { name: "Medicare Advantage", note: "Part C plans — coming soon", domain: "medicare.gov" },
+  { name: "Blue Cross Blue Shield", note: "Via MHMD network", domain: "bcbs.com" },
+  { name: "Cigna", note: "Via MHMD network", domain: "cigna.com" },
+  { name: "UnitedHealthcare", note: "Via MHMD network", domain: "uhc.com" },
+  { name: "Community Health Choice", note: "Via MHMD network", domain: "communityhealthchoice.org" },
 ];
+
+const logoUrl = (domain: string) => `https://logo.clearbit.com/${domain}?size=200`;
+
+const InsuranceCard = ({ ins, variant }: { ins: Insurer; variant: "accepted" | "pending" }) => (
+  <div
+    className={`rounded-xl p-5 flex flex-col items-center text-center gap-3 transition-all hover:shadow-md bg-background ${
+      variant === "accepted"
+        ? "border border-accent/30"
+        : "border-2 border-dashed border-gold/50"
+    }`}
+  >
+    <div className="h-14 w-full flex items-center justify-center">
+      <img
+        src={logoUrl(ins.domain)}
+        alt={`${ins.name} logo`}
+        className="max-h-12 max-w-[140px] object-contain"
+        loading="lazy"
+        onError={(e) => {
+          // graceful fallback: hide broken image, show name large
+          (e.currentTarget as HTMLImageElement).style.display = "none";
+        }}
+      />
+    </div>
+    <div>
+      <p className="font-body font-semibold text-base text-foreground">{ins.name}</p>
+      <p className="font-body text-xs text-muted-foreground mt-1">{ins.note}</p>
+    </div>
+  </div>
+);
 
 const InsuranceSection = () => {
   const ref = useScrollAnimation();
@@ -38,32 +69,19 @@ const InsuranceSection = () => {
             <h3 className="font-display text-xl font-bold text-foreground">Currently Accepted</h3>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {acceptedInsurers.map((ins) => (
-              <div key={ins.name} className="bg-accent-pale border border-accent/30 rounded-xl p-5 text-center hover:shadow-sm transition-all">
-                <p className="font-body font-semibold text-base text-foreground">{ins.name}</p>
-                <p className="font-body text-xs text-muted-foreground mt-1">{ins.note}</p>
-              </div>
-            ))}
+            {acceptedInsurers.map((ins) => <InsuranceCard key={ins.name} ins={ins} variant="accepted" />)}
           </div>
         </div>
 
         {/* Pending */}
         <div className="max-w-5xl mx-auto fade-up">
-          <div className="flex items-center gap-2 mb-5">
+          <div className="flex items-center gap-2 mb-5 flex-wrap">
             <Clock className="w-5 h-5 text-gold" />
             <h3 className="font-display text-xl font-bold text-foreground">Coming Soon — Credentialing in Progress</h3>
             <span className="font-body text-xs text-muted-foreground">(Expected within 3 months)</span>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-            {pendingInsurers.map((ins) => (
-              <div
-                key={ins.name}
-                className="rounded-xl p-5 text-center hover:shadow-sm transition-all bg-background border-2 border-dashed border-gold/40"
-              >
-                <p className="font-body font-semibold text-sm text-foreground">{ins.name}</p>
-                <p className="font-body text-xs text-muted-foreground mt-1">{ins.note}</p>
-              </div>
-            ))}
+            {pendingInsurers.map((ins) => <InsuranceCard key={ins.name} ins={ins} variant="pending" />)}
           </div>
         </div>
 

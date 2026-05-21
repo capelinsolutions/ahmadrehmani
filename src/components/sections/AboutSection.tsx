@@ -1,4 +1,4 @@
-import { ShieldCheck, Star } from "lucide-react";
+import { ShieldCheck, Star, Award, Building2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import drRehmaniPhoto from "@/assets/dr-rehmani.png";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -7,12 +7,21 @@ const credentials = [
   { label: "Undergraduate", value: "University of Rochester — Magna Cum Laude · B.A. Biology & Religion · Minor in Public Health" },
   { label: "Medical Degree", value: "Doctor of Osteopathic Medicine — NYCOM (New York College of Osteopathic Medicine)" },
   { label: "Residency", value: "Ophthalmology — St. John's Episcopal Hospital · Chief Resident 2019–2020" },
-  { label: "Fellowship", value: "Surgical Vitreoretinal Fellowship — UTMB (University of Texas Medical Branch), Houston" },
+  { label: "Fellowship", value: "Surgical Vitreoretinal Fellowship — University of Texas Medical Branch (UTMB), Houston" },
   { label: "Academic Role", value: "Former Clinical Assistant Professor — UTMB" },
   { label: "Research", value: "Sub-Investigator on 28 U.S. Clinical Trials in retinal disease (Eylea, Vabysmo, Susvimo, RGX-314 and more)" },
 ];
 
-const chips = ["UTMB Fellowship-Trained", "28 Clinical Trials", "Former UTMB Faculty", "Percy Dutton Prize", "Chief Resident", "5.0 Google Rated"];
+const chips = [
+  { label: "Fellowship-Trained", icon: Star },
+  { label: "28 Clinical Trials", icon: Star },
+  { label: "Former UTMB Faculty", icon: Star },
+  { label: "Percy Dutton Prize", icon: Award },
+  { label: "Chief Resident", icon: Star },
+  { label: "5.0 Google Rated", icon: Star },
+  { label: "Founder: Retina Program at North Cypress Surgery Center & North Houston Retina Clinic", icon: Building2 },
+  { label: "Awards: Percy Dutton Lifetime Achievement Award · Keidaean Honor Society", icon: Award },
+];
 
 const AboutSection = () => {
   const ref = useScrollAnimation();
@@ -26,7 +35,7 @@ const AboutSection = () => {
               className="w-full rounded-2xl overflow-hidden"
               style={{
                 aspectRatio: "4/5",
-                background: "linear-gradient(135deg, #000000, #1a1a1a)",
+                background: "linear-gradient(135deg, hsl(215 65% 22%), hsl(210 80% 35%))",
               }}
             >
               <img src={drRehmaniPhoto} alt="Dr. Ahmad Rehmani, D.O. — Fellowship-Trained Vitreoretinal Specialist, North Houston Retina, Cypress TX" className="w-full h-full object-cover object-top" loading="lazy" />
@@ -34,7 +43,7 @@ const AboutSection = () => {
             <div className="absolute bottom-4 right-4 bg-background rounded-xl px-5 py-3 shadow-lg flex items-center gap-3">
               <ShieldCheck className="w-6 h-6 text-accent" />
               <div>
-                <p className="font-body text-sm font-semibold text-foreground">UTMB Fellowship-Trained</p>
+                <p className="font-body text-sm font-semibold text-foreground">Fellowship-Trained</p>
                 <p className="font-body text-xs text-muted-foreground">Vitreoretinal Specialist</p>
               </div>
             </div>
@@ -54,7 +63,7 @@ const AboutSection = () => {
                 Dr. Ahmad Rehmani is the founder, owner, and physician of <strong className="text-foreground">North Houston Retina, PLLC</strong> in Cypress, TX. After completing his Surgical Vitreoretinal Fellowship at the University of Texas Medical Branch (UTMB) in Houston and serving as Chief Resident in Ophthalmology at St. John's Episcopal Hospital, Dr. Rehmani has dedicated his career exclusively to diseases and surgery of the retina and vitreous.
               </p>
               <p>
-                Unlike a general ophthalmologist or optometrist, Dr. Rehmani focuses solely on complex retinal conditions — macular degeneration, diabetic retinopathy, retinal detachment, retinal tears, and vitreous hemorrhage. As a former Clinical Assistant Professor at UTMB and a sub-investigator on 28 active U.S. clinical trials, he brings academic-level expertise and the latest treatments directly to patients in the Northwest Houston corridor.
+                Unlike a general ophthalmologist or optometrist, Dr. Rehmani focuses solely on complex retinal conditions. While Dr. Rehmani is happy to care for the day-to-day ocular and retinal conditions such as macular degeneration, diabetic retinopathy, retinal detachment and retinal tears, he is well versed in complex retinal disease both medically and surgically. He has developed his own techniques in complex lens replacement cases and serves as the founder for the surgical retina program at <strong className="text-foreground">North Cypress Surgery Center</strong>. As a former Clinical Assistant Professor at UTMB and a sub-investigator on 28 active U.S. clinical trials, he brings academic-level expertise and the latest treatments directly to patients in the Northwest Houston corridor.
               </p>
               <p>
                 Patients consistently describe their experience as warm, thorough, and confidence-inspiring — reflected in his perfect 5.0 Google rating and recognition as a sub-investigator on 28 active U.S. clinical trials advancing the future of retinal care.
@@ -81,12 +90,15 @@ const AboutSection = () => {
 
             {/* Chips */}
             <div className="flex flex-wrap gap-3">
-              {chips.map((chip) => (
-                <span key={chip} className="inline-flex items-center gap-1.5 bg-primary text-primary-foreground rounded-full px-4 py-1.5 text-xs font-body font-medium">
-                  <Star className="w-3 h-3 text-gold-light fill-gold-light" />
-                  {chip}
-                </span>
-              ))}
+              {chips.map((chip) => {
+                const Icon = chip.icon;
+                return (
+                  <span key={chip.label} className="inline-flex items-center gap-1.5 bg-primary text-primary-foreground rounded-full px-4 py-1.5 text-xs font-body font-medium max-w-full">
+                    <Icon className="w-3 h-3 text-gold-light fill-gold-light shrink-0" />
+                    <span className="truncate-none">{chip.label}</span>
+                  </span>
+                );
+              })}
             </div>
 
             <Link to="/doctor/ahmad-rehmani" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-6 py-3 rounded-lg font-body font-semibold transition-colors text-sm">
