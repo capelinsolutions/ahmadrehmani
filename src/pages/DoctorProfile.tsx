@@ -36,7 +36,7 @@ const DoctorProfile = () => {
       </div>
 
       {/* Hero Banner */}
-      <section className="relative bg-gradient-to-br from-primary via-[#1a1a1a] to-primary overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary via-[hsl(215_70%_30%)] to-primary overflow-hidden">
         <div className="container mx-auto px-4 py-12 lg:py-20">
           <div className="grid lg:grid-cols-[360px_1fr] gap-10 lg:gap-16 items-center">
             {/* Photo */}
@@ -63,7 +63,7 @@ const DoctorProfile = () => {
               </div>
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-                {["UTMB Fellowship-Trained", "28 Clinical Trials", "Former UTMB Faculty", "Chief Resident"].map(badge => (
+                {["Fellowship-Trained", "28 Clinical Trials", "Former UTMB Faculty", "Chief Resident", "Founder — North Cypress Surgical Center"].map(badge => (
                   <span key={badge} className="inline-flex items-center gap-1.5 bg-white/10 text-primary-foreground rounded-full px-4 py-1.5 text-xs font-body font-medium border border-white/10">
                     <BadgeCheck className="w-3.5 h-3.5 text-accent" />
                     {badge}
@@ -133,10 +133,10 @@ const DoctorProfile = () => {
                       Dr. Ahmad Rehmani is the founder, owner, and physician of <strong className="text-foreground">North Houston Retina, PLLC</strong> in Cypress, TX. He is a fellowship-trained vitreoretinal specialist who has dedicated his career exclusively to diseases and surgery of the retina and vitreous.
                     </p>
                     <p>
-                      After completing his Surgical Vitreoretinal Fellowship at the University of Texas Medical Branch (UTMB) in Houston and serving as Chief Resident in Ophthalmology at St. John's Episcopal Hospital in New York, Dr. Rehmani returned to the Houston area to provide specialized retinal care to the underserved Northwest Houston corridor — including Cypress, Bridgeland, Katy, and Tomball.
+                      After serving as Chief Resident in Ophthalmology at St. John's Episcopal Hospital in New York and completing his Surgical Vitreoretinal Fellowship at the University of Texas Medical Branch (UTMB) in Houston, Dr. Rehmani returned to the Houston area to provide specialized retinal care to the underserved Northwest Houston corridor — including Cypress, Bridgeland, Katy, and Tomball.
                     </p>
                     <p>
-                      Unlike a general ophthalmologist or optometrist, Dr. Rehmani focuses solely on complex retinal conditions — macular degeneration, diabetic retinopathy, retinal detachment, retinal tears, and vitreous hemorrhage. As a former Clinical Assistant Professor at UTMB and a sub-investigator on 28 active U.S. clinical trials, he brings academic-level expertise and the latest treatments directly to his patients.
+                      Unlike a general ophthalmologist or optometrist, Dr. Rehmani focuses solely on complex retinal conditions. While Dr. Rehmani is happy to care for the day-to-day ocular and retinal conditions such as macular degeneration, diabetic retinopathy, retinal detachment and retinal tears, he is well versed in complex retinal disease both medically and surgically. He has developed his own techniques in complex lens replacement cases and serves as the founder for the surgical retina program at <strong className="text-foreground">North Cypress Surgery Center</strong>. As a former Clinical Assistant Professor at UTMB and a sub-investigator on 28 active U.S. clinical trials, he brings academic-level expertise and the latest treatments directly to patients in the Northwest Houston corridor.
                     </p>
                     <p>
                       Dr. Rehmani is known for taking the time to explain complex diagnoses in plain language, ensuring every patient fully understands their condition and treatment options. Patients consistently describe their experience as warm, thorough, and confidence-inspiring.
