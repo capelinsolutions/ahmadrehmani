@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
-import { Phone, Menu, X } from "lucide-react";
+import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
+import { serviceCategories } from "@/data/services";
 
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Services", to: "/services" },
+  { label: "Services", to: "/services", hasDropdown: true },
   { label: "Location", to: "/locations" },
   { label: "Reviews", to: "/reviews" },
   { label: "Insurance", to: "/insurance" },
@@ -16,6 +17,7 @@ const navLinks = [
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
@@ -27,6 +29,7 @@ const Navbar = () => {
 
   useEffect(() => {
     setMobileOpen(false);
+    setMobileServicesOpen(false);
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, [location.pathname]);
 
@@ -41,7 +44,7 @@ const Navbar = () => {
       }}
     >
       <div className="container mx-auto px-4 flex items-center justify-between h-16 lg:h-[72px]">
-        {/* Logo / Wordmark — replace with image when uploaded */}
+        {/* Logo */}
         <Link to="/" className="flex items-center gap-3">
           <img src={logo} alt="North Houston Retina logo" className="w-12 h-12 lg:w-14 lg:h-14 object-contain shrink-0 drop-shadow-[0_2px_8px_rgba(96,200,255,0.4)]" />
           <div className="flex flex-col">
@@ -53,20 +56,66 @@ const Navbar = () => {
         {/* Desktop Links */}
         <div className="hidden lg:flex items-center gap-1">
           {navLinks.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              end={link.to === "/"}
-              className={({ isActive }) =>
-                `px-3 py-2 text-sm rounded-md transition-colors font-body ${
-                  isActive
-                    ? "text-primary-foreground bg-white/15"
-                    : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-white/10"
-                }`
-              }
-            >
-              {link.label}
-            </NavLink>
+            link.hasDropdown ? (
+              <div key={link.to} className="relative group">
+                <NavLink
+                  to={link.to}
+                  className={({ isActive }) =>
+                    `flex items-center gap-1 px-3 py-2 text-sm rounded-md transition-colors font-body ${
+                      isActive
+                        ? "text-primary-foreground bg-white/15"
+                        : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-white/10"
+                    }`
+                  }
+                >
+                  {link.label}
+                  <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" />
+                </NavLink>
+                {/* Dropdown */}
+                <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="w-72 bg-background rounded-xl shadow-2xl border border-border overflow-hidden">
+                    <div className="px-4 py-3 bg-gradient-deep">
+                      <p className="font-display text-primary-foreground text-sm font-semibold">Conditions & Treatments</p>
+                      <p className="font-body text-primary-foreground/60 text-[11px]">Browse by category</p>
+                    </div>
+                    <div className="py-2">
+                      {serviceCategories.map((cat) => (
+                        <Link
+                          key={cat.slug}
+                          to={`/services/${cat.slug}`}
+                          className="block px-4 py-2.5 font-body text-sm text-foreground hover:bg-accent-pale hover:text-accent transition-colors border-l-2 border-transparent hover:border-accent"
+                        >
+                          {cat.name}
+                        </Link>
+                      ))}
+                      <div className="border-t border-border mt-1 pt-1">
+                        <Link
+                          to="/services"
+                          className="block px-4 py-2.5 font-body text-sm text-accent font-semibold hover:bg-accent-pale"
+                        >
+                          View All Services →
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                end={link.to === "/"}
+                className={({ isActive }) =>
+                  `px-3 py-2 text-sm rounded-md transition-colors font-body ${
+                    isActive
+                      ? "text-primary-foreground bg-white/15"
+                      : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-white/10"
+                  }`
+                }
+              >
+                {link.label}
+              </NavLink>
+            )
           ))}
         </div>
 
@@ -98,19 +147,47 @@ const Navbar = () => {
       {/* Mobile overlay */}
       {mobileOpen && (
         <div
-          className="lg:hidden absolute left-0 right-0 top-full z-50 flex flex-col items-center py-6 gap-1 shadow-2xl border-t border-white/10"
+          className="lg:hidden absolute left-0 right-0 top-full z-50 flex flex-col items-stretch py-4 gap-0 shadow-2xl border-t border-white/10 max-h-[calc(100vh-64px)] overflow-y-auto"
           style={{ background: "hsl(215 65% 18%)" }}
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.to}
-              to={link.to}
-              className="w-full text-base text-primary-foreground/90 hover:text-primary-foreground hover:bg-white/10 font-body py-3.5 px-6 transition-colors text-left"
-            >
-              {link.label}
-            </Link>
-          ))}
-          <div className="w-full px-6 pt-4 flex flex-col gap-3">
+          {navLinks.map((link) =>
+            link.hasDropdown ? (
+              <div key={link.to}>
+                <button
+                  onClick={() => setMobileServicesOpen((v) => !v)}
+                  className="w-full flex items-center justify-between text-base text-primary-foreground/90 hover:bg-white/10 font-body py-3.5 px-6 transition-colors text-left"
+                >
+                  {link.label}
+                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                </button>
+                {mobileServicesOpen && (
+                  <div className="bg-black/20">
+                    {serviceCategories.map((cat) => (
+                      <Link
+                        key={cat.slug}
+                        to={`/services/${cat.slug}`}
+                        className="block py-2.5 px-10 font-body text-sm text-primary-foreground/85 hover:bg-white/10"
+                      >
+                        {cat.name}
+                      </Link>
+                    ))}
+                    <Link to="/services" className="block py-2.5 px-10 font-body text-sm text-gold-light font-semibold hover:bg-white/10">
+                      View All Services →
+                    </Link>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={link.to}
+                to={link.to}
+                className="w-full text-base text-primary-foreground/90 hover:text-primary-foreground hover:bg-white/10 font-body py-3.5 px-6 transition-colors text-left"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
+          <div className="px-6 pt-4 flex flex-col gap-3">
             <a
               href="tel:+13465870223"
               className="bg-accent text-accent-foreground px-6 py-3 rounded-lg text-base font-body font-semibold flex items-center justify-center gap-2"
