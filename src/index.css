@@ -59,6 +59,14 @@
     --shadow-md: 0 6px 24px hsla(215, 50%, 18%, 0.12);
     --shadow-lg: 0 16px 48px hsla(215, 50%, 18%, 0.18);
 
+    /* === Rich blue gradients === */
+    --gradient-primary: linear-gradient(135deg, hsl(215 75% 18%) 0%, hsl(215 70% 28%) 35%, hsl(210 85% 42%) 70%, hsl(200 95% 55%) 100%);
+    --gradient-deep: linear-gradient(135deg, hsl(220 75% 14%) 0%, hsl(215 70% 22%) 50%, hsl(210 80% 32%) 100%);
+    --gradient-bright: linear-gradient(135deg, hsl(215 80% 30%) 0%, hsl(210 90% 48%) 50%, hsl(200 100% 60%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(210 60% 99%) 0%, hsl(210 70% 96%) 50%, hsl(210 80% 92%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(215 65% 22%) 0%, hsl(212 75% 35%) 45%, hsl(205 85% 48%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(210 90% 48%), hsl(200 100% 60%));
+
     --font-display: 'Playfair Display', Georgia, serif;
     --font-body: 'DM Sans', system-ui, sans-serif;
 
@@ -112,6 +120,14 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Gradient utility classes */
+.bg-gradient-primary { background: var(--gradient-primary); }
+.bg-gradient-deep { background: var(--gradient-deep); }
+.bg-gradient-bright { background: var(--gradient-bright); }
+.bg-gradient-soft { background: var(--gradient-soft); }
+.bg-gradient-card { background: var(--gradient-card); }
+.bg-gradient-accent { background: var(--gradient-accent); }
 
 /* Skip to content */
 .skip-to-content {

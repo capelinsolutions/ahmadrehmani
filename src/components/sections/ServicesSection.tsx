@@ -76,7 +76,7 @@ const ServicesSection = () => {
   const [openIdx, setOpenIdx] = useState<number | null>(0);
 
   return (
-    <section id="services" ref={ref} className="bg-off-white py-16 lg:py-24">
+    <section id="services" ref={ref} className="bg-gradient-soft py-16 lg:py-24">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 fade-up">
           <div className="max-w-2xl">

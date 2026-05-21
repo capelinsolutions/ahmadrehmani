@@ -34,12 +34,16 @@ const Navbar = () => {
     <nav
       role="navigation"
       className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? "shadow-md" : ""}`}
-      style={{ background: "hsl(215 65% 18% / 0.97)", backdropFilter: "blur(12px)" }}
+      style={{
+        background:
+          "linear-gradient(135deg, hsl(220 75% 14% / 0.97), hsl(215 70% 22% / 0.97) 50%, hsl(210 80% 28% / 0.97))",
+        backdropFilter: "blur(12px)",
+      }}
     >
       <div className="container mx-auto px-4 flex items-center justify-between h-16 lg:h-[72px]">
         {/* Logo / Wordmark — replace with image when uploaded */}
         <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="North Houston Retina logo" className="w-10 h-10 lg:w-12 lg:h-12 rounded-lg object-cover shrink-0" />
+          <img src={logo} alt="North Houston Retina logo" className="w-12 h-12 lg:w-14 lg:h-14 object-contain shrink-0 drop-shadow-[0_2px_8px_rgba(96,200,255,0.4)]" />
           <div className="flex flex-col">
             <span className="font-display text-base lg:text-lg text-primary-foreground font-semibold leading-tight">Dr. Ahmad Rehmani, D.O.</span>
             <span className="font-body text-[10px] lg:text-[11px] text-gold-light uppercase tracking-[0.12em]">North Houston Retina · Cypress, TX</span>

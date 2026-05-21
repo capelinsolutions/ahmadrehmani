@@ -15,7 +15,7 @@ const credentials = [
 const chips = [
   { label: "Fellowship-Trained", icon: Star },
   { label: "28 Clinical Trials", icon: Star },
-  { label: "Former UTMB Faculty", icon: Star },
+  { label: "Former Clinical Professor", icon: Star },
   { label: "Percy Dutton Prize", icon: Award },
   { label: "Chief Resident", icon: Star },
   { label: "5.0 Google Rated", icon: Star },
@@ -26,17 +26,14 @@ const chips = [
 const AboutSection = () => {
   const ref = useScrollAnimation();
   return (
-    <section id="about" ref={ref} className="bg-background py-16 lg:py-24">
+    <section id="about" ref={ref} className="bg-gradient-soft py-16 lg:py-24">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left - Photo */}
           <div className="fade-up relative">
             <div
-              className="w-full rounded-2xl overflow-hidden"
-              style={{
-                aspectRatio: "4/5",
-                background: "linear-gradient(135deg, hsl(215 65% 22%), hsl(210 80% 35%))",
-              }}
+              className="bg-gradient-card w-full rounded-2xl overflow-hidden"
+              style={{ aspectRatio: "4/5" }}
             >
               <img src={drRehmaniPhoto} alt="Dr. Ahmad Rehmani, D.O. — Fellowship-Trained Vitreoretinal Specialist, North Houston Retina, Cypress TX" className="w-full h-full object-cover object-top" loading="lazy" />
             </div>

@@ -50,7 +50,7 @@ const InsuranceCard = ({ ins, variant }: { ins: Insurer; variant: "accepted" | "
 const InsuranceSection = () => {
   const ref = useScrollAnimation();
   return (
-    <section id="insurance" ref={ref} className="bg-background py-16 lg:py-24">
+    <section id="insurance" ref={ref} className="bg-gradient-soft py-16 lg:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 fade-up">
           <span className="font-body text-sm text-accent font-semibold uppercase tracking-wider">Insurance & Coverage</span>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import clinicBg from "@/assets/clinic-hero-bg.jpg";
 
 const NAVY_GRADIENT =
-  "linear-gradient(135deg, rgba(11,28,58,0.94) 0%, rgba(20,52,98,0.88) 50%, rgba(11,28,58,0.94) 100%)";
+  "linear-gradient(135deg, rgba(8,20,48,0.94) 0%, rgba(15,52,120,0.85) 35%, rgba(20,90,170,0.78) 65%, rgba(8,20,48,0.94) 100%)";
 
 const HeroSection = () => (
   <section
@@ -42,7 +42,7 @@ const HeroSection = () => (
           </h1>
 
           <p className="text-primary-foreground/80 text-lg font-body leading-relaxed max-w-xl">
-            Dr. Ahmad Rehmani, D.O. — founder of <strong className="text-primary-foreground">North Houston Retina</strong> — delivers UTMB fellowship-trained care for retinal and ocular conditions including macular degeneration, diabetic retinopathy, retinal detachment, and complex vitreoretinal surgery. Now welcoming new patients across Cypress, Bridgeland, Katy, and Northwest Houston.
+            Dr. Ahmad Rehmani, D.O. — founder of <strong className="text-primary-foreground">North Houston Retina</strong> — delivers fellowship-trained care for retinal and ocular conditions including macular degeneration, diabetic retinopathy, retinal detachment, and complex vitreoretinal surgery. Now welcoming new patients across Cypress, Bridgeland, Katy, and Northwest Houston.
           </p>
 
           <div className="flex flex-wrap gap-4">
