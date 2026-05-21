@@ -1,24 +1,22 @@
 import { Phone, CheckCircle2, Clock } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-type Insurer = { name: string; note: string; domain: string };
+type Insurer = { name: string; note: string; logo: string };
 
 const acceptedInsurers: Insurer[] = [
-  { name: "Aetna", note: "Commercial plans", domain: "aetna.com" },
-  { name: "Wellpoint", note: "All major Wellpoint plans", domain: "wellpoint.com" },
-  { name: "Multiplan / PHCS", note: "Multiplan / PHCS network", domain: "multiplan.com" },
+  { name: "Aetna", note: "Commercial plans", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Aetna_logo.svg/320px-Aetna_logo.svg.png" },
+  { name: "Wellpoint", note: "All major Wellpoint plans", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Wellpoint_logo_2023.svg/320px-Wellpoint_logo_2023.svg.png" },
+  { name: "Multiplan / PHCS", note: "Multiplan / PHCS network", logo: "https://logo.clearbit.com/multiplan.com?size=200" },
 ];
 
 const pendingInsurers: Insurer[] = [
-  { name: "Medicare", note: "Part A & B — pending credentialing", domain: "medicare.gov" },
-  { name: "Medicare Advantage", note: "Part C plans — coming soon", domain: "medicare.gov" },
-  { name: "Blue Cross Blue Shield", note: "Via MHMD network", domain: "bcbs.com" },
-  { name: "Cigna", note: "Via MHMD network", domain: "cigna.com" },
-  { name: "UnitedHealthcare", note: "Via MHMD network", domain: "uhc.com" },
-  { name: "Community Health Choice", note: "Via MHMD network", domain: "communityhealthchoice.org" },
+  { name: "Medicare", note: "Part A & B — pending credentialing", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Centers_for_Medicare_and_Medicaid_Services_logo.svg/320px-Centers_for_Medicare_and_Medicaid_Services_logo.svg.png" },
+  { name: "Medicare Advantage", note: "Part C plans — coming soon", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Centers_for_Medicare_and_Medicaid_Services_logo.svg/320px-Centers_for_Medicare_and_Medicaid_Services_logo.svg.png" },
+  { name: "Blue Cross Blue Shield", note: "Via MHMD network", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Blue_Cross_Blue_Shield_Association_logo.svg/320px-Blue_Cross_Blue_Shield_Association_logo.svg.png" },
+  { name: "Cigna", note: "Via MHMD network", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Cigna_logo.svg/320px-Cigna_logo.svg.png" },
+  { name: "UnitedHealthcare", note: "Via MHMD network", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/UnitedHealthcare_logo.svg/320px-UnitedHealthcare_logo.svg.png" },
+  { name: "Community Health Choice", note: "Via MHMD network", logo: "https://logo.clearbit.com/communityhealthchoice.org?size=200" },
 ];
-
-const logoUrl = (domain: string) => `https://logo.clearbit.com/${domain}?size=200`;
 
 const InsuranceCard = ({ ins, variant }: { ins: Insurer; variant: "accepted" | "pending" }) => (
   <div
