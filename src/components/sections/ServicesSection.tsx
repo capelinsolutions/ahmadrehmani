@@ -24,7 +24,7 @@ const ServicesSection = () => {
           </div>
           <Link
             to="/contact"
-            className="shrink--0 bg-accent hover:bg-accent-light text-accent-foreground px-6 py-3 rounded-lg font-body font-semibold transition-colors"
+            className="shrink-0 bg-accent hover:bg-accent-light text-accent-foreground px-6 py-3 rounded-lg font-body font-semibold transition-colors"
           >
             Book Consultation
           </Link>
