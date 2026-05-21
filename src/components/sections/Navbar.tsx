@@ -36,7 +36,7 @@ const Navbar = () => {
       className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? "shadow-md" : ""}`}
       style={{
         background:
-          "linear-gradient(135deg, hsl(220 75% 14% / 0.97), hsl(215 70% 22% / 0.97) 50%, hsl(210 80% 28% / 0.97))",
+          "linear-gradient(135deg, hsl(222 80% 7%) 0%, hsl(220 78% 11%) 50%, hsl(215 75% 16%) 100%)",
         backdropFilter: "blur(12px)",
       }}
     >

@@ -28,7 +28,7 @@ const InsuranceCard = ({ ins, variant }: { ins: Insurer; variant: "accepted" | "
   >
     <div className="h-14 w-full flex items-center justify-center">
       <img
-        src={logoUrl(ins.domain)}
+        src={ins.logo}
         alt={`${ins.name} logo`}
         className="max-h-12 max-w-[140px] object-contain"
         loading="lazy"
