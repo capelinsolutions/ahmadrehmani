@@ -61,7 +61,7 @@
 
     /* === Rich blue gradients === */
     --gradient-primary: linear-gradient(135deg, hsl(215 75% 18%) 0%, hsl(215 70% 28%) 35%, hsl(210 85% 42%) 70%, hsl(200 95% 55%) 100%);
-    --gradient-deep: linear-gradient(135deg, hsl(220 75% 14%) 0%, hsl(215 70% 22%) 50%, hsl(210 80% 32%) 100%);
+    --gradient-deep: linear-gradient(135deg, hsl(222 82% 6%) 0%, hsl(220 78% 10%) 50%, hsl(215 75% 14%) 100%);
     --gradient-bright: linear-gradient(135deg, hsl(215 80% 30%) 0%, hsl(210 90% 48%) 50%, hsl(200 100% 60%) 100%);
     --gradient-soft: linear-gradient(180deg, hsl(210 60% 99%) 0%, hsl(210 70% 96%) 50%, hsl(210 80% 92%) 100%);
     --gradient-card: linear-gradient(135deg, hsl(215 65% 22%) 0%, hsl(212 75% 35%) 45%, hsl(205 85% 48%) 100%);
