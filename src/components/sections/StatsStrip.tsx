@@ -10,7 +10,7 @@ const metrics = [
 const StatsStrip = () => {
   const ref = useScrollAnimation();
   return (
-    <section ref={ref} className="bg-primary py-10 lg:py-14">
+    <section ref={ref} className="bg-gradient-primary py-10 lg:py-14">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 fade-up">
           {metrics.map((m, i) => (

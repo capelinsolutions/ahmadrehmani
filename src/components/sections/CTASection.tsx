@@ -8,10 +8,10 @@ const CTASection = () => {
   return (
     <section
       ref={ref}
-      className="py-16 lg:py-24 relative overflow-hidden"
-      style={{ background: "linear-gradient(135deg, hsl(215 65% 18%), hsl(215 70% 28%))" }}
+      className="bg-gradient-deep py-16 lg:py-24 relative overflow-hidden"
     >
-      <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] -translate-y-1/2 rounded-full opacity-25" style={{ background: "radial-gradient(circle, hsl(210 90% 55%), transparent)" }} />
+      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] -translate-y-1/2 rounded-full opacity-30" style={{ background: "radial-gradient(circle, hsl(200 100% 60%), transparent)" }} />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full opacity-20" style={{ background: "radial-gradient(circle, hsl(210 90% 55%), transparent)" }} />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center fade-up">

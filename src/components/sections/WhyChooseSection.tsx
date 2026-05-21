@@ -36,7 +36,8 @@ const outcomeMetrics = [
 const WhyChooseSection = () => {
   const ref = useScrollAnimation();
   return (
-    <section ref={ref} className="bg-background py-16 lg:py-24">
+    <section ref={ref} className="bg-background py-16 lg:py-24 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-10 pointer-events-none" style={{ background: "radial-gradient(circle, hsl(210 90% 55%), transparent)" }} />
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 fade-up">
           <span className="font-body text-sm text-accent font-semibold uppercase tracking-wider">Why Patients Choose Us</span>
@@ -63,8 +64,7 @@ const WhyChooseSection = () => {
 
           {/* Right - stats card */}
           <div
-            className="rounded-2xl p-8 space-y-6 fade-up"
-            style={{ background: "linear-gradient(135deg, hsl(215 65% 22%), hsl(215 70% 32%))" }}
+            className="bg-gradient-card rounded-2xl p-8 space-y-6 fade-up shadow-lg"
           >
             <h3 className="font-display text-primary-foreground text-xl font-semibold">Patient Outcome Indicators</h3>
             <div className="space-y-4">
