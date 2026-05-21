@@ -1,21 +1,54 @@
-// React hooks: `useState` tracks the active theme id and dropdown open state;
-// `useEffect` applies the selected theme's HSL values to CSS variables on <html>.
+// Theme switcher — curated blue & white palettes.
+// `useState` tracks the active theme id + dropdown state;
+// `useEffect` writes the selected theme's HSL tokens to CSS variables on <html>.
 import { useState, useEffect } from "react";
-
-// Lucide icon used as the trigger button glyph for the theme switcher.
 import { Palette } from "lucide-react";
 
 const themes = [
-  { id: "high-contrast", label: "White, Black & Yellow", primary: "0 0% 7%", accent: "50 100% 50%", accentLight: "50 100% 60%", gold: "50 100% 50%", goldLight: "50 100% 65%", gray800: "0 0% 5%" },
-  { id: "navy-teal", label: "Navy & Teal", primary: "221 75% 17%", accent: "170 78% 27%", accentLight: "170 78% 35%", gold: "37 56% 50%", goldLight: "40 82% 68%", gray800: "220 26% 14%" },
-  { id: "midnight-emerald", label: "Midnight Emerald", primary: "160 100% 10%", accent: "152 80% 35%", accentLight: "152 80% 45%", gold: "45 85% 55%", goldLight: "48 90% 68%", gray800: "160 40% 8%" },
-  { id: "crimson-gold", label: "Crimson & Gold", primary: "0 60% 18%", accent: "0 72% 50%", accentLight: "0 72% 58%", gold: "42 90% 55%", goldLight: "44 95% 68%", gray800: "0 30% 12%" },
-  { id: "royal-purple", label: "Royal Purple", primary: "270 60% 18%", accent: "270 70% 50%", accentLight: "270 70% 60%", gold: "38 80% 55%", goldLight: "40 90% 68%", gray800: "270 35% 12%" },
-  { id: "deep-ocean", label: "Deep Ocean", primary: "215 70% 20%", accent: "195 90% 40%", accentLight: "195 90% 50%", gold: "42 75% 55%", goldLight: "44 85% 68%", gray800: "215 50% 14%" },
+  {
+    id: "navy-sky",
+    label: "Navy & Sky (Default)",
+    primary: "215 65% 22%",
+    accent: "210 90% 48%",
+    accentLight: "210 90% 58%",
+    gold: "200 95% 55%",
+    goldLight: "200 100% 78%",
+    gray800: "215 65% 18%",
+  },
+  {
+    id: "deep-ocean",
+    label: "Deep Ocean",
+    primary: "215 80% 16%",
+    accent: "200 95% 42%",
+    accentLight: "200 95% 52%",
+    gold: "195 90% 60%",
+    goldLight: "195 95% 78%",
+    gray800: "215 70% 14%",
+  },
+  {
+    id: "royal-blue",
+    label: "Royal Blue",
+    primary: "222 70% 25%",
+    accent: "222 88% 55%",
+    accentLight: "222 88% 65%",
+    gold: "210 95% 62%",
+    goldLight: "210 100% 80%",
+    gray800: "222 70% 18%",
+  },
+  {
+    id: "soft-azure",
+    label: "Soft Azure",
+    primary: "212 55% 30%",
+    accent: "205 88% 50%",
+    accentLight: "205 88% 62%",
+    gold: "198 90% 60%",
+    goldLight: "198 95% 80%",
+    gray800: "212 55% 22%",
+  },
 ] as const;
 
 const ThemeSwitcher = () => {
-  const [active, setActive] = useState(() => localStorage.getItem("site-theme") || "high-contrast");
+  const [active, setActive] = useState(() => localStorage.getItem("site-theme") || "navy-sky");
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -42,10 +75,11 @@ const ThemeSwitcher = () => {
       </button>
 
       {open && (
-        <div className="absolute bottom-full mb-3 left-0 rounded-xl p-3 space-y-1 shadow-2xl border border-white/20 min-w-[220px]"
-          style={{ background: "rgb(0,0,0)" }}
+        <div
+          className="absolute bottom-full mb-3 left-0 rounded-xl p-3 space-y-1 shadow-2xl border border-white/20 min-w-[240px]"
+          style={{ background: "hsl(215 65% 18%)" }}
         >
-          <p className="font-body text-[10px] text-primary-foreground/40 uppercase tracking-widest px-3 pb-1">Select Theme</p>
+          <p className="font-body text-[10px] text-primary-foreground/40 uppercase tracking-widest px-3 pb-1">Blue & White Themes</p>
           {themes.map((t) => (
             <button
               key={t.id}

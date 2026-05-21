@@ -5,7 +5,7 @@ const features = [
   {
     icon: ShieldCheck,
     title: "Dedicated Subspecialist — Not a Generalist",
-    description: "Dr. Rehmani's entire practice focuses on diseases and surgery of the retina and vitreous. When your central vision is at stake, you deserve a UTMB fellowship-trained specialist — not a general eye doctor seeing routine eyeglass prescriptions."
+    description: "When your vision is at stake — choose the doctor with the skill, expertise, training, and bedside manner that will make you feel at ease. Dr. Rehmani's entire practice focuses on diseases and surgery of the retina and vitreous."
   },
   {
     icon: GraduationCap,
@@ -14,7 +14,7 @@ const features = [
   },
   {
     icon: FlaskConical,
-    title: "Active Research — 28 U.S. Clinical Trials",
+    title: "Clinical Trial Researcher — 28 Major U.S. Clinical Trials",
     description: "As a sub-investigator on 28 active U.S. clinical trials in macular degeneration and diabetic eye disease, Dr. Rehmani offers patients early visibility into the most advanced anti-VEGF therapies and gene-therapy approaches."
   },
   {
@@ -29,7 +29,7 @@ const outcomeMetrics = [
   { label: "Patients Who Recommend", value: "100%", width: "100%" },
   { label: "Staff Professionalism", value: "5.0 / 5.0", width: "100%" },
   { label: "Explanation of Condition", value: "5.0 / 5.0", width: "100%" },
-  { label: "Anti-VEGF Injection Volume", value: "High", width: "92%" },
+  { label: "High Vitreoretinal Surgery Success Rate", value: "Excellent", width: "96%" },
   { label: "Research Trial Participation", value: "28 Trials", width: "95%" },
 ];
 
@@ -40,8 +40,8 @@ const WhyChooseSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 fade-up">
           <span className="font-body text-sm text-accent font-semibold uppercase tracking-wider">Why Patients Choose Us</span>
-          <h2 className="font-display text-foreground text-3xl lg:text-4xl font-bold mt-3">
-            A Level of Expertise You Won't Find at a General Eye Clinic
+          <h2 className="font-display text-foreground text-3xl lg:text-4xl font-bold mt-3 max-w-4xl mx-auto leading-tight">
+            When Your Vision Is at Stake — Choose the Doctor with the Skill, Expertise, Training & Bedside Manner That Puts You at Ease
           </h2>
         </div>
 
@@ -64,22 +64,22 @@ const WhyChooseSection = () => {
           {/* Right - stats card */}
           <div
             className="rounded-2xl p-8 space-y-6 fade-up"
-            style={{ background: "linear-gradient(135deg, #000000, #1a1a1a)" }}
+            style={{ background: "linear-gradient(135deg, hsl(215 65% 22%), hsl(215 70% 32%))" }}
           >
             <h3 className="font-display text-primary-foreground text-xl font-semibold">Patient Outcome Indicators</h3>
             <div className="space-y-4">
               {outcomeMetrics.map((m) => (
                 <div key={m.label}>
-                  <div className="flex justify-between mb-1.5">
-                    <span className="font-body text-primary-foreground/70 text-sm">{m.label}</span>
-                    <span className="font-body text-gold-light text-sm font-semibold">{m.value}</span>
+                  <div className="flex justify-between mb-1.5 gap-3">
+                    <span className="font-body text-primary-foreground/75 text-sm">{m.label}</span>
+                    <span className="font-body text-gold-light text-sm font-semibold whitespace-nowrap">{m.value}</span>
                   </div>
                   <div className="h-2 bg-white/10 rounded-full overflow-hidden">
                     <div
                       className="h-full rounded-full"
                       style={{
                         width: m.width,
-                        background: "linear-gradient(90deg, hsl(0 0% 7%), hsl(50 100% 50%))",
+                        background: "linear-gradient(90deg, hsl(210 90% 58%), hsl(200 100% 78%))",
                       }}
                     />
                   </div>
@@ -90,13 +90,13 @@ const WhyChooseSection = () => {
               <p className="font-body text-primary-foreground/50 text-xs uppercase tracking-wider mb-2">Training & Affiliations</p>
               <ul className="space-y-1.5">
                 {[
+                  "Former Clinical Assistant Professor — UTMB",
                   "University of Texas Medical Branch (UTMB) — Vitreoretinal Fellowship",
                   "St. John's Episcopal Hospital — Chief Resident",
-                  "Former Clinical Assistant Professor — UTMB",
                   "American Society of Retina Specialists (ASRS)",
                   "American Academy of Ophthalmology (AAO)",
                 ].map((h) => (
-                  <li key={h} className="font-body text-primary-foreground/80 text-sm">{h}</li>
+                  <li key={h} className="font-body text-primary-foreground/85 text-sm">{h}</li>
                 ))}
               </ul>
             </div>

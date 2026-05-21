@@ -1,20 +1,17 @@
 import { Phone, MessageSquare, MapPin, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const CTASection = () => {
   const ref = useScrollAnimation();
 
-  const scrollTo = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section
       ref={ref}
       className="py-16 lg:py-24 relative overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #000000, #1a1a1a)" }}
+      style={{ background: "linear-gradient(135deg, hsl(215 65% 18%), hsl(215 70% 28%))" }}
     >
-      <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] -translate-y-1/2 rounded-full opacity-10" style={{ background: "radial-gradient(circle, hsl(0 0% 15%), transparent)" }} />
+      <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] -translate-y-1/2 rounded-full opacity-25" style={{ background: "radial-gradient(circle, hsl(210 90% 55%), transparent)" }} />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center fade-up">
@@ -32,12 +29,12 @@ const CTASection = () => {
               >
                 <Phone className="w-5 h-5" /> Call (346) 587-0223
               </a>
-              <button
-                onClick={() => scrollTo("contact")}
+              <Link
+                to="/contact"
                 className="inline-flex items-center gap-2 bg-primary-foreground text-primary hover:bg-primary-foreground/90 px-6 py-3 rounded-lg font-body font-semibold transition-colors"
               >
                 <MessageSquare className="w-5 h-5" /> Send Us a Message
-              </button>
+              </Link>
             </div>
           </div>
 

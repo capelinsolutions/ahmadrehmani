@@ -4,7 +4,7 @@ const metrics = [
   { number: "5.0", label: "Google Star Rating" },
   { number: "28", label: "U.S. Clinical Trials (Sub-Investigator)" },
   { number: "10+", label: "Peer-Reviewed Publications" },
-  { number: "UTMB", label: "Vitreoretinal Fellowship Trained" },
+  { number: "Fellowship", label: "Vitreoretinal Trained" },
 ];
 
 const StatsStrip = () => {
@@ -16,7 +16,7 @@ const StatsStrip = () => {
           {metrics.map((m, i) => (
             <div key={m.label} className={`text-center ${i < 3 ? "lg:border-r lg:border-white/10" : ""}`}>
               <p className="font-display text-gold-light text-4xl lg:text-[42px] font-bold">{m.number}</p>
-              <p className="font-body text-primary-foreground/60 text-xs lg:text-[13px] mt-2 uppercase tracking-wide">{m.label}</p>
+              <p className="font-body text-primary-foreground/70 text-xs lg:text-[13px] mt-2 uppercase tracking-wide">{m.label}</p>
             </div>
           ))}
         </div>
