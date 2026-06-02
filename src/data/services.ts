@@ -1,10 +1,9 @@
-// Real clinical photography (Unsplash — royalty free)
-const macularImg = "https://images.unsplash.com/photo-1559076877-2bc7c8c91317?auto=format&fit=crop&w=1200&q=80";
-const diabeticImg = "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80";
-const detachmentImg = "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=80";
-const vascularImg = "https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1200&q=80";
-const surgicalImg = "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1200&q=80";
-const inflammatoryImg = "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80";
+import macularImg from "@/assets/services/macular-diseases.jpg";
+import diabeticImg from "@/assets/services/diabetic-eye-disease.jpg";
+import detachmentImg from "@/assets/services/retinal-detachment-tears.jpg";
+import vascularImg from "@/assets/services/retinal-vascular-disease.jpg";
+import surgicalImg from "@/assets/services/vitreous-surgical-conditions.jpg";
+import inflammatoryImg from "@/assets/services/inflammatory-other.jpg";
 
 export type SubService = { name: string; description: string };
 export type ServiceCategory = {

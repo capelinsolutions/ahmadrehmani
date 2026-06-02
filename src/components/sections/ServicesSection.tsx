@@ -1,80 +1,92 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Stethoscope } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { serviceCategories } from "@/data/services";
 
-type Props = { compact?: boolean };
-
-const ServicesSection = ({ compact = false }: Props) => {
+const ServicesSection = () => {
   const ref = useScrollAnimation();
 
   return (
-    <section id="services" ref={ref} className="bg-gradient-soft py-20 lg:py-28">
-      <div className="container mx-auto px-4 max-w-6xl">
-        {/* Header — centered, calmer */}
-        <div className="text-center max-w-2xl mx-auto mb-14 fade-up">
-          <span className="font-body text-xs text-accent font-semibold uppercase tracking-[0.2em]">
-            Expert Retinal Care
-          </span>
-          <h2 className="font-display text-foreground text-3xl lg:text-5xl font-bold mt-4 leading-[1.1]">
-            {compact ? "Specialized Retinal Services" : "Conditions & Treatments"}
-          </h2>
-          <p className="font-body text-gray-600 mt-5 leading-relaxed text-base lg:text-lg">
-            {compact
-              ? "Advanced medical and surgical care for the retina, vitreous, and macula — all in one Cypress location."
-              : "Fellowship-trained vitreoretinal specialty care covering the full spectrum of retinal disease — from in-office injections to advanced microsurgery."}
-          </p>
+    <section id="services" ref={ref} className="bg-gradient-soft py-16 lg:py-24">
+      <div className="container mx-auto px-4">
+        {/* Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 fade-up">
+          <div className="max-w-2xl">
+            <span className="font-body text-sm text-accent font-semibold uppercase tracking-wider">
+              Expert Retinal Care
+            </span>
+            <h2 className="font-display text-foreground text-3xl lg:text-4xl font-bold mt-3 leading-tight">
+              Conditions & Treatments Offered in Cypress, TX
+            </h2>
+            <p className="font-body text-gray-600 mt-4 leading-relaxed">
+              As a fellowship-trained vitreoretinal specialist, Dr. Rehmani offers the most advanced medical and surgical treatments for diseases of the retina, vitreous, and macula — all in one Cypress location.
+            </p>
+          </div>
+          <Link
+            to="/contact"
+            className="shrink-0 bg-accent hover:bg-accent-light text-accent-foreground px-6 py-3 rounded-lg font-body font-semibold transition-colors"
+          >
+            Book Consultation
+          </Link>
         </div>
 
-        {/* Service Cards Grid — calmer, larger images, more whitespace */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Service Cards Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {serviceCategories.map((cat, i) => (
-            <Link
+            <article
               key={cat.slug}
-              to={`/services/${cat.slug}`}
-              className="group block fade-up"
-              style={{ transitionDelay: `${i * 70}ms` }}
+              className="group bg-background rounded-2xl border border-border shadow-sm overflow-hidden hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 fade-up"
+              style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <article className="bg-background rounded-2xl overflow-hidden border border-border/60 shadow-[0_2px_20px_-12px_rgba(15,23,42,0.15)] hover:shadow-[0_20px_50px_-20px_rgba(15,23,42,0.25)] hover:-translate-y-1 transition-all duration-500">
-                {/* Image */}
-                <div className="relative h-56 overflow-hidden bg-muted">
-                  <img
-                    src={cat.image}
-                    alt={cat.name}
-                    className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-700"
-                    loading="lazy"
-                  />
-                </div>
-
-                {/* Body — clean, minimal */}
-                <div className="p-7">
-                  <h3 className="font-display text-xl font-semibold text-foreground leading-snug">
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img
+                  src={cat.image}
+                  alt={cat.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute bottom-3 left-4 right-4">
+                  <h3 className="font-display text-lg font-semibold text-white leading-tight drop-shadow-lg">
                     {cat.name}
                   </h3>
-                  <p className="font-body text-[15px] text-gray-600 mt-3 leading-relaxed line-clamp-2">
-                    {cat.shortDescription}
-                  </p>
-                  <span className="inline-flex items-center gap-1.5 mt-5 text-sm font-body font-semibold text-accent group-hover:gap-2.5 transition-all">
-                    Learn more
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
                 </div>
-              </article>
-            </Link>
+              </div>
+
+              {/* Body */}
+              <div className="p-5">
+                <p className="font-body text-sm text-gray-600 leading-relaxed line-clamp-3">
+                  {cat.shortDescription}
+                </p>
+
+                {/* Key conditions */}
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {cat.subServices.slice(1, 5).map((sub) => (
+                    <span
+                      key={sub.name}
+                      className="inline-flex items-center gap-1 text-[11px] font-body font-medium text-accent bg-accent-pale px-2.5 py-1 rounded-full"
+                    >
+                      <Stethoscope className="w-3 h-3" />
+                      {sub.name.split("(").shift()?.trim()}
+                    </span>
+                  ))}
+                </div>
+
+                {/* CTA */}
+                <div className="mt-5 pt-4 border-t border-border">
+                  <Link
+                    to={`/services/${cat.slug}`}
+                    className="inline-flex items-center gap-2 w-full justify-center bg-gradient-primary text-white font-body font-semibold text-sm px-5 py-3 rounded-xl hover:shadow-lg hover:scale-[1.02] transition-all duration-200"
+                  >
+                    Explore {cat.name}
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+            </article>
           ))}
         </div>
-
-        {!compact && (
-          <div className="mt-14 text-center fade-up">
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-8 py-4 rounded-lg font-body font-semibold transition-colors"
-            >
-              Book a Consultation
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-        )}
       </div>
     </section>
   );
