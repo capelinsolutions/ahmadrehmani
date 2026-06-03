@@ -4,7 +4,7 @@ import CTASection from "@/components/sections/CTASection";
 
 const InsurancePage = () => (
   <PageShell>
-    <InsuranceSection />
+    <InsuranceSection showPending />
     <CTASection />
   </PageShell>
 );
