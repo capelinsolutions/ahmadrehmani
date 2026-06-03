@@ -1,4 +1,7 @@
+import { useRef } from "react";
 import { Phone, CheckCircle2, Clock } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import aetnaLogo from "@/assets/insurance/aetna.png";
 import wellpointLogo from "@/assets/insurance/wellpoint.png";
@@ -28,7 +31,7 @@ const pendingInsurers: Insurer[] = [
 
 const InsuranceCard = ({ ins, variant }: { ins: Insurer; variant: "accepted" | "pending" }) => (
   <div
-    className={`rounded-xl p-5 flex flex-col items-center text-center gap-3 transition-all hover:shadow-md bg-background ${
+    className={`rounded-xl p-5 flex flex-col items-center text-center gap-3 transition-all hover:shadow-md bg-background h-full ${
       variant === "accepted"
         ? "border border-accent/30"
         : "border-2 border-dashed border-gold/50"
@@ -41,7 +44,6 @@ const InsuranceCard = ({ ins, variant }: { ins: Insurer; variant: "accepted" | "
         className="max-h-12 max-w-[140px] object-contain"
         loading="lazy"
         onError={(e) => {
-          // graceful fallback: hide broken image, show name large
           (e.currentTarget as HTMLImageElement).style.display = "none";
         }}
       />
@@ -53,8 +55,12 @@ const InsuranceCard = ({ ins, variant }: { ins: Insurer; variant: "accepted" | "
   </div>
 );
 
-const InsuranceSection = () => {
+type Props = { showPending?: boolean };
+
+const InsuranceSection = ({ showPending = false }: Props) => {
   const ref = useScrollAnimation();
+  const autoplay = useRef(Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: true }));
+
   return (
     <section id="insurance" ref={ref} className="bg-gradient-soft py-16 lg:py-24">
       <div className="container mx-auto px-4">
@@ -70,26 +76,45 @@ const InsuranceSection = () => {
 
         {/* Accepted */}
         <div className="max-w-5xl mx-auto fade-up mb-10">
-          <div className="flex items-center gap-2 mb-5">
+          <div className="flex items-center justify-center gap-2 mb-6">
             <CheckCircle2 className="w-5 h-5 text-accent" />
             <h3 className="font-display text-xl font-bold text-foreground">Currently Accepted</h3>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {acceptedInsurers.map((ins) => <InsuranceCard key={ins.name} ins={ins} variant="accepted" />)}
-          </div>
+
+          {showPending ? (
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {acceptedInsurers.map((ins) => <InsuranceCard key={ins.name} ins={ins} variant="accepted" />)}
+            </div>
+          ) : (
+            <Carousel
+              opts={{ loop: true, align: "start" }}
+              plugins={[autoplay.current]}
+              className="px-2"
+            >
+              <CarouselContent>
+                {[...acceptedInsurers, ...acceptedInsurers].map((ins, i) => (
+                  <CarouselItem key={`${ins.name}-${i}`} className="basis-1/2 sm:basis-1/3 md:basis-1/4">
+                    <InsuranceCard ins={ins} variant="accepted" />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          )}
         </div>
 
-        {/* Pending */}
-        <div className="max-w-5xl mx-auto fade-up">
-          <div className="flex items-center gap-2 mb-5 flex-wrap">
-            <Clock className="w-5 h-5 text-gold" />
-            <h3 className="font-display text-xl font-bold text-foreground">Coming Soon — Credentialing in Progress</h3>
-            <span className="font-body text-xs text-muted-foreground">(Expected within 3 months)</span>
+        {/* Pending — only on Insurance page */}
+        {showPending && (
+          <div className="max-w-5xl mx-auto fade-up">
+            <div className="flex items-center gap-2 mb-5 flex-wrap">
+              <Clock className="w-5 h-5 text-gold" />
+              <h3 className="font-display text-xl font-bold text-foreground">Coming Soon — Credentialing in Progress</h3>
+              <span className="font-body text-xs text-muted-foreground">(Expected within 3 months)</span>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+              {pendingInsurers.map((ins) => <InsuranceCard key={ins.name} ins={ins} variant="pending" />)}
+            </div>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-            {pendingInsurers.map((ins) => <InsuranceCard key={ins.name} ins={ins} variant="pending" />)}
-          </div>
-        </div>
+        )}
 
         <div className="text-center mt-10 fade-up">
           <a
