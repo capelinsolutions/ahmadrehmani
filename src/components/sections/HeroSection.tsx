@@ -1,133 +1,149 @@
-import { Phone, Star, ShieldCheck, MapPin, ChevronDown, Award } from "lucide-react";
+import { Phone, Star, ChevronDown, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
-import clinicBg from "@/assets/clinic-hero-bg.jpg";
-
-const NAVY_GRADIENT =
-  "linear-gradient(135deg, rgba(8,20,48,0.94) 0%, rgba(15,52,120,0.85) 35%, rgba(20,90,170,0.78) 65%, rgba(8,20,48,0.94) 100%)";
 
 const HeroSection = () => (
   <section
     id="hero"
-    className="relative overflow-hidden"
-    style={{ minHeight: "88vh" }}
+    className="relative w-full overflow-hidden bg-[#030816]"
+    style={{ minHeight: "92vh" }}
   >
-    {/* Background image */}
+    {/* Ambient background glows */}
     <div
-      className="absolute inset-0 bg-cover bg-center"
-      style={{ backgroundImage: `url(${clinicBg})` }}
+      className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full blur-[120px] -mr-48 -mt-48 pointer-events-none"
+      style={{ background: "hsl(210 90% 48% / 0.18)" }}
       aria-hidden="true"
     />
-    {/* Navy overlay */}
-    <div className="absolute inset-0" style={{ background: NAVY_GRADIENT }} aria-hidden="true" />
+    <div
+      className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full blur-[120px] -ml-24 -mb-24 pointer-events-none"
+      style={{ background: "hsl(200 95% 55% / 0.12)" }}
+      aria-hidden="true"
+    />
+    <div
+      className="absolute inset-0 pointer-events-none opacity-[0.05]"
+      style={{
+        backgroundImage:
+          "radial-gradient(circle at 2px 2px, rgba(255,255,255,0.6) 1px, transparent 0)",
+        backgroundSize: "28px 28px",
+      }}
+      aria-hidden="true"
+    />
 
-    {/* Background effects */}
-    <div className="absolute inset-0 pointer-events-none">
-      <div className="absolute top-0 left-[10%] w-[500px] h-[500px] rounded-full opacity-25" style={{ background: "radial-gradient(circle, hsl(210 90% 48%), transparent)" }} />
-      <div className="absolute top-[-100px] right-[5%] w-[300px] h-[300px] rounded-full opacity-20" style={{ background: "radial-gradient(circle, hsl(200 95% 65%), transparent)" }} />
-    </div>
-
-    <div className="container mx-auto px-4 py-16 lg:py-24 relative z-10">
-      <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        {/* Left */}
-        <div className="space-y-8">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-white/15 border border-white/25 rounded-pill px-4 py-1.5">
-            <Star className="w-4 h-4 text-gold-light fill-gold-light" />
-            <span className="text-gold-light text-sm font-body font-medium">Fellowship-Trained · 5.0 Google Rating</span>
+    <div className="container mx-auto px-6 md:px-10 py-20 lg:py-28 relative z-10">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        {/* Content */}
+        <div className="lg:col-span-7 flex flex-col space-y-8 animate-fade-in">
+          <div className="inline-flex items-center gap-3 self-start bg-accent/10 border border-accent/25 py-1.5 px-4 rounded-pill backdrop-blur-sm">
+            <div className="flex gap-0.5">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-3.5 h-3.5 text-gold-light fill-gold-light" />
+              ))}
+            </div>
+            <span
+              className="text-[10px] uppercase tracking-[0.22em] font-body font-medium text-primary-foreground/85"
+            >
+              Fellowship Trained · Cypress, TX
+            </span>
           </div>
 
-          <h1 className="font-display text-primary-foreground leading-[1.15]" style={{ fontSize: "clamp(40px, 5vw, 62px)" }}>
-            Houston's Medical and Surgical{" "}
-            <span className="text-gold-light">Vitreo-Retinal Specialist</span>
+          <h1
+            className="font-display text-primary-foreground leading-[1.05]"
+            style={{ fontSize: "clamp(44px, 6vw, 78px)" }}
+          >
+            Houston's Medical &amp;{" "}
+            <span className="text-gold-light italic font-medium">Surgical</span>{" "}
+            Vitreo-Retinal Specialist
           </h1>
 
-          <p className="text-primary-foreground/80 text-lg font-body leading-relaxed max-w-xl">
-            Dr. Ahmad Rehmani, D.O. — founder of <strong className="text-primary-foreground">North Houston Retina</strong> — delivers fellowship-trained care for retinal and ocular conditions including macular degeneration, diabetic retinopathy, retinal detachment, and complex vitreoretinal surgery. Now welcoming new patients across Cypress, Bridgeland, Katy, and Northwest Houston.
+          <p className="text-lg md:text-xl font-body leading-relaxed max-w-2xl text-primary-foreground/70">
+            Dr. Ahmad Rehmani, D.O. delivers elite, fellowship-trained care for complex
+            retinal and ocular conditions at{" "}
+            <span className="text-primary-foreground font-medium">North Houston Retina</span>.
+            Providing clarity through specialized expertise and advanced surgical techniques.
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 pt-2">
             <a
               href="tel:+13465870223"
-              className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-6 py-3 rounded-lg font-body font-semibold text-base transition-colors"
+              className="group inline-flex items-center gap-3 px-8 py-4 bg-accent hover:bg-accent-light transition-all text-accent-foreground font-body font-bold rounded-lg shadow-lg shadow-accent/30"
             >
-              <Phone className="w-5 h-5" />
+              <Phone className="w-5 h-5 group-hover:scale-110 transition-transform" />
               Call (346) 587-0223
             </a>
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 border border-primary-foreground/30 text-primary-foreground hover:bg-white/10 px-6 py-3 rounded-lg font-body font-medium text-base transition-colors"
+              className="inline-flex items-center px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/20 transition-all text-primary-foreground font-body font-semibold rounded-lg backdrop-blur-sm"
             >
               Explore Our Services
             </Link>
           </div>
-
-          {/* Trust indicators */}
-          <div className="flex flex-wrap gap-6 pt-4">
-            {[
-              { icon: Star, value: "5.0 / 5.0", label: "Google Rated" },
-              { icon: ShieldCheck, value: "Fellowship-Trained", label: "Vitreoretinal Specialist" },
-              { icon: Award, value: "Founder — Surgical Program", label: "North Cypress Surgical Center" },
-            ].map((item) => (
-              <div key={item.label} className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-accent/25 flex items-center justify-center">
-                  <item.icon className="w-5 h-5 text-gold-light" />
-                </div>
-                <div>
-                  <p className="text-primary-foreground text-sm font-body font-semibold">{item.value}</p>
-                  <p className="text-primary-foreground/60 text-xs font-body">{item.label}</p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
 
-        {/* Right Card - hidden on mobile */}
-        <div className="hidden lg:block">
+        {/* Recognition Card */}
+        <div className="lg:col-span-5 relative animate-fade-in">
           <div
-            className="rounded-2xl p-8 space-y-6"
-            style={{
-              background: "rgba(255,255,255,0.07)",
-              border: "1px solid rgba(255,255,255,0.18)",
-              backdropFilter: "blur(16px)",
-            }}
+            className="absolute -inset-4 rounded-[2.5rem] blur-2xl pointer-events-none"
+            style={{ background: "hsl(210 90% 48% / 0.15)" }}
+            aria-hidden="true"
+          />
+          <div
+            className="relative rounded-[2rem] p-8 md:p-10 shadow-2xl overflow-hidden border border-white/10 backdrop-blur-xl"
+            style={{ background: "hsl(215 65% 10% / 0.8)" }}
           >
-            <div>
-              <p className="text-primary-foreground/70 text-sm font-body uppercase tracking-wider">Patient Recognition</p>
-              <p className="text-primary-foreground text-lg font-display font-semibold mt-1">Verified Ratings & Awards</p>
-            </div>
+            <div
+              className="absolute top-0 left-0 w-full h-px opacity-60"
+              style={{
+                background:
+                  "linear-gradient(90deg, transparent, hsl(var(--accent)), transparent)",
+              }}
+              aria-hidden="true"
+            />
 
-            <div className="flex items-center gap-4">
-              <span className="text-5xl font-display font-bold text-gold-light">5.0</span>
+            <div className="space-y-8">
               <div>
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-gold-light fill-gold-light" />
-                  ))}
-                </div>
-                <p className="text-primary-foreground/70 text-sm font-body mt-1">Google Reviews · Cypress, TX</p>
+                <p className="text-[11px] uppercase tracking-[0.3em] font-body font-bold text-gold-light mb-2">
+                  Patient Recognition
+                </p>
+                <h2 className="font-display text-3xl text-primary-foreground font-medium">
+                  Verified Ratings &amp; Awards
+                </h2>
               </div>
-            </div>
 
-            <ul className="space-y-3">
-              {[
-                "Vitreoretinal Surgical Fellowship",
-                "Founder — Surgical Program at North Cypress Surgical Center",
-                "Sub-Investigator — 28 Active U.S. Clinical Trials",
-                "Former Clinical Assistant Professor — UTMB",
-                "Chief Resident — St. John's Episcopal Hospital",
-                "Percy Dutton Lifetime Achievement Prize",
-              ].map((award) => (
-                <li key={award} className="flex items-start gap-2 text-primary-foreground/85 text-sm font-body">
-                  <Star className="w-4 h-4 text-gold-light mt-0.5 flex-shrink-0" />
-                  {award}
-                </li>
-              ))}
-            </ul>
+              <div className="flex items-end gap-4 pb-8 border-b border-white/10">
+                <span className="font-display text-7xl font-light text-primary-foreground tracking-tighter leading-none">
+                  5.0
+                </span>
+                <div className="flex flex-col mb-1">
+                  <div className="flex gap-0.5 mb-1.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-gold-light fill-gold-light" />
+                    ))}
+                  </div>
+                  <p className="text-primary-foreground/50 text-[11px] font-body font-medium tracking-[0.15em]">
+                    GOOGLE REVIEWS · CYPRESS, TX
+                  </p>
+                </div>
+              </div>
 
-            <div className="pt-2">
+              <ul className="space-y-4">
+                {[
+                  "Vitreoretinal Surgical Fellowship Trained",
+                  "Founder — North Cypress Surgical Program",
+                  "Sub-Investigator — 28 Active U.S. Clinical Trials",
+                  "Former Clinical Assistant Professor — UTMB",
+                ].map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-3 text-primary-foreground/85 font-body"
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-gold-light flex-shrink-0 mt-0.5" />
+                    <span className="text-sm font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+
               <Link
                 to="/contact"
-                className="w-full bg-accent hover:bg-accent-light text-accent-foreground py-3 rounded-lg font-body font-semibold text-center block transition-colors"
+                className="block w-full text-center py-5 bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent transition-all text-accent-foreground font-body font-bold rounded-xl shadow-xl shadow-accent/30"
               >
                 Request a Call Back
               </Link>
@@ -139,8 +155,10 @@ const HeroSection = () => (
 
     {/* Scroll indicator */}
     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce-slow">
-      <span className="text-primary-foreground/50 text-xs font-body uppercase tracking-wider">Scroll</span>
-      <ChevronDown className="w-5 h-5 text-primary-foreground/50" />
+      <span className="text-primary-foreground/40 text-[10px] font-body uppercase tracking-[0.25em]">
+        Scroll
+      </span>
+      <ChevronDown className="w-5 h-5 text-primary-foreground/40" />
     </div>
   </section>
 );
