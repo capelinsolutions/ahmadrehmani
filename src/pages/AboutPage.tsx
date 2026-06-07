@@ -5,7 +5,7 @@ import CTASection from "@/components/sections/CTASection";
 
 const AboutPage = () => (
   <PageShell>
-    <AboutSection />
+    <AboutSection compact={false} />
     <WhyChooseSection />
     <CTASection />
   </PageShell>

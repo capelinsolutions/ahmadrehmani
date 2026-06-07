@@ -18,7 +18,7 @@ const Index = () => (
     <StatsStrip />
     <UrgencyBar />
 
-    <AboutSection />
+    <AboutSection compact />
     <SectionCTA to="/about" label="Learn More About Dr. Rehmani" />
 
     <ServicesSection />
