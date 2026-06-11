@@ -83,9 +83,6 @@ const AboutSection = ({ compact = false }: AboutSectionProps) => {
                 <p>
                   Dr. Ahmad Rehmani is the founder of <strong className="text-foreground">North Houston Retina</strong> in Cypress, TX. A UTMB fellowship-trained vitreoretinal specialist, he treats complex retinal conditions including macular degeneration, diabetic retinopathy, and retinal detachment — bringing academic-level expertise to the Northwest Houston corridor.
                 </p>
-                <p>
-                  Known for his warm bedside manner and perfect 5.0 patient rating, Dr. Rehmani focuses solely on retinal and vitreous disease so you receive subspecialist care, not generalist treatment.
-                </p>
               </div>
             ) : (
               /* ---------- FULL (About Page) ---------- */
