@@ -8,9 +8,9 @@ const UrgencyBar = () => (
       </p>
       <a
         href="tel:+13465870223"
-        className="inline-flex items-center gap-2 bg-primary-foreground text-emergency px-5 py-2 rounded-lg font-body font-bold text-sm whitespace-nowrap transition-transform hover:scale-105"
+        className="group inline-flex items-center gap-2 bg-primary-foreground text-emergency px-5 py-2 rounded-lg font-body font-bold text-sm whitespace-nowrap transition-all hover:scale-105 hover:shadow-lg"
       >
-        <Phone className="w-4 h-4" />
+        <Phone className="w-4 h-4 animate-bounce-slow group-hover:animate-none" />
         Call Now — (346) 587-0223
       </a>
     </div>

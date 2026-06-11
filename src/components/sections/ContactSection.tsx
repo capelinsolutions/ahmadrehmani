@@ -86,8 +86,8 @@ const ContactSection = () => {
                   <label htmlFor="message" className="font-body text-[13px] text-foreground uppercase tracking-wider font-semibold block mb-1.5">Additional Information</label>
                   <textarea id="message" rows={4} placeholder="Describe your symptoms or concerns..." className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 font-body text-sm focus:ring-2 focus:ring-accent focus:border-accent outline-none transition resize-none" />
                 </div>
-                <button type="submit" className="w-full bg-accent hover:bg-accent-light text-accent-foreground py-3.5 rounded-lg font-body font-semibold text-base flex items-center justify-center gap-2 transition-colors">
-                  <Send className="w-5 h-5" /> Send Appointment Request
+                <button type="submit" className="group w-full bg-accent hover:bg-accent-light text-accent-foreground py-3.5 rounded-lg font-body font-semibold text-base flex items-center justify-center gap-2 transition-all hover:shadow-lg hover:-translate-y-0.5">
+                  <Send className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" /> Send Appointment Request
                 </button>
                 <p className="font-body text-xs text-muted-foreground text-center">
                   🔒 Your information is protected under HIPAA and will never be shared.
@@ -105,9 +105,9 @@ const ContactSection = () => {
                 { icon: MapPin, label: "Office Address", value: "27700 Northwest Freeway, Suite 355, Cypress, TX 77433" },
                 { icon: Globe, label: "Practice", value: "North Houston Retina, PLLC" },
               ].map((item) => (
-                <div key={item.label} className="flex gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-accent-pale flex items-center justify-center shrink-0">
-                    <item.icon className="w-5 h-5 text-accent" />
+                <div key={item.label} className="group flex gap-3 p-2 -m-2 rounded-lg hover:bg-accent-pale/40 transition-colors">
+                  <div className="w-10 h-10 rounded-lg bg-accent-pale flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent group-hover:scale-110">
+                    <item.icon className="w-5 h-5 text-accent transition-colors group-hover:text-accent-foreground" />
                   </div>
                   <div className="min-w-0">
                     <p className="font-body text-xs text-muted-foreground uppercase tracking-wider">{item.label}</p>
@@ -140,7 +140,7 @@ const ContactSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className="w-10 h-10 rounded-full bg-primary-mid flex items-center justify-center text-primary-foreground hover:bg-accent transition-colors"
+                    className="w-10 h-10 rounded-full bg-primary-mid flex items-center justify-center text-primary-foreground hover:bg-accent hover:scale-110 hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <s.icon className="w-5 h-5" />
                   </a>

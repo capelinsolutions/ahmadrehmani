@@ -1,6 +1,6 @@
 import SectionCTA from "@/components/SectionCTA";
 import { useRef } from "react";
-import { Star, CheckCircle } from "lucide-react";
+import { Star, CheckCircle, Quote } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -34,10 +34,11 @@ const reviews = [
 ];
 
 const ReviewCard = ({ r }: { r: typeof reviews[number] }) => (
-  <div className="bg-background border border-border rounded-xl p-6 hover:shadow-md transition-all duration-300 h-full flex flex-col">
+  <div className="group relative bg-background border border-border rounded-xl p-6 hover:shadow-xl hover:-translate-y-1 hover:border-accent/40 transition-all duration-300 h-full flex flex-col">
+    <Quote className="absolute top-4 right-4 w-8 h-8 text-accent/10 group-hover:text-accent/25 transition-colors" />
     <div className="flex gap-0.5 mb-4">
       {[...Array(5)].map((_, i) => (
-        <Star key={i} className="w-4 h-4 text-gold fill-gold" />
+        <Star key={i} className="w-4 h-4 text-gold fill-gold transition-transform duration-300 group-hover:scale-110" style={{ transitionDelay: `${i * 40}ms` }} />
       ))}
     </div>
     <p className="font-body text-sm text-gray-600 italic leading-relaxed mb-5 flex-1">"{r.text}"</p>
