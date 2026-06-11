@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import logo from "@/assets/logo.png";
+import logoAsset from "@/assets/nhr-logo.png.asset.json";
 import { serviceCategories } from "@/data/services";
 
 const navLinks = [
