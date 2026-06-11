@@ -1,3 +1,4 @@
+import SectionCTA from "@/components/SectionCTA";
 import { ArrowRight, Stethoscope } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";

@@ -1,3 +1,4 @@
+import SectionCTA from "@/components/SectionCTA";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";

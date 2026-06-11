@@ -1,3 +1,4 @@
+import SectionCTA from "@/components/SectionCTA";
 import { useRef } from "react";
 import { Phone, CheckCircle2, Clock } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
