@@ -53,10 +53,6 @@ const Navbar = () => {
               className="h-7 sm:h-8 lg:h-9 w-auto object-contain"
             />
           </div>
-          <div className="hidden sm:flex flex-col min-w-0">
-            <span className="font-display text-sm lg:text-base text-primary-foreground font-semibold leading-tight truncate">Dr. Ahmad Rehmani, D.O.</span>
-            <span className="font-body text-[10px] lg:text-[11px] text-gold-light uppercase tracking-[0.12em] truncate">Fellowship-Trained Retina Specialist</span>
-          </div>
         </Link>
 
         {/* Desktop Links */}
