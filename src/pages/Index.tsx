@@ -19,7 +19,6 @@ const Index = () => (
     <UrgencyBar />
 
     <AboutSection compact />
-    <SectionCTA to="/about" label="Learn More About Dr. Rehmani" />
 
     <ServicesSection />
     <SectionCTA to="/services" label="Explore All Services" />
