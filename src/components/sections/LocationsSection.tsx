@@ -219,6 +219,7 @@ const LocationsSection = () => {
             </div>
           </div>
         </div>
+        <SectionCTA to="/locations" label="View Our Locations" />
       </div>
     </section>
   );

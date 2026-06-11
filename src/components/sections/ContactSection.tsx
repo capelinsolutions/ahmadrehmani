@@ -148,6 +148,7 @@ const ContactSection = () => {
             </div>
           </div>
         </div>
+        <SectionCTA to="/contact" label="Contact Us" />
       </div>
     </section>
   );

@@ -81,6 +81,7 @@ const ReviewsSection = () => {
             Read All Google Reviews
           </a>
         </div>
+        <SectionCTA to="/reviews" label="Read More Patient Reviews" />
       </div>
     </section>
   );

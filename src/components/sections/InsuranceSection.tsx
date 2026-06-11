@@ -125,6 +125,7 @@ const InsuranceSection = ({ showPending = false }: Props) => {
             Call to Verify Your Coverage — (346) 587-0223
           </a>
         </div>
+        <SectionCTA to="/insurance" label="See All Accepted Insurance" />
       </div>
     </section>
   );

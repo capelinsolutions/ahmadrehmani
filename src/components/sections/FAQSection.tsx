@@ -55,6 +55,7 @@ const FAQSection = () => {
           <div className="space-y-4">{col1.map((f, i) => renderFaq(f, i))}</div>
           <div className="space-y-4">{col2.map((f, i) => renderFaq(f, i + half))}</div>
         </div>
+        <SectionCTA to="/faq" label="View All FAQs" />
       </div>
     </section>
   );

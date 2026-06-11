@@ -87,6 +87,7 @@ const ServicesSection = () => {
             </article>
           ))}
         </div>
+        <SectionCTA to="/services" label="Explore All Services" />
       </div>
     </section>
   );
