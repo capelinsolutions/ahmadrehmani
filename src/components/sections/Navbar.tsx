@@ -45,11 +45,17 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-4 flex items-center justify-between h-16 lg:h-[72px]">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="North Houston Retina logo" className="w-12 h-12 lg:w-14 lg:h-14 object-contain shrink-0 drop-shadow-[0_2px_8px_rgba(96,200,255,0.4)]" />
-          <div className="flex flex-col">
-            <span className="font-display text-base lg:text-lg text-primary-foreground font-semibold leading-tight">Dr. Ahmad Rehmani, D.O.</span>
-            <span className="font-body text-[10px] lg:text-[11px] text-gold-light uppercase tracking-[0.12em]">North Houston Retina · Cypress, TX</span>
+        <Link to="/" className="flex items-center gap-3 min-w-0" aria-label="North Houston Retina — Dr. Ahmad Rehmani home">
+          <div className="bg-white rounded-lg px-2.5 py-1.5 shadow-sm shrink-0 flex items-center">
+            <img
+              src={logoAsset.url}
+              alt="North Houston Retina logo"
+              className="h-7 sm:h-8 lg:h-9 w-auto object-contain"
+            />
+          </div>
+          <div className="hidden sm:flex flex-col min-w-0">
+            <span className="font-display text-sm lg:text-base text-primary-foreground font-semibold leading-tight truncate">Dr. Ahmad Rehmani, D.O.</span>
+            <span className="font-body text-[10px] lg:text-[11px] text-gold-light uppercase tracking-[0.12em] truncate">Fellowship-Trained Retina Specialist</span>
           </div>
         </Link>
 
