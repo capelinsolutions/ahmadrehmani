@@ -8,7 +8,7 @@ const ServicesSection = () => {
   const ref = useScrollAnimation();
 
   return (
-    <section id="services" ref={ref} className="bg-gradient-soft py-16 lg:py-24">
+    <section id="services" ref={ref} className="bg-gradient-soft py-20 lg:py-28 relative overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 fade-up">
