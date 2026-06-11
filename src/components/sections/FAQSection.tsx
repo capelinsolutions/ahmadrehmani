@@ -1,6 +1,6 @@
 import SectionCTA from "@/components/SectionCTA";
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, HelpCircle } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const faqs = [
@@ -24,23 +24,32 @@ const FAQSection = () => {
   const col1 = faqs.slice(0, half);
   const col2 = faqs.slice(half);
 
-  const renderFaq = (faq: typeof faqs[0], i: number) => (
-    <div key={i} className="bg-background border border-border rounded-xl overflow-hidden">
-      <button
-        onClick={() => setOpenIndex(openIndex === i ? null : i)}
-        className="w-full flex items-center justify-between px-5 py-4 text-left"
-        aria-expanded={openIndex === i}
+  const renderFaq = (faq: typeof faqs[0], i: number) => {
+    const isOpen = openIndex === i;
+    return (
+      <div
+        key={i}
+        className={`group bg-background border rounded-xl overflow-hidden transition-all duration-300 hover:shadow-md ${
+          isOpen ? "border-accent/40 shadow-md" : "border-border hover:border-accent/30"
+        }`}
       >
-        <span className={`font-body font-medium text-sm pr-4 ${openIndex === i ? "text-accent" : "text-foreground"}`}>
-          {faq.q}
-        </span>
-        <ChevronDown className={`w-5 h-5 shrink-0 text-muted-foreground transition-transform duration-300 ${openIndex === i ? "rotate-180" : ""}`} />
-      </button>
-      <div className={`overflow-hidden transition-all duration-300 ${openIndex === i ? "max-h-[600px] pb-5 px-5" : "max-h-0"}`}>
-        <p className="font-body text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
+        <button
+          onClick={() => setOpenIndex(isOpen ? null : i)}
+          className="w-full flex items-center justify-between gap-3 px-5 py-4 text-left"
+          aria-expanded={isOpen}
+        >
+          <HelpCircle className={`w-4 h-4 shrink-0 transition-colors ${isOpen ? "text-accent" : "text-muted-foreground group-hover:text-accent"}`} />
+          <span className={`flex-1 font-body font-medium text-sm pr-2 transition-colors ${isOpen ? "text-accent" : "text-foreground"}`}>
+            {faq.q}
+          </span>
+          <ChevronDown className={`w-5 h-5 shrink-0 transition-all duration-300 ${isOpen ? "rotate-180 text-accent" : "text-muted-foreground group-hover:text-accent"}`} />
+        </button>
+        <div className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-[600px] pb-5 px-5" : "max-h-0"}`}>
+          <p className="font-body text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <section id="faq" ref={ref} className="bg-off-white py-16 lg:py-24">

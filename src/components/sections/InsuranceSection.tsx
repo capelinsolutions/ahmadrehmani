@@ -32,17 +32,17 @@ const pendingInsurers: Insurer[] = [
 
 const InsuranceCard = ({ ins, variant }: { ins: Insurer; variant: "accepted" | "pending" }) => (
   <div
-    className={`rounded-xl p-5 flex flex-col items-center text-center gap-3 transition-all hover:shadow-md bg-background h-full ${
+    className={`group rounded-xl p-5 flex flex-col items-center text-center gap-3 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-background h-full ${
       variant === "accepted"
-        ? "border border-accent/30"
-        : "border-2 border-dashed border-gold/50"
+        ? "border border-accent/30 hover:border-accent"
+        : "border-2 border-dashed border-gold/50 hover:border-gold"
     }`}
   >
     <div className="h-14 w-full flex items-center justify-center">
       <img
         src={ins.logo}
         alt={`${ins.name} logo`}
-        className="max-h-12 max-w-[140px] object-contain"
+        className="max-h-12 max-w-[140px] object-contain transition-transform duration-300 group-hover:scale-110"
         loading="lazy"
         onError={(e) => {
           (e.currentTarget as HTMLImageElement).style.display = "none";
