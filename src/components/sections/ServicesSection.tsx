@@ -11,21 +11,21 @@ const ServicesSection = () => {
     <section id="services" ref={ref} className="bg-gradient-soft py-16 lg:py-24">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 fade-up">
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-16 fade-up">
           <div className="max-w-2xl">
-            <span className="font-body text-sm text-accent font-semibold uppercase tracking-wider">
+            <span className="inline-block font-body text-sm text-accent font-bold uppercase tracking-[0.2em] mb-4 px-4 py-1.5 bg-accent-pale rounded-full border border-accent/15">
               Expert Retinal Care
             </span>
-            <h2 className="font-display text-foreground text-3xl lg:text-4xl font-bold mt-3 leading-tight">
+            <h2 className="font-display text-foreground text-3xl lg:text-5xl font-bold mt-4 leading-tight">
               Conditions & Treatments Offered in Cypress, TX
             </h2>
-            <p className="font-body text-gray-600 mt-4 leading-relaxed">
+            <p className="font-body text-gray-600 mt-5 leading-relaxed text-lg max-w-xl">
               As a fellowship-trained vitreoretinal specialist, Dr. Rehmani offers the most advanced medical and surgical treatments for diseases of the retina, vitreous, and macula — all in one Cypress location.
             </p>
           </div>
           <Link
             to="/contact"
-            className="shrink-0 bg-accent hover:bg-accent-light text-accent-foreground px-6 py-3 rounded-lg font-body font-semibold transition-colors"
+            className="shrink-0 bg-accent hover:bg-accent-light text-accent-foreground px-8 py-4 rounded-xl font-body font-bold transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 text-center"
           >
             Book Consultation
           </Link>
