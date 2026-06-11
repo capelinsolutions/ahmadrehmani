@@ -1,5 +1,8 @@
 import SectionCTA from "@/components/SectionCTA";
+import { useRef } from "react";
 import { Star, CheckCircle } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const reviews = [
@@ -18,10 +21,45 @@ const reviews = [
     name: "Sandra C.",
     location: "Google Review · Katy, TX",
   },
+  {
+    text: "From the first visit, I felt at ease. Dr. Rehmani explained every step of my retinal vein occlusion treatment with patience and clarity. The office staff is welcoming and the appointments run on time. I trust him completely with my vision.",
+    name: "Robert K.",
+    location: "Google Review · Tomball, TX",
+  },
+  {
+    text: "I was nervous about getting eye injections, but Dr. Rehmani made the process virtually painless and the results have been remarkable. He truly listens and tailors care to each patient. Best retina specialist experience I've ever had.",
+    name: "Diana L.",
+    location: "Google Review · Jersey Village, TX",
+  },
 ];
+
+const ReviewCard = ({ r }: { r: typeof reviews[number] }) => (
+  <div className="bg-background border border-border rounded-xl p-6 hover:shadow-md transition-all duration-300 h-full flex flex-col">
+    <div className="flex gap-0.5 mb-4">
+      {[...Array(5)].map((_, i) => (
+        <Star key={i} className="w-4 h-4 text-gold fill-gold" />
+      ))}
+    </div>
+    <p className="font-body text-sm text-gray-600 italic leading-relaxed mb-5 flex-1">"{r.text}"</p>
+    <div className="flex items-center justify-between mt-auto">
+      <div>
+        <p className="font-body text-sm font-semibold text-foreground">{r.name}</p>
+        <p className="font-body text-xs text-muted-foreground">{r.location}</p>
+      </div>
+      <div className="flex items-center gap-1 text-accent">
+        <CheckCircle className="w-4 h-4" />
+        <span className="text-xs font-body">Verified</span>
+      </div>
+    </div>
+  </div>
+);
 
 const ReviewsSection = () => {
   const ref = useScrollAnimation();
+  const autoplay = useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true })
+  );
+
   return (
     <section id="reviews" ref={ref} className="bg-off-white py-16 lg:py-24">
       <div className="container mx-auto px-4">
@@ -45,32 +83,19 @@ const ReviewsSection = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {reviews.map((r, i) => (
-            <div
-              key={r.name}
-              className="fade-up bg-background border border-border rounded-xl p-6 hover:shadow-md transition-all duration-300"
-              style={{ transitionDelay: `${i * 100}ms` }}
-            >
-              <div className="flex gap-0.5 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 text-gold fill-gold" />
-                ))}
-              </div>
-              <p className="font-body text-sm text-gray-600 italic leading-relaxed mb-5">"{r.text}"</p>
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="font-body text-sm font-semibold text-foreground">{r.name}</p>
-                  <p className="font-body text-xs text-muted-foreground">{r.location}</p>
-                </div>
-                <div className="flex items-center gap-1 text-accent">
-                  <CheckCircle className="w-4 h-4" />
-                  <span className="text-xs font-body">Verified</span>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Carousel
+          opts={{ loop: true, align: "start" }}
+          plugins={[autoplay.current]}
+          className="fade-up px-2"
+        >
+          <CarouselContent>
+            {reviews.map((r) => (
+              <CarouselItem key={r.name} className="basis-full sm:basis-1/2 lg:basis-1/3">
+                <ReviewCard r={r} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
 
         <div className="text-center mt-10 fade-up">
           <a
