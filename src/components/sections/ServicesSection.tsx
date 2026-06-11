@@ -34,58 +34,55 @@ const ServicesSection = () => {
         {/* Service Cards Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {serviceCategories.map((cat, i) => (
-            <article
+            <Link
+              to={`/services/${cat.slug}`}
               key={cat.slug}
-              className="group bg-background rounded-2xl border border-border shadow-sm overflow-hidden hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 fade-up"
-              style={{ transitionDelay: `${i * 80}ms` }}
+              className="group relative flex flex-col bg-background rounded-2xl border border-border shadow-sm overflow-hidden hover:shadow-2xl hover:-translate-y-2 hover:border-accent/40 transition-all duration-300 fade-up"
+              style={{ transitionDelay: `${i * 70}ms` }}
             >
               {/* Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-52 overflow-hidden">
                 <img
                   src={cat.image}
                   alt={cat.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-                <div className="absolute bottom-3 left-4 right-4">
-                  <h3 className="font-display text-lg font-semibold text-white leading-tight drop-shadow-lg">
-                    {cat.name}
-                  </h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent" />
+                <div className="absolute top-4 left-4">
+                  <span className="inline-flex items-center gap-1.5 bg-white/95 backdrop-blur-sm text-accent text-[11px] font-body font-semibold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">
+                    <Stethoscope className="w-3 h-3" />
+                    {cat.subServices.length} Treatments
+                  </span>
                 </div>
+                <h3 className="absolute bottom-4 left-5 right-5 font-display text-2xl font-bold text-white leading-tight drop-shadow-xl">
+                  {cat.name}
+                </h3>
               </div>
 
               {/* Body */}
-              <div className="p-5">
-                <p className="font-body text-sm text-gray-600 leading-relaxed line-clamp-3">
-                  {cat.shortDescription}
-                </p>
-
-                {/* Key conditions */}
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {cat.subServices.slice(1, 5).map((sub) => (
+              <div className="flex flex-col flex-1 p-6">
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {cat.subServices.slice(1, 4).map((sub) => (
                     <span
                       key={sub.name}
-                      className="inline-flex items-center gap-1 text-[11px] font-body font-medium text-accent bg-accent-pale px-2.5 py-1 rounded-full"
+                      className="text-[11px] font-body font-medium text-accent bg-accent-pale px-2.5 py-1 rounded-full"
                     >
-                      <Stethoscope className="w-3 h-3" />
                       {sub.name.split("(").shift()?.trim()}
                     </span>
                   ))}
                 </div>
 
-                {/* CTA */}
-                <div className="mt-5 pt-4 border-t border-border">
-                  <Link
-                    to={`/services/${cat.slug}`}
-                    className="inline-flex items-center gap-2 w-full justify-center bg-gradient-primary text-white font-body font-semibold text-sm px-5 py-3 rounded-xl hover:shadow-lg hover:scale-[1.02] transition-all duration-200"
-                  >
-                    Explore {cat.name}
+                <div className="mt-auto flex items-center justify-between pt-4 border-t border-border">
+                  <span className="font-body font-semibold text-sm text-foreground group-hover:text-accent transition-colors">
+                    Learn More
+                  </span>
+                  <span className="w-10 h-10 rounded-full bg-gradient-primary text-white flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:translate-x-1 transition-all">
                     <ArrowRight className="w-4 h-4" />
-                  </Link>
+                  </span>
                 </div>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
         <SectionCTA to="/services" label="Explore All Services" />
