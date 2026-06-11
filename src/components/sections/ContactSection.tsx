@@ -1,3 +1,4 @@
+import SectionCTA from "@/components/SectionCTA";
 import { useState, type FormEvent } from "react";
 import { Phone, MapPin, Globe, Send, CheckCircle, Instagram, Facebook, Star, Mail } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -148,6 +149,7 @@ const ContactSection = () => {
             </div>
           </div>
         </div>
+        <SectionCTA to="/contact" label="Contact Us" />
       </div>
     </section>
   );

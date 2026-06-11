@@ -10,34 +10,19 @@ import InsuranceSection from "@/components/sections/InsuranceSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactSection from "@/components/sections/ContactSection";
 import CTASection from "@/components/sections/CTASection";
-import SectionCTA from "@/components/SectionCTA";
 
 const Index = () => (
   <PageShell>
     <HeroSection />
     <StatsStrip />
     <UrgencyBar />
-
     <AboutSection compact />
-
     <ServicesSection />
-    <SectionCTA to="/services" label="Explore All Services" />
-
     <LocationsSection />
-    <SectionCTA to="/locations" label="View Our Locations" />
-
     <ReviewsSection />
-    <SectionCTA to="/reviews" label="Read More Patient Reviews" />
-
     <InsuranceSection />
-    <SectionCTA to="/insurance" label="See All Accepted Insurance" />
-
     <FAQSection />
-    <SectionCTA to="/faq" label="View All FAQs" />
-
     <ContactSection />
-    <SectionCTA to="/contact" label="Contact Us" />
-
     <CTASection />
   </PageShell>
 );

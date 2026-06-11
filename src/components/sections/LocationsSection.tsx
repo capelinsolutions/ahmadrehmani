@@ -1,3 +1,4 @@
+import SectionCTA from "@/components/SectionCTA";
 import { MapPin, Phone, Clock, Star, ExternalLink, Mail, CheckCircle2 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import clinicAsset from "@/assets/clinic-waiting-room.jpg.asset.json";
@@ -219,6 +220,7 @@ const LocationsSection = () => {
             </div>
           </div>
         </div>
+        <SectionCTA to="/locations" label="View Our Locations" />
       </div>
     </section>
   );

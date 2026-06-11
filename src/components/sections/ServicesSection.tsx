@@ -1,3 +1,4 @@
+import SectionCTA from "@/components/SectionCTA";
 import { ArrowRight, Stethoscope } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -87,6 +88,7 @@ const ServicesSection = () => {
             </article>
           ))}
         </div>
+        <SectionCTA to="/services" label="Explore All Services" />
       </div>
     </section>
   );
