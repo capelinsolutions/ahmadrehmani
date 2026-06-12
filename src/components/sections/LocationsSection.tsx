@@ -120,8 +120,8 @@ const LocationsSection = () => {
               </div>
 
               <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5 border-t border-white/10 pt-6">
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0">
+                <div className="group flex items-start gap-3 cursor-default">
+                  <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent/30 group-hover:border-accent/60 group-hover:scale-110 group-hover:rotate-6">
                     <MapPin className="w-4 h-4 text-accent-light" />
                   </div>
                   <div>
@@ -135,8 +135,8 @@ const LocationsSection = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0">
+                <div className="group flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent/30 group-hover:border-accent/60 group-hover:scale-110 group-hover:rotate-6">
                     <Phone className="w-4 h-4 text-accent-light" />
                   </div>
                   <div>
@@ -151,8 +151,8 @@ const LocationsSection = () => {
                     </a>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0">
+                <div className="group flex items-start gap-3 cursor-default">
+                  <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent/30 group-hover:border-accent/60 group-hover:scale-110 group-hover:rotate-6">
                     <Clock className="w-4 h-4 text-accent-light" />
                   </div>
                   <div>
@@ -166,8 +166,8 @@ const LocationsSection = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0">
+                <div className="group flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent/30 group-hover:border-accent/60 group-hover:scale-110 group-hover:rotate-6">
                     <Mail className="w-4 h-4 text-accent-light" />
                   </div>
                   <div className="min-w-0">
@@ -193,9 +193,9 @@ const LocationsSection = () => {
                 ].map((item) => (
                   <li
                     key={item}
-                    className="flex items-center gap-2 text-primary-foreground/85 font-body text-sm"
+                    className="group flex items-center gap-2 text-primary-foreground/85 font-body text-sm transition-all duration-300 hover:text-gold-light hover:translate-x-1 cursor-default"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-gold-light flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-gold-light flex-shrink-0 transition-transform duration-300 group-hover:scale-125" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -204,17 +204,17 @@ const LocationsSection = () => {
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <a
                   href="tel:+13465870223"
-                  className="flex-1 bg-accent hover:bg-accent-light text-accent-foreground py-3.5 rounded-lg font-body font-bold text-sm text-center transition-colors inline-flex items-center justify-center gap-2 shadow-lg shadow-accent/30"
+                  className="group flex-1 bg-accent hover:bg-accent-light text-accent-foreground py-3.5 rounded-lg font-body font-bold text-sm text-center transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/50 hover:-translate-y-0.5 hover:scale-[1.02]"
                 >
-                  <Phone className="w-4 h-4" /> Call (346) 587-0223
+                  <Phone className="w-4 h-4 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" /> Call (346) 587-0223
                 </a>
                 <a
                   href="https://maps.google.com/?q=27700+Northwest+Freeway+Suite+355+Cypress+TX+77433"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 border border-white/20 bg-white/5 text-primary-foreground hover:bg-white/10 py-3.5 rounded-lg font-body font-semibold text-sm text-center transition-colors inline-flex items-center justify-center gap-1.5 backdrop-blur-sm"
+                  className="group flex-1 border border-white/20 bg-white/5 text-primary-foreground hover:bg-white/10 hover:border-white/40 py-3.5 rounded-lg font-body font-semibold text-sm text-center transition-all duration-300 inline-flex items-center justify-center gap-1.5 backdrop-blur-sm hover:-translate-y-0.5"
                 >
-                  Get Directions <ExternalLink className="w-3.5 h-3.5" />
+                  Get Directions <ExternalLink className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               </div>
             </div>
