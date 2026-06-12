@@ -204,17 +204,17 @@ const LocationsSection = () => {
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <a
                   href="tel:+13465870223"
-                  className="flex-1 bg-accent hover:bg-accent-light text-accent-foreground py-3.5 rounded-lg font-body font-bold text-sm text-center transition-colors inline-flex items-center justify-center gap-2 shadow-lg shadow-accent/30"
+                  className="group flex-1 bg-accent hover:bg-accent-light text-accent-foreground py-3.5 rounded-lg font-body font-bold text-sm text-center transition-all duration-300 inline-flex items-center justify-center gap-2 shadow-lg shadow-accent/30 hover:shadow-xl hover:shadow-accent/50 hover:-translate-y-0.5 hover:scale-[1.02]"
                 >
-                  <Phone className="w-4 h-4" /> Call (346) 587-0223
+                  <Phone className="w-4 h-4 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110" /> Call (346) 587-0223
                 </a>
                 <a
                   href="https://maps.google.com/?q=27700+Northwest+Freeway+Suite+355+Cypress+TX+77433"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 border border-white/20 bg-white/5 text-primary-foreground hover:bg-white/10 py-3.5 rounded-lg font-body font-semibold text-sm text-center transition-colors inline-flex items-center justify-center gap-1.5 backdrop-blur-sm"
+                  className="group flex-1 border border-white/20 bg-white/5 text-primary-foreground hover:bg-white/10 hover:border-white/40 py-3.5 rounded-lg font-body font-semibold text-sm text-center transition-all duration-300 inline-flex items-center justify-center gap-1.5 backdrop-blur-sm hover:-translate-y-0.5"
                 >
-                  Get Directions <ExternalLink className="w-3.5 h-3.5" />
+                  Get Directions <ExternalLink className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </a>
               </div>
             </div>
