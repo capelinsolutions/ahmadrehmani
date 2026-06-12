@@ -120,8 +120,8 @@ const LocationsSection = () => {
               </div>
 
               <div className="grid sm:grid-cols-2 gap-x-6 gap-y-5 border-t border-white/10 pt-6">
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0">
+                <div className="group flex items-start gap-3 cursor-default">
+                  <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent/30 group-hover:border-accent/60 group-hover:scale-110 group-hover:rotate-6">
                     <MapPin className="w-4 h-4 text-accent-light" />
                   </div>
                   <div>
@@ -135,8 +135,8 @@ const LocationsSection = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0">
+                <div className="group flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent/30 group-hover:border-accent/60 group-hover:scale-110 group-hover:rotate-6">
                     <Phone className="w-4 h-4 text-accent-light" />
                   </div>
                   <div>
@@ -151,8 +151,8 @@ const LocationsSection = () => {
                     </a>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0">
+                <div className="group flex items-start gap-3 cursor-default">
+                  <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent/30 group-hover:border-accent/60 group-hover:scale-110 group-hover:rotate-6">
                     <Clock className="w-4 h-4 text-accent-light" />
                   </div>
                   <div>
@@ -166,8 +166,8 @@ const LocationsSection = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0">
+                <div className="group flex items-start gap-3">
+                  <div className="w-9 h-9 rounded-lg bg-accent/15 border border-accent/25 flex items-center justify-center shrink-0 transition-all duration-300 group-hover:bg-accent/30 group-hover:border-accent/60 group-hover:scale-110 group-hover:rotate-6">
                     <Mail className="w-4 h-4 text-accent-light" />
                   </div>
                   <div className="min-w-0">
@@ -193,9 +193,9 @@ const LocationsSection = () => {
                 ].map((item) => (
                   <li
                     key={item}
-                    className="flex items-center gap-2 text-primary-foreground/85 font-body text-sm"
+                    className="group flex items-center gap-2 text-primary-foreground/85 font-body text-sm transition-all duration-300 hover:text-gold-light hover:translate-x-1 cursor-default"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-gold-light flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-gold-light flex-shrink-0 transition-transform duration-300 group-hover:scale-125" />
                     <span>{item}</span>
                   </li>
                 ))}
