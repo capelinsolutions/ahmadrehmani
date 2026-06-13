@@ -1,9 +1,7 @@
 import SectionCTA from "@/components/SectionCTA";
 import { MapPin, Phone, Clock, Star, ExternalLink, Mail, CheckCircle2 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import clinicAsset from "@/assets/clinic-waiting-room.jpg.asset.json";
-
-const clinicImg = clinicAsset.url;
+import clinicImg from "@/assets/clinic-waiting-room.jpg";
 
 const LocationsSection = () => {
   const ref = useScrollAnimation();
