@@ -48,7 +48,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-3 min-w-0" aria-label="North Houston Retina — Dr. Ahmad Rehmani home">
           <div className="bg-white rounded-lg px-2.5 py-1.5 shadow-sm shrink-0 flex items-center">
             <img
-              src={logoAsset.url}
+              src={logo}
               alt="North Houston Retina logo"
               className="h-7 sm:h-8 lg:h-9 w-auto object-contain"
             />
