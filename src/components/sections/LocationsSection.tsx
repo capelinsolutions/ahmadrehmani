@@ -64,46 +64,6 @@ const LocationsSection = () => {
                 width={1920}
                 height={1280}
               />
-              {/* Right-side fade into content panel on lg+ */}
-              <div
-                className="absolute inset-0 lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-[#030816]/40"
-                aria-hidden="true"
-              />
-              {/* Bottom fade */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(180deg, hsl(215 65% 8% / 0.05) 0%, hsl(215 65% 8% / 0.25) 70%, hsl(215 65% 6% / 0.85) 100%)",
-                }}
-                aria-hidden="true"
-              />
-
-              {/* Floating chips */}
-              <div className="absolute top-5 left-5 inline-flex items-center gap-2 bg-[hsl(215_65%_10%_/_0.7)] backdrop-blur-md border border-white/15 py-2 px-3.5 rounded-full">
-                <span className="w-2 h-2 rounded-full bg-gold-light animate-pulse" />
-                <span className="text-[10px] uppercase tracking-[0.22em] font-body font-semibold text-primary-foreground">
-                  Main Office · Cypress
-                </span>
-              </div>
-              <div className="absolute top-5 right-5 inline-flex items-center gap-1.5 bg-gold/20 backdrop-blur-md border border-gold/30 py-2 px-3.5 rounded-full">
-                <Star className="w-3 h-3 fill-gold-light text-gold-light" />
-                <span className="text-[10px] uppercase tracking-[0.2em] font-body font-semibold text-gold-light">
-                  5.0 Google
-                </span>
-              </div>
-
-              {/* Bottom welcome panel */}
-              <div className="absolute bottom-0 left-0 right-0 p-5 lg:p-7">
-                <div className="rounded-2xl border border-white/15 backdrop-blur-xl px-5 py-4 bg-[hsl(215_65%_10%_/_0.65)]">
-                  <p className="text-[10px] uppercase tracking-[0.22em] font-body font-semibold text-gold-light mb-1">
-                    Now Welcoming New Patients
-                  </p>
-                  <p className="font-body text-primary-foreground/80 text-sm">
-                    Same-day evaluation available for retinal emergencies.
-                  </p>
-                </div>
-              </div>
             </div>
 
             {/* Info side */}
