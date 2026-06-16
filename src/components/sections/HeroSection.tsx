@@ -33,16 +33,6 @@ const HeroSection = () => (
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
         {/* Content */}
         <div className="lg:col-span-6 flex flex-col space-y-8 animate-fade-in">
-          <div className="inline-flex items-center gap-3 self-start bg-accent/10 border border-accent/25 py-1.5 px-4 rounded-pill backdrop-blur-sm">
-            <div className="flex gap-0.5">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-3.5 h-3.5 text-gold-light fill-gold-light" />
-              ))}
-            </div>
-            <span className="text-[10px] uppercase tracking-[0.22em] font-body font-medium text-primary-foreground/85">
-              Fellowship Trained · Cypress, TX
-            </span>
-          </div>
 
           <h1
             className="font-display text-primary-foreground leading-[1.05]"
