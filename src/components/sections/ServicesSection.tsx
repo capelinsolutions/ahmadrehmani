@@ -56,18 +56,6 @@ const ServicesSection = () => {
 
               {/* Body */}
               <div className="flex flex-col flex-1 p-7">
-                {/* Condition chips */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {cat.subServices.slice(0, 3).map((sub) => (
-                    <span
-                      key={sub.name}
-                      className="text-xs font-body font-semibold text-accent bg-accent-pale px-3 py-1.5 rounded-full border border-accent/10"
-                    >
-                      {sub.name.split("(").shift()?.trim()}
-                    </span>
-                  ))}
-                </div>
-
                 {/* CTA */}
                 <div className="mt-auto flex items-center justify-between pt-5 border-t-2 border-border/40">
                   <span className="font-body font-bold text-sm text-foreground group-hover:text-accent transition-colors duration-300">
