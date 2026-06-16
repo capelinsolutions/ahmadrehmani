@@ -45,10 +45,6 @@ const LocationsSection = () => {
             North Houston Retina —{" "}
             <span className="text-gold-light italic font-medium">Cypress, TX</span>
           </h2>
-          <p className="font-body text-primary-foreground/65 mt-5 text-base lg:text-lg leading-relaxed">
-            Conveniently located on Northwest Freeway (US-290) — serving Cypress,
-            Bridgeland, Katy, Tomball, and the Northwest Houston corridor.
-          </p>
         </div>
 
         {/* Split card */}
