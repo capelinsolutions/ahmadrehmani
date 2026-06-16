@@ -19,9 +19,6 @@ const ServicesSection = () => {
             <h2 className="font-display text-foreground text-3xl lg:text-5xl font-bold mt-4 leading-tight">
               Conditions & Treatments Offered in Cypress, TX
             </h2>
-            <p className="font-body text-gray-600 mt-5 leading-relaxed text-lg max-w-xl">
-              As a fellowship-trained vitreoretinal specialist, Dr. Rehmani offers the most advanced medical and surgical treatments for diseases of the retina, vitreous, and macula — all in one Cypress location.
-            </p>
           </div>
           <Link
             to="/contact"
