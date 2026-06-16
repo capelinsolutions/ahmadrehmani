@@ -112,19 +112,6 @@ const AboutSection = ({ compact = false }: AboutSectionProps) => {
               <cite className="font-body text-sm text-muted-foreground mt-3 block not-italic">— Dr. Ahmad Rehmani, D.O. · Owner, North Houston Retina</cite>
             </blockquote>
 
-            {/* Chips */}
-            <div className="flex flex-wrap gap-3">
-              {chips.map((chip) => {
-                const Icon = chip.icon;
-                return (
-                  <span key={chip.label} className="inline-flex items-center gap-1.5 bg-primary text-primary-foreground rounded-full px-4 py-1.5 text-xs font-body font-medium max-w-full">
-                    <Icon className="w-3 h-3 text-gold-light fill-gold-light shrink-0" />
-                    <span className="truncate-none">{chip.label}</span>
-                  </span>
-                );
-              })}
-            </div>
-
             <Link to="/doctor/ahmad-rehmani" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-6 py-3 rounded-lg font-body font-semibold transition-colors text-sm">
               View Full Profile →
             </Link>
