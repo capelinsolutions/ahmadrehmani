@@ -36,9 +36,6 @@ const Footer = () => {
           <div>
             <p className="font-display text-primary-foreground text-lg font-semibold">Dr. Ahmad Rehmani, D.O.</p>
             <p className="font-body text-gold-light text-xs uppercase tracking-[0.12em] mt-1">North Houston Retina, PLLC</p>
-            <p className="font-body text-primary-foreground/65 text-sm mt-4 leading-relaxed">
-              Fellowship-trained vitreoretinal specialist serving Cypress, Bridgeland, Katy, and Northwest Houston. Dedicated to preserving and restoring vision through subspecialty retinal care.
-            </p>
           </div>
 
           {/* Services */}
