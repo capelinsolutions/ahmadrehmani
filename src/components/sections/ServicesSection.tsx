@@ -17,7 +17,7 @@ const ServicesSection = () => {
               Expert Retinal Care
             </span>
             <h2 className="font-display text-foreground text-3xl lg:text-5xl font-bold mt-4 leading-tight">
-              Conditions & Treatments Offered in Cypress, TX
+              Conditions & Treatments&nbsp;
             </h2>
           </div>
           <Link
