@@ -59,22 +59,6 @@ const HeroSection = () => (
             <span className="text-primary-foreground font-medium">North Houston Retina</span>.
           </p>
 
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 max-w-xl">
-            {[
-              "Vitreoretinal Fellowship Trained",
-              "Founder — N. Cypress Surgery Prog.",
-              "28 Active U.S. Clinical Trials",
-              "Former Clinical Asst. Prof. — UTMB",
-            ].map((item) => (
-              <li
-                key={item}
-                className="flex items-start gap-2.5 text-primary-foreground/85 font-body"
-              >
-                <CheckCircle2 className="w-4 h-4 text-gold-light flex-shrink-0 mt-1" />
-                <span className="text-sm font-medium">{item}</span>
-              </li>
-            ))}
-          </ul>
 
           <div className="flex flex-wrap gap-4 pt-2">
             <a
