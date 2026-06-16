@@ -11,21 +11,26 @@ const metrics = [
 const StatsStrip = () => {
   const ref = useScrollAnimation();
   return (
-    <section ref={ref} className="bg-gradient-primary py-10 lg:py-14">
+    <section ref={ref} className="bg-white border-y border-gray-200 py-6 lg:py-8 shadow-sm">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 fade-up">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 max-w-7xl mx-auto fade-up">
           {metrics.map((m, i) => {
             const Icon = m.icon;
             return (
               <div
                 key={m.label}
-                className={`group text-center transition-transform duration-300 hover:-translate-y-1 ${i < 3 ? "lg:border-r lg:border-white/10" : ""}`}
+                className={`flex items-center gap-4 px-4 py-2 group transition-all duration-300 ${
+                  i < 3 ? "lg:border-r lg:border-gray-100" : ""
+                }`}
               >
-                <div className="flex justify-center mb-2">
-                  <Icon className="w-6 h-6 text-gold-light transition-transform duration-300 group-hover:scale-110" />
+                <div className="flex-shrink-0 p-2.5 rounded-lg bg-gray-50 border border-gray-100 group-hover:bg-gray-900 group-hover:border-gray-900 transition-all duration-300">
+                  <Icon className="w-5 h-5 text-gray-900 group-hover:text-white transition-colors duration-300" />
                 </div>
-                <p className="font-display text-gold-light text-4xl lg:text-[42px] font-bold">{m.number}</p>
-                <p className="font-body text-primary-foreground/70 text-xs lg:text-[13px] mt-2 uppercase tracking-wide">{m.label}</p>
+                <div className="text-left">
+                  <span className="font-body text-base lg:text-[15px] font-bold text-gray-900 tracking-tight leading-snug block">
+                    {m.number} <span className="font-normal text-gray-600">{m.label}</span>
+                  </span>
+                </div>
               </div>
             );
           })}
