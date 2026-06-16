@@ -50,13 +50,6 @@ const ServicesSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent" />
                 
-                {/* Treatment count badge */}
-                <div className="absolute top-5 left-5">
-                  <span className="inline-flex items-center gap-1.5 bg-white/95 backdrop-blur-sm text-accent text-xs font-body font-bold uppercase tracking-wider px-4 py-2 rounded-full shadow-lg">
-                    <Stethoscope className="w-3.5 h-3.5" />
-                    {cat.subServices.length} Treatments
-                  </span>
-                </div>
 
                 {/* Category title on image */}
                 <h3 className="absolute bottom-5 left-6 right-6 font-display text-2xl lg:text-[1.65rem] font-bold text-white leading-tight drop-shadow-2xl">

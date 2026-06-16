@@ -57,13 +57,6 @@ const AboutSection = ({ compact = false }: AboutSectionProps) => {
             >
               <img src={drRehmaniPhoto} alt="Dr. Ahmad Rehmani, D.O. — Fellowship-Trained Vitreoretinal Specialist, North Houston Retina, Cypress TX" className="w-full h-full object-cover object-top" loading="lazy" />
             </div>
-            <div className="absolute bottom-4 right-4 bg-background rounded-xl px-5 py-3 shadow-lg flex items-center gap-3">
-              <ShieldCheck className="w-6 h-6 text-accent" />
-              <div>
-                <p className="font-body text-sm font-semibold text-foreground">Fellowship-Trained</p>
-                <p className="font-body text-xs text-muted-foreground">Vitreoretinal Specialist</p>
-              </div>
-            </div>
           </div>
 
           {/* Right */}

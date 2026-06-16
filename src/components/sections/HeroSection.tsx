@@ -121,61 +121,6 @@ const HeroSection = () => (
                 width={1280}
                 height={1280}
               />
-              {/* Dark gradient overlay for legibility */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background:
-                    "linear-gradient(180deg, hsl(215 65% 8% / 0.15) 0%, hsl(215 65% 8% / 0.35) 55%, hsl(215 65% 6% / 0.92) 100%)",
-                }}
-                aria-hidden="true"
-              />
-
-              {/* Floating location chip top-left */}
-              <div className="absolute top-5 left-5 inline-flex items-center gap-2 bg-[hsl(215_65%_10%_/_0.7)] backdrop-blur-md border border-white/15 py-2 px-3.5 rounded-full">
-                <span className="w-2 h-2 rounded-full bg-gold-light animate-pulse" />
-                <span className="text-[10px] uppercase tracking-[0.22em] font-body font-semibold text-primary-foreground">
-                  North Houston Retina · Cypress
-                </span>
-              </div>
-
-              {/* Bottom recognition panel */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-7">
-                <div className="rounded-2xl border border-white/15 backdrop-blur-xl p-5 md:p-6 bg-[hsl(215_65%_10%_/_0.65)]">
-                  <div className="flex items-center justify-between gap-4">
-                    <div className="flex items-center gap-4">
-                      <span className="font-display text-5xl font-light text-primary-foreground leading-none">
-                        5.0
-                      </span>
-                      <div>
-                        <div className="flex gap-0.5 mb-1">
-                          {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className="w-4 h-4 text-gold-light fill-gold-light"
-                            />
-                          ))}
-                        </div>
-                        <p className="text-primary-foreground/60 text-[10px] font-body font-medium tracking-[0.18em] uppercase">
-                          Google Reviews
-                        </p>
-                      </div>
-                    </div>
-                    <Link
-                      to="/contact"
-                      className="hidden sm:inline-flex items-center px-5 py-3 bg-gradient-to-r from-accent to-accent-light hover:from-accent-light hover:to-accent transition-all text-accent-foreground font-body font-bold rounded-xl shadow-lg shadow-accent/30 text-sm"
-                    >
-                      Request a Call Back
-                    </Link>
-                  </div>
-                  <Link
-                    to="/contact"
-                    className="sm:hidden mt-4 block w-full text-center py-3 bg-gradient-to-r from-accent to-accent-light text-accent-foreground font-body font-bold rounded-xl shadow-lg shadow-accent/30 text-sm"
-                  >
-                    Request a Call Back
-                  </Link>
-                </div>
-              </div>
             </div>
           </div>
         </div>
