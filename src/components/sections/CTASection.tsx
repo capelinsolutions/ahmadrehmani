@@ -18,6 +18,7 @@ const CTASection = () => {
           <div className="space-y-6">
             <h2 className="font-display text-primary-foreground text-3xl lg:text-4xl font-bold leading-tight">
               Ready to Protect Your Vision? Schedule Your Consultation Today.
+            </h2>
             <div className="flex flex-wrap gap-4">
               <a
                 href="tel:+13465870223"
