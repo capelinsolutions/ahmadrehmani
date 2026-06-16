@@ -19,9 +19,6 @@ const CTASection = () => {
             <h2 className="font-display text-primary-foreground text-3xl lg:text-4xl font-bold leading-tight">
               Ready to Protect Your Vision? Schedule Your Consultation Today.
             </h2>
-            <p className="font-body text-primary-foreground/70 leading-relaxed">
-              Don't wait for vision problems to worsen. Whether you're managing macular degeneration, diabetic eye disease, need a specialist second opinion, or are experiencing new flashes and floaters — Dr. Rehmani's Cypress team is ready to help. Same-day evaluation available for retinal emergencies.
-            </p>
             <div className="flex flex-wrap gap-4">
               <a
                 href="tel:+13465870223"

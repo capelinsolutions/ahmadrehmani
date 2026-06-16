@@ -28,9 +28,6 @@ const ContactSection = () => {
           <h2 className="font-display text-foreground text-3xl lg:text-4xl font-bold mt-3">
             Request an Appointment or Ask a Question
           </h2>
-          <p className="font-body text-muted-foreground mt-4 max-w-xl mx-auto">
-            Now welcoming new patients in Cypress, Bridgeland, Katy, and the Northwest Houston area.
-          </p>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-12 fade-up">

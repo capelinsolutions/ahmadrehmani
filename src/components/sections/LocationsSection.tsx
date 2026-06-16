@@ -142,23 +142,6 @@ const LocationsSection = () => {
                 </div>
               </div>
 
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-2 border-t border-white/10 pt-6">
-                {[
-                  "Free On-Site Parking",
-                  "Wheelchair Accessible",
-                  "Most Insurance Accepted",
-                  "Same-Day Emergencies",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className="group flex items-center gap-2 text-primary-foreground/85 font-body text-sm transition-all duration-300 hover:text-gold-light hover:translate-x-1 cursor-default"
-                  >
-                    <CheckCircle2 className="w-4 h-4 text-gold-light flex-shrink-0 transition-transform duration-300 group-hover:scale-125" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
               <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <a
                   href="tel:+13465870223"
