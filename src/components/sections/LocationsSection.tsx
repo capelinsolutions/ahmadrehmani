@@ -66,10 +66,10 @@ const LocationsSection = () => {
             <div className="lg:col-span-6 p-7 lg:p-12 flex flex-col justify-center space-y-7">
               <div>
                 <h3 className="font-display text-primary-foreground text-2xl lg:text-[2rem] font-semibold leading-tight">
-                  North Houston Retina, PLLC
+                  Cypress, TX Clinic
                 </h3>
                 <p className="font-body text-primary-foreground/55 text-sm mt-2">
-                  Cypress, TX · Northwest Houston Corridor
+                  Northwest Houston Corridor
                 </p>
               </div>
 
