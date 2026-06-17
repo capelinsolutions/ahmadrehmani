@@ -70,9 +70,6 @@ const InsuranceSection = ({ showPending = false }: Props) => {
           <h2 className="font-display text-foreground text-3xl lg:text-4xl font-bold mt-3">
             Insurance Plans Accepted at North Houston Retina
           </h2>
-          <p className="font-body text-gray-600 mt-4 max-w-2xl mx-auto">
-            We are continuously expanding our in-network plans. As a courtesy, we will also hold claims for patients with pending insurances. Call <a href="tel:+13465870223" className="text-accent font-semibold">(346) 587-0223</a> to verify your specific coverage.
-          </p>
         </div>
 
         {/* Accepted */}
