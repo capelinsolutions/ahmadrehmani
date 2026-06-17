@@ -65,10 +65,16 @@ const LocationsSection = () => {
             {/* Info side */}
             <div className="lg:col-span-6 p-7 lg:p-12 flex flex-col justify-center space-y-7">
               <div>
+                <div className="inline-flex items-center gap-1.5 bg-gold-light/10 border border-gold-light/20 px-2.5 py-0.5 rounded-full mb-3">
+                  <span className="w-1.5 h-1.5 rounded-full bg-gold-light animate-pulse"></span>
+                  <span className="text-[10px] text-gold-light font-body font-semibold uppercase tracking-wider">
+                    Accepting New Patients
+                  </span>
+                </div>
                 <h3 className="font-display text-primary-foreground text-2xl lg:text-[2rem] font-semibold leading-tight">
                   Cypress, TX Clinic
                 </h3>
-                <p className="font-body text-primary-foreground/55 text-sm mt-2">
+                <p className="font-body text-primary-foreground/55 text-sm mt-1.5">
                   Northwest Houston Corridor
                 </p>
               </div>
