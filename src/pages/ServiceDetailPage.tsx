@@ -145,16 +145,16 @@ const ServiceDetailPage = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-primary py-14">
-        <div className="container mx-auto px-4 text-center text-primary-foreground">
+      <section className="bg-gradient-primary border-y border-border py-14">
+        <div className="container mx-auto px-4 text-center text-foreground">
           <h2 className="font-display text-3xl lg:text-4xl font-bold">Concerned about {service.name.toLowerCase()}?</h2>
-          <p className="font-body text-primary-foreground/80 mt-3 max-w-2xl mx-auto">Same-day evaluation available for urgent retinal symptoms. Call our Cypress office or request a consultation online.</p>
+          <p className="font-body text-muted-foreground mt-3 max-w-2xl mx-auto">Same-day evaluation available for urgent retinal symptoms. Call our Cypress office or request a consultation online.</p>
           <div className="flex flex-wrap gap-3 justify-center mt-6">
             <a href="tel:+13465870223" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-6 py-3 rounded-lg font-body font-semibold">
               <Phone className="w-4 h-4" />
               Call (346) 587-0223
             </a>
-            <Link to="/contact" className="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 text-primary-foreground px-6 py-3 rounded-lg font-body font-semibold border border-white/25">
+            <Link to="/contact" className="inline-flex items-center gap-2 bg-background hover:bg-secondary text-foreground px-6 py-3 rounded-lg font-body font-semibold border border-border">
               Request Consultation
             </Link>
           </div>
