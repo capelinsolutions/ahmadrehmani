@@ -67,7 +67,7 @@ const ThemeSwitcher = () => {
     <div className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-primary-foreground transition-colors font-body text-xs uppercase tracking-wider bg-white/10 px-3 py-1.5 rounded-full border border-white/15 hover:bg-white/20"
+        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors font-body text-xs uppercase tracking-wider bg-secondary px-3 py-1.5 rounded-full border border-border hover:bg-accent-pale"
         aria-label="Change color palette"
       >
         <Palette className="w-4 h-4" />
@@ -76,25 +76,24 @@ const ThemeSwitcher = () => {
 
       {open && (
         <div
-          className="absolute bottom-full mb-3 left-0 rounded-xl p-3 space-y-1 shadow-2xl border border-white/20 min-w-[240px]"
-          style={{ background: "hsl(215 65% 18%)" }}
+          className="absolute bottom-full mb-3 left-0 rounded-xl p-3 space-y-1 shadow-2xl border border-border min-w-[240px] bg-background"
         >
-          <p className="font-body text-[10px] text-primary-foreground/40 uppercase tracking-widest px-3 pb-1">Blue & White Themes</p>
+          <p className="font-body text-[10px] text-muted-foreground uppercase tracking-widest px-3 pb-1">Blue & White Themes</p>
           {themes.map((t) => (
             <button
               key={t.id}
               onClick={() => { setActive(t.id); setOpen(false); }}
               className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-all ${
-                active === t.id ? "bg-white/20 text-primary-foreground ring-1 ring-white/25" : "text-primary-foreground/60 hover:bg-white/10 hover:text-primary-foreground"
+                active === t.id ? "bg-accent-pale text-foreground ring-1 ring-accent/30" : "text-muted-foreground hover:bg-secondary hover:text-foreground"
               }`}
             >
               <div className="flex gap-1.5">
-                <span className="w-4 h-4 rounded-full border border-white/20" style={{ background: `hsl(${t.primary})` }} />
-                <span className="w-4 h-4 rounded-full border border-white/20" style={{ background: `hsl(${t.accent})` }} />
-                <span className="w-4 h-4 rounded-full border border-white/20" style={{ background: `hsl(${t.gold})` }} />
+                <span className="w-4 h-4 rounded-full border border-border" style={{ background: `hsl(${t.primary})` }} />
+                <span className="w-4 h-4 rounded-full border border-border" style={{ background: `hsl(${t.accent})` }} />
+                <span className="w-4 h-4 rounded-full border border-border" style={{ background: `hsl(${t.gold})` }} />
               </div>
               <span className="font-body text-xs font-medium">{t.label}</span>
-              {active === t.id && <span className="ml-auto text-accent-light text-xs">✓</span>}
+              {active === t.id && <span className="ml-auto text-accent text-xs">✓</span>}
             </button>
           ))}
         </div>
