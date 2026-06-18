@@ -120,9 +120,9 @@ const ContactSection = () => {
             </div>
 
             {/* Social panel */}
-            <div className="bg-primary rounded-xl p-6 space-y-4">
-              <h3 className="font-display text-primary-foreground text-lg font-semibold">Connect With Dr. Rehmani</h3>
-              <p className="font-body text-primary-foreground/60 text-sm">
+            <div className="bg-gradient-card border border-border rounded-xl p-6 space-y-4">
+              <h3 className="font-display text-foreground text-lg font-semibold">Connect With Dr. Rehmani</h3>
+              <p className="font-body text-muted-foreground text-sm">
                 Follow @retinadoctor on Instagram for retinal health education — "retina in simpler terms."
               </p>
               <div className="flex gap-3">
@@ -137,7 +137,7 @@ const ContactSection = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className="w-10 h-10 rounded-full bg-primary-mid flex items-center justify-center text-primary-foreground hover:bg-accent hover:scale-110 hover:-translate-y-0.5 transition-all duration-300"
+                    className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground hover:bg-accent hover:scale-110 hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <s.icon className="w-5 h-5" />
                   </a>
