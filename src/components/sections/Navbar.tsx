@@ -76,9 +76,9 @@ const Navbar = () => {
                 {/* Dropdown */}
                 <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                   <div className="w-72 bg-background rounded-xl shadow-2xl border border-border overflow-hidden">
-                    <div className="px-4 py-3 bg-gradient-deep">
-                      <p className="font-display text-primary-foreground text-sm font-semibold">Conditions & Treatments</p>
-                      <p className="font-body text-primary-foreground/60 text-[11px]">Browse by category</p>
+                    <div className="px-4 py-3 bg-accent-pale border-b border-border">
+                      <p className="font-display text-foreground text-sm font-semibold">Conditions & Treatments</p>
+                      <p className="font-body text-muted-foreground text-[11px]">Browse by category</p>
                     </div>
                     <div className="py-2">
                       {serviceCategories.map((cat) => (
