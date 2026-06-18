@@ -64,30 +64,30 @@ const WhyChooseSection = () => {
 
           {/* Right - stats card */}
           <div
-            className="bg-gradient-card rounded-2xl p-8 space-y-6 fade-up shadow-lg"
+            className="bg-gradient-card border border-border rounded-2xl p-8 space-y-6 fade-up shadow-lg"
           >
-            <h3 className="font-display text-primary-foreground text-xl font-semibold">Patient Outcome Indicators</h3>
+            <h3 className="font-display text-foreground text-xl font-semibold">Patient Outcome Indicators</h3>
             <div className="space-y-4">
               {outcomeMetrics.map((m) => (
                 <div key={m.label}>
                   <div className="flex justify-between mb-1.5 gap-3">
-                    <span className="font-body text-primary-foreground/75 text-sm">{m.label}</span>
-                    <span className="font-body text-gold-light text-sm font-semibold whitespace-nowrap">{m.value}</span>
+                    <span className="font-body text-foreground/80 text-sm">{m.label}</span>
+                    <span className="font-body text-accent text-sm font-semibold whitespace-nowrap">{m.value}</span>
                   </div>
-                  <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                  <div className="h-2 bg-background/60 rounded-full overflow-hidden">
                     <div
                       className="h-full rounded-full"
                       style={{
                         width: m.width,
-                        background: "linear-gradient(90deg, hsl(210 90% 58%), hsl(200 100% 78%))",
+                        background: "linear-gradient(90deg, hsl(210 90% 48%), hsl(200 100% 60%))",
                       }}
                     />
                   </div>
                 </div>
               ))}
             </div>
-            <div className="border-t border-white/10 pt-5">
-              <p className="font-body text-primary-foreground/50 text-xs uppercase tracking-wider mb-2">Training & Affiliations</p>
+            <div className="border-t border-border pt-5">
+              <p className="font-body text-muted-foreground text-xs uppercase tracking-wider mb-2">Training & Affiliations</p>
               <ul className="space-y-1.5">
                 {[
                   "Former Clinical Assistant Professor — UTMB",
@@ -96,7 +96,7 @@ const WhyChooseSection = () => {
                   "American Society of Retina Specialists (ASRS)",
                   "American Academy of Ophthalmology (AAO)",
                 ].map((h) => (
-                  <li key={h} className="font-body text-primary-foreground/85 text-sm">{h}</li>
+                  <li key={h} className="font-body text-foreground/85 text-sm">{h}</li>
                 ))}
               </ul>
             </div>
