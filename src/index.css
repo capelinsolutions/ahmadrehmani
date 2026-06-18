@@ -59,12 +59,12 @@
     --shadow-md: 0 6px 24px hsla(215, 50%, 18%, 0.12);
     --shadow-lg: 0 16px 48px hsla(215, 50%, 18%, 0.18);
 
-    /* === Rich blue gradients === */
-    --gradient-primary: linear-gradient(135deg, hsl(215 75% 18%) 0%, hsl(215 70% 28%) 35%, hsl(210 85% 42%) 70%, hsl(200 95% 55%) 100%);
-    --gradient-deep: linear-gradient(135deg, hsl(222 82% 6%) 0%, hsl(220 78% 10%) 50%, hsl(215 75% 14%) 100%);
-    --gradient-bright: linear-gradient(135deg, hsl(215 80% 30%) 0%, hsl(210 90% 48%) 50%, hsl(200 100% 60%) 100%);
+    /* === Light blue & white gradients === */
+    --gradient-primary: linear-gradient(135deg, hsl(210 80% 97%) 0%, hsl(210 70% 94%) 50%, hsl(210 75% 90%) 100%);
+    --gradient-deep: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 60% 98%) 50%, hsl(210 70% 95%) 100%);
+    --gradient-bright: linear-gradient(135deg, hsl(210 90% 96%) 0%, hsl(210 90% 90%) 50%, hsl(200 95% 88%) 100%);
     --gradient-soft: linear-gradient(180deg, hsl(210 60% 99%) 0%, hsl(210 70% 96%) 50%, hsl(210 80% 92%) 100%);
-    --gradient-card: linear-gradient(135deg, hsl(215 65% 22%) 0%, hsl(212 75% 35%) 45%, hsl(205 85% 48%) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(210 60% 98%) 0%, hsl(210 70% 94%) 45%, hsl(200 80% 90%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(210 90% 48%), hsl(200 100% 60%));
 
     --font-display: 'Playfair Display', Georgia, serif;
