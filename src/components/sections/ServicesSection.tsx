@@ -61,7 +61,7 @@ const ServicesSection = () => {
                   <span className="font-body font-bold text-sm text-foreground group-hover:text-accent transition-colors duration-300">
                     Learn More
                   </span>
-                  <span className="w-11 h-11 rounded-full bg-gradient-primary text-white flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:translate-x-1.5 group-hover:scale-110 transition-all duration-300">
+                  <span className="w-11 h-11 rounded-full bg-accent text-accent-foreground flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:translate-x-1.5 group-hover:scale-110 transition-all duration-300">
                     <ArrowRight className="w-5 h-5" />
                   </span>
                 </div>

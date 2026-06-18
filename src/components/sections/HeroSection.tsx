@@ -5,25 +5,25 @@ import clinicHero from "@/assets/dr-rehmani-exam.jpg";
 const HeroSection = () => (
   <section
     id="hero"
-    className="relative w-full overflow-hidden bg-[#030816]"
+    className="relative w-full overflow-hidden bg-gradient-soft"
     style={{ minHeight: "92vh" }}
   >
     {/* Ambient background glows */}
     <div
       className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full blur-[120px] -mr-48 -mt-48 pointer-events-none"
-      style={{ background: "hsl(210 90% 48% / 0.22)" }}
+      style={{ background: "hsl(210 90% 48% / 0.12)" }}
       aria-hidden="true"
     />
     <div
       className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full blur-[120px] -ml-24 -mb-24 pointer-events-none"
-      style={{ background: "hsl(200 95% 55% / 0.15)" }}
+      style={{ background: "hsl(200 95% 55% / 0.10)" }}
       aria-hidden="true"
     />
     <div
-      className="absolute inset-0 pointer-events-none opacity-[0.05]"
+      className="absolute inset-0 pointer-events-none opacity-[0.06]"
       style={{
         backgroundImage:
-          "radial-gradient(circle at 2px 2px, rgba(255,255,255,0.6) 1px, transparent 0)",
+          "radial-gradient(circle at 2px 2px, hsl(215 50% 25% / 0.5) 1px, transparent 0)",
         backgroundSize: "28px 28px",
       }}
       aria-hidden="true"
@@ -35,18 +35,18 @@ const HeroSection = () => (
         <div className="lg:col-span-6 flex flex-col space-y-8 animate-fade-in">
 
           <h1
-            className="font-display text-primary-foreground leading-[1.05]"
+            className="font-display text-foreground leading-[1.05]"
             style={{ fontSize: "clamp(44px, 6vw, 78px)" }}
           >
             Houston's Medical &amp;{" "}
-            <span className="text-gold-light italic font-medium">Surgical</span>{" "}
+            <span className="text-accent italic font-medium">Surgical</span>{" "}
             Vitreo-Retinal Specialist
           </h1>
 
-          <p className="text-lg md:text-xl font-body leading-relaxed max-w-xl text-primary-foreground/70">
+          <p className="text-lg md:text-xl font-body leading-relaxed max-w-xl text-muted-foreground">
             Dr. Ahmad Rehmani, D.O. delivers elite, fellowship-trained care for complex
             retinal and ocular conditions at{" "}
-            <span className="text-primary-foreground font-medium">North Houston Retina</span>.
+            <span className="text-foreground font-medium">North Houston Retina</span>.
           </p>
 
 
@@ -60,7 +60,7 @@ const HeroSection = () => (
             </a>
             <Link
               to="/services"
-              className="inline-flex items-center px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/20 transition-all text-primary-foreground font-body font-semibold rounded-lg backdrop-blur-sm"
+              className="inline-flex items-center px-8 py-4 bg-background hover:bg-secondary border border-border transition-all text-foreground font-body font-semibold rounded-lg"
             >
               Explore Our Services
             </Link>
@@ -72,17 +72,17 @@ const HeroSection = () => (
           {/* Halo glow */}
           <div
             className="absolute -inset-6 rounded-[2.5rem] blur-3xl pointer-events-none"
-            style={{ background: "hsl(210 90% 48% / 0.25)" }}
+            style={{ background: "hsl(210 90% 48% / 0.18)" }}
             aria-hidden="true"
           />
 
-          <div className="relative rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
-            {/* Gold gradient top accent */}
+          <div className="relative rounded-[2rem] overflow-hidden border border-border shadow-2xl">
+            {/* Accent top line */}
             <div
               className="absolute top-0 left-0 w-full h-px opacity-70 z-20"
               style={{
                 background:
-                  "linear-gradient(90deg, transparent, hsl(var(--gold-light)), transparent)",
+                  "linear-gradient(90deg, transparent, hsl(var(--accent)), transparent)",
               }}
               aria-hidden="true"
             />
@@ -103,10 +103,10 @@ const HeroSection = () => (
 
     {/* Scroll indicator */}
     <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce-slow">
-      <span className="text-primary-foreground/40 text-[10px] font-body uppercase tracking-[0.25em]">
+      <span className="text-muted-foreground text-[10px] font-body uppercase tracking-[0.25em]">
         Scroll
       </span>
-      <ChevronDown className="w-5 h-5 text-primary-foreground/40" />
+      <ChevronDown className="w-5 h-5 text-muted-foreground" />
     </div>
   </section>
 );
