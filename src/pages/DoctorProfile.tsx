@@ -22,13 +22,13 @@ const DoctorProfile = () => {
       </Helmet>
 
       {/* Top bar */}
-      <div className="bg-primary sticky top-0 z-40" style={{ backdropFilter: "blur(12px)" }}>
+      <div className="bg-background border-b border-border sticky top-0 z-40" style={{ backdropFilter: "blur(12px)" }}>
         <div className="container mx-auto px-4 flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 text-primary-foreground font-body text-sm hover:text-gold-light transition-colors">
+          <Link to="/" className="flex items-center gap-2 text-foreground font-body text-sm hover:text-accent transition-colors">
             <ArrowLeft className="w-4 h-4" />
             Back to Home
           </Link>
-          <a href="tel:+13465870223" className="flex items-center gap-1.5 text-gold-light text-sm font-body font-medium">
+          <a href="tel:+13465870223" className="flex items-center gap-1.5 text-accent text-sm font-body font-medium">
             <Phone className="w-4 h-4" />
             (346) 587-0223
           </a>
@@ -36,12 +36,12 @@ const DoctorProfile = () => {
       </div>
 
       {/* Hero Banner */}
-      <section className="relative bg-gradient-to-br from-primary via-[hsl(215_70%_30%)] to-primary overflow-hidden">
+      <section className="relative bg-gradient-deep border-b border-border overflow-hidden">
         <div className="container mx-auto px-4 py-12 lg:py-20">
           <div className="grid lg:grid-cols-[360px_1fr] gap-10 lg:gap-16 items-center">
             {/* Photo */}
             <div className="relative mx-auto lg:mx-0 w-72 lg:w-full">
-              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+              <div className="rounded-2xl overflow-hidden shadow-2xl border-4 border-background">
                 <img src={drHero} alt="Dr. Ahmad Rehmani, D.O. — Vitreoretinal Specialist at North Houston Retina" className="w-full h-auto object-contain" />
               </div>
               <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground rounded-full px-5 py-2 flex items-center gap-2 shadow-lg">
@@ -54,17 +54,17 @@ const DoctorProfile = () => {
             <div className="text-center lg:text-left space-y-6">
               <div>
                 <p className="font-body text-accent text-sm font-semibold uppercase tracking-wider mb-2">Vitreoretinal Specialist</p>
-                <h1 className="font-display text-primary-foreground text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+                <h1 className="font-display text-foreground text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
                   Dr. Ahmad Rehmani, D.O.
                 </h1>
-                <p className="font-body text-primary-foreground/70 text-lg mt-3">
+                <p className="font-body text-muted-foreground text-lg mt-3">
                   Founder & Physician — North Houston Retina, PLLC
                 </p>
               </div>
 
               <div className="flex flex-wrap justify-center lg:justify-start gap-3">
                 {["Fellowship-Trained", "28 Clinical Trials", "Former Clinical Professor", "Chief Resident", "Founder — North Cypress Surgical Center"].map(badge => (
-                  <span key={badge} className="inline-flex items-center gap-1.5 bg-white/10 text-primary-foreground rounded-full px-4 py-1.5 text-xs font-body font-medium border border-white/10">
+                  <span key={badge} className="inline-flex items-center gap-1.5 bg-secondary text-foreground rounded-full px-4 py-1.5 text-xs font-body font-medium border border-border">
                     <BadgeCheck className="w-3.5 h-3.5 text-accent" />
                     {badge}
                   </span>
@@ -79,8 +79,8 @@ const DoctorProfile = () => {
                   { icon: Stethoscope, label: "Retina & Vitreous" },
                 ].map(item => (
                   <div key={item.label} className="flex flex-col items-center lg:items-start gap-1">
-                    <item.icon className="w-5 h-5 text-gold-light" />
-                    <span className="font-body text-primary-foreground/80 text-xs">{item.label}</span>
+                    <item.icon className="w-5 h-5 text-accent" />
+                    <span className="font-body text-foreground/80 text-xs">{item.label}</span>
                   </div>
                 ))}
               </div>
@@ -89,7 +89,7 @@ const DoctorProfile = () => {
                 <a href="tel:+13465870223" className="bg-accent hover:bg-accent-light text-accent-foreground px-6 py-3 rounded-lg font-body font-semibold transition-colors text-sm">
                   Call to Book
                 </a>
-                <Link to="/#contact" className="border border-white/20 text-primary-foreground hover:bg-white/10 px-6 py-3 rounded-lg font-body font-semibold transition-colors text-sm">
+                <Link to="/#contact" className="border border-border bg-background text-foreground hover:bg-secondary px-6 py-3 rounded-lg font-body font-semibold transition-colors text-sm">
                   Request Appointment
                 </Link>
               </div>
