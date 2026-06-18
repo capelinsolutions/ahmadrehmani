@@ -23,32 +23,32 @@ const ServiceDetailPage = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="bg-gradient-deep py-12 lg:py-20 text-primary-foreground">
+      <section className="bg-gradient-deep border-b border-border py-12 lg:py-20 text-foreground">
         <div className="container mx-auto px-4">
-          <nav className="flex items-center gap-2 text-xs font-body text-primary-foreground/70 mb-6">
-            <Link to="/" className="hover:text-gold-light">Home</Link>
+          <nav className="flex items-center gap-2 text-xs font-body text-muted-foreground mb-6">
+            <Link to="/" className="hover:text-accent">Home</Link>
             <ChevronRight className="w-3 h-3" />
-            <Link to="/services" className="hover:text-gold-light">Services</Link>
+            <Link to="/services" className="hover:text-accent">Services</Link>
             <ChevronRight className="w-3 h-3" />
-            <span className="text-gold-light">{service.name}</span>
+            <span className="text-accent">{service.name}</span>
           </nav>
 
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div className="space-y-5">
-              <span className="font-body text-sm text-gold-light font-semibold uppercase tracking-wider">Conditions & Treatments</span>
+              <span className="font-body text-sm text-accent font-semibold uppercase tracking-wider">Conditions & Treatments</span>
               <h1 className="font-display text-4xl lg:text-5xl font-bold leading-tight">{service.name}</h1>
-              <p className="font-body text-primary-foreground/80 text-lg leading-relaxed">{service.shortDescription}</p>
+              <p className="font-body text-muted-foreground text-lg leading-relaxed">{service.shortDescription}</p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <a href="tel:+13465870223" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-5 py-3 rounded-lg font-body font-semibold">
                   <Phone className="w-4 h-4" />
                   Call (346) 587-0223
                 </a>
-                <Link to="/contact" className="inline-flex items-center gap-2 border border-primary-foreground/30 hover:bg-white/10 px-5 py-3 rounded-lg font-body font-medium">
+                <Link to="/contact" className="inline-flex items-center gap-2 border border-border bg-background hover:bg-secondary px-5 py-3 rounded-lg font-body font-medium">
                   Request Consultation
                 </Link>
               </div>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-border">
               <img src={service.image} alt={`${service.name} — medical illustration`} width={1280} height={720} className="w-full h-auto object-cover" />
             </div>
           </div>
