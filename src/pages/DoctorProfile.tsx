@@ -333,7 +333,7 @@ const DoctorProfile = () => {
               </div>
 
               {/* Credentials Summary */}
-              <div className="bg-primary rounded-2xl p-6 space-y-4 text-primary-foreground">
+              <div className="bg-gradient-card border border-border rounded-2xl p-6 space-y-4 text-foreground">
                 <h3 className="font-display text-lg font-bold">Quick Facts</h3>
                 <div className="space-y-3 font-body text-sm">
                   {[
@@ -347,8 +347,8 @@ const DoctorProfile = () => {
                     "Keidaean Honor Society",
                   ].map(fact => (
                     <div key={fact} className="flex items-start gap-2">
-                      <Star className="w-3.5 h-3.5 text-gold-light shrink-0 mt-0.5" />
-                      <span className="text-primary-foreground/85">{fact}</span>
+                      <Star className="w-3.5 h-3.5 text-accent shrink-0 mt-0.5" />
+                      <span className="text-foreground/85">{fact}</span>
                     </div>
                   ))}
                 </div>
