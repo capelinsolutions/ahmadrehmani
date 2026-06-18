@@ -94,21 +94,21 @@ const ServiceDetailPage = () => {
             </div>
 
             {/* Treatments */}
-            <div className="bg-gradient-card rounded-2xl p-8 text-primary-foreground shadow-lg">
-              <div className="flex items-center gap-3 mb-6 pb-5 border-b border-white/15">
-                <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center">
-                  <Stethoscope className="w-6 h-6 text-gold-light" />
+            <div className="bg-gradient-card border border-border rounded-2xl p-8 text-foreground shadow-lg">
+              <div className="flex items-center gap-3 mb-6 pb-5 border-b border-border">
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <Stethoscope className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <p className="font-body text-xs text-primary-foreground/60 uppercase tracking-wider">How We Treat</p>
+                  <p className="font-body text-xs text-muted-foreground uppercase tracking-wider">How We Treat</p>
                   <h3 className="font-display text-2xl font-bold">Treatment Options</h3>
                 </div>
               </div>
               <ul className="space-y-3">
                 {service.treatments.map((t) => (
                   <li key={t} className="flex items-start gap-3">
-                    <span className="shrink-0 w-2 h-2 rounded-full bg-gold-light mt-2.5" />
-                    <span className="font-body text-primary-foreground/90 leading-relaxed">{t}</span>
+                    <span className="shrink-0 w-2 h-2 rounded-full bg-accent mt-2.5" />
+                    <span className="font-body text-foreground/90 leading-relaxed">{t}</span>
                   </li>
                 ))}
               </ul>
