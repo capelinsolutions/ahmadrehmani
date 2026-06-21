@@ -1,27 +1,52 @@
 import SectionCTA from "@/components/SectionCTA";
-import {
-  ArrowRight,
-  Eye,
-  Droplets,
-  AlertTriangle,
-  HeartPulse,
-  Microscope,
-  ShieldAlert,
-  Stethoscope,
-  type LucideIcon,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { serviceCategories } from "@/data/services";
+import macularDiseasesIcon from "@/assets/services-icons/macular_diseases.svg";
+import diabeticIcon from "@/assets/services-icons/diabetic_eye_disease.svg";
+import detachmentIcon from "@/assets/services-icons/retinal_detachment_tears.svg";
+import macularDegenerationIcon from "@/assets/services-icons/macular_degeneration.svg";
+import surgicalIcon from "@/assets/services-icons/surgical_vitreoretinal.svg";
+import dislocatedLensIcon from "@/assets/services-icons/dislocated_lens_dense_cataract.svg";
 
-const serviceIcons: Record<string, LucideIcon> = {
-  "macular-diseases": Eye,
-  "diabetic-eye-disease": Droplets,
-  "retinal-detachment-tears": AlertTriangle,
-  "retinal-vascular-disease": HeartPulse,
-  "vitreous-surgical-conditions": Microscope,
-  "inflammatory-other": ShieldAlert,
-};
+const services = [
+  {
+    name: "Macular Diseases",
+    description: "Conditions affecting the macula, the central retina responsible for sharp, detailed vision.",
+    icon: macularDiseasesIcon,
+    slug: "macular-diseases",
+  },
+  {
+    name: "Diabetic Eye Disease",
+    description: "Retinal damage from diabetes, including leaking vessels, swelling, and bleeding.",
+    icon: diabeticIcon,
+    slug: "diabetic-eye-disease",
+  },
+  {
+    name: "Retinal Detachment & Tears",
+    description: "The retina lifts or tears away from the back of the eye, a vision-threatening emergency.",
+    icon: detachmentIcon,
+    slug: "retinal-detachment-tears",
+  },
+  {
+    name: "Macular Degeneration",
+    description: "Age-related breakdown of the macula causing loss of central vision over time.",
+    icon: macularDegenerationIcon,
+    slug: "macular-diseases",
+  },
+  {
+    name: "Surgical Vitreo-Retinal Conditions",
+    description: "Advanced microsurgery for the vitreous and retina to repair complex eye problems.",
+    icon: surgicalIcon,
+    slug: "vitreous-surgical-conditions",
+  },
+  {
+    name: "Dislocated Lenses & Dense Cataract",
+    description: "Displaced or severely clouded lenses requiring specialized retinal surgical care.",
+    icon: dislocatedLensIcon,
+    slug: "vitreous-surgical-conditions",
+  },
+];
 
 const ServicesSection = () => {
   const ref = useScrollAnimation();
@@ -49,37 +74,32 @@ const ServicesSection = () => {
 
         {/* Service Cards Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {serviceCategories.map((cat, i) => {
-            const Icon = serviceIcons[cat.slug] ?? Stethoscope;
-            return (
-              <Link
-                to={`/services/${cat.slug}`}
-                key={cat.slug}
-                className="group relative flex flex-col bg-background p-6 rounded-2xl border border-border/80 hover:shadow-[0_12px_30px_-10px_rgba(0,0,0,0.12)] hover:-translate-y-1.5 hover:border-accent/40 transition-all duration-300 fade-up"
-                style={{ transitionDelay: `${i * 80}ms` }}
-              >
-                {/* Content */}
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 shrink-0 rounded-xl bg-accent/5 border border-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300">
-                    <Icon className="w-6 h-6" strokeWidth={1.5} />
-                  </div>
-                  <h3 className="font-display text-xl font-bold text-foreground leading-snug group-hover:text-accent transition-colors pt-1">
-                    {cat.name}
-                  </h3>
+          {services.map((svc, i) => (
+            <Link
+              to={`/services/${svc.slug}`}
+              key={`${svc.slug}-${i}`}
+              className="group relative flex flex-col bg-background p-6 rounded-2xl border border-border/80 hover:shadow-[0_12px_30px_-10px_rgba(0,0,0,0.12)] hover:-translate-y-1.5 hover:border-accent/40 transition-all duration-300 fade-up"
+              style={{ transitionDelay: `${i * 80}ms` }}
+            >
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-14 h-14 shrink-0 rounded-xl bg-accent/5 border border-accent/10 flex items-center justify-center group-hover:bg-accent/10 transition-all duration-300">
+                  <img src={svc.icon} alt="" className="w-9 h-9" />
                 </div>
+                <h3 className="font-display text-xl font-bold text-foreground leading-snug group-hover:text-accent transition-colors pt-1">
+                  {svc.name}
+                </h3>
+              </div>
 
-                <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-1 mb-4 pl-16">
-                  {cat.shortDescription}
-                </p>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-1 mb-4 pl-[72px]">
+                {svc.description}
+              </p>
 
-                {/* Learn More link */}
-                <div className="mt-auto pl-16 flex items-center gap-1.5 text-xs font-bold text-accent/80 group-hover:text-accent transition-colors duration-300">
-                  <span>Learn More</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                </div>
-              </Link>
-            );
-          })}
+              <div className="mt-auto pl-[72px] flex items-center gap-1.5 text-xs font-bold text-accent/80 group-hover:text-accent transition-colors duration-300">
+                <span>Learn More</span>
+                <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+              </div>
+            </Link>
+          ))}
         </div>
         <SectionCTA to="/services" label="Explore All Services" />
       </div>
@@ -88,4 +108,3 @@ const ServicesSection = () => {
 };
 
 export default ServicesSection;
-
