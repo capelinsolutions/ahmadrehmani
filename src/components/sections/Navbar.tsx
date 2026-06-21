@@ -72,7 +72,7 @@ const Navbar = () => {
         <nav className="hidden lg:flex items-center gap-7 xl:gap-9 h-full">
           {navLinks.map((link) =>
             link.hasDropdown ? (
-              <div key={link.to} className="group h-full flex items-center relative">
+              <div key={link.to} className="group h-full flex items-center">
                 <NavLink
                   to={link.to}
                   className={({ isActive }) =>
