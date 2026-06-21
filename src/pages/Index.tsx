@@ -7,12 +7,14 @@ import ReviewsSection from "@/components/sections/ReviewsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import ContactSection from "@/components/sections/ContactSection";
 import CTASection from "@/components/sections/CTASection";
+import SocietiesSection from "@/components/sections/SocietiesSection";
 
 const Index = () => (
   <PageShell>
     <HeroSection />
     <AboutSection compact />
     <ServicesSection />
+    <SocietiesSection />
     <LocationsSection />
     <ReviewsSection />
     <FAQSection />
