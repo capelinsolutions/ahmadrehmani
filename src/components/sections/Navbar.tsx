@@ -86,10 +86,10 @@ const Navbar = () => {
                 </NavLink>
 
                 {/* Mega Menu */}
-                <div className="absolute left-1/2 -translate-x-1/2 top-full w-screen max-w-[1100px] opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50 pt-3">
+                <div className="absolute left-1/2 -translate-x-1/2 top-full w-[min(1100px,calc(100vw-2rem))] opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50 pt-3">
                   <div className="bg-background border border-border shadow-2xl rounded-2xl overflow-hidden">
-                    <div className="grid grid-cols-12 gap-8 p-10">
-                      <div className="col-span-3">
+                    <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 p-6 lg:p-10">
+                      <div className="md:col-span-3">
                         <h4 className="font-display text-foreground font-bold text-lg mb-5">
                           Surgical Retina
                         </h4>
@@ -106,7 +106,7 @@ const Navbar = () => {
                           ))}
                         </ul>
                       </div>
-                      <div className="col-span-3">
+                      <div className="md:col-span-3">
                         <h4 className="font-display text-foreground font-bold text-lg mb-5">
                           Medical Retina
                         </h4>
@@ -131,12 +131,12 @@ const Navbar = () => {
                       </div>
 
                       {/* Featured panel */}
-                      <div className="col-span-6 bg-accent-pale/60 rounded-xl p-7 flex flex-col justify-between border border-border">
+                      <div className="md:col-span-6 bg-accent-pale/60 rounded-xl p-6 lg:p-7 flex flex-col justify-between border border-border">
                         <div>
                           <span className="font-body text-accent font-bold text-[10px] uppercase tracking-[0.2em] mb-2 block">
                             Featured Specialist
                           </span>
-                          <h4 className="font-display text-2xl font-bold text-foreground mb-3">
+                          <h4 className="font-display text-xl lg:text-2xl font-bold text-foreground mb-3">
                             Dr. Ahmad Rehmani, D.O.
                           </h4>
                           <p className="font-body text-muted-foreground text-sm leading-relaxed mb-5">
@@ -144,7 +144,7 @@ const Navbar = () => {
                             for complex retinal and ocular conditions across North Houston.
                           </p>
                         </div>
-                        <div className="flex items-center gap-3">
+                        <div className="flex flex-wrap items-center gap-3">
                           <Link
                             to="/about"
                             className="inline-flex items-center font-body text-sm font-bold text-foreground border-b-2 border-gold pb-0.5 hover:text-accent transition-colors"
