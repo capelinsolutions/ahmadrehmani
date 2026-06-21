@@ -64,16 +64,8 @@ const Navbar = () => {
           <img
             src={logo}
             alt="North Houston Retina logo"
-            className="h-10 lg:h-12 w-auto object-contain"
+            className="h-12 lg:h-14 w-auto object-contain"
           />
-          <div className="hidden sm:flex flex-col leading-tight">
-            <span className="font-display text-base lg:text-lg font-bold text-foreground tracking-tight">
-              NORTH HOUSTON
-            </span>
-            <span className="font-body text-[10px] lg:text-xs font-bold tracking-[0.2em] text-accent">
-              RETINA SPECIALISTS
-            </span>
-          </div>
         </Link>
 
         {/* Desktop Nav */}
