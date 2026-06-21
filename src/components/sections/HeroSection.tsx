@@ -13,11 +13,10 @@ const HeroSection = () => (
       <img
         src={clinicHero}
         alt="North Houston Retina clinic"
-        className="w-full h-full object-cover object-center opacity-85"
+        className="w-full h-full object-cover object-center"
       />
-      {/* Radial overlay: clearer background image at the edges, solid white at the center for readable text */}
-      <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/45 to-background/90 md:from-background/85 md:via-background/30 md:to-background/85" />
-      <div className="absolute inset-0 bg-background/35" />
+      {/* A much lighter overlay to keep the clinical space in the background clearly visible */}
+      <div className="absolute inset-0 bg-background/50 md:bg-background/40" />
     </div>
 
     {/* Ambient background glows */}
