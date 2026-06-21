@@ -15,8 +15,8 @@ const HeroSection = () => (
         alt="North Houston Retina clinic"
         className="w-full h-full object-cover object-center"
       />
-      {/* Soft light overlay for premium legibility & WCAG contrast compliance */}
-      <div className="absolute inset-0 bg-background/90 md:bg-background/85 backdrop-blur-[1px]" />
+      {/* A much lighter overlay to keep the clinical space in the background clearly visible */}
+      <div className="absolute inset-0 bg-background/50 md:bg-background/40" />
     </div>
 
     {/* Ambient background glows */}
