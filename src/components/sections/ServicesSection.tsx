@@ -78,26 +78,29 @@ const ServicesSection = () => {
             <Link
               to={`/services/${svc.slug}`}
               key={`${svc.slug}-${i}`}
-              className="group relative flex flex-col bg-background p-6 rounded-2xl border border-border/80 hover:shadow-[0_12px_30px_-10px_rgba(0,0,0,0.12)] hover:-translate-y-1.5 hover:border-accent/40 transition-all duration-300 fade-up"
+              className="group relative flex flex-col items-center text-center bg-background px-8 py-10 rounded-2xl border border-border/60 hover:border-accent/40 hover:shadow-[0_12px_30px_-10px_rgba(0,0,0,0.10)] hover:-translate-y-1 transition-all duration-300 fade-up"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-14 h-14 shrink-0 rounded-xl bg-accent/5 border border-accent/10 flex items-center justify-center group-hover:bg-accent/10 transition-all duration-300">
-                  <img src={svc.icon} alt="" className="w-9 h-9" />
-                </div>
-                <h3 className="font-display text-xl font-bold text-foreground leading-snug group-hover:text-accent transition-colors pt-1">
-                  {svc.name}
-                </h3>
+              <div className="w-24 h-24 mb-6 flex items-center justify-center">
+                <img
+                  src={svc.icon}
+                  alt=""
+                  className="w-full h-full transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
 
-              <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-1 mb-4 pl-[72px]">
+              <h3 className="font-display text-lg font-bold text-foreground tracking-wide uppercase mb-3 group-hover:text-accent transition-colors">
+                {svc.name}
+              </h3>
+
+              <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6 max-w-[26ch]">
                 {svc.description}
               </p>
 
-              <div className="mt-auto pl-[72px] flex items-center gap-1.5 text-xs font-bold text-accent/80 group-hover:text-accent transition-colors duration-300">
-                <span>Learn More</span>
+              <span className="mt-auto inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.15em] text-accent/90 group-hover:text-accent transition-colors duration-300">
+                Learn More
                 <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-              </div>
+              </span>
             </Link>
           ))}
         </div>
