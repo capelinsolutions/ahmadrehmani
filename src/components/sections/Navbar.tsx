@@ -15,6 +15,13 @@ const navLinks = [
   { label: "Contact", to: "/contact" },
 ];
 
+// Split categories into two surgical/medical-leaning columns
+const SURGICAL_SLUGS = new Set([
+  "retinal-detachment-tears",
+  "vitreous-surgical-conditions",
+  "macular-diseases",
+]);
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
@@ -33,103 +40,161 @@ const Navbar = () => {
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, [location.pathname]);
 
+  const surgical = serviceCategories.filter((c) => SURGICAL_SLUGS.has(c.slug));
+  const medical = serviceCategories.filter((c) => !SURGICAL_SLUGS.has(c.slug));
+
+  const linkClass = ({ isActive }: { isActive: boolean }) =>
+    `font-body text-sm font-semibold tracking-wide transition-colors ${
+      isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+    }`;
+
   return (
-    <nav
-      role="navigation"
-      className={`sticky top-0 z-40 transition-all duration-300 ${scrolled ? "shadow-md" : ""}`}
-      style={{
-        background:
-          "linear-gradient(135deg, hsl(222 80% 7%) 0%, hsl(220 78% 11%) 50%, hsl(215 75% 16%) 100%)",
-        backdropFilter: "blur(12px)",
-      }}
+    <header
+      className={`sticky top-0 z-40 transition-shadow duration-300 bg-background/95 backdrop-blur-md border-b border-border ${
+        scrolled ? "shadow-md" : "shadow-sm"
+      }`}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between h-16 lg:h-[72px]">
+      <div className="container mx-auto px-6 lg:px-8 flex items-center justify-between h-20 lg:h-24">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 min-w-0" aria-label="North Houston Retina — Dr. Ahmad Rehmani home">
-          <div className="bg-white rounded-lg px-2.5 py-1.5 shadow-sm shrink-0 flex items-center">
-            <img
-              src={logo}
-              alt="North Houston Retina logo"
-              className="h-7 sm:h-8 lg:h-9 w-auto object-contain"
-            />
+        <Link
+          to="/"
+          className="flex items-center gap-3 min-w-0 shrink-0"
+          aria-label="North Houston Retina — Dr. Ahmad Rehmani home"
+        >
+          <img
+            src={logo}
+            alt="North Houston Retina logo"
+            className="h-10 lg:h-12 w-auto object-contain"
+          />
+          <div className="hidden sm:flex flex-col leading-tight">
+            <span className="font-display text-base lg:text-lg font-bold text-foreground tracking-tight">
+              NORTH HOUSTON
+            </span>
+            <span className="font-body text-[10px] lg:text-xs font-bold tracking-[0.2em] text-accent">
+              RETINA SPECIALISTS
+            </span>
           </div>
         </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden lg:flex items-center gap-1">
-          {navLinks.map((link) => (
+        {/* Desktop Nav */}
+        <nav className="hidden lg:flex items-center gap-7 xl:gap-9 h-full">
+          {navLinks.map((link) =>
             link.hasDropdown ? (
-              <div key={link.to} className="relative group">
+              <div key={link.to} className="group h-full flex items-center relative">
                 <NavLink
                   to={link.to}
                   className={({ isActive }) =>
-                    `flex items-center gap-1 px-3 py-2 text-sm rounded-md transition-colors font-body ${
-                      isActive
-                        ? "text-primary-foreground bg-white/15"
-                        : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-white/10"
+                    `flex items-center gap-1.5 font-body text-sm font-semibold tracking-wide transition-colors h-full ${
+                      isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                     }`
                   }
                 >
                   {link.label}
-                  <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" />
+                  <ChevronDown className="w-4 h-4 text-muted-foreground/60 group-hover:rotate-180 transition-transform duration-300" />
                 </NavLink>
-                {/* Dropdown */}
-                <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                  <div className="w-72 bg-background rounded-xl shadow-2xl border border-border overflow-hidden">
-                    <div className="px-4 py-3 bg-accent-pale border-b border-border">
-                      <p className="font-display text-foreground text-sm font-semibold">Conditions & Treatments</p>
-                      <p className="font-body text-muted-foreground text-[11px]">Browse by category</p>
-                    </div>
-                    <div className="py-2">
-                      {serviceCategories.map((cat) => (
-                        <Link
-                          key={cat.slug}
-                          to={`/services/${cat.slug}`}
-                          className="block px-4 py-2.5 font-body text-sm text-foreground hover:bg-accent-pale hover:text-accent transition-colors border-l-2 border-transparent hover:border-accent"
-                        >
-                          {cat.name}
-                        </Link>
-                      ))}
-                      <div className="border-t border-border mt-1 pt-1">
+
+                {/* Mega Menu */}
+                <div className="absolute left-1/2 -translate-x-1/2 top-full w-screen max-w-[1100px] opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50 pt-3">
+                  <div className="bg-background border border-border shadow-2xl rounded-2xl overflow-hidden">
+                    <div className="grid grid-cols-12 gap-8 p-10">
+                      <div className="col-span-3">
+                        <h4 className="font-display text-foreground font-bold text-lg mb-5">
+                          Surgical Retina
+                        </h4>
+                        <ul className="space-y-3.5">
+                          {surgical.map((c) => (
+                            <li key={c.slug}>
+                              <Link
+                                to={`/services/${c.slug}`}
+                                className="font-body text-sm text-muted-foreground hover:text-accent transition-colors block"
+                              >
+                                {c.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="col-span-3">
+                        <h4 className="font-display text-foreground font-bold text-lg mb-5">
+                          Medical Retina
+                        </h4>
+                        <ul className="space-y-3.5">
+                          {medical.map((c) => (
+                            <li key={c.slug}>
+                              <Link
+                                to={`/services/${c.slug}`}
+                                className="font-body text-sm text-muted-foreground hover:text-accent transition-colors block"
+                              >
+                                {c.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
                         <Link
                           to="/services"
-                          className="block px-4 py-2.5 font-body text-sm text-accent font-semibold hover:bg-accent-pale"
+                          className="inline-flex items-center gap-1.5 mt-5 font-body text-xs font-bold text-accent hover:text-accent-light transition-colors"
                         >
-                          View All Services →
+                          View all services →
                         </Link>
+                      </div>
+
+                      {/* Featured panel */}
+                      <div className="col-span-6 bg-accent-pale/60 rounded-xl p-7 flex flex-col justify-between border border-border">
+                        <div>
+                          <span className="font-body text-accent font-bold text-[10px] uppercase tracking-[0.2em] mb-2 block">
+                            Featured Specialist
+                          </span>
+                          <h4 className="font-display text-2xl font-bold text-foreground mb-3">
+                            Dr. Ahmad Rehmani, D.O.
+                          </h4>
+                          <p className="font-body text-muted-foreground text-sm leading-relaxed mb-5">
+                            Fellowship-trained vitreoretinal surgeon delivering elite care
+                            for complex retinal and ocular conditions across North Houston.
+                          </p>
+                        </div>
+                        <div className="flex items-center gap-3">
+                          <Link
+                            to="/about"
+                            className="inline-flex items-center font-body text-sm font-bold text-foreground border-b-2 border-gold pb-0.5 hover:text-accent transition-colors"
+                          >
+                            Meet our Surgeon
+                          </Link>
+                          <Link
+                            to="/contact"
+                            className="inline-flex items-center font-body text-sm font-semibold text-accent hover:text-accent-light transition-colors ml-auto"
+                          >
+                            Book consultation →
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             ) : (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                end={link.to === "/"}
-                className={({ isActive }) =>
-                  `px-3 py-2 text-sm rounded-md transition-colors font-body ${
-                    isActive
-                      ? "text-primary-foreground bg-white/15"
-                      : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-white/10"
-                  }`
-                }
-              >
+              <NavLink key={link.to} to={link.to} end={link.to === "/"} className={linkClass}>
                 {link.label}
               </NavLink>
             )
-          ))}
-        </div>
+          )}
+        </nav>
 
         {/* Right side */}
-        <div className="hidden lg:flex items-center gap-3">
-          <a href="tel:+13465870223" className="flex items-center gap-1.5 text-gold-light text-sm font-body font-medium">
-            <Phone className="w-4 h-4" />
-            (346) 587-0223
-          </a>
+        <div className="hidden lg:flex items-center gap-6 shrink-0">
+          <div className="hidden xl:flex flex-col items-end leading-tight">
+            <span className="font-body text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">
+              Appointments
+            </span>
+            <a
+              href="tel:+13465870223"
+              className="font-body text-foreground font-bold text-base hover:text-accent transition-colors"
+            >
+              (346) 587-0223
+            </a>
+          </div>
           <Link
             to="/contact"
-            className="bg-accent hover:bg-accent-light text-accent-foreground px-5 py-2 rounded-lg text-sm font-body font-semibold transition-colors"
+            className="bg-primary text-primary-foreground px-7 py-3 rounded-full font-body text-sm font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 hover:-translate-y-0.5 active:scale-95 transition-all"
           >
             Book Consultation
           </Link>
@@ -137,7 +202,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden text-primary-foreground p-2"
+          className="lg:hidden text-foreground p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
@@ -148,32 +213,34 @@ const Navbar = () => {
 
       {/* Mobile overlay */}
       {mobileOpen && (
-        <div
-          className="lg:hidden absolute left-0 right-0 top-full z-50 flex flex-col items-stretch py-4 gap-0 shadow-2xl border-t border-white/10 max-h-[calc(100vh-64px)] overflow-y-auto"
-          style={{ background: "hsl(215 65% 18%)" }}
-        >
+        <div className="lg:hidden absolute left-0 right-0 top-full z-50 flex flex-col items-stretch py-4 bg-background border-t border-border shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto">
           {navLinks.map((link) =>
             link.hasDropdown ? (
               <div key={link.to}>
                 <button
                   onClick={() => setMobileServicesOpen((v) => !v)}
-                  className="w-full flex items-center justify-between text-base text-primary-foreground/90 hover:bg-white/10 font-body py-3.5 px-6 transition-colors text-left"
+                  className="w-full flex items-center justify-between text-base text-foreground font-body font-semibold py-3.5 px-6 hover:bg-accent-pale transition-colors text-left"
                 >
                   {link.label}
-                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
+                  <ChevronDown
+                    className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
+                  />
                 </button>
                 {mobileServicesOpen && (
-                  <div className="bg-black/20">
+                  <div className="bg-accent-pale/40">
                     {serviceCategories.map((cat) => (
                       <Link
                         key={cat.slug}
                         to={`/services/${cat.slug}`}
-                        className="block py-2.5 px-10 font-body text-sm text-primary-foreground/85 hover:bg-white/10"
+                        className="block py-2.5 px-10 font-body text-sm text-muted-foreground hover:text-accent hover:bg-background"
                       >
                         {cat.name}
                       </Link>
                     ))}
-                    <Link to="/services" className="block py-2.5 px-10 font-body text-sm text-gold-light font-semibold hover:bg-white/10">
+                    <Link
+                      to="/services"
+                      className="block py-2.5 px-10 font-body text-sm text-accent font-semibold hover:bg-background"
+                    >
                       View All Services →
                     </Link>
                   </div>
@@ -183,7 +250,7 @@ const Navbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className="w-full text-base text-primary-foreground/90 hover:text-primary-foreground hover:bg-white/10 font-body py-3.5 px-6 transition-colors text-left"
+                className="w-full text-base text-foreground font-body font-semibold py-3.5 px-6 hover:bg-accent-pale transition-colors text-left"
               >
                 {link.label}
               </Link>
@@ -192,21 +259,21 @@ const Navbar = () => {
           <div className="px-6 pt-4 flex flex-col gap-3">
             <a
               href="tel:+13465870223"
-              className="bg-accent text-accent-foreground px-6 py-3 rounded-lg text-base font-body font-semibold flex items-center justify-center gap-2"
+              className="bg-accent-pale text-foreground px-6 py-3 rounded-lg text-base font-body font-semibold flex items-center justify-center gap-2 border border-border"
             >
               <Phone className="w-5 h-5" />
               Call (346) 587-0223
             </a>
             <Link
               to="/contact"
-              className="bg-white/10 text-primary-foreground px-6 py-3 rounded-lg text-base font-body font-semibold text-center"
+              className="bg-primary text-primary-foreground px-6 py-3 rounded-full text-base font-body font-bold text-center shadow-lg shadow-primary/20"
             >
               Book Consultation
             </Link>
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 };
 
