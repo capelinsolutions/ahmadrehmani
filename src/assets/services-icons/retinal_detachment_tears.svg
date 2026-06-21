@@ -1,0 +1,16 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#1a1a1a" stroke-width="2.857" stroke-linecap="round" stroke-linejoin="round">
+  <g transform="translate(-12.00,-12.00) scale(1.12)">
+  <!-- Eyeball globe (cross-section) -->
+  <circle cx="100" cy="100" r="64"/>
+  <!-- Cornea bump on left -->
+  <path d="M38 80 C20 89, 20 111, 38 120"/>
+  <!-- Lens -->
+  <ellipse cx="45" cy="100" rx="6.5" ry="16"/>
+  <!-- Retina lining (intact lower portion, follows globe wall) -->
+  <path d="M66 154 C104 172, 150 146, 160 104" stroke-width="2.500"/>
+  <!-- Detached retina: gently lifted away from the wall, flatter (less concave) -->
+  <path d="M160 94 C152 60, 116 46, 80 54 C104 60, 124 70, 132 86 C136 96, 130 104, 118 106" stroke-width="2.500"/>
+  <!-- Lift indicator arrow showing retina pulling inward -->
+  <path d="M104 76 l6 -6 l-8 0" stroke-width="1.964"/>
+</g>
+</svg>
