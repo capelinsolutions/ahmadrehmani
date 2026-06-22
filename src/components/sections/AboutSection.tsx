@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import drRehmaniAsset from "@/assets/dr-rehmani.jpg.asset.json";
+import drRehmaniImg from "@/assets/dr-profile-hero.jpg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface AboutSectionProps {
@@ -17,7 +17,7 @@ const AboutSection = ({ compact = false }: AboutSectionProps) => {
           <div className="lg:col-span-5 fade-up">
             <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden border border-border/40 shadow-sm bg-muted">
               <img 
-                src={drRehmaniAsset.url} 
+                src={drRehmaniImg} 
                 alt="Dr. Ahmad Rehmani, D.O. — Vitreoretinal Specialist, North Houston Retina" 
                 className="w-full h-full object-cover object-center" 
                 loading="lazy" 
