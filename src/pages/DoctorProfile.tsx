@@ -20,19 +20,6 @@ const DoctorProfile = () => {
         <link rel="canonical" href="https://www.northhoustonretina.com/doctor/ahmad-rehmani" />
       </Helmet>
 
-      {/* Top bar */}
-      <div className="bg-background border-b border-border sticky top-0 z-40" style={{ backdropFilter: "blur(12px)" }}>
-        <div className="container mx-auto px-4 flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 text-foreground font-body text-sm hover:text-accent transition-colors">
-            <ArrowLeft className="w-4 h-4" />
-            Back to Home
-          </Link>
-          <a href="tel:+13465870223" className="flex items-center gap-1.5 text-accent text-sm font-body font-medium">
-            <Phone className="w-4 h-4" />
-            (346) 587-0223
-          </a>
-        </div>
-      </div>
 
       {/* Quick Stats — page starts here */}
       <section className="bg-background border-b border-border">
