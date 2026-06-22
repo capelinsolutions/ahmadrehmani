@@ -208,7 +208,7 @@ const Navbar = () => {
               <div key={link.to}>
                 <button
                   onClick={() => setMobileServicesOpen((v) => !v)}
-                  className="w-full flex items-center justify-between text-base text-foreground font-body font-semibold py-3.5 px-6 hover:bg-accent-pale transition-colors text-left"
+                  className="w-full flex items-center justify-between text-base text-foreground font-body font-bold py-3.5 px-6 hover:bg-accent-pale transition-colors text-left"
                 >
                   {link.label}
                   <ChevronDown
@@ -219,16 +219,16 @@ const Navbar = () => {
                   <div className="bg-accent-pale/40">
                     {serviceCategories.map((cat) => (
                       <Link
-                        key={cat.slug}
-                        to={`/services/${cat.slug}`}
-                        className="block py-2.5 px-10 font-body text-sm text-muted-foreground hover:text-accent hover:bg-background"
+                          key={cat.slug}
+                          to={`/services/${cat.slug}`}
+                          className="block py-2.5 px-10 font-body text-sm text-muted-foreground hover:text-accent hover:bg-background font-medium"
                       >
                         {cat.name}
                       </Link>
                     ))}
                     <Link
                       to="/services"
-                      className="block py-2.5 px-10 font-body text-sm text-accent font-semibold hover:bg-background"
+                      className="block py-2.5 px-10 font-body text-sm text-accent font-bold hover:bg-background"
                     >
                       View All Services →
                     </Link>
@@ -239,7 +239,7 @@ const Navbar = () => {
               <Link
                 key={link.to}
                 to={link.to}
-                className="w-full text-base text-foreground font-body font-semibold py-3.5 px-6 hover:bg-accent-pale transition-colors text-left"
+                className="w-full text-base text-foreground font-body font-bold py-3.5 px-6 hover:bg-accent-pale transition-colors text-left"
               >
                 {link.label}
               </Link>
@@ -248,7 +248,7 @@ const Navbar = () => {
           <div className="px-6 pt-4 flex flex-col gap-3">
             <a
               href="tel:+13465870223"
-              className="bg-accent-pale text-foreground px-6 py-3 rounded-lg text-base font-body font-semibold flex items-center justify-center gap-2 border border-border"
+              className="bg-accent-pale text-foreground px-6 py-3 rounded-lg text-base font-body font-bold flex items-center justify-center gap-2 border border-border"
             >
               <Phone className="w-5 h-5" />
               Call (346) 587-0223
