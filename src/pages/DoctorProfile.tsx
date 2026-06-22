@@ -4,6 +4,7 @@ import {
   Stethoscope, Users,
 } from "lucide-react";
 import PageShell from "@/components/PageShell";
+import drRehmaniAsset from "@/assets/dr-rehmani.jpg.asset.json";
 
 import drExam from "@/assets/dr-exam.jpg";
 import drStanding from "@/assets/dr-standing.jpg";
