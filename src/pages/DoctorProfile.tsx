@@ -2,8 +2,9 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import {
   GraduationCap, Award, FlaskConical, Phone,
-  Stethoscope, BookOpen, Users, ArrowLeft, CheckCircle2,
+  Stethoscope, Users, ArrowLeft,
 } from "lucide-react";
+import PageShell from "@/components/PageShell";
 
 import drExam from "@/assets/dr-exam.jpg";
 import drStanding from "@/assets/dr-standing.jpg";
