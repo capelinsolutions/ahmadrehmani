@@ -73,7 +73,7 @@ const Navbar = () => {
                 <NavLink
                   to={link.to}
                   className={({ isActive }) =>
-                    `flex items-center gap-1.5 font-body text-sm font-semibold tracking-wide transition-colors h-full ${
+                    `flex items-center gap-1.5 font-body text-sm font-bold tracking-wide transition-colors h-full ${
                       isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                     }`
                   }
