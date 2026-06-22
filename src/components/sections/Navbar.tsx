@@ -41,7 +41,7 @@ const Navbar = () => {
   const medical = serviceCategories.filter((c) => !SURGICAL_SLUGS.has(c.slug));
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
-    `font-body text-sm font-semibold tracking-wide transition-colors ${
+    `font-body text-sm font-bold tracking-wide transition-colors ${
       isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
     }`;
 
