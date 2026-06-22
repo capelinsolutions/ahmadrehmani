@@ -9,9 +9,6 @@ const navLinks = [
   { label: "About", to: "/about" },
   { label: "Services", to: "/services", hasDropdown: true },
   { label: "Location", to: "/locations" },
-  { label: "Reviews", to: "/reviews" },
-  { label: "Insurance", to: "/insurance" },
-  { label: "FAQ", to: "/faq" },
   { label: "Contact", to: "/contact" },
 ];
 
