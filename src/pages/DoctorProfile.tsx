@@ -168,74 +168,9 @@ const DoctorProfile = () => {
               </div>
             </section>
 
-            {/* Specialties */}
-            <section>
-              <SectionHeading icon={BookOpen} title="Conditions Treated" />
-              <div className="grid sm:grid-cols-2 gap-3 mt-6">
-                {[
-                  "Age-Related Macular Degeneration (AMD)",
-                  "Diabetic Retinopathy & Macular Edema",
-                  "Retinal Detachment & Tears",
-                  "Vitreous Hemorrhage",
-                  "Epiretinal Membrane (Macular Pucker)",
-                  "Macular Hole",
-                  "Retinal Vein & Artery Occlusion",
-                  "Uveitis & Ocular Inflammation",
-                  "Flashes & Floaters",
-                  "Cataract Surgery (Complex Cases)",
-                ].map(condition => (
-                  <div key={condition} className="flex items-center gap-3 bg-gray-50 border border-border rounded-lg px-4 py-3">
-                    <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
-                    <span className="font-body text-sm text-foreground">{condition}</span>
-                  </div>
-                ))}
-              </div>
-            </section>
-
-            {/* Philosophy */}
-            <section>
-              <blockquote className="border-l-4 border-accent bg-accent/5 rounded-r-xl px-8 py-8">
-                <p className="font-display italic text-foreground text-xl leading-relaxed">
-                  "My goal is to make the most advanced retinal care feel accessible — to explain complex diagnoses in plain language, and to treat every patient with the same urgency and compassion I would want for my own family."
-                </p>
-                <cite className="font-body text-sm text-muted-foreground mt-4 block not-italic">
-                  — Dr. Ahmad Rehmani, D.O. · Owner & Physician, North Houston Retina
-                </cite>
-              </blockquote>
-            </section>
           </div>
         </div>
       </main>
-
-      {/* Floating Call to Schedule — bottom right */}
-      <a
-        href="tel:+13465870223"
-        className="fixed bottom-6 right-6 z-50 bg-accent hover:bg-accent-light text-accent-foreground px-5 py-3 rounded-full shadow-xl font-body font-semibold text-sm inline-flex items-center gap-2 transition-colors"
-        aria-label="Call to Schedule"
-      >
-        <Phone className="w-4 h-4" />
-        Call to Schedule
-      </a>
-
-      {/* Bottom CTA */}
-      <section className="bg-gradient-to-r from-accent to-accent-light py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-display text-accent-foreground text-2xl lg:text-3xl font-bold">
-            Ready to See Dr. Rehmani?
-          </h2>
-          <p className="font-body text-accent-foreground/80 mt-2 max-w-xl mx-auto">
-            Schedule your consultation today and receive expert retinal care from a fellowship-trained specialist.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4 mt-6">
-            <a href="tel:+13465870223" className="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-body font-semibold transition-colors hover:bg-primary/90">
-              Call (346) 587-0223
-            </a>
-            <Link to="/" className="border-2 border-accent-foreground text-accent-foreground px-8 py-3 rounded-lg font-body font-semibold hover:bg-accent-foreground/10 transition-colors">
-              Back to Home
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* Schema */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
@@ -258,7 +193,7 @@ const DoctorProfile = () => {
         "address": { "@type": "PostalAddress", "streetAddress": "27700 Northwest Freeway, Suite 355", "addressLocality": "Cypress", "addressRegion": "TX", "postalCode": "77433", "addressCountry": "US" },
         "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "44", "bestRating": "5" }
       })}} />
-    </>
+    </PageShell>
   );
 };
 
