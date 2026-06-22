@@ -48,7 +48,16 @@ const DoctorProfile = () => {
             {/* About */}
             <section>
               <SectionHeading icon={Users} title="About Dr. Rehmani" />
-              <div className="space-y-4 font-body text-muted-foreground leading-relaxed mt-6">
+              <div className="grid md:grid-cols-[260px_1fr] gap-8 mt-6 items-start">
+                <div className="rounded-2xl overflow-hidden border border-border/40 shadow-sm bg-muted aspect-[3/4] w-full">
+                  <img
+                    src={drRehmaniAsset.url}
+                    alt="Dr. Ahmad Rehmani, D.O. — Vitreoretinal Specialist"
+                    className="w-full h-full object-cover object-center"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="space-y-4 font-body text-muted-foreground leading-relaxed">
                 <p>
                   <strong className="text-foreground">North Houston Retina PLLC</strong> was founded in 2026 by Dr. Ahmad Rehmani in Cypress, TX, specializing in diseases and surgery of the retina, vitreous and macula. He spent 3 years in New Jersey in private practice as the highest volume surgeon focusing on high quality compassionate care for his patients. During this time, he participated in over 20 national clinical trials which have led to FDA approval of some of the newest treatments in the market today.
                 </p>
