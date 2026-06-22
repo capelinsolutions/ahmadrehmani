@@ -73,6 +73,7 @@ const DoctorProfile = () => {
                 <p>
                   Dr. Rehmani is also fluent in English, Urdu, Hindi and Punjabi. Outside of work his interests include traveling, the Buffalo Bills, playing sports, working out and spending time with his wife and three children.
                 </p>
+                </div>
               </div>
             </section>
 
