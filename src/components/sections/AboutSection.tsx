@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import drRehmaniAsset from "@/assets/dr-rehmani.jpg.asset.json";
+import drRehmaniImg from "@/assets/dr-profile-hero.jpg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface AboutSectionProps {
