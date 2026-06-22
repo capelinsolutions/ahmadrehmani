@@ -1,8 +1,7 @@
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
 import {
-  GraduationCap, Award, FlaskConical, Phone,
-  Stethoscope, Users, ArrowLeft,
+  GraduationCap, Award, FlaskConical,
+  Stethoscope, Users,
 } from "lucide-react";
 import PageShell from "@/components/PageShell";
 
