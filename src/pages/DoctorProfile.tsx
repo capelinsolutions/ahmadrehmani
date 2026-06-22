@@ -13,7 +13,7 @@ import drSlitLamp from "@/assets/dr-slit-lamp.jpg";
 
 const DoctorProfile = () => {
   return (
-    <>
+    <PageShell>
       <Helmet>
         <title>Dr. Ahmad Rehmani, D.O. — Board-Certified Retina Specialist | Cypress, TX</title>
         <meta name="description" content="Meet Dr. Ahmad Rehmani, D.O. — fellowship-trained vitreoretinal specialist and founder of North Houston Retina in Cypress, TX. Sub-investigator on 20+ U.S. clinical trials." />
