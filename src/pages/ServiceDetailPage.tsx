@@ -1,9 +1,26 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { AlertCircle, Stethoscope, ArrowRight, Phone, ChevronRight } from "lucide-react";
+import { AlertCircle, ArrowRight, Phone, ChevronRight, Check } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import { getServiceBySlug, serviceCategories } from "@/data/services";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import {
+  MacularDiseasesIcon,
+  DiabeticIcon,
+  DetachmentIcon,
+  MacularDegenerationIcon,
+  SurgicalIcon,
+  DislocatedLensIcon,
+} from "@/components/ServiceIcons";
+
+const iconBySlug: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
+  "macular-diseases": MacularDiseasesIcon,
+  "diabetic-eye-disease": DiabeticIcon,
+  "retinal-detachment-tears": DetachmentIcon,
+  "retinal-vascular-disease": MacularDegenerationIcon,
+  "vitreous-surgical-conditions": SurgicalIcon,
+  "inflammatory-other": DislocatedLensIcon,
+};
 
 const ServiceDetailPage = () => {
   const { slug = "" } = useParams();
@@ -13,6 +30,7 @@ const ServiceDetailPage = () => {
   if (!service) return <Navigate to="/services" replace />;
 
   const otherServices = serviceCategories.filter((s) => s.slug !== service.slug);
+  const Icon = iconBySlug[service.slug] ?? MacularDiseasesIcon;
 
   return (
     <PageShell>
@@ -23,7 +41,7 @@ const ServiceDetailPage = () => {
       </Helmet>
 
       {/* Hero */}
-      <section className="bg-gradient-deep border-b border-border py-12 lg:py-20 text-foreground">
+      <section className="bg-gradient-deep border-b border-border py-12 lg:py-16 text-foreground">
         <div className="container mx-auto px-4">
           <nav className="flex items-center gap-2 text-xs font-body text-muted-foreground mb-6">
             <Link to="/" className="hover:text-accent">Home</Link>
@@ -33,7 +51,7 @@ const ServiceDetailPage = () => {
             <span className="text-accent">{service.name}</span>
           </nav>
 
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-[1fr_auto] gap-10 items-center">
             <div className="space-y-5">
               <span className="font-body text-sm text-accent font-semibold uppercase tracking-wider">Conditions & Treatments</span>
               <h1 className="font-display text-4xl lg:text-5xl font-bold leading-tight">{service.name}</h1>
@@ -47,99 +65,58 @@ const ServiceDetailPage = () => {
                   Request Consultation
                 </Link>
               </div>
+
+              {/* Conditions list — right under CTA */}
+              <div className="pt-6">
+                <p className="font-body text-xs text-accent font-semibold uppercase tracking-wider mb-3">Conditions We Treat</p>
+                <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
+                  {service.subServices.map((sub) => (
+                    <li key={sub.name} className="flex items-start gap-2">
+                      <Check className="w-4 h-4 text-accent mt-1 shrink-0" />
+                      <span className="font-body text-foreground/90 text-sm leading-snug">{sub.name}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-2xl border border-border">
-              <img src={service.image} alt={`${service.name} — medical illustration`} width={1280} height={720} className="w-full h-auto object-cover" />
+
+            <div className="flex justify-center lg:justify-end">
+              <div className="w-44 h-44 lg:w-56 lg:h-56 rounded-2xl bg-accent-pale/40 border border-accent/20 flex items-center justify-center text-primary p-6 shadow-lg">
+                <Icon className="w-full h-full" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Long description */}
-      <section ref={ref} className="bg-background py-16">
-        <div className="container mx-auto px-4 max-w-4xl fade-up">
-          <h2 className="font-display text-3xl font-bold text-foreground mb-5">About {service.name}</h2>
-          <p className="font-body text-gray-700 leading-[1.8] text-lg">{service.longDescription}</p>
-        </div>
-      </section>
+      {/* About + Symptoms */}
+      <section ref={ref} className="bg-background py-14">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="grid lg:grid-cols-[1.4fr_1fr] gap-10 fade-up">
+            <div>
+              <h2 className="font-display text-3xl font-bold text-foreground mb-4">About {service.name}</h2>
+              <p className="font-body text-gray-700 leading-[1.8] text-base lg:text-lg">{service.longDescription}</p>
+            </div>
 
-      {/* Symptoms & Treatments infographic */}
-      <section className="bg-gradient-soft py-16">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12 fade-up">
-            <span className="font-body text-sm text-accent font-semibold uppercase tracking-wider">At a Glance</span>
-            <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mt-3">Symptoms & Treatment Options</h2>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {/* Symptoms */}
-            <div className="bg-background border-2 border-accent/20 rounded-2xl p-8 shadow-sm">
-              <div className="flex items-center gap-3 mb-6 pb-5 border-b border-border">
-                <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center">
-                  <AlertCircle className="w-6 h-6 text-red-500" />
+            <div className="bg-background border-2 border-accent/20 rounded-2xl p-6 lg:p-7 shadow-sm h-fit">
+              <div className="flex items-center gap-3 mb-5 pb-4 border-b border-border">
+                <div className="w-11 h-11 rounded-xl bg-red-50 flex items-center justify-center">
+                  <AlertCircle className="w-5 h-5 text-red-500" />
                 </div>
                 <div>
                   <p className="font-body text-xs text-muted-foreground uppercase tracking-wider">Watch For</p>
-                  <h3 className="font-display text-2xl font-bold text-foreground">Symptoms</h3>
+                  <h3 className="font-display text-xl font-bold text-foreground">Symptoms</h3>
                 </div>
               </div>
-              <ul className="space-y-3">
+              <ul className="space-y-2.5">
                 {service.symptoms.map((s, i) => (
                   <li key={s} className="flex items-start gap-3">
-                    <span className="shrink-0 w-7 h-7 rounded-full bg-red-50 text-red-500 text-xs font-display font-bold flex items-center justify-center">{i + 1}</span>
-                    <span className="font-body text-foreground/85 leading-relaxed pt-0.5">{s}</span>
+                    <span className="shrink-0 w-6 h-6 rounded-full bg-red-50 text-red-500 text-xs font-display font-bold flex items-center justify-center">{i + 1}</span>
+                    <span className="font-body text-foreground/85 text-sm leading-relaxed pt-0.5">{s}</span>
                   </li>
                 ))}
               </ul>
             </div>
-
-            {/* Treatments */}
-            <div className="bg-gradient-card border border-border rounded-2xl p-8 text-foreground shadow-lg">
-              <div className="flex items-center gap-3 mb-6 pb-5 border-b border-border">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                  <Stethoscope className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <p className="font-body text-xs text-muted-foreground uppercase tracking-wider">How We Treat</p>
-                  <h3 className="font-display text-2xl font-bold">Treatment Options</h3>
-                </div>
-              </div>
-              <ul className="space-y-3">
-                {service.treatments.map((t) => (
-                  <li key={t} className="flex items-start gap-3">
-                    <span className="shrink-0 w-2 h-2 rounded-full bg-accent mt-2.5" />
-                    <span className="font-body text-foreground/90 leading-relaxed">{t}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Sub-services */}
-      <section className="bg-background py-16 lg:py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12 fade-up max-w-3xl mx-auto">
-            <span className="font-body text-sm text-accent font-semibold uppercase tracking-wider">Conditions Covered</span>
-            <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mt-3">Specific Conditions We Treat</h2>
-            <p className="font-body text-gray-600 mt-3">Each condition under {service.name} is diagnosed with precision imaging and treated with a tailored plan.</p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {service.subServices.map((sub, i) => (
-              <article key={sub.name} className="group bg-background border border-border rounded-2xl overflow-hidden hover:shadow-xl hover:border-accent/40 transition-all">
-                <div className="relative h-44 overflow-hidden bg-gradient-card">
-                  <img src={service.image} alt={`${sub.name} illustration`} loading="lazy" width={1280} height={720} className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
-                  <span className="absolute top-3 left-3 bg-gold-light/95 text-primary text-[10px] font-body font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">#{(i + 1).toString().padStart(2, "0")}</span>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-display text-lg font-bold text-foreground leading-tight">{sub.name}</h3>
-                  <p className="font-body text-sm text-gray-600 mt-2 leading-relaxed">{sub.description}</p>
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>
