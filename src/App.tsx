@@ -8,6 +8,7 @@ import Index from "./pages/Index.tsx";
 import AboutPage from "./pages/AboutPage.tsx";
 import ServicesPage from "./pages/ServicesPage.tsx";
 import ServiceDetailPage from "./pages/ServiceDetailPage.tsx";
+import MacularDegenerationPage from "./pages/MacularDegenerationPage.tsx";
 import LocationsPage from "./pages/LocationsPage.tsx";
 import InsurancePage from "./pages/InsurancePage.tsx";
 import ReviewsPage from "./pages/ReviewsPage.tsx";
@@ -29,6 +30,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<DoctorProfile />} />
             <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/macular-degeneration" element={<MacularDegenerationPage />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route path="/locations" element={<LocationsPage />} />
             <Route path="/insurance" element={<InsurancePage />} />
