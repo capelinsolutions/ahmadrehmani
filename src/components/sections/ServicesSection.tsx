@@ -2,48 +2,50 @@ import SectionCTA from "@/components/SectionCTA";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import macularDiseasesIcon from "@/assets/services-icons/macular_diseases.svg";
-import diabeticIcon from "@/assets/services-icons/diabetic_eye_disease.svg";
-import detachmentIcon from "@/assets/services-icons/retinal_detachment_tears.svg";
-import macularDegenerationIcon from "@/assets/services-icons/macular_degeneration.svg";
-import surgicalIcon from "@/assets/services-icons/surgical_vitreoretinal.svg";
-import dislocatedLensIcon from "@/assets/services-icons/dislocated_lens_dense_cataract.svg";
+import {
+  MacularDiseasesIcon,
+  DiabeticIcon,
+  DetachmentIcon,
+  MacularDegenerationIcon,
+  SurgicalIcon,
+  DislocatedLensIcon,
+} from "@/components/ServiceIcons";
 
 const services = [
   {
     name: "Macular Diseases",
     description: "Conditions affecting the macula, the central retina responsible for sharp, detailed vision.",
-    icon: macularDiseasesIcon,
+    icon: MacularDiseasesIcon,
     slug: "macular-diseases",
   },
   {
     name: "Diabetic Eye Disease",
     description: "Retinal damage from diabetes, including leaking vessels, swelling, and bleeding.",
-    icon: diabeticIcon,
+    icon: DiabeticIcon,
     slug: "diabetic-eye-disease",
   },
   {
     name: "Retinal Detachment & Tears",
     description: "The retina lifts or tears away from the back of the eye, a vision-threatening emergency.",
-    icon: detachmentIcon,
+    icon: DetachmentIcon,
     slug: "retinal-detachment-tears",
   },
   {
     name: "Macular Degeneration",
     description: "Age-related breakdown of the macula causing loss of central vision over time.",
-    icon: macularDegenerationIcon,
+    icon: MacularDegenerationIcon,
     slug: "macular-diseases",
   },
   {
     name: "Surgical Vitreo-Retinal Conditions",
     description: "Advanced microsurgery for the vitreous and retina to repair complex eye problems.",
-    icon: surgicalIcon,
+    icon: SurgicalIcon,
     slug: "vitreous-surgical-conditions",
   },
   {
     name: "Dislocated Lenses & Dense Cataract",
     description: "Displaced or severely clouded lenses requiring specialized retinal surgical care.",
-    icon: dislocatedLensIcon,
+    icon: DislocatedLensIcon,
     slug: "vitreous-surgical-conditions",
   },
 ];
