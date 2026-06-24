@@ -2,48 +2,50 @@ import SectionCTA from "@/components/SectionCTA";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import macularDiseasesIcon from "@/assets/services-icons/macular_diseases.svg";
-import diabeticIcon from "@/assets/services-icons/diabetic_eye_disease.svg";
-import detachmentIcon from "@/assets/services-icons/retinal_detachment_tears.svg";
-import macularDegenerationIcon from "@/assets/services-icons/macular_degeneration.svg";
-import surgicalIcon from "@/assets/services-icons/surgical_vitreoretinal.svg";
-import dislocatedLensIcon from "@/assets/services-icons/dislocated_lens_dense_cataract.svg";
+import {
+  MacularDiseasesIcon,
+  DiabeticIcon,
+  DetachmentIcon,
+  MacularDegenerationIcon,
+  SurgicalIcon,
+  DislocatedLensIcon,
+} from "@/components/ServiceIcons";
 
 const services = [
   {
     name: "Macular Diseases",
     description: "Conditions affecting the macula, the central retina responsible for sharp, detailed vision.",
-    icon: macularDiseasesIcon,
+    icon: MacularDiseasesIcon,
     slug: "macular-diseases",
   },
   {
     name: "Diabetic Eye Disease",
     description: "Retinal damage from diabetes, including leaking vessels, swelling, and bleeding.",
-    icon: diabeticIcon,
+    icon: DiabeticIcon,
     slug: "diabetic-eye-disease",
   },
   {
     name: "Retinal Detachment & Tears",
     description: "The retina lifts or tears away from the back of the eye, a vision-threatening emergency.",
-    icon: detachmentIcon,
+    icon: DetachmentIcon,
     slug: "retinal-detachment-tears",
   },
   {
     name: "Macular Degeneration",
     description: "Age-related breakdown of the macula causing loss of central vision over time.",
-    icon: macularDegenerationIcon,
+    icon: MacularDegenerationIcon,
     slug: "macular-diseases",
   },
   {
     name: "Surgical Vitreo-Retinal Conditions",
     description: "Advanced microsurgery for the vitreous and retina to repair complex eye problems.",
-    icon: surgicalIcon,
+    icon: SurgicalIcon,
     slug: "vitreous-surgical-conditions",
   },
   {
     name: "Dislocated Lenses & Dense Cataract",
     description: "Displaced or severely clouded lenses requiring specialized retinal surgical care.",
-    icon: dislocatedLensIcon,
+    icon: DislocatedLensIcon,
     slug: "vitreous-surgical-conditions",
   },
 ];
@@ -81,12 +83,9 @@ const ServicesSection = () => {
               className="group relative flex flex-col items-center text-center bg-background px-8 py-10 rounded-2xl border border-border/60 hover:border-accent/40 hover:shadow-[0_12px_30px_-10px_rgba(0,0,0,0.10)] hover:-translate-y-1 transition-all duration-300 fade-up"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <div className="w-24 h-24 mb-6 flex items-center justify-center">
-                <img
-                  src={svc.icon}
-                  alt=""
-                  className="w-full h-full transition-transform duration-500 group-hover:scale-105"
-                />
+              <div className="w-32 h-32 mb-6 flex items-center justify-center bg-accent-pale/50 group-hover:bg-accent-pale/80 text-primary group-hover:text-accent rounded-full p-4 transition-all duration-500 shadow-sm border border-accent/5 group-hover:shadow-md group-hover:scale-105 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-radial from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <svc.icon className="w-24 h-24 transition-transform duration-500 relative z-10" />
               </div>
 
               <h3 className="font-display text-lg font-bold text-foreground tracking-wide uppercase mb-3 group-hover:text-accent transition-colors">
