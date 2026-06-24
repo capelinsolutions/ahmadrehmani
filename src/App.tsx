@@ -10,6 +10,7 @@ import ServicesPage from "./pages/ServicesPage.tsx";
 import ServiceDetailPage from "./pages/ServiceDetailPage.tsx";
 import MacularDegenerationPage from "./pages/MacularDegenerationPage.tsx";
 import CentralSerousRetinopathyPage from "./pages/CentralSerousRetinopathyPage.tsx";
+import MacularPuckerPage from "./pages/MacularPuckerPage.tsx";
 import LocationsPage from "./pages/LocationsPage.tsx";
 import InsurancePage from "./pages/InsurancePage.tsx";
 import ReviewsPage from "./pages/ReviewsPage.tsx";
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/services/macular-degeneration" element={<MacularDegenerationPage />} />
             <Route path="/services/central-serous-retinopathy" element={<CentralSerousRetinopathyPage />} />
+            <Route path="/services/macular-pucker" element={<MacularPuckerPage />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route path="/locations" element={<LocationsPage />} />
             <Route path="/insurance" element={<InsurancePage />} />

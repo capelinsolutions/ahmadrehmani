@@ -1,0 +1,164 @@
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import { Phone, ChevronRight, Layers, Scissors, Film, Sparkles } from "lucide-react";
+import PageShell from "@/components/PageShell";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import ermOct from "@/assets/services/erm-oct.jpg";
+
+const MacularPuckerPage = () => {
+  const aboutRef = useScrollAnimation();
+  const treatRef = useScrollAnimation();
+
+  return (
+    <PageShell>
+      <Helmet>
+        <title>Macular Pucker (Epiretinal Membrane) | North Houston Retina</title>
+        <meta
+          name="description"
+          content="Expert diagnosis and surgical treatment of macular pucker (epiretinal membrane / ERM) in Cypress, TX — restoring clear central vision with vitrectomy and membrane peeling."
+        />
+        <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/macular-pucker" />
+      </Helmet>
+
+      {/* Hero */}
+      <section className="bg-gradient-deep border-b border-border py-12 lg:py-16">
+        <div className="container mx-auto px-4">
+          <nav className="flex items-center gap-2 text-xs font-body text-muted-foreground mb-6">
+            <Link to="/" className="hover:text-accent">Home</Link>
+            <ChevronRight className="w-3 h-3" />
+            <Link to="/services" className="hover:text-accent">Services</Link>
+            <ChevronRight className="w-3 h-3" />
+            <span className="text-accent">Macular Pucker</span>
+          </nav>
+
+          <div className="max-w-4xl">
+            <span className="font-body text-sm text-accent font-semibold uppercase tracking-wider">
+              Conditions & Treatments
+            </span>
+            <h1 className="font-display text-4xl lg:text-5xl font-bold leading-tight mt-3 text-foreground">
+              Macular Pucker
+            </h1>
+            <p className="font-body text-muted-foreground text-lg leading-relaxed mt-4">
+              Also called an <strong>epiretinal membrane (ERM)</strong> — a fine layer of scar tissue that grows over the macula and warps central vision. With modern microsurgery, the membrane can be safely peeled and vision restored.
+            </p>
+            <div className="flex flex-wrap gap-3 pt-6">
+              <a href="tel:+13465870223" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-5 py-3 rounded-lg font-body font-semibold">
+                <Phone className="w-4 h-4" />
+                Call (346) 587-0223
+              </a>
+              <Link to="/contact" className="inline-flex items-center gap-2 border border-border bg-background hover:bg-secondary px-5 py-3 rounded-lg font-body font-medium">
+                Request Consultation
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section ref={aboutRef} className="bg-background py-16">
+        <div className="container mx-auto px-4 max-w-6xl fade-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-body font-semibold uppercase tracking-wider">
+              <Layers className="w-3.5 h-3.5" /> The Condition
+            </span>
+          </div>
+          <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-8">
+            What is a Macular Pucker?
+          </h2>
+
+          <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
+            <div>
+              <p className="font-body text-gray-700 leading-[1.8] text-base lg:text-lg">
+                A macular pucker is a thin sheet of scar tissue that grows over the surface of the macula — the central area of the retina responsible for sharp, detailed vision. As the membrane contracts, it wrinkles the underlying retina and can cause <strong>distorted, blurred, or missing central vision</strong>. Straight lines may appear bent and reading can become difficult.
+              </p>
+            </div>
+
+            <figure className="rounded-2xl overflow-hidden shadow-md border border-border bg-background">
+              <img
+                src={ermOct}
+                alt="OCT scan showing an epiretinal membrane (macular pucker) wrinkling the macula"
+                loading="lazy"
+                width={1024}
+                height={1024}
+                className="w-full h-64 lg:h-80 object-cover"
+              />
+              <figcaption className="font-body text-xs text-muted-foreground px-3 py-2 border-t border-border">
+                OCT scan — epiretinal membrane distorting the macular surface
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      {/* Treatment */}
+      <section ref={treatRef} className="bg-gradient-soft py-16 border-y border-border">
+        <div className="container mx-auto px-4 max-w-6xl fade-up">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="inline-flex items-center gap-2 bg-gradient-accent text-white px-3 py-1 rounded-full text-xs font-body font-bold uppercase tracking-wider shadow-sm">
+              <Sparkles className="w-3.5 h-3.5" /> Surgical Treatment
+            </span>
+          </div>
+          <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-8">
+            Vitrectomy with Membrane Peeling
+          </h2>
+
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            <div className="bg-gradient-bright border-2 border-accent rounded-2xl p-6 lg:p-7 shadow-md">
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-accent text-accent-foreground flex items-center justify-center shrink-0">
+                  <Scissors className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="font-body text-xs text-accent font-bold uppercase tracking-wider">Outpatient Microsurgery</p>
+                  <p className="font-display text-xl lg:text-2xl font-bold text-foreground">How the Surgery Works</p>
+                </div>
+              </div>
+              <p className="font-body text-gray-700 leading-relaxed text-sm lg:text-base">
+                Treatment is a short outpatient procedure called a <strong>vitrectomy with membrane peel</strong>. Through three tiny, sutureless incisions, the vitreous gel is removed and microforceps are used to gently lift the scar tissue off the surface of the macula. As the retina relaxes back into its natural shape over the following weeks, distortion improves and central vision sharpens.
+              </p>
+            </div>
+
+            {/* Video placeholder */}
+            <figure className="rounded-2xl overflow-hidden border-2 border-dashed border-accent/40 bg-background shadow-sm">
+              <div className="relative aspect-video bg-gradient-deep flex flex-col items-center justify-center text-center p-6">
+                <div className="w-14 h-14 rounded-full bg-accent/15 border border-accent/30 flex items-center justify-center mb-3">
+                  <Film className="w-7 h-7 text-accent" />
+                </div>
+                <p className="font-display text-lg font-bold text-foreground">Surgical Video Coming Soon</p>
+                <p className="font-body text-xs text-muted-foreground mt-1 max-w-xs">
+                  Dr. Rehmani peeling an epiretinal membrane — clip to be added.
+                </p>
+              </div>
+              <figcaption className="font-body text-xs text-muted-foreground px-3 py-2 border-t border-border bg-background">
+                Video placeholder — surgical footage will be uploaded here.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="bg-gradient-primary border-y border-border py-14">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground">
+            Seeing distorted or wavy central vision?
+          </h2>
+          <p className="font-body text-muted-foreground mt-3 max-w-2xl mx-auto">
+            An OCT scan takes only minutes and can confirm whether a macular pucker is the cause. Call our Cypress office or request a consultation online.
+          </p>
+          <div className="flex flex-wrap gap-3 justify-center mt-6">
+            <a href="tel:+13465870223" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-6 py-3 rounded-lg font-body font-semibold">
+              <Phone className="w-4 h-4" />
+              Call (346) 587-0223
+            </a>
+            <Link to="/contact" className="inline-flex items-center gap-2 bg-background hover:bg-secondary text-foreground px-6 py-3 rounded-lg font-body font-semibold border border-border">
+              Request Consultation
+            </Link>
+          </div>
+        </div>
+      </section>
+    </PageShell>
+  );
+};
+
+export default MacularPuckerPage;
