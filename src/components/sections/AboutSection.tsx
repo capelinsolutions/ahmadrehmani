@@ -32,7 +32,7 @@ const AboutSection = ({ compact = false }: AboutSectionProps) => {
                 Founding Surgeon
               </span>
               <h2 className="font-display text-foreground text-3xl lg:text-4xl font-bold tracking-tight leading-tight">
-                Expertise in Complex Vitreoretinal Care
+                Expertise in Vitreoretinal Care
               </h2>
             </div>
 
