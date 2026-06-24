@@ -11,6 +11,7 @@ import ServiceDetailPage from "./pages/ServiceDetailPage.tsx";
 import MacularDegenerationPage from "./pages/MacularDegenerationPage.tsx";
 import CentralSerousRetinopathyPage from "./pages/CentralSerousRetinopathyPage.tsx";
 import MacularPuckerPage from "./pages/MacularPuckerPage.tsx";
+import MacularHolePage from "./pages/MacularHolePage.tsx";
 import LocationsPage from "./pages/LocationsPage.tsx";
 import InsurancePage from "./pages/InsurancePage.tsx";
 import ReviewsPage from "./pages/ReviewsPage.tsx";
