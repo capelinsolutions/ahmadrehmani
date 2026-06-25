@@ -13,6 +13,7 @@ import CentralSerousRetinopathyPage from "./pages/CentralSerousRetinopathyPage.t
 import MacularPuckerPage from "./pages/MacularPuckerPage.tsx";
 import MacularHolePage from "./pages/MacularHolePage.tsx";
 import CystoidMacularEdemaPage from "./pages/CystoidMacularEdemaPage.tsx";
+import VitreomacularTractionPage from "./pages/VitreomacularTractionPage.tsx";
 import LocationsPage from "./pages/LocationsPage.tsx";
 import InsurancePage from "./pages/InsurancePage.tsx";
 import ReviewsPage from "./pages/ReviewsPage.tsx";
@@ -39,6 +40,7 @@ const App = () => (
             <Route path="/services/macular-pucker" element={<MacularPuckerPage />} />
             <Route path="/services/macular-hole" element={<MacularHolePage />} />
             <Route path="/services/cystoid-macular-edema" element={<CystoidMacularEdemaPage />} />
+            <Route path="/services/vitreomacular-traction" element={<VitreomacularTractionPage />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route path="/locations" element={<LocationsPage />} />
             <Route path="/insurance" element={<InsurancePage />} />

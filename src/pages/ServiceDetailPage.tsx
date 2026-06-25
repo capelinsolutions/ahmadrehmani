@@ -28,7 +28,8 @@ const customRouteBySubServiceName: Record<string, string> = {
   "Macular Hole": "/services/macular-hole",
   "Macular Pucker (Epiretinal Membrane)": "/services/macular-pucker",
   "Central Serous Retinopathy": "/services/central-serous-retinopathy",
-  "Cystoid Macular Edema": "/services/cystoid-macular-edema"
+  "Cystoid Macular Edema": "/services/cystoid-macular-edema",
+  "Vitreomacular Traction Syndrome": "/services/vitreomacular-traction"
 };
 
 const ServiceDetailPage = () => {
