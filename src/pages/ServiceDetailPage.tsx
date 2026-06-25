@@ -22,6 +22,15 @@ const iconBySlug: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
   "inflammatory-other": DislocatedLensIcon,
 };
 
+const customRouteBySubServiceName: Record<string, string> = {
+  "Wet Age-Related Macular Degeneration (AMD)": "/services/macular-degeneration",
+  "Dry Age-Related Macular Degeneration (AMD)": "/services/macular-degeneration",
+  "Macular Hole": "/services/macular-hole",
+  "Macular Pucker (Epiretinal Membrane)": "/services/macular-pucker",
+  "Central Serous Retinopathy": "/services/central-serous-retinopathy",
+  "Cystoid Macular Edema": "/services/cystoid-macular-edema"
+};
+
 const ServiceDetailPage = () => {
   const { slug = "" } = useParams();
   const service = getServiceBySlug(slug);
@@ -70,12 +79,21 @@ const ServiceDetailPage = () => {
               <div className="pt-6">
                 <p className="font-body text-xs text-accent font-semibold uppercase tracking-wider mb-3">Conditions We Treat</p>
                 <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-2">
-                  {service.subServices.map((sub) => (
-                    <li key={sub.name} className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-accent mt-1 shrink-0" />
-                      <span className="font-body text-foreground/90 text-sm leading-snug">{sub.name}</span>
-                    </li>
-                  ))}
+                  {service.subServices.map((sub) => {
+                    const customRoute = customRouteBySubServiceName[sub.name];
+                    return (
+                      <li key={sub.name} className="flex items-start gap-2">
+                        <Check className="w-4 h-4 text-accent mt-1 shrink-0" />
+                        {customRoute ? (
+                          <Link to={customRoute} className="font-body text-accent hover:text-accent-light hover:underline text-sm leading-snug font-semibold transition-colors">
+                            {sub.name}
+                          </Link>
+                        ) : (
+                          <span className="font-body text-foreground/90 text-sm leading-snug">{sub.name}</span>
+                        )}
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             </div>
