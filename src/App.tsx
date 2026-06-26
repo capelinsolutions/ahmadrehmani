@@ -24,6 +24,7 @@ import RetinalArterialOcclusionPage from "./pages/RetinalArterialOcclusionPage.t
 import RetinalVeinOcclusionPage from "./pages/RetinalVeinOcclusionPage.tsx";
 import VitreousFloatersPage from "./pages/VitreousFloatersPage.tsx";
 import MicropulseLaserPage from "./pages/MicropulseLaserPage.tsx";
+import LaserPhotocoagulationPage from "./pages/LaserPhotocoagulationPage.tsx";
 import LocationsPage from "./pages/LocationsPage.tsx";
 import InsurancePage from "./pages/InsurancePage.tsx";
 import ReviewsPage from "./pages/ReviewsPage.tsx";
@@ -61,6 +62,7 @@ const App = () => (
             <Route path="/services/retinal-vein-occlusion" element={<RetinalVeinOcclusionPage />} />
             <Route path="/services/vitreous-floaters" element={<VitreousFloatersPage />} />
             <Route path="/services/micropulse-laser" element={<MicropulseLaserPage />} />
+            <Route path="/services/laser-photocoagulation" element={<LaserPhotocoagulationPage />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route path="/locations" element={<LocationsPage />} />
             <Route path="/insurance" element={<InsurancePage />} />
