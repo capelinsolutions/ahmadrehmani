@@ -37,7 +37,7 @@ const RetinalDetachmentPage = () => {
               Conditions & Treatments
             </span>
             <h1 className="font-display text-4xl lg:text-5xl font-bold leading-tight mt-3 text-foreground">
-              Retinal Tears & Retinal Detachments
+              Retinal Detachment
             </h1>
             <p className="font-body text-muted-foreground text-lg leading-relaxed mt-4">
               A retinal detachment occurs when the retina separates from its underlying support layers — a vision-threatening condition requiring prompt diagnosis and treatment to maximize visual recovery.
