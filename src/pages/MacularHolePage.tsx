@@ -39,7 +39,7 @@ const MacularHolePage = () => {
               Macular Hole
             </h1>
             <p className="font-body text-muted-foreground text-lg leading-relaxed mt-4">
-              A full-thickness opening in the central retina that alters your direct line of sight. Using state-of-the-art microsurgical techniques, we gently release the traction pulling the hole open, allowing the retina to heal and close.
+              A small opening in the macula — the central retina responsible for sharp, detailed vision. Treated with advanced pars plana vitrectomy, membrane peeling, and gas bubble placement to promote closure and maximize visual recovery.
             </p>
             <div className="flex flex-wrap gap-3 pt-6">
               <a href="tel:+13465870223" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-5 py-3 rounded-lg font-body font-semibold">
