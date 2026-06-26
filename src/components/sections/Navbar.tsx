@@ -84,7 +84,7 @@ const SERVICES_MENU: MenuColumn[] = [
   {
     heading: "Retinal Lasers",
     items: [
-      { label: "Micropulse Laser", to: "/services/central-serous-retinopathy" },
+      { label: "Micropulse Laser", to: "/services/micropulse-laser" },
       { label: "Laser Photocoagulation", to: "/services/diabetic-retinopathy" },
     ],
   },
