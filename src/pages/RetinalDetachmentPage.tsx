@@ -64,16 +64,16 @@ const RetinalDetachmentPage = () => {
             </span>
           </div>
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-8">
-            Understanding Retinal Tears & Detachments
+            Understanding Retinal Detachment
           </h2>
 
           <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
             <div className="space-y-4">
               <p className="font-body text-gray-700 leading-[1.8] text-base lg:text-lg">
-                Retinal tears and detachments often occur as the vitreous gel inside the eye naturally separates with age. In some patients, this process creates traction on the retina, causing a tear that can advance to a retinal detachment and <strong>permanent vision loss if left untreated</strong>.
+                A retinal detachment occurs when the retina, the <strong>light-sensitive tissue lining the back of the eye</strong>, separates from its underlying support layers. This is a vision-threatening condition that may cause <strong>flashes of light, new floaters, a curtain-like shadow, or sudden loss of vision</strong>.
               </p>
               <p className="font-body text-gray-700 leading-[1.8] text-base lg:text-lg">
-                Common warning signs include <strong>new flashes, floaters, or a shadow</strong> in your vision. These symptoms warrant immediate evaluation by a retina specialist.
+                Prompt diagnosis and treatment are essential to maximize the chance of visual recovery.
               </p>
             </div>
 
