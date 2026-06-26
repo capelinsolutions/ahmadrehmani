@@ -23,6 +23,7 @@ import UveitisPage from "./pages/UveitisPage.tsx";
 import RetinalArterialOcclusionPage from "./pages/RetinalArterialOcclusionPage.tsx";
 import RetinalVeinOcclusionPage from "./pages/RetinalVeinOcclusionPage.tsx";
 import VitreousFloatersPage from "./pages/VitreousFloatersPage.tsx";
+import MicropulseLaserPage from "./pages/MicropulseLaserPage.tsx";
 import LocationsPage from "./pages/LocationsPage.tsx";
 import InsurancePage from "./pages/InsurancePage.tsx";
 import ReviewsPage from "./pages/ReviewsPage.tsx";
