@@ -16,6 +16,7 @@ import CystoidMacularEdemaPage from "./pages/CystoidMacularEdemaPage.tsx";
 import VitreomacularTractionPage from "./pages/VitreomacularTractionPage.tsx";
 import RetinalDetachmentPage from "./pages/RetinalDetachmentPage.tsx";
 import LatticeDegenerationPage from "./pages/LatticeDegenerationPage.tsx";
+import PosteriorVitreousDetachmentPage from "./pages/PosteriorVitreousDetachmentPage.tsx";
 import LocationsPage from "./pages/LocationsPage.tsx";
 import InsurancePage from "./pages/InsurancePage.tsx";
 import ReviewsPage from "./pages/ReviewsPage.tsx";
@@ -45,6 +46,7 @@ const App = () => (
             <Route path="/services/vitreomacular-traction" element={<VitreomacularTractionPage />} />
             <Route path="/services/retinal-detachment-tears" element={<RetinalDetachmentPage />} />
             <Route path="/services/lattice-degeneration" element={<LatticeDegenerationPage />} />
+            <Route path="/services/posterior-vitreous-detachment" element={<PosteriorVitreousDetachmentPage />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route path="/locations" element={<LocationsPage />} />
             <Route path="/insurance" element={<InsurancePage />} />
