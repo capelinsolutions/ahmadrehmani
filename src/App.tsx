@@ -56,6 +56,7 @@ const App = () => (
             <Route path="/services/endophthalmitis" element={<EndophthalmitisPage />} />
             <Route path="/services/uveitis" element={<UveitisPage />} />
             <Route path="/services/retinal-arterial-occlusion" element={<RetinalArterialOcclusionPage />} />
+            <Route path="/services/retinal-vein-occlusion" element={<RetinalVeinOcclusionPage />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route path="/locations" element={<LocationsPage />} />
             <Route path="/insurance" element={<InsurancePage />} />
