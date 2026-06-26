@@ -37,10 +37,10 @@ const RetinalDetachmentPage = () => {
               Conditions & Treatments
             </span>
             <h1 className="font-display text-4xl lg:text-5xl font-bold leading-tight mt-3 text-foreground">
-              Retinal Tears & Retinal Detachments
+              Retinal Detachment
             </h1>
             <p className="font-body text-muted-foreground text-lg leading-relaxed mt-4">
-              A retinal tear or detachment is a sight-threatening emergency. New flashes, floaters, or a shadow in your vision require same-day evaluation to prevent permanent vision loss.
+              A retinal detachment occurs when the retina separates from its underlying support layers — a vision-threatening condition requiring prompt diagnosis and treatment to maximize visual recovery.
             </p>
             <div className="flex flex-wrap gap-3 pt-6">
               <a href="tel:+13465870223" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-5 py-3 rounded-lg font-body font-semibold">
@@ -64,16 +64,16 @@ const RetinalDetachmentPage = () => {
             </span>
           </div>
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-8">
-            Understanding Retinal Tears & Detachments
+            Understanding Retinal Detachment
           </h2>
 
           <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
             <div className="space-y-4">
               <p className="font-body text-gray-700 leading-[1.8] text-base lg:text-lg">
-                Retinal tears and detachments often occur as the vitreous gel inside the eye naturally separates with age. In some patients, this process creates traction on the retina, causing a tear that can advance to a retinal detachment and <strong>permanent vision loss if left untreated</strong>.
+                A retinal detachment occurs when the retina, the <strong>light-sensitive tissue lining the back of the eye</strong>, separates from its underlying support layers. This is a vision-threatening condition that may cause <strong>flashes of light, new floaters, a curtain-like shadow, or sudden loss of vision</strong>.
               </p>
               <p className="font-body text-gray-700 leading-[1.8] text-base lg:text-lg">
-                Common warning signs include <strong>new flashes, floaters, or a shadow</strong> in your vision. These symptoms warrant immediate evaluation by a retina specialist.
+                Prompt diagnosis and treatment are essential to maximize the chance of visual recovery.
               </p>
             </div>
 
