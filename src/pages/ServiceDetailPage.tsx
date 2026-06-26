@@ -31,7 +31,12 @@ const customRouteBySubServiceName: Record<string, string> = {
   "Cystoid Macular Edema": "/services/cystoid-macular-edema",
   "Vitreomacular Traction Syndrome": "/services/vitreomacular-traction",
   "Lattice Degeneration": "/services/lattice-degeneration",
-  "Posterior Vitreous Detachment": "/services/posterior-vitreous-detachment"
+  "Posterior Vitreous Detachment": "/services/posterior-vitreous-detachment",
+  "Non-Proliferative Diabetic Retinopathy": "/services/diabetic-retinopathy",
+  "Proliferative Diabetic Retinopathy": "/services/diabetic-retinopathy",
+  "Diabetic Macular Edema": "/services/diabetic-retinopathy",
+  "Diabetic Vitreous Hemorrhage": "/services/diabetic-retinopathy",
+  "Tractional Retinal Detachment": "/services/diabetic-retinopathy"
 };
 
 const ServiceDetailPage = () => {
