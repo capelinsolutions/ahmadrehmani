@@ -38,7 +38,9 @@ const customRouteBySubServiceName: Record<string, string> = {
   "Diabetic Vitreous Hemorrhage": "/services/diabetic-retinopathy",
   "Tractional Retinal Detachment": "/services/diabetic-retinopathy",
   "Endophthalmitis": "/services/endophthalmitis",
-  "Posterior & Intermediate Uveitis": "/services/uveitis"
+  "Posterior & Intermediate Uveitis": "/services/uveitis",
+  "Central Retinal Artery Occlusion (CRAO)": "/services/retinal-arterial-occlusion",
+  "Branch Retinal Artery Occlusion (BRAO)": "/services/retinal-arterial-occlusion"
 };
 
 const ServiceDetailPage = () => {
