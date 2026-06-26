@@ -36,7 +36,8 @@ const customRouteBySubServiceName: Record<string, string> = {
   "Proliferative Diabetic Retinopathy": "/services/diabetic-retinopathy",
   "Diabetic Macular Edema": "/services/diabetic-retinopathy",
   "Diabetic Vitreous Hemorrhage": "/services/diabetic-retinopathy",
-  "Tractional Retinal Detachment": "/services/diabetic-retinopathy"
+  "Tractional Retinal Detachment": "/services/diabetic-retinopathy",
+  "Endophthalmitis": "/services/endophthalmitis"
 };
 
 const ServiceDetailPage = () => {
