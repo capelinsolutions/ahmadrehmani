@@ -2,26 +2,177 @@ import { useState, useEffect } from "react";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "@/assets/nhr-logo.png";
-import { serviceCategories } from "@/data/services";
+
+type MenuItem = { label: string; to: string; children?: MenuItem[] };
+type MenuColumn = { heading: string; items: MenuItem[] };
+
+const CONDITIONS_MENU: MenuColumn[] = [
+  {
+    heading: "Common",
+    items: [
+      { label: "Macular Degeneration", to: "/services/macular-degeneration" },
+      { label: "Diabetic Retinopathy", to: "/services/diabetic-retinopathy" },
+      {
+        label: "Floaters",
+        to: "/services/vitreous-floaters",
+        children: [{ label: "Asteroid Hyalosis", to: "/services/vitreous-floaters" }],
+      },
+    ],
+  },
+  {
+    heading: "Macular",
+    items: [
+      { label: "Central Serous Retinopathy", to: "/services/central-serous-retinopathy" },
+      { label: "Cystoid Macular Edema (CME)", to: "/services/cystoid-macular-edema" },
+      { label: "Epiretinal Membrane / Macular Pucker", to: "/services/macular-pucker" },
+      { label: "Juxtafoveal Telangiectasia", to: "/services/macular-diseases" },
+      { label: "Macular Hole", to: "/services/macular-hole" },
+      { label: "Vitreomacular Traction", to: "/services/vitreomacular-traction" },
+    ],
+  },
+  {
+    heading: "Peripheral",
+    items: [
+      { label: "Lattice Degeneration", to: "/services/lattice-degeneration" },
+      { label: "Posterior Vitreous Detachment", to: "/services/posterior-vitreous-detachment" },
+      { label: "Retinal Hole / Tear", to: "/services/retinal-detachment-tears" },
+      { label: "Retinal Detachment", to: "/services/retinal-detachment-tears" },
+    ],
+  },
+  {
+    heading: "Uveitis",
+    items: [
+      { label: "Endophthalmitis", to: "/services/endophthalmitis" },
+      { label: "Panuveitis / Vitritis", to: "/services/uveitis" },
+    ],
+  },
+  {
+    heading: "Vascular",
+    items: [
+      { label: "Retinal Arterial Occlusion", to: "/services/retinal-arterial-occlusion" },
+      { label: "Retinal Vein Occlusion", to: "/services/retinal-vein-occlusion" },
+    ],
+  },
+  {
+    heading: "Lens Complications",
+    items: [
+      { label: "Retained Lens Fragments", to: "/services" },
+      { label: "Dislocated Intraocular Lenses", to: "/services" },
+    ],
+  },
+];
+
+const SERVICES_MENU: MenuColumn[] = [
+  {
+    heading: "Diagnostics",
+    items: [
+      { label: "Fundus Autofluorescence", to: "/services" },
+      { label: "Humphrey Visual Field Test", to: "/services" },
+      { label: "Ocular Ultrasound (B-scan)", to: "/services" },
+      { label: "Spectral Domain OCT", to: "/services" },
+      { label: "SD-OCT Angiography", to: "/services" },
+      { label: "Ultra-Widefield Imaging", to: "/services" },
+    ],
+  },
+  {
+    heading: "Injections",
+    items: [
+      { label: "Intravitreal Injections", to: "/services" },
+      { label: "Sub-Tenon Injections", to: "/services" },
+    ],
+  },
+  {
+    heading: "Retinal Lasers",
+    items: [
+      { label: "Micropulse Laser", to: "/services/central-serous-retinopathy" },
+      { label: "Laser Photocoagulation", to: "/services/diabetic-retinopathy" },
+    ],
+  },
+  {
+    heading: "Retinal Surgeries",
+    items: [
+      { label: "Macular Hole Repair", to: "/services/macular-hole" },
+      { label: "Membrane Peeling", to: "/services/macular-pucker" },
+      {
+        label: "Retinal Detachment",
+        to: "/services/retinal-detachment-tears",
+        children: [
+          { label: "In-Office Pneumatic Retinopexy", to: "/services/retinal-detachment-tears" },
+          { label: "Vitrectomy", to: "/services/retinal-detachment-tears" },
+          { label: "Scleral Buckle", to: "/services/retinal-detachment-tears" },
+        ],
+      },
+      {
+        label: "Cataract Complications",
+        to: "/services",
+        children: [
+          { label: "Dense Cataract Surgery", to: "/services" },
+          { label: "Lens Repositioning", to: "/services" },
+          { label: "Retained Lens Fragments", to: "/services" },
+          { label: "Secondary Intraocular Lenses", to: "/services" },
+        ],
+      },
+    ],
+  },
+];
 
 const navLinks = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Services", to: "/services", hasDropdown: true },
+  { label: "Conditions", to: "/services", menu: CONDITIONS_MENU },
+  { label: "Services", to: "/services", menu: SERVICES_MENU },
   { label: "Location", to: "/locations" },
   { label: "Contact", to: "/contact" },
-];
+] as const;
 
-// Split categories into two surgical/medical-leaning columns
-const SURGICAL_SLUGS = new Set([
-  "retinal-detachment-tears",
-  "vitreous-surgical-conditions",
-  "macular-diseases",
-]);
+const MegaMenu = ({ columns }: { columns: MenuColumn[] }) => (
+  <div className="absolute left-1/2 -translate-x-1/2 top-full w-[min(1200px,calc(100vw-2rem))] opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50 pt-3">
+    <div className="bg-background border border-border shadow-2xl rounded-2xl overflow-hidden">
+      <div
+        className="grid gap-x-8 gap-y-8 p-8 lg:p-10"
+        style={{ gridTemplateColumns: `repeat(${Math.min(columns.length, 4)}, minmax(0,1fr))` }}
+      >
+        {columns.map((col) => (
+          <div key={col.heading}>
+            <h4 className="font-display text-foreground font-bold text-base mb-4 pb-2 border-b border-border">
+              {col.heading}
+            </h4>
+            <ul className="space-y-2.5">
+              {col.items.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    to={item.to}
+                    className="font-body text-[13px] text-muted-foreground hover:text-accent transition-colors block leading-snug"
+                  >
+                    {item.label}
+                  </Link>
+                  {item.children && (
+                    <ul className="mt-1.5 ml-3 pl-3 border-l border-border space-y-1.5">
+                      {item.children.map((sub) => (
+                        <li key={sub.label}>
+                          <Link
+                            to={sub.to}
+                            className="font-body text-[12px] text-muted-foreground/90 hover:text-accent transition-colors block leading-snug"
+                          >
+                            {sub.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+);
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileOpenIdx, setMobileOpenIdx] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
@@ -33,12 +184,9 @@ const Navbar = () => {
 
   useEffect(() => {
     setMobileOpen(false);
-    setMobileServicesOpen(false);
+    setMobileOpenIdx(null);
     window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
   }, [location.pathname]);
-
-  const surgical = serviceCategories.filter((c) => SURGICAL_SLUGS.has(c.slug));
-  const medical = serviceCategories.filter((c) => !SURGICAL_SLUGS.has(c.slug));
 
   const linkClass = ({ isActive }: { isActive: boolean }) =>
     `font-body text-sm font-bold tracking-wide transition-colors ${
@@ -52,24 +200,19 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 lg:px-8 flex items-center justify-between h-20 lg:h-24 relative">
-        {/* Logo */}
         <Link
           to="/"
           className="flex items-center gap-3 min-w-0 shrink-0"
           aria-label="North Houston Retina — Dr. Ahmad Rehmani home"
         >
-          <img
-            src={logo}
-            alt="North Houston Retina logo"
-            className="h-12 lg:h-14 w-auto object-contain"
-          />
+          <img src={logo} alt="North Houston Retina logo" className="h-12 lg:h-14 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-7 xl:gap-9 h-full">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 h-full">
           {navLinks.map((link) =>
-            link.hasDropdown ? (
-              <div key={link.to} className="group h-full flex items-center">
+            "menu" in link ? (
+              <div key={link.label} className="group h-full flex items-center">
                 <NavLink
                   to={link.to}
                   className={({ isActive }) =>
@@ -81,84 +224,7 @@ const Navbar = () => {
                   {link.label}
                   <ChevronDown className="w-4 h-4 text-muted-foreground/60 group-hover:rotate-180 transition-transform duration-300" />
                 </NavLink>
-
-                {/* Mega Menu */}
-                <div className="absolute left-1/2 -translate-x-1/2 top-full w-[min(1100px,calc(100vw-2rem))] opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 z-50 pt-3">
-                  <div className="bg-background border border-border shadow-2xl rounded-2xl overflow-hidden">
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 p-6 lg:p-10">
-                      <div className="md:col-span-3">
-                        <h4 className="font-display text-foreground font-bold text-lg mb-5">
-                          Surgical Retina
-                        </h4>
-                        <ul className="space-y-3.5">
-                          {surgical.map((c) => (
-                            <li key={c.slug}>
-                              <Link
-                                to={`/services/${c.slug}`}
-                                className="font-body text-sm text-muted-foreground hover:text-accent transition-colors block"
-                              >
-                                {c.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="md:col-span-3">
-                        <h4 className="font-display text-foreground font-bold text-lg mb-5">
-                          Medical Retina
-                        </h4>
-                        <ul className="space-y-3.5">
-                          {medical.map((c) => (
-                            <li key={c.slug}>
-                              <Link
-                                to={`/services/${c.slug}`}
-                                className="font-body text-sm text-muted-foreground hover:text-accent transition-colors block"
-                              >
-                                {c.name}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                        <Link
-                          to="/services"
-                          className="inline-flex items-center gap-1.5 mt-5 font-body text-xs font-bold text-accent hover:text-accent-light transition-colors"
-                        >
-                          View all services →
-                        </Link>
-                      </div>
-
-                      {/* Featured panel */}
-                      <div className="md:col-span-6 bg-accent-pale/60 rounded-xl p-6 lg:p-7 flex flex-col justify-between border border-border">
-                        <div>
-                          <span className="font-body text-accent font-bold text-[10px] uppercase tracking-[0.2em] mb-2 block">
-                            Featured Specialist
-                          </span>
-                          <h4 className="font-display text-xl lg:text-2xl font-bold text-foreground mb-3">
-                            Dr. Ahmad Rehmani, D.O.
-                          </h4>
-                          <p className="font-body text-muted-foreground text-sm leading-relaxed mb-5">
-                            Fellowship-trained vitreoretinal surgeon delivering elite care
-                            for complex retinal and ocular conditions across North Houston.
-                          </p>
-                        </div>
-                        <div className="flex flex-wrap items-center gap-3">
-                          <Link
-                            to="/about"
-                            className="inline-flex items-center font-body text-sm font-bold text-foreground border-b-2 border-gold pb-0.5 hover:text-accent transition-colors"
-                          >
-                            Meet our Surgeon
-                          </Link>
-                          <Link
-                            to="/contact"
-                            className="inline-flex items-center font-body text-sm font-semibold text-accent hover:text-accent-light transition-colors ml-auto"
-                          >
-                            Book consultation →
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <MegaMenu columns={link.menu} />
               </div>
             ) : (
               <NavLink key={link.to} to={link.to} end={link.to === "/"} className={linkClass}>
@@ -203,35 +269,46 @@ const Navbar = () => {
       {/* Mobile overlay */}
       {mobileOpen && (
         <div className="lg:hidden absolute left-0 right-0 top-full z-50 flex flex-col items-stretch py-4 bg-background border-t border-border shadow-2xl max-h-[calc(100vh-80px)] overflow-y-auto">
-          {navLinks.map((link) =>
-            link.hasDropdown ? (
-              <div key={link.to}>
+          {navLinks.map((link, idx) =>
+            "menu" in link ? (
+              <div key={link.label}>
                 <button
-                  onClick={() => setMobileServicesOpen((v) => !v)}
+                  onClick={() => setMobileOpenIdx(mobileOpenIdx === idx ? null : idx)}
                   className="w-full flex items-center justify-between text-base text-foreground font-body font-bold py-3.5 px-6 hover:bg-accent-pale transition-colors text-left"
                 >
                   {link.label}
                   <ChevronDown
-                    className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`}
+                    className={`w-4 h-4 transition-transform ${mobileOpenIdx === idx ? "rotate-180" : ""}`}
                   />
                 </button>
-                {mobileServicesOpen && (
-                  <div className="bg-accent-pale/40">
-                    {serviceCategories.map((cat) => (
-                      <Link
-                          key={cat.slug}
-                          to={`/services/${cat.slug}`}
-                          className="block py-2.5 px-10 font-body text-sm text-muted-foreground hover:text-accent hover:bg-background font-medium"
-                      >
-                        {cat.name}
-                      </Link>
+                {mobileOpenIdx === idx && (
+                  <div className="bg-accent-pale/40 py-2">
+                    {link.menu.map((col) => (
+                      <div key={col.heading} className="py-2">
+                        <p className="px-8 py-1 font-display text-xs font-bold uppercase tracking-wider text-foreground">
+                          {col.heading}
+                        </p>
+                        {col.items.map((item) => (
+                          <div key={item.label}>
+                            <Link
+                              to={item.to}
+                              className="block py-2 px-10 font-body text-sm text-muted-foreground hover:text-accent hover:bg-background font-medium"
+                            >
+                              {item.label}
+                            </Link>
+                            {item.children?.map((sub) => (
+                              <Link
+                                key={sub.label}
+                                to={sub.to}
+                                className="block py-1.5 px-14 font-body text-[13px] text-muted-foreground/80 hover:text-accent"
+                              >
+                                — {sub.label}
+                              </Link>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
                     ))}
-                    <Link
-                      to="/services"
-                      className="block py-2.5 px-10 font-body text-sm text-accent font-bold hover:bg-background"
-                    >
-                      View All Services →
-                    </Link>
                   </div>
                 )}
               </div>
