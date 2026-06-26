@@ -26,6 +26,7 @@ import VitreousFloatersPage from "./pages/VitreousFloatersPage.tsx";
 import MicropulseLaserPage from "./pages/MicropulseLaserPage.tsx";
 import LaserPhotocoagulationPage from "./pages/LaserPhotocoagulationPage.tsx";
 import PneumaticRetinopexyPage from "./pages/PneumaticRetinopexyPage.tsx";
+import ParsPlanaVitrectomyPage from "./pages/ParsPlanaVitrectomyPage.tsx";
 import LocationsPage from "./pages/LocationsPage.tsx";
 import InsurancePage from "./pages/InsurancePage.tsx";
 import ReviewsPage from "./pages/ReviewsPage.tsx";
