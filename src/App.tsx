@@ -60,6 +60,7 @@ const App = () => (
             <Route path="/services/retinal-arterial-occlusion" element={<RetinalArterialOcclusionPage />} />
             <Route path="/services/retinal-vein-occlusion" element={<RetinalVeinOcclusionPage />} />
             <Route path="/services/vitreous-floaters" element={<VitreousFloatersPage />} />
+            <Route path="/services/micropulse-laser" element={<MicropulseLaserPage />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route path="/locations" element={<LocationsPage />} />
             <Route path="/insurance" element={<InsurancePage />} />
