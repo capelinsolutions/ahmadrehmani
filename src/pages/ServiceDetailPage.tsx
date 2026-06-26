@@ -42,7 +42,9 @@ const customRouteBySubServiceName: Record<string, string> = {
   "Central Retinal Artery Occlusion (CRAO)": "/services/retinal-arterial-occlusion",
   "Branch Retinal Artery Occlusion (BRAO)": "/services/retinal-arterial-occlusion",
   "Central Retinal Vein Occlusion (CRVO)": "/services/retinal-vein-occlusion",
-  "Branch Retinal Vein Occlusion (BRVO)": "/services/retinal-vein-occlusion"
+  "Branch Retinal Vein Occlusion (BRVO)": "/services/retinal-vein-occlusion",
+  "Vitreous Floaters": "/services/vitreous-floaters",
+  "Asteroid Hyalosis": "/services/vitreous-floaters"
 };
 
 const ServiceDetailPage = () => {
