@@ -97,7 +97,7 @@ const SERVICES_MENU: MenuColumn[] = [
         label: "Retinal Detachment",
         to: "/services/retinal-detachment-tears",
         children: [
-          { label: "In-Office Pneumatic Retinopexy", to: "/services/retinal-detachment-tears" },
+          { label: "In-Office Pneumatic Retinopexy", to: "/services/pneumatic-retinopexy" },
           { label: "Vitrectomy", to: "/services/retinal-detachment-tears" },
           { label: "Scleral Buckle", to: "/services/retinal-detachment-tears" },
         ],
