@@ -19,6 +19,7 @@ import LatticeDegenerationPage from "./pages/LatticeDegenerationPage.tsx";
 import PosteriorVitreousDetachmentPage from "./pages/PosteriorVitreousDetachmentPage.tsx";
 import DiabeticRetinopathyPage from "./pages/DiabeticRetinopathyPage.tsx";
 import EndophthalmitisPage from "./pages/EndophthalmitisPage.tsx";
+import UveitisPage from "./pages/UveitisPage.tsx";
 import LocationsPage from "./pages/LocationsPage.tsx";
 import InsurancePage from "./pages/InsurancePage.tsx";
 import ReviewsPage from "./pages/ReviewsPage.tsx";
@@ -51,6 +52,7 @@ const App = () => (
             <Route path="/services/posterior-vitreous-detachment" element={<PosteriorVitreousDetachmentPage />} />
             <Route path="/services/diabetic-retinopathy" element={<DiabeticRetinopathyPage />} />
             <Route path="/services/endophthalmitis" element={<EndophthalmitisPage />} />
+            <Route path="/services/uveitis" element={<UveitisPage />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route path="/locations" element={<LocationsPage />} />
             <Route path="/insurance" element={<InsurancePage />} />
