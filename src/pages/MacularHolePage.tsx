@@ -69,7 +69,7 @@ const MacularHolePage = () => {
           <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
             <div>
               <p className="font-body text-gray-700 leading-[1.8] text-base lg:text-lg">
-                A macular hole is a small, physical break or hole in the central part of the retina called the macula, which controls our sharpest central vision. This opening is typically caused by the vitreous gel inside the eye shrinking and pulling on the delicate macular tissues. A macular hole can cause <strong>distorted, blurred, or missing central vision</strong>, making it difficult to read, drive, or recognize fine details.
+                A macular hole is a small opening that develops in the <strong>macula</strong>, the central portion of the retina responsible for sharp, detailed vision. Patients often notice <strong>blurred central vision, distortion, difficulty reading, or a dark spot</strong> in the center of their vision.
               </p>
             </div>
 
