@@ -40,7 +40,7 @@ const RetinalDetachmentPage = () => {
               Retinal Tears & Retinal Detachments
             </h1>
             <p className="font-body text-muted-foreground text-lg leading-relaxed mt-4">
-              A retinal tear or detachment is a sight-threatening emergency. New flashes, floaters, or a shadow in your vision require same-day evaluation to prevent permanent vision loss.
+              A retinal detachment occurs when the retina separates from its underlying support layers — a vision-threatening condition requiring prompt diagnosis and treatment to maximize visual recovery.
             </p>
             <div className="flex flex-wrap gap-3 pt-6">
               <a href="tel:+13465870223" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-5 py-3 rounded-lg font-body font-semibold">
