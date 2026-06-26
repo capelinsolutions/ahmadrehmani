@@ -39,7 +39,7 @@ const MacularHolePage = () => {
               Macular Hole
             </h1>
             <p className="font-body text-muted-foreground text-lg leading-relaxed mt-4">
-              A full-thickness opening in the central retina that alters your direct line of sight. Using state-of-the-art microsurgical techniques, we gently release the traction pulling the hole open, allowing the retina to heal and close.
+              A small opening in the macula — the central retina responsible for sharp, detailed vision. Treated with advanced pars plana vitrectomy, membrane peeling, and gas bubble placement to promote closure and maximize visual recovery.
             </p>
             <div className="flex flex-wrap gap-3 pt-6">
               <a href="tel:+13465870223" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-5 py-3 rounded-lg font-body font-semibold">
@@ -69,7 +69,7 @@ const MacularHolePage = () => {
           <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
             <div>
               <p className="font-body text-gray-700 leading-[1.8] text-base lg:text-lg">
-                A macular hole is a small, physical break or hole in the central part of the retina called the macula, which controls our sharpest central vision. This opening is typically caused by the vitreous gel inside the eye shrinking and pulling on the delicate macular tissues. A macular hole can cause <strong>distorted, blurred, or missing central vision</strong>, making it difficult to read, drive, or recognize fine details.
+                A macular hole is a small opening that develops in the <strong>macula</strong>, the central portion of the retina responsible for sharp, detailed vision. Patients often notice <strong>blurred central vision, distortion, difficulty reading, or a dark spot</strong> in the center of their vision.
               </p>
             </div>
 
@@ -114,12 +114,12 @@ const MacularHolePage = () => {
                 </div>
               </div>
               <p className="font-body text-gray-700 leading-relaxed text-sm lg:text-base">
-                The primary purpose of macular hole surgery (vitrectomy) is to <strong>release the physical traction</strong> pulling the edges of the hole apart. During this advanced outpatient microsurgery, Dr. Rehmani removes the vitreous gel and extremely delicately peels away the microscopic inner limiting membrane (ILM) on the retina's surface. 
+                Macular holes are treated with advanced <strong>pars plana vitrectomy</strong> surgery, <strong>membrane peeling</strong>, and <strong>gas bubble placement</strong>. Dr. Rehmani removes the vitreous gel, gently peels the inner limiting membrane (ILM) to release traction, and places a gas bubble that acts as an internal splint to promote closure of the hole.
               </p>
               <div className="mt-4 flex gap-3 items-start bg-accent-pale/20 p-4 rounded-xl border border-accent/10">
                 <Target className="w-5 h-5 text-accent shrink-0 mt-0.5" />
                 <p className="font-body text-xs text-gray-600 leading-relaxed">
-                  <strong>The Gas Bubble:</strong> A temporary gas bubble is placed in the eye to act as a internal splint, pressing the macular edges together so the hole can close and heal over the following days.
+                  <strong>Maximizing Recovery:</strong> The gas bubble gradually dissolves over days to weeks as the macular edges seal together, allowing the retina to heal and central vision to recover.
                 </p>
               </div>
             </div>
