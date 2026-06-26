@@ -30,7 +30,8 @@ const customRouteBySubServiceName: Record<string, string> = {
   "Central Serous Retinopathy": "/services/central-serous-retinopathy",
   "Cystoid Macular Edema": "/services/cystoid-macular-edema",
   "Vitreomacular Traction Syndrome": "/services/vitreomacular-traction",
-  "Lattice Degeneration": "/services/lattice-degeneration"
+  "Lattice Degeneration": "/services/lattice-degeneration",
+  "Posterior Vitreous Detachment": "/services/posterior-vitreous-detachment"
 };
 
 const ServiceDetailPage = () => {
