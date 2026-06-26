@@ -21,6 +21,7 @@ import DiabeticRetinopathyPage from "./pages/DiabeticRetinopathyPage.tsx";
 import EndophthalmitisPage from "./pages/EndophthalmitisPage.tsx";
 import UveitisPage from "./pages/UveitisPage.tsx";
 import RetinalArterialOcclusionPage from "./pages/RetinalArterialOcclusionPage.tsx";
+import RetinalVeinOcclusionPage from "./pages/RetinalVeinOcclusionPage.tsx";
 import LocationsPage from "./pages/LocationsPage.tsx";
 import InsurancePage from "./pages/InsurancePage.tsx";
 import ReviewsPage from "./pages/ReviewsPage.tsx";
