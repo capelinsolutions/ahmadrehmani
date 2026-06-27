@@ -66,12 +66,12 @@ const SERVICES_MENU: MenuColumn[] = [
   {
     heading: "Diagnostics",
     items: [
-      { label: "Fundus Autofluorescence", to: "/services" },
-      { label: "Humphrey Visual Field Test", to: "/services" },
-      { label: "Ocular Ultrasound (B-scan)", to: "/services" },
-      { label: "Spectral Domain OCT", to: "/services" },
-      { label: "SD-OCT Angiography", to: "/services" },
-      { label: "Ultra-Widefield Imaging", to: "/services" },
+      { label: "Fundus Autofluorescence", to: "/services/diagnostics#fundus-autofluorescence" },
+      { label: "Humphrey Visual Field Test", to: "/services/diagnostics#humphrey-visual-field" },
+      { label: "Ocular Ultrasound (B-scan)", to: "/services/diagnostics#ocular-ultrasound" },
+      { label: "Spectral Domain OCT", to: "/services/diagnostics#sd-oct" },
+      { label: "SD-OCT Angiography", to: "/services/diagnostics#sd-octa" },
+      { label: "Ultra-Widefield Imaging", to: "/services/diagnostics#ultra-widefield-imaging" },
     ],
   },
   {
