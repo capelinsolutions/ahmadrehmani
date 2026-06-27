@@ -104,12 +104,12 @@ const SERVICES_MENU: MenuColumn[] = [
       },
       {
         label: "Cataract Complications",
-        to: "/services",
+        to: "/services/cataract-complications",
         children: [
-          { label: "Dense Cataract Surgery", to: "/services" },
-          { label: "Lens Repositioning", to: "/services" },
-          { label: "Retained Lens Fragments", to: "/services" },
-          { label: "Secondary Intraocular Lenses", to: "/services" },
+          { label: "Dense Cataracts", to: "/services/cataract-complications#dense-cataracts" },
+          { label: "Lens Repositioning", to: "/services/cataract-complications#lens-repositioning" },
+          { label: "Retained Lens Fragments", to: "/services/cataract-complications#retained-lens-fragments" },
+          { label: "Secondary Intraocular Lens", to: "/services/cataract-complications#secondary-intraocular-lens" },
         ],
       },
     ],
