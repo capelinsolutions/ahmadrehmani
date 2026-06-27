@@ -29,6 +29,7 @@ import PneumaticRetinopexyPage from "./pages/PneumaticRetinopexyPage.tsx";
 import ParsPlanaVitrectomyPage from "./pages/ParsPlanaVitrectomyPage.tsx";
 import ScleralBucklePage from "./pages/ScleralBucklePage.tsx";
 import CataractComplicationsPage from "./pages/CataractComplicationsPage.tsx";
+import DiagnosticsPage from "./pages/DiagnosticsPage.tsx";
 import LocationsPage from "./pages/LocationsPage.tsx";
 import InsurancePage from "./pages/InsurancePage.tsx";
 import ReviewsPage from "./pages/ReviewsPage.tsx";
@@ -71,6 +72,7 @@ const App = () => (
             <Route path="/services/pars-plana-vitrectomy" element={<ParsPlanaVitrectomyPage />} />
             <Route path="/services/scleral-buckle" element={<ScleralBucklePage />} />
             <Route path="/services/cataract-complications" element={<CataractComplicationsPage />} />
+            <Route path="/services/diagnostics" element={<DiagnosticsPage />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route path="/locations" element={<LocationsPage />} />
             <Route path="/insurance" element={<InsurancePage />} />
