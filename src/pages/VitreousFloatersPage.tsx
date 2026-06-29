@@ -104,7 +104,7 @@ const VitreousFloatersPage = () => (
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {[
             {
               icon: Eye,
@@ -115,11 +115,6 @@ const VitreousFloatersPage = () => (
               icon: Clock,
               title: "Observation & Adaptation",
               body: "Most floaters become less noticeable within 3–6 months as the brain naturally adapts. Reassurance and monitoring are often all that is needed.",
-            },
-            {
-              icon: Sparkles,
-              title: "Asteroid Hyalosis Care",
-              body: "When calcium-lipid deposits cause glare or reduced clarity, individualized treatment planning helps restore visual quality.",
             },
             {
               icon: Scissors,
