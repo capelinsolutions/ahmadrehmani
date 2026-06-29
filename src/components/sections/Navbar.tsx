@@ -10,7 +10,14 @@ const CONDITIONS_MENU: MenuColumn[] = [
   {
     heading: "Common",
     items: [
-      { label: "Macular Degeneration", to: "/services/macular-degeneration" },
+      {
+        label: "Macular Degeneration",
+        to: "/services/macular-degeneration",
+        children: [
+          { label: "Wet Macular Degeneration", to: "/services/macular-degeneration" },
+          { label: "Dry Macular Degeneration", to: "/services/dry-macular-degeneration" },
+        ],
+      },
       { label: "Diabetic Retinopathy", to: "/services/diabetic-retinopathy" },
       {
         label: "Floaters",

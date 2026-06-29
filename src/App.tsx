@@ -9,6 +9,7 @@ import AboutPage from "./pages/AboutPage.tsx";
 import ServicesPage from "./pages/ServicesPage.tsx";
 import ServiceDetailPage from "./pages/ServiceDetailPage.tsx";
 import MacularDegenerationPage from "./pages/MacularDegenerationPage.tsx";
+import DryMacularDegenerationPage from "./pages/DryMacularDegenerationPage.tsx";
 import CentralSerousRetinopathyPage from "./pages/CentralSerousRetinopathyPage.tsx";
 import MacularPuckerPage from "./pages/MacularPuckerPage.tsx";
 import MacularHolePage from "./pages/MacularHolePage.tsx";
@@ -52,6 +53,7 @@ const App = () => (
             <Route path="/about" element={<DoctorProfile />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/services/macular-degeneration" element={<MacularDegenerationPage />} />
+            <Route path="/services/dry-macular-degeneration" element={<DryMacularDegenerationPage />} />
             <Route path="/services/central-serous-retinopathy" element={<CentralSerousRetinopathyPage />} />
             <Route path="/services/macular-pucker" element={<MacularPuckerPage />} />
             <Route path="/services/macular-hole" element={<MacularHolePage />} />

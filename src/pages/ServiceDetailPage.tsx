@@ -24,7 +24,7 @@ const iconBySlug: Record<string, React.FC<React.SVGProps<SVGSVGElement>>> = {
 
 const customRouteBySubServiceName: Record<string, string> = {
   "Wet Age-Related Macular Degeneration (AMD)": "/services/macular-degeneration",
-  "Dry Age-Related Macular Degeneration (AMD)": "/services/macular-degeneration",
+  "Dry Age-Related Macular Degeneration (AMD)": "/services/dry-macular-degeneration",
   "Macular Hole": "/services/macular-hole",
   "Macular Pucker (Epiretinal Membrane)": "/services/macular-pucker",
   "Central Serous Retinopathy": "/services/central-serous-retinopathy",
