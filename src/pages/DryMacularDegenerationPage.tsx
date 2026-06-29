@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Phone, ChevronRight, Sun, Sparkles, ShieldCheck } from "lucide-react";
+import { Phone, ChevronRight, Sun, Sparkles, ShieldCheck, Syringe, CalendarClock } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import dryFundus from "@/assets/services/dry-amd-fundus.jpg";
 import valedaDevice from "@/assets/services/valeda-actual.jpg";
 import gaFundus from "@/assets/services/geographic-atrophy-fundus.jpg";
@@ -138,11 +139,70 @@ const DryMacularDegenerationPage = () => {
               <p className="font-body text-gray-700 leading-[1.8] text-base lg:text-lg">
                 Geographic atrophy is the advanced form of dry AMD, where well-defined patches of the macula lose function permanently. Once GA reaches the center of vision, reading and face recognition become severely impaired.
               </p>
-              <div className="mt-7 bg-accent-pale/40 border-l-4 border-primary rounded-r-xl p-5 lg:p-6">
+              <div className="mt-7">
                 <p className="font-display text-lg lg:text-xl font-bold text-foreground mb-2">Treatment: Complement Inhibitor Injections</p>
-                <p className="font-body text-gray-700 leading-relaxed text-sm lg:text-base">
-                  We offer GA treatment with FDA-approved complement inhibitor injections (Syfovre, Izervay) shown to slow the growth of vision-threatening atrophy. Early intervention is key — the sooner treatment begins, the more central vision can be preserved.
+                <p className="font-body text-gray-700 leading-relaxed text-sm lg:text-base mb-5">
+                  FDA-approved complement inhibitor injections slow the growth of vision-threatening atrophy. Early intervention helps preserve more central vision.
                 </p>
+
+                <Tabs defaultValue="syfovre" className="w-full">
+                  <TabsList className="grid grid-cols-2 w-full bg-accent-pale/60 p-1 h-auto rounded-xl">
+                    <TabsTrigger
+                      value="syfovre"
+                      className="font-display font-bold text-sm lg:text-base py-2.5 rounded-lg data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-sm"
+                    >
+                      Syfovre
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="izervay"
+                      className="font-display font-bold text-sm lg:text-base py-2.5 rounded-lg data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:shadow-sm"
+                    >
+                      Izervay
+                    </TabsTrigger>
+                  </TabsList>
+
+                  <TabsContent value="syfovre" className="mt-5">
+                    <div className="bg-background border border-border rounded-2xl p-5 lg:p-6 shadow-sm">
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                          <Syringe className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <p className="font-body text-[11px] text-primary font-bold uppercase tracking-wider">Pegcetacoplan</p>
+                          <p className="font-display text-lg font-bold text-foreground">Syfovre® (Apellis)</p>
+                        </div>
+                      </div>
+                      <p className="font-body text-gray-700 leading-relaxed text-sm lg:text-base">
+                        A targeted C3 complement inhibitor — the first FDA-approved therapy for geographic atrophy. Demonstrated reduction in GA lesion growth across landmark OAKS and DERBY trials.
+                      </p>
+                      <div className="flex items-center gap-2 mt-4 text-xs font-body text-muted-foreground">
+                        <CalendarClock className="w-3.5 h-3.5 text-accent" />
+                        Dosed every 25–60 days, individualized to lesion progression.
+                      </div>
+                    </div>
+                  </TabsContent>
+
+                  <TabsContent value="izervay" className="mt-5">
+                    <div className="bg-background border border-border rounded-2xl p-5 lg:p-6 shadow-sm">
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="w-10 h-10 rounded-xl bg-accent/15 text-accent flex items-center justify-center shrink-0">
+                          <Syringe className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <p className="font-body text-[11px] text-accent font-bold uppercase tracking-wider">Avacincaptad Pegol</p>
+                          <p className="font-display text-lg font-bold text-foreground">Izervay® (Astellas)</p>
+                        </div>
+                      </div>
+                      <p className="font-body text-gray-700 leading-relaxed text-sm lg:text-base">
+                        A C5 complement inhibitor approved for geographic atrophy secondary to dry AMD. GATHER1 and GATHER2 trials showed a meaningful slowing of GA growth as early as the first six months of therapy.
+                      </p>
+                      <div className="flex items-center gap-2 mt-4 text-xs font-body text-muted-foreground">
+                        <CalendarClock className="w-3.5 h-3.5 text-accent" />
+                        Monthly intravitreal injection schedule.
+                      </div>
+                    </div>
+                  </TabsContent>
+                </Tabs>
               </div>
             </div>
 
