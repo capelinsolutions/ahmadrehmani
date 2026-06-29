@@ -37,6 +37,7 @@ import ReviewsPage from "./pages/ReviewsPage.tsx";
 import FAQPage from "./pages/FAQPage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
 import DoctorProfile from "./pages/DoctorProfile.tsx";
+import EyeAnatomyPage from "./pages/EyeAnatomyPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
