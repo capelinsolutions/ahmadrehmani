@@ -3,10 +3,27 @@ import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Activity } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import drFundus from "@/assets/services/diabetic-retinopathy-fundus.jpg";
-import dmeOct from "@/assets/services/diabetic-macular-edema-oct.jpg";
+import drNpdr from "@/assets/services/diabetic-retinopathy-fundus-npdr.jpg";
+import drAdvanced from "@/assets/services/diabetic-retinopathy-advanced.jpg";
+import avastin from "@/assets/services/meds/avastin.png";
+import lucentis from "@/assets/services/meds/lucentis.png";
+import eylea from "@/assets/services/meds/eylea.png";
+import eyleaHd from "@/assets/services/meds/eylea-hd.png";
+import vabysmo from "@/assets/services/meds/vabysmo.png";
+import pavblu from "@/assets/services/meds/pavblu.png";
+import ozurdex from "@/assets/services/meds/ozurdex.png";
+import iluvien from "@/assets/services/meds/iluvien.png";
 
-const injectionMeds = ["Vabysmo", "Eylea HD", "Eylea", "Avastin", "Lucentis", "Ozurdex", "Iluvien"];
+const injectionMeds = [
+  { name: "Avastin", logo: avastin },
+  { name: "Lucentis", logo: lucentis },
+  { name: "Eylea", logo: eylea },
+  { name: "Eylea HD", logo: eyleaHd },
+  { name: "Vabysmo", logo: vabysmo },
+  { name: "Pavblu", logo: pavblu },
+  { name: "Ozurdex", logo: ozurdex },
+  { name: "Iluvien", logo: iluvien },
+];
 
 const DiabeticRetinopathyPage = () => {
   const ref = useScrollAnimation();
@@ -54,7 +71,7 @@ const DiabeticRetinopathyPage = () => {
           <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-start">
             <div className="space-y-6">
               <p className="font-body text-gray-700 leading-[1.8] text-base lg:text-lg">
-                Diabetes can damage the delicate blood vessels of the retina, leading to leakage, swelling, abnormal blood vessel growth, and vision-threatening bleeding. Because diabetic eye disease often develops without early symptoms, regular dilated eye examinations and advanced OCT imaging are essential for early detection and preserving vision.
+                Diabetes can damage the delicate blood vessels of the retina, leading to leakage, swelling, abnormal blood vessel growth, and vision-threatening bleeding. Because diabetic eye disease often develops without early symptoms, regular dilated eye examinations and advanced OCT imaging are essential for early detection and preserving vision. <strong>Advanced ultra-widefield imaging and fluorescein angiography</strong> allow the earliest detection of even the smallest hemorrhages and early disease.
               </p>
               <p className="font-body text-gray-700 leading-[1.8] text-base lg:text-lg">
                 At North Houston Retina, Dr. Rehmani provides comprehensive, state-of-the-art diabetic eye care tailored to each patient's needs. Treatment options include <strong>anti-VEGF and steroid injections</strong>, <strong>focal and panretinal laser therapy</strong>, and <strong>advanced 27-gauge vitrectomy surgery</strong> for vitreous hemorrhage, tractional retinal detachment, and other complex diabetic retinal conditions.
@@ -63,12 +80,12 @@ const DiabeticRetinopathyPage = () => {
 
             <div className="grid grid-cols-1 gap-4">
               <figure className="rounded-2xl overflow-hidden shadow-md border border-border bg-background">
-                <img src={drFundus} alt="Fundus photograph of diabetic retinopathy with hemorrhages and exudates" loading="lazy" width={1024} height={1024} className="w-full h-56 lg:h-64 object-cover" />
+                <img src={drNpdr} alt="Fundus photograph of diabetic retinopathy with dot-blot hemorrhages and hard exudates" loading="lazy" width={1024} height={1024} className="w-full h-56 lg:h-64 object-cover" />
                 <figcaption className="font-body text-xs text-muted-foreground px-3 py-2 border-t border-border">Fundus photo — diabetic retinopathy</figcaption>
               </figure>
               <figure className="rounded-2xl overflow-hidden shadow-md border border-border bg-background">
-                <img src={dmeOct} alt="OCT of diabetic macular edema showing cystic fluid" loading="lazy" width={1024} height={1024} className="w-full h-56 lg:h-64 object-cover" />
-                <figcaption className="font-body text-xs text-muted-foreground px-3 py-2 border-t border-border">OCT & imaging — diabetic macular edema</figcaption>
+                <img src={drAdvanced} alt="Fundus photograph of advanced proliferative diabetic retinopathy with tractional retinal detachment" loading="lazy" width={1024} height={1024} className="w-full h-56 lg:h-64 object-cover" />
+                <figcaption className="font-body text-xs text-muted-foreground px-3 py-2 border-t border-border">Fundus photo — advanced diabetic retinopathy</figcaption>
               </figure>
             </div>
           </div>
@@ -81,13 +98,19 @@ const DiabeticRetinopathyPage = () => {
             </div>
             <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
               {[0, 1].map((dup) => (
-                <div key={dup} className="flex animate-marquee space-x-8 items-center min-w-full shrink-0" aria-hidden={dup === 1}>
-                  {injectionMeds.map((name) => (
+                <div key={dup} className="flex animate-marquee space-x-10 items-center min-w-full shrink-0" aria-hidden={dup === 1}>
+                  {injectionMeds.map((med) => (
                     <div
-                      key={`${dup}-${name}`}
-                      className="flex-shrink-0 w-44 h-20 flex items-center justify-center bg-background rounded-lg shadow-sm border border-border px-6"
+                      key={`${dup}-${med.name}`}
+                      className="flex-shrink-0 w-44 h-24 flex items-center justify-center bg-background rounded-xl shadow-sm border border-border px-5 transition-shadow hover:shadow-md"
+                      title={med.name}
                     >
-                      <span className="font-display text-xl font-semibold text-primary tracking-tight whitespace-nowrap">{name}</span>
+                      <img
+                        src={med.logo}
+                        alt={`${med.name} logo`}
+                        loading="lazy"
+                        className="max-h-14 max-w-full object-contain"
+                      />
                     </div>
                   ))}
                 </div>
