@@ -37,6 +37,7 @@ import ReviewsPage from "./pages/ReviewsPage.tsx";
 import FAQPage from "./pages/FAQPage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
 import DoctorProfile from "./pages/DoctorProfile.tsx";
+import EyeAnatomyPage from "./pages/EyeAnatomyPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -82,6 +83,7 @@ const App = () => (
             <Route path="/faq" element={<FAQPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/doctor/ahmad-rehmani" element={<DoctorProfile />} />
+            <Route path="/eye-anatomy" element={<EyeAnatomyPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
