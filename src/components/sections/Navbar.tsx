@@ -32,7 +32,7 @@ const CONDITIONS_MENU: MenuColumn[] = [
       { label: "Central Serous Retinopathy", to: "/services/central-serous-retinopathy" },
       { label: "Cystoid Macular Edema (CME)", to: "/services/cystoid-macular-edema" },
       { label: "Epiretinal Membrane / Macular Pucker", to: "/services/macular-pucker" },
-      { label: "Juxtafoveal Telangiectasia", to: "/services/macular-diseases" },
+      { label: "Juxtafoveal Telangiectasia", to: "/services/juxtafoveal-telangiectasia" },
       { label: "Macular Hole", to: "/services/macular-hole" },
       { label: "Vitreomacular Traction", to: "/services/vitreomacular-traction" },
     ],
@@ -42,7 +42,7 @@ const CONDITIONS_MENU: MenuColumn[] = [
     items: [
       { label: "Lattice Degeneration", to: "/services/lattice-degeneration" },
       { label: "Posterior Vitreous Detachment", to: "/services/posterior-vitreous-detachment" },
-      { label: "Retinal Hole / Tear", to: "/services/retinal-detachment-tears" },
+      { label: "Retinal Hole / Tear", to: "/services/retinal-hole-tear" },
       { label: "Retinal Detachment", to: "/services/retinal-detachment-tears" },
     ],
   },
@@ -50,7 +50,7 @@ const CONDITIONS_MENU: MenuColumn[] = [
     heading: "Uveitis",
     items: [
       { label: "Endophthalmitis", to: "/services/endophthalmitis" },
-      { label: "Panuveitis / Vitritis", to: "/services/uveitis" },
+      { label: "Uveitis", to: "/services/uveitis" },
     ],
   },
   {
@@ -63,8 +63,8 @@ const CONDITIONS_MENU: MenuColumn[] = [
   {
     heading: "Lens Complications",
     items: [
-      { label: "Retained Lens Fragments", to: "/services" },
-      { label: "Dislocated Intraocular Lenses", to: "/services" },
+      { label: "Retained Lens Fragments", to: "/services/retained-lens-fragments" },
+      { label: "Dislocated Intraocular Lenses", to: "/services/dislocated-intraocular-lens" },
     ],
   },
 ];
@@ -84,8 +84,8 @@ const SERVICES_MENU: MenuColumn[] = [
   {
     heading: "Injections",
     items: [
-      { label: "Intravitreal Injections", to: "/services" },
-      { label: "Sub-Tenon Injections", to: "/services" },
+      { label: "Intravitreal Injections", to: "/services/intravitreal-injections" },
+      { label: "Sub-Tenon Injections", to: "/services/subtenon-injection" },
     ],
   },
   {
@@ -110,12 +110,13 @@ const SERVICES_MENU: MenuColumn[] = [
         ],
       },
       {
-        label: "Cataract Complications",
+        label: "Lens Complications",
         to: "/services/cataract-complications",
         children: [
           { label: "Dense Cataracts", to: "/services/cataract-complications#dense-cataracts" },
           { label: "Lens Repositioning", to: "/services/cataract-complications#lens-repositioning" },
-          { label: "Retained Lens Fragments", to: "/services/cataract-complications#retained-lens-fragments" },
+          { label: "Retained Lens Fragments", to: "/services/retained-lens-fragments" },
+          { label: "Dislocated Intraocular Lens", to: "/services/dislocated-intraocular-lens" },
           { label: "Secondary Intraocular Lens", to: "/services/cataract-complications#secondary-intraocular-lens" },
         ],
       },

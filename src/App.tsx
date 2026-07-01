@@ -38,6 +38,12 @@ import FAQPage from "./pages/FAQPage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
 import DoctorProfile from "./pages/DoctorProfile.tsx";
 import EyeAnatomyPage from "./pages/EyeAnatomyPage.tsx";
+import JuxtafovealTelangiectasiaPage from "./pages/JuxtafovealTelangiectasiaPage.tsx";
+import RetinalHoleTearPage from "./pages/RetinalHoleTearPage.tsx";
+import RetainedLensFragmentsPage from "./pages/RetainedLensFragmentsPage.tsx";
+import DislocatedIOLPage from "./pages/DislocatedIOLPage.tsx";
+import IntravitrealInjectionsPage from "./pages/IntravitrealInjectionsPage.tsx";
+import SubtenonInjectionPage from "./pages/SubtenonInjectionPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -76,6 +82,12 @@ const App = () => (
             <Route path="/services/scleral-buckle" element={<ScleralBucklePage />} />
             <Route path="/services/cataract-complications" element={<CataractComplicationsPage />} />
             <Route path="/services/diagnostics" element={<DiagnosticsPage />} />
+            <Route path="/services/juxtafoveal-telangiectasia" element={<JuxtafovealTelangiectasiaPage />} />
+            <Route path="/services/retinal-hole-tear" element={<RetinalHoleTearPage />} />
+            <Route path="/services/retained-lens-fragments" element={<RetainedLensFragmentsPage />} />
+            <Route path="/services/dislocated-intraocular-lens" element={<DislocatedIOLPage />} />
+            <Route path="/services/intravitreal-injections" element={<IntravitrealInjectionsPage />} />
+            <Route path="/services/subtenon-injection" element={<SubtenonInjectionPage />} />
             <Route path="/services/:slug" element={<ServiceDetailPage />} />
             <Route path="/locations" element={<LocationsPage />} />
             <Route path="/insurance" element={<InsurancePage />} />
