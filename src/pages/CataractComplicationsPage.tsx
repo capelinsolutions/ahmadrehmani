@@ -57,7 +57,7 @@ const CataractComplicationsPage = () => {
             <ChevronRight className="w-3 h-3" />
             <Link to="/services" className="hover:text-accent">Services</Link>
             <ChevronRight className="w-3 h-3" />
-            <span className="text-accent">Cataract Complications</span>
+            <span className="text-accent">Lens Complications</span>
           </nav>
 
           <div className="grid lg:grid-cols-2 gap-10 items-center">

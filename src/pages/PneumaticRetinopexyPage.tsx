@@ -22,6 +22,8 @@ const PneumaticRetinopexyPage = () => (
           <Link to="/" className="hover:text-accent">Home</Link>
           <ChevronRight className="w-3 h-3" />
           <Link to="/services" className="hover:text-accent">Services</Link>
+            <ChevronRight className="w-3 h-3" />
+            <Link to="/services/retinal-detachment-tears" className="hover:text-accent">Retinal Detachments</Link>
           <ChevronRight className="w-3 h-3" />
           <span className="text-accent">Pneumatic Retinopexy</span>
         </nav>
