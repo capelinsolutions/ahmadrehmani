@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Phone, ChevronRight, Droplet, Zap, Sparkles } from "lucide-react";
+import { Phone, ChevronRight, Droplet, Zap, Sparkles, Eye } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import cscrOct from "@/assets/services/cscr-oct.jpg";
@@ -102,7 +102,22 @@ const CentralSerousRetinopathyPage = () => {
             How We Treat CSCR
           </h2>
 
-          <div className="grid lg:grid-cols-2 gap-6">
+          <div className="grid lg:grid-cols-3 gap-6">
+            <div className="bg-background border-l-4 border-primary rounded-r-xl p-5 lg:p-6 shadow-sm">
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                  <Eye className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="font-body text-xs text-primary font-bold uppercase tracking-wider">First-Line Approach</p>
+                  <p className="font-display text-lg lg:text-xl font-bold text-foreground">Observation & Monitoring</p>
+                </div>
+              </div>
+              <p className="font-body text-gray-700 leading-relaxed text-sm lg:text-base">
+                Most cases of CSCR <strong>resolve spontaneously</strong> within a few months. Careful close observation with serial OCT imaging allows us to track fluid resorption and confirm visual recovery without unnecessary intervention.
+              </p>
+            </div>
+
             <div className="bg-gradient-bright border-2 border-accent rounded-2xl p-6 lg:p-7 shadow-md">
               <div className="flex items-start gap-3 mb-3">
                 <div className="w-10 h-10 rounded-xl bg-accent text-accent-foreground flex items-center justify-center shrink-0">
@@ -114,14 +129,22 @@ const CentralSerousRetinopathyPage = () => {
                 </div>
               </div>
               <p className="font-body text-gray-700 leading-relaxed text-sm lg:text-base">
-                We offer the most advanced modalities for CSCR, including <strong>micropulse laser therapy</strong> — a gentle, tissue-sparing treatment shown to <strong>reverse chronic CSR</strong> without thermal damage to the retina. Most patients return to normal activity the same day.
+                For chronic or non-resolving cases, we offer <strong>micropulse laser therapy</strong> — a gentle, tissue-sparing treatment shown to <strong>reverse chronic CSR</strong> without thermal damage to the retina. Most patients return to normal activity the same day.
               </p>
             </div>
 
             <div className="bg-background border-l-4 border-primary rounded-r-xl p-5 lg:p-6 shadow-sm">
-              <p className="font-display text-lg lg:text-xl font-bold text-foreground mb-2">Anti-VEGF Injections</p>
+              <div className="flex items-start gap-3 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                  <Droplet className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="font-body text-xs text-primary font-bold uppercase tracking-wider">Select Cases</p>
+                  <p className="font-display text-lg lg:text-xl font-bold text-foreground">Anti-VEGF Injections</p>
+                </div>
+              </div>
               <p className="font-body text-gray-700 leading-relaxed text-sm lg:text-base">
-                In select cases — particularly when CSCR is complicated by abnormal new vessel growth — <strong>intravitreal anti-VEGF injections</strong> are used to stop leakage and protect central vision.
+                When CSCR is complicated by abnormal new vessel growth, <strong>intravitreal anti-VEGF injections</strong> are used to stop leakage and protect central vision.
               </p>
             </div>
           </div>
