@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Phone, ChevronRight, ShieldCheck, Eye, Zap } from "lucide-react";
+import { Phone, ChevronRight, Eye, Zap } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import latticeImg from "@/assets/services/lattice-degeneration-fundus.jpg";
 
@@ -92,22 +92,17 @@ const LatticeDegenerationPage = () => (
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {[
             {
               icon: Eye,
               title: "Routine Monitoring",
-              body: "Dilated retinal exams allow Dr. Rehmani to track stable lattice areas and detect early changes before symptoms appear.",
+              body: "Dilated scleral depressed retinal exams allow Dr. Rehmani to track stable lattice areas and detect early changes before symptoms appear.",
             },
             {
               icon: Zap,
               title: "Laser Retinopexy",
-              body: "When a tear forms within or near lattice degeneration, in-office laser therapy seals the retina and reduces detachment risk.",
-            },
-            {
-              icon: ShieldCheck,
-              title: "Long-Term Protection",
-              body: "Patient education on warning signs — new flashes, floaters, or shadows — ensures rapid evaluation if anything changes.",
+              body: "Due to the increased risk of tears — or when a tear forms within or near lattice degeneration — in-office laser therapy seals suspicious areas of the retina and reduces detachment risk.",
             },
           ].map(({ icon: Icon, title, body }) => (
             <div
