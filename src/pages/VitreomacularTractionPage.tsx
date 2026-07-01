@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Phone, ChevronRight, Eye, Scissors, Sparkles } from "lucide-react";
+import { Phone, ChevronRight, Eye, Scissors, Sparkles, ArrowRight } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import AntiVegfMarquee from "@/components/AntiVegfMarquee";
 import vmtOct from "@/assets/services/vmt-oct.jpg";
 
 const VitreomacularTractionPage = () => {
@@ -83,7 +84,7 @@ const VitreomacularTractionPage = () => {
                 className="w-full h-64 lg:h-80 object-cover"
               />
               <figcaption className="font-body text-xs text-muted-foreground px-3 py-2 border-t border-border">
-                OCT scan — clear visualization of vitreous gel pulling and lifting the central macula
+                OCT scan — vitreous gel pulling and lifting the central macula
               </figcaption>
             </figure>
           </div>
@@ -103,23 +104,7 @@ const VitreomacularTractionPage = () => {
           </h2>
 
           <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-            <div className="bg-gradient-bright border-2 border-accent rounded-2xl p-6 lg:p-7 shadow-md flex flex-col justify-between">
-              <div>
-                <div className="flex items-start gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-accent text-accent-foreground flex items-center justify-center shrink-0">
-                    <Scissors className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="font-body text-xs text-accent font-bold uppercase tracking-wider">Surgical Intervention</p>
-                    <p className="font-display text-xl lg:text-2xl font-bold text-foreground">Vitrectomy Surgery</p>
-                  </div>
-                </div>
-                <p className="font-body text-gray-700 leading-relaxed text-sm lg:text-base">
-                  If symptoms are progressive or severe enough to impair daily life, <strong>vitrectomy surgery is highly effective to release the traction</strong>. During this precise outpatient microsurgery, Dr. Rehmani carefully removes the vitreous gel pulling on the retina. Releasing the traction allows the macula to flatten, recover its natural structure, and gradually restore visual clarity.
-                </p>
-              </div>
-            </div>
-
+            {/* Observation on the LEFT */}
             <div className="border border-border bg-background rounded-2xl p-6 lg:p-7 shadow-sm flex flex-col justify-between">
               <div>
                 <div className="flex items-start gap-3 mb-4">
@@ -136,7 +121,42 @@ const VitreomacularTractionPage = () => {
                 </p>
               </div>
             </div>
+
+            {/* Vitrectomy on the RIGHT with link */}
+            <div className="bg-gradient-bright border-2 border-accent rounded-2xl p-6 lg:p-7 shadow-md flex flex-col justify-between">
+              <div>
+                <div className="flex items-start gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-accent text-accent-foreground flex items-center justify-center shrink-0">
+                    <Scissors className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="font-body text-xs text-accent font-bold uppercase tracking-wider">Surgical Intervention</p>
+                    <p className="font-display text-xl lg:text-2xl font-bold text-foreground">Vitrectomy Surgery</p>
+                  </div>
+                </div>
+                <p className="font-body text-gray-700 leading-relaxed text-sm lg:text-base">
+                  If symptoms are progressive or severe enough to impair daily life, <strong>vitrectomy surgery is highly effective to release the traction</strong>. During this precise outpatient microsurgery, Dr. Rehmani carefully removes the vitreous gel pulling on the retina. Releasing the traction allows the macula to flatten, recover its natural structure, and gradually restore visual clarity.
+                </p>
+              </div>
+              <Link
+                to="/services/pars-plana-vitrectomy"
+                className="mt-5 inline-flex items-center gap-2 text-accent font-body font-semibold text-sm hover:gap-3 transition-all"
+              >
+                Learn about pars plana vitrectomy
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
+
+          {/* Long-term follow-up */}
+          <div className="mt-10 bg-background border-l-4 border-primary rounded-r-xl p-5 lg:p-6 shadow-sm max-w-3xl">
+            <p className="font-display text-lg font-bold text-foreground mb-1">Long-Term Follow-Up</p>
+            <p className="font-body text-gray-700 text-sm lg:text-base leading-relaxed">
+              Regular monitoring with <strong>OCT, OCTA, and fluorescein angiography</strong> allows Dr. Rehmani to track the macula, catch complications early, and confirm sustained visual recovery.
+            </p>
+          </div>
+
+          <AntiVegfMarquee />
         </div>
       </section>
 

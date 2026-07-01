@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Phone, ChevronRight, AlertTriangle, Zap, Scissors, Sparkles, Film, Heart } from "lucide-react";
+import { Phone, ChevronRight, AlertTriangle, Zap, Scissors, Sparkles, Film, Heart, ArrowRight } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import retinalTearFundus from "@/assets/services/retinal-tear-fundus.jpg";
+import retinalTearFundus from "@/assets/services/retinal-detachment-fundus.jpg";
 
 const RetinalDetachmentPage = () => {
   const aboutRef = useScrollAnimation();
@@ -80,14 +80,14 @@ const RetinalDetachmentPage = () => {
             <figure className="rounded-2xl overflow-hidden shadow-md border border-border bg-background">
               <img
                 src={retinalTearFundus}
-                alt="Fundus photograph showing a horseshoe-shaped retinal tear with lifted flap"
+                alt="Ultra-widefield fundus photograph showing a large rhegmatogenous retinal detachment with corrugated retinal folds"
                 loading="lazy"
                 width={1024}
                 height={1024}
                 className="w-full h-64 lg:h-80 object-cover"
               />
               <figcaption className="font-body text-xs text-muted-foreground px-3 py-2 border-t border-border">
-                Fundus photograph — a peripheral retinal tear with lifted flap, visible against the retinal vessels
+                Ultra-widefield fundus photograph — bullous retinal detachment with corrugated folds
               </figcaption>
             </figure>
           </div>
@@ -110,7 +110,10 @@ const RetinalDetachmentPage = () => {
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-gradient-bright border-2 border-accent rounded-2xl p-6 shadow-md">
+            <Link
+              to="/services/pneumatic-retinopexy"
+              className="group bg-gradient-bright border-2 border-accent rounded-2xl p-6 shadow-md hover:shadow-lg hover:-translate-y-1 transition-all"
+            >
               <div className="w-11 h-11 rounded-xl bg-accent text-accent-foreground flex items-center justify-center mb-4">
                 <Zap className="w-5 h-5" />
               </div>
@@ -119,9 +122,15 @@ const RetinalDetachmentPage = () => {
               <p className="font-body text-sm text-gray-700 leading-relaxed">
                 A precisely-placed gas bubble inside the eye gently re-attaches the retina, paired with laser or cryotherapy to seal the tear — often performed comfortably in the office.
               </p>
-            </div>
+              <span className="mt-4 inline-flex items-center gap-1.5 text-accent font-body font-semibold text-sm group-hover:gap-2.5 transition-all">
+                Learn more <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
 
-            <div className="bg-background border border-border rounded-2xl p-6 shadow-sm">
+            <Link
+              to="/services/scleral-buckle"
+              className="group bg-background border border-border rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-accent/40 transition-all"
+            >
               <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
                 <Scissors className="w-5 h-5" />
               </div>
@@ -130,9 +139,15 @@ const RetinalDetachmentPage = () => {
               <p className="font-body text-sm text-gray-700 leading-relaxed">
                 A soft silicone band is placed around the outside of the eye to relieve traction on the retina, supporting reattachment from the outside-in.
               </p>
-            </div>
+              <span className="mt-4 inline-flex items-center gap-1.5 text-accent font-body font-semibold text-sm group-hover:gap-2.5 transition-all">
+                Learn more <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
 
-            <div className="bg-background border border-border rounded-2xl p-6 shadow-sm">
+            <Link
+              to="/services/pars-plana-vitrectomy"
+              className="group bg-background border border-border rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-accent/40 transition-all"
+            >
               <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-4">
                 <Sparkles className="w-5 h-5" />
               </div>
@@ -141,7 +156,10 @@ const RetinalDetachmentPage = () => {
               <p className="font-body text-sm text-gray-700 leading-relaxed">
                 Modern small-gauge vitrectomy removes the vitreous gel, drains subretinal fluid, and uses laser plus gas or oil tamponade to restore the retina to its proper position.
               </p>
-            </div>
+              <span className="mt-4 inline-flex items-center gap-1.5 text-accent font-body font-semibold text-sm group-hover:gap-2.5 transition-all">
+                Learn more <ArrowRight className="w-4 h-4" />
+              </span>
+            </Link>
           </div>
 
           {/* Video placeholder */}
