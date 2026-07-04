@@ -3,23 +3,23 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Human Eye — Interactive Anatomy | North Houston Retina</title>
+<title>Interactive Eye Anatomy | Retina Center NJ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#0A0F1A;--bg-grad-1:#0d1626;--bg-grad-2:#070b13;
     --panel:#ffffff;--panel-soft:#f3f7fa;
-    --ink:#0E2033;--ink-soft:#5B6B7B;--line:#e3ebf2;
-    --accent:#12A0AE;--accent-ink:#0B6E78;--highlight:#E8A33D;
+    --ink:#0A1B33;--ink-soft:#5B6B7B;--line:#e3ebf2;
+    --accent:#0F7BE0;--accent-ink:#0B4E8F;--highlight:#E8A33D;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0;height:100%}
-  body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--panel);-webkit-font-smoothing:antialiased;}
-  .wrap{display:grid;grid-template-columns:1fr 320px;grid-template-rows:auto 1fr;height:100vh;min-height:560px;}
+  body{font-family:'DM Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--panel);-webkit-font-smoothing:antialiased;}
+  .wrap{display:grid;grid-template-columns:1fr 320px;grid-template-rows:1fr;height:100vh;min-height:560px;}
   header{grid-column:1 / -1;display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 28px 16px;border-bottom:1px solid var(--line);}
-  header .titles h1{font-family:'Newsreader',Georgia,serif;font-weight:500;font-size:26px;line-height:1.1;margin:0;letter-spacing:-.01em;}
+  header .titles h1{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:26px;line-height:1.1;margin:0;letter-spacing:-.01em;}
   header .titles p{margin:4px 0 0;font-size:13px;color:var(--ink-soft);}
   header .brand{text-align:right;font-size:12.5px;color:var(--ink-soft);line-height:1.35;}
   header .brand strong{color:var(--ink);font-weight:600;display:block;font-size:13.5px}
@@ -30,7 +30,7 @@
   .hint b{color:#fff;font-weight:600}
   .hint .dot{width:3px;height:3px;border-radius:50%;background:#4a5b70}
   .controls{position:absolute;top:16px;left:16px;display:flex;flex-direction:column;gap:8px;}
-  .ctrl{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.92);color:var(--ink);border:1px solid rgba(255,255,255,.5);font:500 12.5px 'Inter',sans-serif;padding:8px 12px;border-radius:10px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.25);transition:transform .12s,background .2s;}
+  .ctrl{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.92);color:var(--ink);border:1px solid rgba(255,255,255,.5);font:500 12.5px 'DM Sans',sans-serif;padding:8px 12px;border-radius:10px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.25);transition:transform .12s,background .2s;}
   .ctrl:hover{transform:translateY(-1px)}
   .ctrl:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .ctrl .sw{width:26px;height:15px;border-radius:999px;background:#c7d2dd;position:relative;transition:background .2s;flex:none}
@@ -43,18 +43,18 @@
   #tip .n::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--highlight);margin-right:7px;vertical-align:middle}
   aside{border-left:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;min-height:0;}
   aside .lead{padding:18px 20px 10px}
-  aside .lead h2{margin:0;font-family:'Newsreader',serif;font-weight:500;font-size:17px}
+  aside .lead h2{margin:0;font-family:'Playfair Display',serif;font-weight:500;font-size:17px}
   aside .lead p{margin:6px 0 0;font-size:12.5px;color:var(--ink-soft);line-height:1.5}
   .legend{overflow-y:auto;padding:4px 12px 20px;flex:1;min-height:0}
   .group-h{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--accent-ink);font-weight:600;margin:14px 8px 6px}
-  .row{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:transparent;border:0;border-radius:9px;padding:8px 9px;cursor:pointer;font:500 13px 'Inter',sans-serif;color:var(--ink);transition:background .15s;}
+  .row{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:transparent;border:0;border-radius:9px;padding:8px 9px;cursor:pointer;font:500 13px 'DM Sans',sans-serif;color:var(--ink);transition:background .15s;}
   .row:hover,.row.active{background:var(--panel-soft)}
   .row:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
   .row .chip{width:12px;height:12px;border-radius:4px;flex:none;border:1px solid rgba(0,0,0,.08)}
   .row .rt{flex:1}
   .row .rd{display:block;font-weight:400;font-size:11.5px;color:var(--ink-soft);margin-top:1px;line-height:1.35}
   @media (max-width:860px){
-    .wrap{grid-template-columns:1fr;grid-template-rows:auto minmax(340px,52vh) auto;height:auto;min-height:100vh}
+    .wrap{grid-template-columns:1fr;grid-template-rows:minmax(340px,58vh) auto;height:auto;min-height:100vh}
     aside{border-left:0;border-top:1px solid var(--line)}
     .legend{max-height:none;overflow:visible}
     header{padding:16px 18px 12px}
@@ -65,17 +65,6 @@
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <div class="titles">
-      <h1>The Human Eye</h1>
-      <p>Interactive anatomy — drag to rotate, hover to look inside.</p>
-    </div>
-    <div class="brand">
-      <strong>North Houston Retina</strong>
-      Ahmad Rehmani, D.O. · Vitreoretinal Specialist
-    </div>
-  </header>
-
   <div class="stage">
     <canvas id="scene"></canvas>
     <div class="controls">
