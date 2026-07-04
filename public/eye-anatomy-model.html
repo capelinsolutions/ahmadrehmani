@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Interactive Eye Anatomy | Retina Center NJ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0A0F1A;--bg-grad-1:#0d1626;--bg-grad-2:#070b13;
+    --panel:#ffffff;--panel-soft:#f3f7fa;
+    --ink:#0A1B33;--ink-soft:#5B6B7B;--line:#e3ebf2;
+    --accent:#0F7BE0;--accent-ink:#0B4E8F;--highlight:#E8A33D;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;height:100%}
+  body{font-family:'DM Sans',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--panel);-webkit-font-smoothing:antialiased;}
+  .wrap{display:grid;grid-template-columns:1fr 320px;grid-template-rows:1fr;height:100vh;min-height:560px;}
+  header{grid-column:1 / -1;display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:20px 28px 16px;border-bottom:1px solid var(--line);}
+  header .titles h1{font-family:'Playfair Display',Georgia,serif;font-weight:500;font-size:26px;line-height:1.1;margin:0;letter-spacing:-.01em;}
+  header .titles p{margin:4px 0 0;font-size:13px;color:var(--ink-soft);}
+  header .brand{text-align:right;font-size:12.5px;color:var(--ink-soft);line-height:1.35;}
+  header .brand strong{color:var(--ink);font-weight:600;display:block;font-size:13.5px}
+  .stage{position:relative;overflow:hidden;background:radial-gradient(120% 120% at 50% 30%,var(--bg-grad-1),var(--bg-grad-2));}
+  #scene{display:block;width:100%;height:100%;cursor:grab;touch-action:none}
+  #scene.grabbing{cursor:grabbing}
+  .hint{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);display:flex;gap:16px;align-items:center;font-size:12px;color:#cdd8e6;background:rgba(10,16,26,.55);border:1px solid rgba(255,255,255,.08);padding:8px 14px;border-radius:999px;backdrop-filter:blur(6px);pointer-events:none;white-space:nowrap;transition:opacity .4s;}
+  .hint b{color:#fff;font-weight:600}
+  .hint .dot{width:3px;height:3px;border-radius:50%;background:#4a5b70}
+  .controls{position:absolute;top:16px;left:16px;display:flex;flex-direction:column;gap:8px;}
+  .ctrl{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.92);color:var(--ink);border:1px solid rgba(255,255,255,.5);font:500 12.5px 'DM Sans',sans-serif;padding:8px 12px;border-radius:10px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.25);transition:transform .12s,background .2s;}
+  .ctrl:hover{transform:translateY(-1px)}
+  .ctrl:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .ctrl .sw{width:26px;height:15px;border-radius:999px;background:#c7d2dd;position:relative;transition:background .2s;flex:none}
+  .ctrl .sw::after{content:"";position:absolute;top:2px;left:2px;width:11px;height:11px;border-radius:50%;background:#fff;transition:transform .2s;box-shadow:0 1px 2px rgba(0,0,0,.3)}
+  .ctrl.on .sw{background:var(--accent)}
+  .ctrl.on .sw::after{transform:translateX(11px)}
+  #tip{position:absolute;pointer-events:none;z-index:5;max-width:230px;padding:10px 12px;background:rgba(12,20,32,.94);color:#eef4fa;border:1px solid rgba(255,255,255,.12);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.4);opacity:0;transform:translateY(4px);transition:opacity .14s,transform .14s;font-size:12.5px;line-height:1.45;}
+  #tip.show{opacity:1;transform:translateY(0)}
+  #tip .n{font-weight:600;font-size:13.5px;color:#fff;display:block;margin-bottom:2px;letter-spacing:.01em}
+  #tip .n::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--highlight);margin-right:7px;vertical-align:middle}
+  aside{border-left:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;min-height:0;}
+  aside .lead{padding:18px 20px 10px}
+  aside .lead h2{margin:0;font-family:'Playfair Display',serif;font-weight:500;font-size:17px}
+  aside .lead p{margin:6px 0 0;font-size:12.5px;color:var(--ink-soft);line-height:1.5}
+  .legend{overflow-y:auto;padding:4px 12px 20px;flex:1;min-height:0}
+  .group-h{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--accent-ink);font-weight:600;margin:14px 8px 6px}
+  .row{display:flex;align-items:center;gap:10px;width:100%;text-align:left;background:transparent;border:0;border-radius:9px;padding:8px 9px;cursor:pointer;font:500 13px 'DM Sans',sans-serif;color:var(--ink);transition:background .15s;}
+  .row:hover,.row.active{background:var(--panel-soft)}
+  .row:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+  .row .chip{width:12px;height:12px;border-radius:4px;flex:none;border:1px solid rgba(0,0,0,.08)}
+  .row .rt{flex:1}
+  .row .rd{display:block;font-weight:400;font-size:11.5px;color:var(--ink-soft);margin-top:1px;line-height:1.35}
+  @media (max-width:860px){
+    .wrap{grid-template-columns:1fr;grid-template-rows:minmax(340px,58vh) auto;height:auto;min-height:100vh}
+    aside{border-left:0;border-top:1px solid var(--line)}
+    .legend{max-height:none;overflow:visible}
+    header{padding:16px 18px 12px}
+    header .brand{text-align:left}
+  }
+  @media (prefers-reduced-motion:reduce){.ctrl,.row,#tip,.hint{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="stage">
+    <canvas id="scene"></canvas>
+    <div class="controls">
+      <button class="ctrl" id="revealBtn" aria-pressed="false" title="Keep the interior visible without hovering"><span class="sw"></span>Lock interior open</button>
+      <button class="ctrl on" id="spinBtn" aria-pressed="true"><span class="sw"></span>Auto-rotate</button>
+      <button class="ctrl" id="resetBtn"><span aria-hidden="true">⟲</span> Reset view</button>
+    </div>
+    <div id="tip"><span class="n"></span><span class="d"></span></div>
+    <div class="hint" id="hint"><span><b>Drag</b> to rotate</span><span class="dot"></span><span><b>Scroll</b> to zoom</span><span class="dot"></span><span><b>Hover</b> a structure to identify it</span></div>
+  </div>
+
+  <aside>
+    <div class="lead">
+      <h2>Structures</h2>
+      <p>Hover the model or a name below. Highlighted parts show a short description.</p>
+    </div>
+    <div class="legend" id="legend"></div>
+  </aside>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+"use strict";
+var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+var canvas=document.getElementById('scene'), stage=canvas.parentElement;
+var tip=document.getElementById('tip'), tipN=tip.querySelector('.n'), tipD=tip.querySelector('.d'), hint=document.getElementById('hint');
+
+var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+renderer.setClearColor(0x000000,0);
+var scene=new THREE.Scene();
+var camera=new THREE.PerspectiveCamera(38,1,0.1,100);
+var camDist=3.4; camera.position.set(0,0,camDist);
+
+scene.add(new THREE.AmbientLight(0xffffff,0.66));
+var key=new THREE.DirectionalLight(0xffffff,0.8); key.position.set(2.5,3,4); scene.add(key);
+var fill=new THREE.DirectionalLight(0x9fbcd8,0.32); fill.position.set(-3,-1,2); scene.add(fill);
+var rim=new THREE.DirectionalLight(0xbfe3ee,0.35); rim.position.set(-1,2,-4); scene.add(rim);
+var inner=new THREE.PointLight(0xfff2e6,0.0,6); inner.position.set(0,0,0.2); scene.add(inner);
+
+var pivot=new THREE.Group(); scene.add(pivot);
+var model=new THREE.Group(); model.rotation.x=Math.PI/2; pivot.add(model);
+
+// ---------- geometry constants ----------
+var R_RET=0.9;                 // retina sphere radius
+var TH_ORA=1.06;               // polar angle (from +Y front) of ora serrata / retina anterior edge
+var BOWL_R=0.895, BOWL_PHI=Math.PI-TH_ORA; // fundus cap: pole -> ora
+var AMBER=0xE8A33D;
+var COL={sclera:0xF1ECE1,cornea:0xBFE3EE,chamber:0xBFE3EE,lens:0xEBE4D2,zonule:0xE7D7AC};
+
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+
+// ================= TEXTURES =================
+function makeIrisTexture(){
+  var S=512,c=document.createElement('canvas');c.width=c.height=S;var x=c.getContext('2d');
+  var cx=S/2,cy=S/2,R=S/2,pr=R*0.30,rnd=mulberry32(12345);
+  x.save();x.beginPath();x.arc(cx,cy,R,0,7);x.clip();
+  var g=x.createRadialGradient(cx,cy,pr,cx,cy,R);
+  g.addColorStop(0,'#4a2f19');g.addColorStop(0.28,'#7a5227');g.addColorStop(0.55,'#6b4a2b');g.addColorStop(0.82,'#513516');g.addColorStop(1,'#2e1d0d');
+  x.fillStyle=g;x.fillRect(0,0,S,S);
+  for(var i=0;i<340;i++){var a=rnd()*7,len=R*(0.55+rnd()*0.45),r0=pr*(0.98+rnd()*0.1),lw=0.5+rnd()*1.4;
+    var col=rnd()>0.55?'rgba(196,150,86,'+(0.10+rnd()*0.16)+')':'rgba(40,24,10,'+(0.10+rnd()*0.20)+')';
+    x.strokeStyle=col;x.lineWidth=lw;x.beginPath();var j=(rnd()-0.5)*0.10;
+    x.moveTo(cx+Math.cos(a)*r0,cy+Math.sin(a)*r0);x.lineTo(cx+Math.cos(a+j)*(r0+len),cy+Math.sin(a+j)*(r0+len));x.stroke();}
+  x.strokeStyle='rgba(60,38,16,0.5)';x.lineWidth=3;x.beginPath();
+  for(var t=0;t<=64;t++){var a2=t/64*7,rr=R*0.42+Math.sin(a2*12)*R*0.02;x.lineTo(cx+Math.cos(a2)*rr,cy+Math.sin(a2)*rr);}x.stroke();
+  var lg=x.createRadialGradient(cx,cy,R*0.80,cx,cy,R);lg.addColorStop(0,'rgba(30,18,8,0)');lg.addColorStop(1,'rgba(20,12,5,0.8)');
+  x.fillStyle=lg;x.fillRect(0,0,S,S);
+  x.fillStyle='#050505';x.beginPath();x.arc(cx,cy,pr,0,7);x.fill();
+  x.strokeStyle='rgba(0,0,0,0.6)';x.lineWidth=3;x.beginPath();x.arc(cx,cy,pr,0,7);x.stroke();
+  x.fillStyle='rgba(255,255,255,0.85)';x.beginPath();x.ellipse(cx-pr*0.35,cy-pr*0.4,pr*0.22,pr*0.16,-0.5,0,7);x.fill();
+  x.restore();
+  var tex=new THREE.CanvasTexture(c);tex.flipY=false;tex.anisotropy=4;return tex;
+}
+
+// widefield fundus: central disc, vessels radiating to the periphery (ora)
+function makeFundusTexture(){
+  var S=1024,c=document.createElement('canvas');c.width=c.height=S;var x=c.getContext('2d');
+  var cx=S/2,cy=S/2,R=S/2,rnd=mulberry32(41);
+  x.save();x.beginPath();x.arc(cx,cy,R,0,7);x.clip();
+  // base: warm orange centrally -> red/brick periphery (widefield)
+  var g=x.createRadialGradient(cx,cy,R*0.04,cx,cy,R);
+  g.addColorStop(0,'#E7A055');g.addColorStop(0.28,'#D97B39');g.addColorStop(0.55,'#C55A2C');g.addColorStop(0.78,'#B23A22');g.addColorStop(1,'#8f2a1a');
+  x.fillStyle=g;x.fillRect(0,0,S,S);
+  // choroidal mottling
+  for(var m=0;m<320;m++){var mx=cx+(rnd()-0.5)*2*R,my=cy+(rnd()-0.5)*2*R,mr=R*(0.02+rnd()*0.10);
+    x.fillStyle='rgba('+(150+rnd()*70|0)+','+(60+rnd()*45|0)+','+(35+rnd()*25|0)+','+(0.03+rnd()*0.06)+')';
+    x.beginPath();x.ellipse(mx,my,mr,mr*(0.6+rnd()*0.6),rnd()*3,0,7);x.fill();}
+  // faint radial choroidal streaks toward periphery
+  for(var sN=0;sN<75;sN++){var a=rnd()*7,r0=R*(0.5+rnd()*0.2),r1=R*(0.9+rnd()*0.12);
+    x.strokeStyle='rgba('+(180+rnd()*40|0)+',60,40,'+(0.05+rnd()*0.08)+')';x.lineWidth=1+rnd()*3;
+    x.beginPath();x.moveTo(cx+Math.cos(a)*r0,cy+Math.sin(a)*r0);var a2=a+(rnd()-0.5)*0.04;
+    x.lineTo(cx+Math.cos(a2)*r1,cy+Math.sin(a2)*r1);x.stroke();}
+
+  var disc={x:cx-R*0.15,y:cy,r:R*0.055};        // disc nasal of centre
+  var mac ={x:cx+R*0.02,y:cy+R*0.01};           // fovea ~ posterior pole (centre)
+  var EDGE=R*0.965;                              // vessels reach out to ~ora
+
+  function dist(ax,ay,bx,by){return Math.hypot(ax-bx,ay-by);}
+  function angTo(ang,tgt){var d=tgt-ang;while(d>Math.PI)d-=2*Math.PI;while(d<-Math.PI)d+=2*Math.PI;return d;}
+  // Catmull-Rom sampler for smooth arcade curves
+  function sample(pts,n){var out=[];for(var i=0;i<n;i++){var tt=i/(n-1)*(pts.length-1),k=Math.min(pts.length-2,Math.floor(tt)),f=tt-k;
+    var p0=pts[Math.max(0,k-1)],p1=pts[k],p2=pts[k+1],p3=pts[Math.min(pts.length-1,k+2)],f2=f*f,f3=f2*f;
+    out.push([0.5*(2*p1[0]+(-p0[0]+p2[0])*f+(2*p0[0]-5*p1[0]+4*p2[0]-p3[0])*f2+(-p0[0]+3*p1[0]-3*p2[0]+p3[0])*f3),
+              0.5*(2*p1[1]+(-p0[1]+p2[1])*f+(2*p0[1]-5*p1[1]+4*p2[1]-p3[1])*f2+(-p0[1]+3*p1[1]-3*p2[1]+p3[1])*f3)]);}return out;}
+  // prominent, smoothly-tapering arcade
+  function arcadeDraw(pts,w0,w1,col,reflex){var s=sample(pts,72),prev=s[0];
+    for(var i=1;i<s.length;i++){var t=i/(s.length-1),w=w0+(w1-w0)*Math.pow(t,0.8);
+      x.strokeStyle=col;x.lineCap='round';x.lineJoin='round';x.lineWidth=Math.max(0.6,w);
+      x.beginPath();x.moveTo(prev[0],prev[1]);x.lineTo(s[i][0],s[i][1]);x.stroke();
+      if(reflex&&w>3.4){x.strokeStyle='rgba(255,190,160,0.22)';x.lineWidth=Math.max(0.4,w*0.30);
+        x.beginPath();x.moveTo(prev[0],prev[1]);x.lineTo(s[i][0],s[i][1]);x.stroke();}
+      prev=s[i];}return s;}
+  // thin, subordinate branch that wanders outward toward the periphery
+  function twig(px,py,ang,w,depth,col){var segs=16;
+    for(var i=0;i<segs;i++){var L=6+w*2;ang+=(rnd()-0.5)*0.34;
+      var outward=Math.atan2(py-cy,px-cx);ang+=0.13*angTo(ang,outward);
+      if(dist(px,py,mac.x,mac.y)<R*0.11){var away=Math.atan2(py-mac.y,px-mac.x);ang+=0.4*angTo(ang,away);}
+      var nx=px+Math.cos(ang)*L,ny=py+Math.sin(ang)*L;
+      x.strokeStyle=col;x.lineCap='round';x.lineWidth=Math.max(0.35,w);
+      x.beginPath();x.moveTo(px,py);x.lineTo(nx,ny);x.stroke();
+      px=nx;py=ny;if(dist(px,py,cx,cy)>EDGE)break;
+      if(depth>0&&i>1&&w>0.7&&rnd()<0.30)twig(px,py,ang+(rnd()<0.5?1:-1)*(0.5+rnd()*0.45),w*0.55,depth-1,col);
+      w*=0.9;}}
+  // spawn a few thin branches along an arcade curve (kept sparse & subordinate)
+  function branchOff(s,col,baseW,every){for(var i=18;i<s.length-6;i+=every){var p=s[i],pn=s[i+3];
+    var ang=Math.atan2(pn[1]-p[1],pn[0]-p[0]);
+    twig(p[0],p[1],ang+(rnd()<0.5?1:-1)*(0.55+rnd()*0.5),baseW,2,col);}}
+
+  var VEIN='#6d1c14', ART='#9f2c1c', dx=disc.x, dy=disc.y;
+  // ---- four arcades (temporal pair prominent, arcing around the macula) ----
+  var stV=[[dx,dy],[dx+40,dy-58],[dx+112,dy-108],[dx+232,dy-134],[dx+382,dy-150],[dx+470,dy-168]];
+  var stA=[[dx,dy-3],[dx+38,dy-40],[dx+108,dy-84],[dx+222,dy-108],[dx+372,dy-124],[dx+460,dy-140]];
+  var itV=[[dx,dy],[dx+40,dy+58],[dx+112,dy+108],[dx+232,dy+134],[dx+382,dy+150],[dx+470,dy+168]];
+  var itA=[[dx,dy+3],[dx+38,dy+40],[dx+108,dy+84],[dx+222,dy+108],[dx+372,dy+124],[dx+460,dy+140]];
+  var snV=[[dx,dy],[dx-42,dy-52],[dx-104,dy-96],[dx-224,dy-128],[dx-312,dy-146]];
+  var snA=[[dx,dy-3],[dx-40,dy-36],[dx-98,dy-72],[dx-214,dy-104],[dx-302,dy-122]];
+  var inV=[[dx,dy],[dx-42,dy+52],[dx-104,dy+96],[dx-224,dy+128],[dx-312,dy+146]];
+  var inA=[[dx,dy+3],[dx-40,dy+36],[dx-98,dy+72],[dx-214,dy+104],[dx-302,dy+122]];
+  var sV=arcadeDraw(stV,9,2,VEIN,true), sA=arcadeDraw(stA,6,1.6,ART,true);
+  var iV=arcadeDraw(itV,9,2,VEIN,true), iA=arcadeDraw(itA,6,1.6,ART,true);
+  var nV=arcadeDraw(snV,6.5,1.6,VEIN,true), nA=arcadeDraw(snA,4.5,1.3,ART,true);
+  var mV=arcadeDraw(inV,6.5,1.6,ART,true), mA=arcadeDraw(inA,4.5,1.3,VEIN,true);
+  // subordinate branches (sparse) — temporal arcades get a bit more
+  branchOff(sV,VEIN,2.4,14); branchOff(iV,VEIN,2.4,14);
+  branchOff(sA,ART,1.8,20);  branchOff(iA,ART,1.8,20);
+  branchOff(nV,VEIN,1.8,18); branchOff(mV,ART,1.8,18);
+  // a couple of fine perimacular twigs (do not cross the fovea)
+  twig(dx+34,dy-6,0.15,1.8,2,ART); twig(dx+34,dy+6,-0.15,1.8,2,VEIN);
+
+  // macula
+  var mg=x.createRadialGradient(mac.x,mac.y,2,mac.x,mac.y,R*0.15);
+  mg.addColorStop(0,'rgba(120,52,26,0.85)');mg.addColorStop(0.5,'rgba(150,66,32,0.4)');mg.addColorStop(1,'rgba(160,74,36,0)');
+  x.fillStyle=mg;x.beginPath();x.arc(mac.x,mac.y,R*0.15,0,7);x.fill();
+  x.fillStyle='rgba(255,222,178,0.5)';x.beginPath();x.arc(mac.x,mac.y,R*0.012,0,7);x.fill();
+  // optic disc (over the converging vessels)
+  var dg=x.createRadialGradient(disc.x,disc.y,1,disc.x,disc.y,disc.r);
+  dg.addColorStop(0,'#FBEFCB');dg.addColorStop(0.55,'#F3DA9C');dg.addColorStop(0.85,'#E4B473');dg.addColorStop(1,'#C4863F');
+  x.fillStyle=dg;x.beginPath();x.arc(disc.x,disc.y,disc.r,0,7);x.fill();
+  x.strokeStyle='rgba(150,90,40,0.5)';x.lineWidth=2;x.beginPath();x.arc(disc.x,disc.y,disc.r,0,7);x.stroke();
+  x.fillStyle='rgba(255,248,225,0.9)';x.beginPath();x.arc(disc.x-disc.r*0.1,disc.y,disc.r*0.42,0,7);x.fill();
+  // vignette
+  var vg=x.createRadialGradient(cx,cy,R*0.55,cx,cy,R);
+  vg.addColorStop(0,'rgba(0,0,0,0)');vg.addColorStop(0.92,'rgba(45,16,8,0.28)');vg.addColorStop(1,'rgba(45,16,8,0.6)');
+  x.fillStyle=vg;x.fillRect(0,0,S,S);
+  x.restore();
+  // feather the very rim so it blends into the peripheral retina shell
+  x.globalCompositeOperation='destination-in';
+  var ag=x.createRadialGradient(cx,cy,R*0.95,cx,cy,R);
+  ag.addColorStop(0,'rgba(0,0,0,1)');ag.addColorStop(1,'rgba(0,0,0,0)');
+  x.fillStyle=ag;x.beginPath();x.arc(cx,cy,R,0,7);x.fill();
+  x.globalCompositeOperation='source-over';
+  var tex=new THREE.CanvasTexture(c);tex.flipY=false;tex.anisotropy=4;
+  return {tex:tex, disc:{u:disc.x/S,v:disc.y/S}, mac:{u:mac.x/S,v:mac.y/S}};
+}
+
+// ================= GEOMETRY BUILDERS =================
+function bowlPos(u,v,R){var X=u*2-1,Y=v*2-1,d=Math.min(1,Math.sqrt(X*X+Y*Y));
+  var phi=d*BOWL_PHI,az=Math.atan2(Y,X);
+  return new THREE.Vector3(Math.sin(phi)*Math.cos(az)*R,-Math.cos(phi)*R,Math.sin(phi)*Math.sin(az)*R);}
+function buildBowl(R){
+  var rings=60,seg=120,pos=[],uv=[],idx=[];
+  for(var i=0;i<=rings;i++){var d=i/rings;
+    for(var j=0;j<=seg;j++){var az=j/seg*Math.PI*2,X=d*Math.cos(az),Y=d*Math.sin(az),phi=d*BOWL_PHI;
+      pos.push(Math.sin(phi)*Math.cos(az)*R,-Math.cos(phi)*R,Math.sin(phi)*Math.sin(az)*R);
+      uv.push((X+1)/2,(Y+1)/2);}}
+  var row=seg+1;
+  for(var a=0;a<rings;a++)for(var b=0;b<seg;b++){var p=a*row+b;idx.push(p,p+row,p+1,p+1,p+row,p+row+1);}
+  var g=new THREE.BufferGeometry();
+  g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
+  g.setAttribute('uv',new THREE.Float32BufferAttribute(uv,2));
+  g.setIndex(idx);g.computeVertexNormals();return g;
+}
+// ciliary body: individual villous finger-like processes emerging from a smooth muscle band
+function buildCiliary(){
+  var grp=new THREE.Group(), rnd=mulberry32(2024);
+  // ciliary muscle — a smooth ring (follows the globe, no reversed taper)
+  var muscle=new THREE.Mesh(new THREE.TorusGeometry(0.53,0.045,18,90),
+    new THREE.MeshPhongMaterial({color:0xA4635B,shininess:16,emissive:0x2c1210,emissiveIntensity:0.32}));
+  muscle.rotation.x=Math.PI/2; muscle.position.y=0.65; grp.add(muscle);
+  reg('ciliary',muscle,'Ciliary body','Muscle and finger-like processes (ciliary processes) that focus the lens and produce the fluid inside the eye.','#B0685E',true);
+  // shared finger geometry with base->tip vertex colours (pigmented base, lighter tip)
+  var fg=new THREE.SphereGeometry(1,10,8);
+  var cBase=new THREE.Color(0x5a2f1e), cTip=new THREE.Color(0xCB9A72), carr=[], pp=fg.attributes.position;
+  for(var v=0;v<pp.count;v++){var f=(pp.getX(v)+1)/2; var c=cBase.clone().lerp(cTip,f); carr.push(c.r,c.g,c.b);}
+  fg.setAttribute('color',new THREE.Float32BufferAttribute(carr,3));
+  var fmat=new THREE.MeshPhongMaterial({vertexColors:true,shininess:26,specular:0x5a3a2c,emissive:0x000000});
+  var procN=76, xAxis=new THREE.Vector3(1,0,0);
+  for(var i=0;i<procN;i++){
+    var th=i/procN*Math.PI*2 + (rnd()-0.5)*0.012;
+    var lenF=0.88+rnd()*0.26;                                   // villous length variation
+    // base anterior & peripheral, tip points inward & slightly posterior — stays peripheral (gap to lens)
+    var rBase=0.55, yBase=0.66, rTip=0.44, yTip=0.63+(rnd()-0.5)*0.02;
+    var cth=Math.cos(th), sth=Math.sin(th);
+    var base=new THREE.Vector3(rBase*cth,yBase,rBase*sth), tip=new THREE.Vector3(rTip*cth,yTip,rTip*sth);
+    var dir=tip.clone().sub(base), len=dir.length()*lenF; dir.normalize();
+    var m=new THREE.Mesh(fg,fmat);
+    m.scale.set(len/2, 0.024, 0.016*(0.85+rnd()*0.35));         // long radially, thin axially & tangentially
+    m.quaternion.setFromUnitVectors(xAxis,dir);
+    m.position.copy(base.clone().add(tip).multiplyScalar(0.5));
+    grp.add(m);
+    reg('ciliary',m,'Ciliary body','Muscle and finger-like processes (ciliary processes) that focus the lens and produce the fluid inside the eye.','#B0685E',true,{pick:(i%3===0)});
+  }
+  return grp;
+}
+// realistic ora serrata: pigmented dentate processes (teeth) pointing anteriorly with U-shaped bays
+function buildOra(){
+  var Nseg=420,M=7,teeth=32,th0=TH_ORA,band=0.06,toothLen=0.12,Ror=0.888,pos=[],col=[],idx=[];
+  var cDeep=new THREE.Color(0x3a2110), cTooth=new THREE.Color(0x5a3016), cBay=new THREE.Color(0xA0714A);
+  function sp(th,phi){return new THREE.Vector3(Ror*Math.sin(th)*Math.cos(phi),Ror*Math.cos(th),Ror*Math.sin(th)*Math.sin(phi));}
+  for(var j=0;j<=Nseg;j++){
+    var phi=j/Nseg*Math.PI*2;
+    var profile=Math.pow(Math.max(0,Math.cos(phi*teeth)),3.2);      // narrow pointed teeth
+    var vary=0.82+0.18*(0.5+0.5*Math.sin(phi*teeth*0.5+1.3));       // slight per-tooth length variation
+    var thAnt=th0-toothLen*profile*vary;                            // teeth extend anteriorly
+    var thPost=th0+band;
+    for(var m=0;m<=M;m++){
+      var t=m/M, th=thPost+(thAnt-thPost)*t, p=sp(th,phi);
+      pos.push(p.x,p.y,p.z);
+      var c=cBay.clone().lerp(cTooth,profile).lerp(cDeep,(1-t)*0.55);
+      col.push(c.r,c.g,c.b);
+    }
+  }
+  var row=M+1;
+  for(var a=0;a<Nseg;a++)for(var b=0;b<M;b++){var p=a*row+b;idx.push(p,p+row,p+1,p+1,p+row,p+row+1);}
+  var g=new THREE.BufferGeometry();
+  g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
+  g.setAttribute('color',new THREE.Float32BufferAttribute(col,3));
+  g.setIndex(idx);g.computeVertexNormals();
+  return new THREE.Mesh(g,new THREE.MeshPhongMaterial({vertexColors:true,shininess:10,side:THREE.DoubleSide,emissive:0x140a04,emissiveIntensity:0.35}));
+}
+// shallow concave foveal depression on the retinal surface at a given direction
+function buildFovea(dir,Rrim,depth,alpha){
+  dir=dir.clone().normalize();
+  var up=Math.abs(dir.y)<0.9?new THREE.Vector3(0,1,0):new THREE.Vector3(1,0,0);
+  var u=new THREE.Vector3().crossVectors(up,dir).normalize();
+  var v=new THREE.Vector3().crossVectors(dir,u).normalize();
+  var rings=14,seg=44,pos=[],idx=[];
+  for(var i=0;i<=rings;i++){
+    var b=i/rings*alpha;
+    var recede=depth*(0.5+0.5*Math.cos(Math.PI*i/rings));   // deepest at centre, 0 at rim
+    var R=Rrim+recede;
+    for(var j=0;j<=seg;j++){var phi=j/seg*Math.PI*2;
+      var d=dir.clone().multiplyScalar(Math.cos(b))
+        .add(u.clone().multiplyScalar(Math.sin(b)*Math.cos(phi)))
+        .add(v.clone().multiplyScalar(Math.sin(b)*Math.sin(phi)));
+      pos.push(d.x*R,d.y*R,d.z*R);}
+  }
+  var row=seg+1;
+  for(var a=0;a<rings;a++)for(var b2=0;b2<seg;b2++){var p=a*row+b2;idx.push(p,p+row,p+1,p+1,p+row,p+row+1);}
+  var g=new THREE.BufferGeometry();
+  g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
+  g.setIndex(idx);g.computeVertexNormals();
+  return g;
+}
+
+// ================= REGISTRY / HIGHLIGHT =================
+var pickables=[],registry={};
+function reg(id,mesh,name,desc,chip,interior,opts){
+  opts=opts||{};
+  mesh.userData={id:id,name:name,desc:desc,pickId:id,proxy:!!opts.proxy,
+    baseEmissive:mesh.material.emissive?mesh.material.emissive.getHex():0x000000,
+    baseOpacity:mesh.material.opacity,hiOpacity:opts.hiOpacity||0.55,
+    baseColor:mesh.material.color?mesh.material.color.getHex():0xffffff,tint:!!opts.tint};
+  registry[id]=registry[id]||{meshes:[],name:name,desc:desc,chip:chip,interior:!!interior};
+  registry[id].meshes.push(mesh);
+  if(opts.pick!==false)pickables.push(mesh);
+  return mesh;
+}
+function applyHi(m){if(m.userData.proxy)m.material.opacity=m.userData.hiOpacity;
+  else if(m.material.emissive)m.material.emissive.setHex(AMBER);
+  else if(m.userData.tint)m.material.color.setHex(0xFFCF9E);}
+function clearHi(m){if(m.userData.proxy)m.material.opacity=m.userData.baseOpacity;
+  else if(m.material.emissive)m.material.emissive.setHex(m.userData.baseEmissive);
+  else if(m.userData.tint)m.material.color.setHex(m.userData.baseColor);}
+function highlight(id){if(registry[id])registry[id].meshes.forEach(applyHi);}
+function clearHighlight(){for(var k in registry)registry[k].meshes.forEach(clearHi);}
+
+// ================= BUILD =================
+// SCLERA
+var scleraMat=new THREE.MeshPhongMaterial({color:COL.sclera,shininess:16,specular:0x555555,side:THREE.DoubleSide,transparent:true,opacity:1});
+var sclera=new THREE.Mesh(new THREE.SphereGeometry(1,72,52,0,Math.PI*2,0.62,Math.PI-0.62),scleraMat);
+model.add(sclera);
+reg('sclera',sclera,'Sclera','The tough white outer wall that protects the eye and holds its round shape.','#E9E2D2',false);
+
+// episcleral vessels (exterior only)
+var epiGroup=new THREE.Group();model.add(epiGroup); // episcleral vessels removed per request
+
+// CHOROID (vascular layer between retina and sclera)
+var choroidMat=new THREE.MeshPhongMaterial({color:0x7a1f16,shininess:8,side:THREE.DoubleSide,emissive:0x230805,emissiveIntensity:0.5,transparent:true,opacity:1});
+var choroid=new THREE.Mesh(new THREE.SphereGeometry(0.94,60,40,0,Math.PI*2,TH_ORA,Math.PI-TH_ORA),choroidMat);
+model.add(choroid);
+reg('choroid',choroid,'Choroid','The vascular layer between the retina and sclera that nourishes the outer retina.','#7a1f16',true,{pick:false});
+
+// CORNEA
+var corneaMat=new THREE.MeshPhongMaterial({color:COL.cornea,shininess:140,specular:0xffffff,transparent:true,opacity:0.26,side:THREE.DoubleSide,depthWrite:false});
+var cornea=new THREE.Mesh(new THREE.SphereGeometry(0.62,48,36,0,Math.PI*2,0,1.05),corneaMat);
+cornea.position.y=0.5;model.add(cornea);
+reg('cornea',cornea,'Cornea','The clear front window that bends incoming light toward the retina.','#BFE3EE',false);
+
+// ANTERIOR CHAMBER
+var chamber=new THREE.Mesh(new THREE.SphereGeometry(0.45,32,20,0,Math.PI*2,0,0.7),
+  new THREE.MeshPhongMaterial({color:COL.chamber,transparent:true,opacity:0.08,side:THREE.DoubleSide,depthWrite:false,shininess:80}));
+chamber.position.y=0.55;chamber.scale.set(1,0.55,1);model.add(chamber);
+reg('chamber',chamber,'Anterior chamber','The fluid-filled space between the cornea and the iris.','#CFEAF2',false);
+
+// IRIS + PUPIL proxy
+var iris=new THREE.Mesh(new THREE.CircleGeometry(0.52,72),
+  new THREE.MeshPhongMaterial({map:makeIrisTexture(),shininess:22,specular:0x332a1e,side:THREE.DoubleSide}));
+iris.rotation.x=-Math.PI/2;iris.position.y=0.80;model.add(iris);
+reg('iris',iris,'Iris','The colored ring of muscle that opens and closes the pupil to control light.','#6B4A2B',false);
+var pupil=new THREE.Mesh(new THREE.CircleGeometry(0.156,48),new THREE.MeshBasicMaterial({color:0x000000,transparent:true,opacity:0,side:THREE.DoubleSide,depthTest:false}));
+pupil.rotation.x=-Math.PI/2;pupil.position.y=0.805;pupil.renderOrder=6;model.add(pupil);
+reg('pupil',pupil,'Pupil','The opening in the center of the iris that light passes through.','#0A0A0A',false,{proxy:true,hiOpacity:1.0});
+
+// LENS (biconvex) + nucleus
+var lens=new THREE.Mesh(new THREE.SphereGeometry(0.30,44,30),
+  new THREE.MeshPhongMaterial({color:COL.lens,shininess:130,specular:0xffffff,transparent:true,opacity:0.5,side:THREE.DoubleSide}));
+lens.scale.set(1,0.5,1);lens.position.y=0.66;model.add(lens);
+reg('lens',lens,'Lens','A clear, flexible structure that fine-tunes focus for near and distance vision.','#EFDCB0',true);
+var nucleus=new THREE.Mesh(new THREE.SphereGeometry(0.17,32,24),
+  new THREE.MeshPhongMaterial({color:0xF2E9D2,shininess:120,specular:0xffffff,transparent:true,opacity:0.35,side:THREE.DoubleSide}));
+nucleus.scale.set(1,0.5,1);nucleus.position.y=0.66;model.add(nucleus);
+// faint concentric lens fibers (growth rings) on the anterior & posterior faces
+(function(){var ringMat=new THREE.MeshBasicMaterial({color:0xffffff,transparent:true,opacity:0.10,side:THREE.DoubleSide});
+  [0.09,0.155,0.215,0.265].forEach(function(rr){
+    var ra=new THREE.Mesh(new THREE.RingGeometry(rr-0.004,rr,54),ringMat);ra.rotation.x=-Math.PI/2;ra.position.y=0.735;model.add(ra);
+    var rp=new THREE.Mesh(new THREE.RingGeometry(rr-0.004,rr,54),ringMat);rp.rotation.x=Math.PI/2;rp.position.y=0.585;model.add(rp);
+  });})();
+
+// CILIARY BODY (villous processes on a muscle band)
+var ciliary=buildCiliary();model.add(ciliary);
+// PARS PLANA: flat, gently-striated band on the wall between the ciliary processes and the ora
+(function(){
+  var th0=0.74, th1=TH_ORA, Rpp=0.884, N=220, M=10, stripes=32, pos=[],col=[],idx=[];
+  var cA=new THREE.Color(0x86563a), cB=new THREE.Color(0x5c3521), cGroove=new THREE.Color(0x3a2110);
+  for(var j=0;j<=N;j++){
+    var phi=j/N*Math.PI*2;
+    for(var m=0;m<=M;m++){
+      var t=m/M, th=th0+(th1-th0)*t;
+      var bow=Math.sin(t*Math.PI)*1.5;                           // bows each stria into an arc
+      var longi=0.5+0.5*Math.cos(phi*stripes+bow);               // curved longitudinal striae
+      var circ=0.5+0.5*Math.cos(t*Math.PI*2.2);                  // gentle circumferential banding
+      var stripe=longi*0.65+circ*0.35;                           // blend -> rounded, more circular areas
+      var R=Rpp+0.006*stripe*Math.sin(t*Math.PI);
+      var st=Math.sin(th), ct=Math.cos(th);
+      pos.push(R*st*Math.cos(phi), R*ct, R*st*Math.sin(phi));
+      var c=cA.clone().lerp(cB,t).lerp(cGroove,(1-stripe)*0.55);
+      col.push(c.r,c.g,c.b);
+    }
+  }
+  var row=M+1;
+  for(var a=0;a<N;a++)for(var b=0;b<M;b++){var p=a*row+b;idx.push(p,p+row,p+1,p+1,p+row,p+row+1);}
+  var g=new THREE.BufferGeometry();
+  g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
+  g.setAttribute('color',new THREE.Float32BufferAttribute(col,3));
+  g.setIndex(idx);g.computeVertexNormals();
+  var parsPlana=new THREE.Mesh(g,new THREE.MeshPhongMaterial({vertexColors:true,shininess:14,side:THREE.DoubleSide,emissive:0x180d05,emissiveIntensity:0.3}));
+  model.add(parsPlana);
+  reg('parsplana',parsPlana,'Pars plana','The flat, smooth posterior part of the ciliary body, between the ciliary processes and the ora serrata.','#6B4030',true);
+})();
+
+// ZONULES (fan of anterior + posterior fibers, ciliary processes -> lens)
+(function(){var zg=new THREE.Group();model.add(zg);
+  var mat=new THREE.MeshPhongMaterial({color:COL.zonule,transparent:true,opacity:0.5,shininess:60,emissive:0x000000});
+  var n=64;
+  for(var i=0;i<n;i++){var a=i/n*Math.PI*2, ci=Math.cos(a),si=Math.sin(a);
+    var origin=new THREE.Vector3(ci*0.44,0.634,si*0.44);  // ciliary process tips
+    var antA=new THREE.Vector3(ci*0.285,0.735,si*0.285);   // to anterior lens surface
+    var postA=new THREE.Vector3(ci*0.285,0.60,si*0.285);   // to posterior lens surface
+    [antA,postA].forEach(function(dst){
+      var mm=new THREE.Mesh(new THREE.TubeGeometry(new THREE.LineCurve3(origin,dst),1,0.0035,4,false),mat.clone());
+      zg.add(mm);
+      reg('zonules',mm,'Zonules','Fine fibers that suspend the lens from the ciliary body and let it change shape to focus.','#E7D7AC',true,{pick:(i%5===0)});
+    });
+  }})();
+
+// ORA SERRATA
+var ora=buildOra();model.add(ora);
+reg('ora',ora,'Ora serrata','The pigmented, serrated ring where the retina ends — about 4 mm behind the limbus, just behind the ciliary body.','#53301a',true);
+
+// PERIPHERAL RETINA SHELL (opaque backing; colour matches fundus periphery)
+var retinaBaseMat=new THREE.MeshBasicMaterial({color:0xA83420,side:THREE.BackSide,transparent:true,opacity:1});
+var retinaBase=new THREE.Mesh(new THREE.SphereGeometry(R_RET,64,44,0,Math.PI*2,TH_ORA,Math.PI-TH_ORA),retinaBaseMat);
+model.add(retinaBase);
+reg('retina',retinaBase,'Retina','The light-sensitive tissue lining the back of the eye — like the film in a camera.','#C6503C',true,{tint:true});
+
+// FUNDUS (detailed textured posterior; vessels reach the ora)
+var fundusData=makeFundusTexture();
+var fundusMat=new THREE.MeshBasicMaterial({map:fundusData.tex,side:THREE.DoubleSide,transparent:true,opacity:1});
+var fundus=new THREE.Mesh(buildBowl(BOWL_R),fundusMat);
+model.add(fundus);
+reg('retina',fundus,'Retina','The light-sensitive tissue lining the back of the eye — like the film in a camera.','#C6503C',true,{tint:true});
+
+// pick proxies on the fundus
+function faceProxy(u,v,R,radius,id,name,desc,chip){
+  var p=bowlPos(u,v,R);
+  var m=new THREE.Mesh(new THREE.CircleGeometry(radius,28),new THREE.MeshBasicMaterial({color:AMBER,transparent:true,opacity:0,side:THREE.DoubleSide}));
+  m.position.copy(p);m.lookAt(0,0,0);model.add(m);
+  reg(id,m,name,desc,chip,true,{proxy:true,hiOpacity:0.4});
+  return p;
+}
+(function(){
+  var macDir=bowlPos(fundusData.mac.u,fundusData.mac.v,1);
+  var macula=new THREE.Mesh(buildFovea(macDir,0.879,0.016,0.12),
+    new THREE.MeshPhongMaterial({color:0x8a3f22,shininess:24,specular:0x8a5a38,side:THREE.DoubleSide,emissive:0x1c0a04,emissiveIntensity:0.4}));
+  model.add(macula);
+  reg('macula',macula,'Macula','The small central region of the retina responsible for sharp, detailed, central vision — with the foveal pit (depression) at its center.','#7A3B22',true);
+})();
+var discP=faceProxy(fundusData.disc.u,fundusData.disc.v,0.883,0.05,'disc','Optic disc','Where the optic nerve and vessels enter the eye. It has no photoreceptors — the natural blind spot.','#F3DDA6');
+
+// vessel pick proxies (invisible tubes along main arcades; glow on hover/legend)
+(function(){var vg=new THREE.Group();model.add(vg);
+  function arc(uvs){var pts=uvs.map(function(p){return bowlPos(p[0],p[1],0.882);});
+    var m=new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts),44,0.02,6,false),new THREE.MeshBasicMaterial({color:AMBER,transparent:true,opacity:0}));
+    vg.add(m);reg('vessels',m,'Retinal vessels','The arteries and veins that arch from the optic disc and branch out to the ora serrata.','#A32C22',true,{proxy:true,hiOpacity:0.85});}
+  var d=[fundusData.disc.u,fundusData.disc.v];
+  arc([d,[0.40,0.30],[0.22,0.14]]); arc([d,[0.40,0.70],[0.22,0.86]]);
+  arc([d,[0.30,0.42],[0.08,0.30]]); arc([d,[0.30,0.58],[0.08,0.70]]);
+  arc([d,[0.58,0.34],[0.80,0.20]]); arc([d,[0.58,0.66],[0.80,0.80]]);
+})();
+
+// OPTIC NERVE
+(function(){var dir=discP.clone().normalize();
+  var curve=new THREE.CatmullRomCurve3([dir.clone().multiplyScalar(0.86),dir.clone().multiplyScalar(1.3),dir.clone().multiplyScalar(1.78)]);
+  var sheath=new THREE.Mesh(new THREE.TubeGeometry(curve,24,0.145,20,false),new THREE.MeshPhongMaterial({color:0xCB8F88,shininess:10,side:THREE.DoubleSide}));
+  var nerve=new THREE.Mesh(new THREE.TubeGeometry(curve,24,0.1,20,false),new THREE.MeshPhongMaterial({color:0xE7A7A0,shininess:14}));
+  var cap=new THREE.Mesh(new THREE.SphereGeometry(0.1,20,16),new THREE.MeshPhongMaterial({color:0xE7A7A0,shininess:14}));
+  cap.position.copy(dir.clone().multiplyScalar(1.78));model.add(sheath);model.add(nerve);model.add(cap);
+  reg('nerve',nerve,'Optic nerve','The cable of over a million nerve fibers that carries the image from the retina to the brain.','#E7A7A0',true);
+  reg('nerve',sheath,'Optic nerve','The cable of over a million nerve fibers that carries the image from the retina to the brain.','#E7A7A0',true);})();
+
+// ================= INTERACTION =================
+var pinReveal=false,effReveal=false,autoSpin=!reduce;
+var rotX=-0.35,rotY=-0.6,tRotX=rotX,tRotY=rotY,dragging=false,lastX=0,lastY=0;
+function setPin(v){pinReveal=v;var b=document.getElementById('revealBtn');b.classList.toggle('on',v);b.setAttribute('aria-pressed',v);}
+function setSpin(v){autoSpin=v;var b=document.getElementById('spinBtn');b.classList.toggle('on',v);b.setAttribute('aria-pressed',v);}
+document.getElementById('revealBtn').addEventListener('click',function(){setPin(!pinReveal);});
+document.getElementById('spinBtn').addEventListener('click',function(){setSpin(!autoSpin);});
+document.getElementById('resetBtn').addEventListener('click',function(){tRotX=-0.35;tRotY=-0.6;camDist=3.4;});
+setSpin(autoSpin);
+
+var raycaster=new THREE.Raycaster(),mouse=new THREE.Vector2(-2,-2),tipXY={x:0,y:0};
+var hovering=false,current=null,lockedId=null,legendReveal=false,spinResume=0;
+function autoSpinPause(){spinResume=performance.now()+2500;}
+canvas.addEventListener('pointerdown',function(e){dragging=true;lastX=e.clientX;lastY=e.clientY;canvas.classList.add('grabbing');canvas.setPointerCapture(e.pointerId);autoSpinPause();});
+window.addEventListener('pointerup',function(){dragging=false;canvas.classList.remove('grabbing');});
+canvas.addEventListener('pointermove',function(e){var r=canvas.getBoundingClientRect();
+  mouse.x=((e.clientX-r.left)/r.width)*2-1;mouse.y=-((e.clientY-r.top)/r.height)*2+1;
+  tipXY.x=e.clientX-r.left;tipXY.y=e.clientY-r.top;hovering=true;
+  if(dragging){var dx=e.clientX-lastX,dy=e.clientY-lastY;tRotY+=dx*0.006;tRotX+=dy*0.006;tRotX=Math.max(-1.35,Math.min(1.35,tRotX));lastX=e.clientX;lastY=e.clientY;hideHint();}});
+canvas.addEventListener('pointerleave',function(){hovering=false;});
+canvas.addEventListener('wheel',function(e){e.preventDefault();camDist+=(e.deltaY>0?1:-1)*0.22;camDist=Math.max(2.3,Math.min(6.0,camDist));},{passive:false});
+var hintHidden=false;function hideHint(){if(!hintHidden){hintHidden=true;hint.style.opacity='0';}}setTimeout(hideHint,6000);
+
+function showTip(id,x,y){var r=registry[id];if(!r)return;tipN.textContent=r.name;tipD.textContent=r.desc;tip.classList.add('show');
+  var tw=tip.offsetWidth,th=tip.offsetHeight,px=x+16,py=y+16;
+  if(px+tw>stage.clientWidth-8)px=x-tw-16;if(py+th>stage.clientHeight-8)py=y-th-16;
+  tip.style.left=Math.max(8,px)+'px';tip.style.top=Math.max(8,py)+'px';}
+function hideTip(){tip.classList.remove('show');}
+function updatePick(){
+  if(lockedId)return;
+  if(!hovering){if(current){clearHighlight();hideTip();current=null;}return;}
+  raycaster.setFromCamera(mouse,camera);
+  var list=pickables.filter(function(m){if(!m.visible)return false;var id=m.userData.pickId;
+    var interior=registry[id]&&registry[id].interior;
+    if(effReveal)return id!=='sclera';return !interior||id==='lens';});
+  var hits=raycaster.intersectObjects(list,false);
+  if(effReveal&&!hits.length)hits=raycaster.intersectObject(sclera,false);
+  // small landmarks win even if the near retina wall is in front of them
+  var PRI={macula:1,disc:1,vessels:1,pupil:1}, id=null;
+  for(var h=0;h<hits.length;h++){if(PRI[hits[h].object.userData.pickId]){id=hits[h].object.userData.pickId;break;}}
+  if(!id&&hits.length)id=hits[0].object.userData.pickId;
+  if(id){
+    if(id!==current){clearHighlight();highlight(id);current=id;markActive(id);}
+    showTip(id,tipXY.x,tipXY.y);
+  }else if(current){clearHighlight();hideTip();current=null;markActive(null);}
+}
+
+// LEGEND
+var groups=[['Outer coat',['sclera','cornea','choroid']],
+  ['Anterior segment',['chamber','iris','pupil','lens','zonules','ciliary','parsplana']],
+  ['Posterior segment',['ora','retina','vessels','macula','disc','nerve']]];
+var legendEl=document.getElementById('legend'),rowEls={};
+groups.forEach(function(g){var h=document.createElement('div');h.className='group-h';h.textContent=g[0];legendEl.appendChild(h);
+  g[1].forEach(function(id){var r=registry[id];if(!r)return;
+    var btn=document.createElement('button');btn.className='row';btn.type='button';
+    btn.innerHTML='<span class="chip" style="background:'+r.chip+'"></span><span class="rt">'+r.name+'<span class="rd">'+r.desc+'</span></span>';
+    var enter=function(){lockedId=id;legendReveal=!!registry[id].interior;clearHighlight();highlight(id);markActive(id);};
+    var leave=function(){lockedId=null;legendReveal=false;clearHighlight();markActive(null);};
+    btn.addEventListener('mouseenter',enter);btn.addEventListener('mouseleave',leave);
+    btn.addEventListener('focus',enter);btn.addEventListener('blur',leave);
+    legendEl.appendChild(btn);rowEls[id]=btn;});});
+function markActive(id){for(var k in rowEls)rowEls[k].classList.toggle('active',k===id);}
+
+// LOOP
+function resize(){var w=stage.clientWidth,h=stage.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();}
+window.addEventListener('resize',resize);resize();
+function animate(){requestAnimationFrame(animate);
+  if(autoSpin&&!dragging&&performance.now()>spinResume)tRotY+=0.0032;
+  rotX+=(tRotX-rotX)*0.12;rotY+=(tRotY-rotY)*0.12;pivot.rotation.set(rotX,rotY,0);
+  camera.position.z+=(camDist-camera.position.z)*0.12;
+  effReveal=pinReveal||hovering||legendReveal;
+  var tgt=effReveal?0.1:1.0;scleraMat.opacity+=(tgt-scleraMat.opacity)*0.12;
+  scleraMat.depthWrite=scleraMat.opacity>0.9;
+  var cTgt=effReveal?0.18:1.0;choroidMat.opacity+=(cTgt-choroidMat.opacity)*0.12;choroidMat.depthWrite=choroidMat.opacity>0.9;
+  // retina becomes translucent on reveal so you can see through to the far side
+  retinaBaseMat.opacity+=((effReveal?0.32:1.0)-retinaBaseMat.opacity)*0.12;retinaBaseMat.depthWrite=retinaBaseMat.opacity>0.9;
+  fundusMat.opacity+=((effReveal?0.55:1.0)-fundusMat.opacity)*0.12;fundusMat.depthWrite=fundusMat.opacity>0.9;
+  var revAmt=1-Math.min(1,Math.max(0,(scleraMat.opacity-0.1)/0.9));
+  inner.intensity=0.9*revAmt;
+  epiGroup.children.forEach(function(m){m.material.opacity=0.30*(1-revAmt);m.visible=m.material.opacity>0.02;});
+  updatePick();renderer.render(scene,camera);
+}
+animate();
+})();
+</script>
+</body>
+</html>
