@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Droplet, Zap, Sparkles, Eye } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import cscrOct from "@/assets/services/cscr-oct.jpg";
+import cscrOct from "@/assets/services/cscr-oct.png.asset.json";
 
 const CentralSerousRetinopathyPage = () => {
   const aboutRef = useScrollAnimation();
@@ -75,12 +75,12 @@ const CentralSerousRetinopathyPage = () => {
 
             <figure className="rounded-2xl overflow-hidden shadow-md border border-border bg-background">
               <img
-                src={cscrOct}
+                src={cscrOct.url}
                 alt="OCT scan showing subretinal fluid characteristic of central serous chorioretinopathy"
                 loading="lazy"
                 width={1024}
                 height={768}
-                className="w-full h-64 lg:h-80 object-cover"
+                className="w-full h-64 lg:h-80 object-contain bg-black"
               />
               <figcaption className="font-body text-xs text-muted-foreground px-3 py-2 border-t border-border">
                 OCT scan — dome of subretinal fluid under the macula in CSCR
