@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Eye, Syringe, Sparkles } from "lucide-react";
 import PageShell from "@/components/PageShell";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import mactelOct from "@/assets/services/juxtafoveal-telangiectasia-oct.png.asset.json";
 
 const JuxtafovealTelangiectasiaPage = () => (
   <PageShell>
