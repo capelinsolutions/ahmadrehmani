@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Scissors, Zap, Droplet, ShieldCheck } from "lucide-react";
 import PageShell from "@/components/PageShell";
-import procedureImg from "@/assets/services/pars-plana-vitrectomy.jpg";
+import procedureImg from "@/assets/services/vitrectomy-surgery.png.asset.json";
 
 const ParsPlanaVitrectomyPage = () => (
   <PageShell>
@@ -66,17 +66,17 @@ const ParsPlanaVitrectomyPage = () => (
 
           <div className="flex justify-center lg:justify-end">
             <figure className="w-full max-w-md">
-              <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-background">
+              <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-black">
                 <img
-                  src={procedureImg}
-                  alt="Medical illustration of pars plana vitrectomy showing trocars, vitrectomy probe, and light pipe inserted into the eye"
+                  src={procedureImg.url}
+                  alt="Surgeon performing pars plana vitrectomy in the operating room using a surgical microscope"
                   width={1024}
                   height={1024}
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-contain"
                 />
               </div>
               <figcaption className="font-body text-xs text-muted-foreground text-center mt-3">
-                Pars plana vitrectomy — microsurgical access through the pars plana of the eye.
+                Pars plana vitrectomy performed in the operating room with a surgical microscope.
               </figcaption>
             </figure>
           </div>
