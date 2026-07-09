@@ -68,15 +68,15 @@ const ScleralBucklePage = () => (
             <figure className="w-full max-w-md">
               <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-background">
                 <img
-                  src={fundusImg}
-                  alt="Color fundus photograph showing retinal vein occlusion with flame-shaped hemorrhages and dilated tortuous veins"
-                  width={1024}
-                  height={1024}
-                  className="w-full h-auto object-cover"
+                  src={scleralBuckleImg.url}
+                  alt="Medical illustration of an eye with a silicone scleral buckle band placed around the outside of the eye"
+                  width={1280}
+                  height={960}
+                  className="w-full h-auto object-contain"
                 />
               </div>
               <figcaption className="font-body text-xs text-muted-foreground text-center mt-3">
-                Color fundus photograph — retinal vein occlusion.
+                Illustration of a scleral buckle — a silicone band encircling the eye to repair retinal detachment.
               </figcaption>
             </figure>
           </div>

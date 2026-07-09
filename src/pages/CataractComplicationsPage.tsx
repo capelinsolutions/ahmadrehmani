@@ -107,15 +107,15 @@ const CataractComplicationsPage = () => {
               <figure className="w-full max-w-md">
                 <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-background">
                   <img
-                    src={heroImg}
-                    alt="Close-up clinical photograph of an eye with a dense, cloudy cataract"
+                    src={denseCataractImg.url}
+                    alt="Close-up slit-lamp clinical photograph of a dense mature cataract with a cloudy white lens"
                     width={1024}
-                    height={1024}
-                    className="w-full h-auto object-cover"
+                    height={768}
+                    className="w-full h-auto object-contain"
                   />
                 </div>
                 <figcaption className="font-body text-xs text-muted-foreground text-center mt-3">
-                  Clinical photograph — dense cataract.
+                  Slit-lamp photograph — dense mature cataract.
                 </figcaption>
               </figure>
             </div>
