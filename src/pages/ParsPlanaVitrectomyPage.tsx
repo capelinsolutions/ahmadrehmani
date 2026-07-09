@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Scissors, Zap, Droplet, ShieldCheck } from "lucide-react";
 import PageShell from "@/components/PageShell";
-import procedureImg from "@/assets/services/pars-plana-vitrectomy.jpg";
+import procedureImg from "@/assets/services/vitrectomy-surgery.png.asset.json";
 
 const ParsPlanaVitrectomyPage = () => (
   <PageShell>
