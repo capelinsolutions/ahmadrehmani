@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Film, Scissors, Eye, Sparkles } from "lucide-react";
 import PageShell from "@/components/PageShell";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import retainedLensFundus from "@/assets/services/retained-lens-fragments-fundus.png.asset.json";
+import retainedLensDiagram from "@/assets/services/retained-lens-fragments-diagram.png.asset.json";
 
 const RetainedLensFragmentsPage = () => (
   <PageShell>
