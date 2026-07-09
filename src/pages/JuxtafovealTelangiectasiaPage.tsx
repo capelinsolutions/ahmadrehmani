@@ -137,6 +137,7 @@ const JuxtafovealTelangiectasiaPage = () => {
       </div>
     </section>
   </PageShell>
-);
+  );
+};
 
 export default JuxtafovealTelangiectasiaPage;
