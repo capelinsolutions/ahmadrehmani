@@ -38,7 +38,7 @@ const AboutSection = ({ compact = false }: AboutSectionProps) => {
 
             <div className="space-y-5 font-body text-muted-foreground text-base leading-relaxed max-w-[55ch]">
               <p>
-                Dr. Ahmad Rehmani is the founder of <strong className="text-foreground font-semibold">North Houston Retina</strong> and the founding vitreoretinal surgeon at North Cypress Surgery Center. Dedicated exclusively to diseases and surgery of the retina and vitreous, he brings academic-level expertise and state-of-the-art surgical treatments directly to the Cypress and Northwest Houston communities.
+                Dr. Ahmad Rehmani is the founder of <strong className="text-foreground font-semibold">North Houston Retina</strong> and the founding vitreoretinal surgeon at North Cypress Surgery Center. Dedicated to diseases and surgery of the retina and vitreous, he brings academic-level expertise and state-of-the-art surgical treatments directly to the Cypress and Northwest Houston communities.
               </p>
               <p>
                 He is highly specialized in both medical and advanced microsurgical management of complex retinal diseases, including lens dislocations, retinal detachments, and macular holes. His clinical expertise also spans common conditions such as dense cataracts, epiretinal membranes, floaters, and vitreous hemorrhage, ensuring each patient receives prompt, world-class specialized care.
