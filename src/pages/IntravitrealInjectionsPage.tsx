@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Syringe, ShieldCheck, Clock, Sparkles } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import AntiVegfMarquee from "@/components/AntiVegfMarquee";
+import injectionImg from "@/assets/services/intravitreal-injection.jpg.asset.json";
 
 const IntravitrealInjectionsPage = () => (
   <PageShell>
@@ -25,27 +26,45 @@ const IntravitrealInjectionsPage = () => (
           <span className="text-accent">Intravitreal Injections</span>
         </nav>
 
-        <div className="max-w-4xl space-y-5">
-          <span className="font-body text-sm text-accent font-semibold uppercase tracking-wider">
-            In-Office Injections
-          </span>
-          <h1 className="font-display text-4xl lg:text-5xl font-bold leading-tight">
-            Intravitreal Injections
-          </h1>
-          <p className="font-body text-foreground/80 text-base lg:text-lg leading-[1.8]">
-            Intravitreal injections deliver medication directly into the vitreous cavity to treat many
-            vision-threatening retinal conditions — including <strong>wet age-related macular
-            degeneration, diabetic macular edema, diabetic retinopathy, retinal vein occlusion,</strong>
-            and inflammatory macular edema. The procedure is performed comfortably in the office under
-            topical anesthesia and typically takes only minutes.
-          </p>
-          <div className="flex flex-wrap gap-3 pt-2">
-            <a href="tel:+13465870223" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-5 py-3 rounded-lg font-body font-semibold">
-              <Phone className="w-4 h-4" /> Call (346) 587-0223
-            </a>
-            <Link to="/contact" className="inline-flex items-center gap-2 border border-border bg-background hover:bg-secondary px-5 py-3 rounded-lg font-body font-medium">
-              Request Consultation
-            </Link>
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
+          <div className="space-y-5">
+            <span className="font-body text-sm text-accent font-semibold uppercase tracking-wider">
+              In-Office Injections
+            </span>
+            <h1 className="font-display text-4xl lg:text-5xl font-bold leading-tight">
+              Intravitreal Injections
+            </h1>
+            <p className="font-body text-foreground/80 text-base lg:text-lg leading-[1.8]">
+              Intravitreal injections deliver medication directly into the vitreous cavity to treat many
+              vision-threatening retinal conditions — including <strong>wet age-related macular
+              degeneration, diabetic macular edema, diabetic retinopathy, retinal vein occlusion,</strong>
+              and inflammatory macular edema. The procedure is performed comfortably in the office under
+              topical anesthesia and typically takes only minutes.
+            </p>
+            <div className="flex flex-wrap gap-3 pt-2">
+              <a href="tel:+13465870223" className="inline-flex items-center gap-2 bg-accent hover:bg-accent-light text-accent-foreground px-5 py-3 rounded-lg font-body font-semibold">
+                <Phone className="w-4 h-4" /> Call (346) 587-0223
+              </a>
+              <Link to="/contact" className="inline-flex items-center gap-2 border border-border bg-background hover:bg-secondary px-5 py-3 rounded-lg font-body font-medium">
+                Request Consultation
+              </Link>
+            </div>
+          </div>
+
+          <div className="flex justify-center lg:justify-end">
+            <figure className="w-full max-w-xl">
+              <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-background">
+                <img
+                  src={injectionImg.url}
+                  alt="Sterile intravitreal injection syringe with fine-gauge needle held by a gloved retina specialist"
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption className="font-body text-xs text-muted-foreground text-center mt-3">
+                Fine-gauge sterile needle used for in-office intravitreal injections.
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
