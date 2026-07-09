@@ -5,7 +5,7 @@ import PageShell from "@/components/PageShell";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import dryFundus from "@/assets/services/dry-amd-fundus.jpg";
-import valedaDevice from "@/assets/services/valeda-actual.jpg";
+import valedaDevice from "@/assets/services/valeda-light-delivery-system.png.asset.json";
 import gaFundus from "@/assets/services/geographic-atrophy-fundus.jpg";
 
 const DryMacularDegenerationPage = () => {
@@ -94,7 +94,7 @@ const DryMacularDegenerationPage = () => {
 
           <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 items-center">
             <figure className="rounded-2xl overflow-hidden shadow-lg border-2 border-accent/30 bg-background">
-              <img src={valedaDevice} alt="Valeda Light Delivery System photobiomodulation device for dry AMD" loading="lazy" className="w-full h-64 lg:h-80 object-cover" />
+              <img src={valedaDevice.url} alt="Valeda Light Delivery System photobiomodulation device for dry AMD" loading="lazy" className="w-full h-64 lg:h-80 object-cover" />
               <figcaption className="font-body text-xs text-muted-foreground px-4 py-3 border-t border-border bg-accent-pale/30">
                 <strong className="text-primary">Valeda Light Delivery System</strong> — FDA-authorized photobiomodulation for intermediate dry AMD
               </figcaption>
