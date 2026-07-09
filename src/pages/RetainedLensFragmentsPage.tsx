@@ -58,7 +58,42 @@ const RetainedLensFragmentsPage = () => {
       </div>
     </section>
 
-    <section className="bg-background py-14">
+    <section ref={aboutRef} className="bg-background py-16">
+      <div className="container mx-auto px-4 max-w-6xl fade-up">
+        <div className="flex items-center gap-3 mb-3">
+          <span className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-body font-semibold uppercase tracking-wider">
+            <Eye className="w-3.5 h-3.5" /> The Condition
+          </span>
+        </div>
+        <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-8">
+          What Are Retained Lens Fragments?
+        </h2>
+
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
+          <div>
+            <p className="font-body text-gray-700 leading-[1.8] text-base lg:text-lg">
+              After complicated cataract surgery, pieces of lens material can fall backward into the vitreous cavity. These retained fragments can cause inflammation, elevated eye pressure, and corneal swelling. Dr. Rehmani uses careful examination and imaging to plan the safest timing and approach for removal.
+            </p>
+          </div>
+
+          <figure className="rounded-2xl overflow-hidden shadow-md border border-border bg-background">
+            <img
+              src={retainedLensFundus.url}
+              alt="Fundus photograph showing retained lens fragments settled in the vitreous cavity"
+              loading="lazy"
+              width={1024}
+              height={768}
+              className="w-full h-64 lg:h-80 object-contain bg-black"
+            />
+            <figcaption className="font-body text-xs text-muted-foreground px-3 py-2 border-t border-border">
+              Fundus image — retained lens fragments in the back of the eye
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section ref={treatRef} className="bg-background py-14">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground">
