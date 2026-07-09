@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Phone, ChevronRight, Layers, Scissors, Film, Sparkles } from "lucide-react";
+import { Phone, ChevronRight, Layers, Scissors, Sparkles } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import ermOct from "@/assets/services/erm-oct.jpg";
