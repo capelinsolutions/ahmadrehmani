@@ -119,19 +119,18 @@ const MacularPuckerPage = () => {
               </p>
             </div>
 
-            {/* Video placeholder */}
-            <figure className="rounded-2xl overflow-hidden border-2 border-dashed border-accent/40 bg-background shadow-sm">
-              <div className="relative aspect-video bg-gradient-deep flex flex-col items-center justify-center text-center p-6">
-                <div className="w-14 h-14 rounded-full bg-accent/15 border border-accent/30 flex items-center justify-center mb-3">
-                  <Film className="w-7 h-7 text-accent" />
-                </div>
-                <p className="font-display text-lg font-bold text-foreground">Surgical Video Coming Soon</p>
-                <p className="font-body text-xs text-muted-foreground mt-1 max-w-xs">
-                  Dr. Rehmani peeling an epiretinal membrane — clip to be added.
-                </p>
-              </div>
+            {/* Surgical GIF */}
+            <figure className="rounded-2xl overflow-hidden border border-border bg-background shadow-sm">
+              <img
+                src={macularPuckerSurgeryGif.url}
+                alt="Surgical footage of macular pucker (epiretinal membrane) removal"
+                loading="lazy"
+                width={1024}
+                height={576}
+                className="w-full h-auto object-cover"
+              />
               <figcaption className="font-body text-xs text-muted-foreground px-3 py-2 border-t border-border bg-background">
-                Video placeholder — surgical footage will be uploaded here.
+                Surgical footage — epiretinal membrane peeling during vitrectomy.
               </figcaption>
             </figure>
           </div>
