@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Phone, ChevronRight, Film, Scissors, Eye, Sparkles } from "lucide-react";
+import { Phone, ChevronRight, Scissors, Eye, Sparkles } from "lucide-react";
 import PageShell from "@/components/PageShell";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import retainedLensFundus from "@/assets/services/retained-lens-fragments-fundus.png.asset.json";
+import retainedLensDiagram from "@/assets/services/retained-lens-fragments-diagram.png.asset.json";
 
-const RetainedLensFragmentsPage = () => (
-  <PageShell>
+const RetainedLensFragmentsPage = () => {
+  const aboutRef = useScrollAnimation();
+  const treatRef = useScrollAnimation();
+  return (
+    <PageShell>
     <Helmet>
       <title>Retained Lens Fragments — Cypress, TX | North Houston Retina</title>
       <meta
@@ -52,7 +58,42 @@ const RetainedLensFragmentsPage = () => (
       </div>
     </section>
 
-    <section className="bg-background py-14">
+    <section ref={aboutRef} className="bg-background py-16">
+      <div className="container mx-auto px-4 max-w-6xl fade-up">
+        <div className="flex items-center gap-3 mb-3">
+          <span className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-body font-semibold uppercase tracking-wider">
+            <Eye className="w-3.5 h-3.5" /> The Condition
+          </span>
+        </div>
+        <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-8">
+          What Are Retained Lens Fragments?
+        </h2>
+
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
+          <div>
+            <p className="font-body text-gray-700 leading-[1.8] text-base lg:text-lg">
+              After complicated cataract surgery, pieces of lens material can fall backward into the vitreous cavity. These retained fragments can cause inflammation, elevated eye pressure, and corneal swelling. Dr. Rehmani uses careful examination and imaging to plan the safest timing and approach for removal.
+            </p>
+          </div>
+
+          <figure className="rounded-2xl overflow-hidden shadow-md border border-border bg-background">
+            <img
+              src={retainedLensFundus.url}
+              alt="Fundus photograph showing retained lens fragments settled in the vitreous cavity"
+              loading="lazy"
+              width={1024}
+              height={768}
+              className="w-full h-64 lg:h-80 object-contain bg-black"
+            />
+            <figcaption className="font-body text-xs text-muted-foreground px-3 py-2 border-t border-border">
+              Fundus image — retained lens fragments in the back of the eye
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section ref={treatRef} className="bg-background py-14">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center max-w-2xl mx-auto mb-10">
           <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground">
@@ -80,17 +121,18 @@ const RetainedLensFragmentsPage = () => (
           ))}
         </div>
 
-        {/* Video placeholder */}
-        <figure className="mt-10 rounded-2xl overflow-hidden border-2 border-dashed border-accent/40 bg-background shadow-sm max-w-3xl mx-auto">
-          <div className="relative aspect-video bg-gradient-deep flex flex-col items-center justify-center text-center p-6">
-            <div className="w-14 h-14 rounded-full bg-accent/15 border border-accent/30 flex items-center justify-center mb-3">
-              <Film className="w-7 h-7 text-accent" />
-            </div>
-            <p className="font-display text-lg font-bold text-foreground">Surgical Video / GIF Coming Soon</p>
-            <p className="font-body text-xs text-muted-foreground mt-1 max-w-xs">
-              Dr. Rehmani removing retained lens fragments — clip to be added.
-            </p>
-          </div>
+        <figure className="mt-10 rounded-2xl overflow-hidden shadow-md border border-border bg-background max-w-3xl mx-auto">
+          <img
+            src={retainedLensDiagram.url}
+            alt="Diagram of retained lens fragments, lens capsule, and IOL inside the eye"
+            loading="lazy"
+            width={1024}
+            height={768}
+            className="w-full h-64 lg:h-80 object-contain bg-white"
+          />
+          <figcaption className="font-body text-xs text-muted-foreground px-3 py-2 border-t border-border">
+            Anatomy diagram — retained lens fragments behind the iris and IOL
+          </figcaption>
         </figure>
       </div>
     </section>
@@ -112,6 +154,7 @@ const RetainedLensFragmentsPage = () => (
       </div>
     </section>
   </PageShell>
-);
+  );
+};
 
 export default RetainedLensFragmentsPage;

@@ -2,9 +2,13 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Eye, Syringe, Sparkles } from "lucide-react";
 import PageShell from "@/components/PageShell";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import mactelOct from "@/assets/services/juxtafoveal-telangiectasia-oct.png.asset.json";
 
-const JuxtafovealTelangiectasiaPage = () => (
-  <PageShell>
+const JuxtafovealTelangiectasiaPage = () => {
+  const aboutRef = useScrollAnimation();
+  return (
+    <PageShell>
     <Helmet>
       <title>Juxtafoveal Telangiectasia (MacTel) — Cypress, TX | North Houston Retina</title>
       <meta
@@ -47,6 +51,41 @@ const JuxtafovealTelangiectasiaPage = () => (
               Request Consultation
             </Link>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section ref={aboutRef} className="bg-background py-16">
+      <div className="container mx-auto px-4 max-w-6xl fade-up">
+        <div className="flex items-center gap-3 mb-3">
+          <span className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-body font-semibold uppercase tracking-wider">
+            <Eye className="w-3.5 h-3.5" /> The Condition
+          </span>
+        </div>
+        <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-8">
+          What is Juxtafoveal Telangiectasia?
+        </h2>
+
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
+          <div>
+            <p className="font-body text-gray-700 leading-[1.8] text-base lg:text-lg">
+              MacTel is characterized by abnormal, dilated capillaries next to the fovea. Over time, these tiny vessels can leak and cause subtle loss of the inner retinal layers, creating a foveal cavitation that is best seen on OCT. Patients often notice mild blurring, difficulty reading, or a small central blind spot before the condition is visible on routine examination.
+            </p>
+          </div>
+
+          <figure className="rounded-2xl overflow-hidden shadow-md border border-border bg-background">
+            <img
+              src={mactelOct.url}
+              alt="OCT scan showing foveal cavitation and telangiectatic vessels in juxtafoveal telangiectasia"
+              loading="lazy"
+              width={1024}
+              height={768}
+              className="w-full h-64 lg:h-80 object-contain bg-black"
+            />
+            <figcaption className="font-body text-xs text-muted-foreground px-3 py-2 border-t border-border">
+              OCT scan — foveal cavitation and juxtafoveal telangiectatic vessels
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -98,6 +137,7 @@ const JuxtafovealTelangiectasiaPage = () => (
       </div>
     </section>
   </PageShell>
-);
+  );
+};
 
 export default JuxtafovealTelangiectasiaPage;
