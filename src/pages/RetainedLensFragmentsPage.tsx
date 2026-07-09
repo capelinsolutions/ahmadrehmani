@@ -121,17 +121,18 @@ const RetainedLensFragmentsPage = () => {
           ))}
         </div>
 
-        {/* Video placeholder */}
-        <figure className="mt-10 rounded-2xl overflow-hidden border-2 border-dashed border-accent/40 bg-background shadow-sm max-w-3xl mx-auto">
-          <div className="relative aspect-video bg-gradient-deep flex flex-col items-center justify-center text-center p-6">
-            <div className="w-14 h-14 rounded-full bg-accent/15 border border-accent/30 flex items-center justify-center mb-3">
-              <Film className="w-7 h-7 text-accent" />
-            </div>
-            <p className="font-display text-lg font-bold text-foreground">Surgical Video / GIF Coming Soon</p>
-            <p className="font-body text-xs text-muted-foreground mt-1 max-w-xs">
-              Dr. Rehmani removing retained lens fragments — clip to be added.
-            </p>
-          </div>
+        <figure className="mt-10 rounded-2xl overflow-hidden shadow-md border border-border bg-background max-w-3xl mx-auto">
+          <img
+            src={retainedLensDiagram.url}
+            alt="Diagram of retained lens fragments, lens capsule, and IOL inside the eye"
+            loading="lazy"
+            width={1024}
+            height={768}
+            className="w-full h-64 lg:h-80 object-contain bg-white"
+          />
+          <figcaption className="font-body text-xs text-muted-foreground px-3 py-2 border-t border-border">
+            Anatomy diagram — retained lens fragments behind the iris and IOL
+          </figcaption>
         </figure>
       </div>
     </section>
