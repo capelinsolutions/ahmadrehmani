@@ -5,8 +5,10 @@ import PageShell from "@/components/PageShell";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import mactelOct from "@/assets/services/juxtafoveal-telangiectasia-oct.png.asset.json";
 
-const JuxtafovealTelangiectasiaPage = () => (
-  <PageShell>
+const JuxtafovealTelangiectasiaPage = () => {
+  const aboutRef = useScrollAnimation();
+  return (
+    <PageShell>
     <Helmet>
       <title>Juxtafoveal Telangiectasia (MacTel) — Cypress, TX | North Houston Retina</title>
       <meta
