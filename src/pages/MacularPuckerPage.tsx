@@ -4,6 +4,7 @@ import { Phone, ChevronRight, Layers, Scissors, Film, Sparkles } from "lucide-re
 import PageShell from "@/components/PageShell";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import ermOct from "@/assets/services/erm-oct.jpg";
+import macularPuckerSurgeryGif from "@/assets/services/macular-pucker-surgery.gif.asset.json";
 
 const MacularPuckerPage = () => {
   const aboutRef = useScrollAnimation();
