@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Wind, Compass, Zap, Clock } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import procedureImg from "@/assets/services/pneumatic-retinopexy.jpg";
+import fundusImg from "@/assets/services/pneumatic-retinopexy-fundus.png.asset.json";
 
 const PneumaticRetinopexyPage = () => (
   <PageShell>
@@ -82,6 +83,26 @@ const PneumaticRetinopexyPage = () => (
             </figure>
           </div>
         </div>
+      </div>
+    </section>
+
+    {/* Fundus photo */}
+    <section className="bg-background py-14">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <figure className="w-full">
+          <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-black">
+            <img
+              src={fundusImg.url}
+              alt="Fundus photograph showing an intraocular gas bubble after pneumatic retinopexy"
+              width={1280}
+              height={720}
+              className="w-full h-auto object-contain"
+            />
+          </div>
+          <figcaption className="font-body text-xs text-muted-foreground text-center mt-3">
+            Fundus photograph demonstrating an intraocular gas bubble used to seal a retinal tear during pneumatic retinopexy.
+          </figcaption>
+        </figure>
       </div>
     </section>
 
