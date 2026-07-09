@@ -5,7 +5,7 @@ import PageShell from "@/components/PageShell";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import dryFundus from "@/assets/services/dry-amd-fundus.jpg";
-import valedaDevice from "@/assets/services/valeda-actual.jpg";
+import valedaDevice from "@/assets/services/valeda-light-delivery-system.png.asset.json";
 import gaFundus from "@/assets/services/geographic-atrophy-fundus.jpg";
 
 const DryMacularDegenerationPage = () => {
