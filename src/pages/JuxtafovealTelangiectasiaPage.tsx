@@ -55,6 +55,41 @@ const JuxtafovealTelangiectasiaPage = () => {
       </div>
     </section>
 
+    <section ref={aboutRef} className="bg-background py-16">
+      <div className="container mx-auto px-4 max-w-6xl fade-up">
+        <div className="flex items-center gap-3 mb-3">
+          <span className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-body font-semibold uppercase tracking-wider">
+            <Eye className="w-3.5 h-3.5" /> The Condition
+          </span>
+        </div>
+        <h2 className="font-display text-3xl lg:text-4xl font-bold text-foreground mb-8">
+          What is Juxtafoveal Telangiectasia?
+        </h2>
+
+        <div className="grid lg:grid-cols-[1.1fr_1fr] gap-10 items-center">
+          <div>
+            <p className="font-body text-gray-700 leading-[1.8] text-base lg:text-lg">
+              MacTel is characterized by abnormal, dilated capillaries next to the fovea. Over time, these tiny vessels can leak and cause subtle loss of the inner retinal layers, creating a foveal cavitation that is best seen on OCT. Patients often notice mild blurring, difficulty reading, or a small central blind spot before the condition is visible on routine examination.
+            </p>
+          </div>
+
+          <figure className="rounded-2xl overflow-hidden shadow-md border border-border bg-background">
+            <img
+              src={mactelOct.url}
+              alt="OCT scan showing foveal cavitation and telangiectatic vessels in juxtafoveal telangiectasia"
+              loading="lazy"
+              width={1024}
+              height={768}
+              className="w-full h-64 lg:h-80 object-contain bg-black"
+            />
+            <figcaption className="font-body text-xs text-muted-foreground px-3 py-2 border-t border-border">
+              OCT scan — foveal cavitation and juxtafoveal telangiectatic vessels
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <section className="bg-background py-14">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center max-w-2xl mx-auto mb-10">
