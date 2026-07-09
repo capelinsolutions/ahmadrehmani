@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight } from "lucide-react";
 import PageShell from "@/components/PageShell";
-import heroImg from "@/assets/services/cataract-complications.jpg";
+import denseCataractImg from "@/assets/services/dense-cataract-clinical.png.asset.json";
 
 const SECTIONS = [
   {

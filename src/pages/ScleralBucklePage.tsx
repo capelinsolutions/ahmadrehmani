@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, CircleDot, ShieldCheck, Layers, Activity } from "lucide-react";
 import PageShell from "@/components/PageShell";
-import fundusImg from "@/assets/services/fundus-rvo.jpg";
+import scleralBuckleImg from "@/assets/services/scleral-buckle-eye.jpg.asset.json";
 
 const ScleralBucklePage = () => (
   <PageShell>
