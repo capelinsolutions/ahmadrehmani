@@ -85,9 +85,9 @@ const RetinalArterialOcclusionPage = () => (
       <div className="container mx-auto px-4 max-w-5xl flex items-start gap-4">
         <AlertCircle className="w-6 h-6 text-red-600 shrink-0 mt-0.5" />
         <p className="font-body text-sm lg:text-base text-red-900 leading-relaxed">
-          <strong>Sudden, painless vision loss is an emergency.</strong> Call our office immediately
-          or go to the nearest emergency room — time is critical to preserve vision and rule out a
-          related stroke.
+          <strong>Retinal arterial occlusion is a medical emergency.</strong> If you experience
+          sudden, painless vision loss, <strong>go to the nearest emergency room immediately</strong>{" "}
+          or call our office — time is critical to preserve vision and rule out a related stroke.
         </p>
       </div>
     </section>
