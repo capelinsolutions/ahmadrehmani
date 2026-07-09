@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Zap, ShieldCheck, Droplet, Activity } from "lucide-react";
 import PageShell from "@/components/PageShell";
-import laserImg from "@/assets/services/micropulse-laser.jpg";
+import laserImg from "@/assets/services/iridex-iq577-laser.png.asset.json";
 
 const MicropulseLaserPage = () => (
   <PageShell>
@@ -61,18 +61,16 @@ const MicropulseLaserPage = () => (
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <figure className="w-full max-w-md">
-              <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-background">
+            <figure className="w-full max-w-xl">
+              <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-white">
                 <img
-                  src={laserImg}
-                  alt="Iridex 577 micropulse retinal laser console with touchscreen and delivery system"
-                  width={1024}
-                  height={1024}
-                  className="w-full h-auto object-cover"
+                  src={laserImg.url}
+                  alt="Iridex IQ 577 micropulse retinal laser console with touchscreen and delivery system"
+                  className="w-full h-auto object-contain"
                 />
               </div>
               <figcaption className="font-body text-xs text-muted-foreground text-center mt-3">
-                Iridex 577 micropulse laser — yellow-wavelength, tissue-sparing therapy.
+                Iridex IQ 577 micropulse laser — yellow-wavelength, tissue-sparing therapy.
               </figcaption>
             </figure>
           </div>
