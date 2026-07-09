@@ -154,6 +154,7 @@ const RetainedLensFragmentsPage = () => {
       </div>
     </section>
   </PageShell>
-);
+  );
+};
 
 export default RetainedLensFragmentsPage;
