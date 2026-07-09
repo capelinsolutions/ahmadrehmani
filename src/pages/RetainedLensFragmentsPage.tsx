@@ -6,8 +6,11 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import retainedLensFundus from "@/assets/services/retained-lens-fragments-fundus.png.asset.json";
 import retainedLensDiagram from "@/assets/services/retained-lens-fragments-diagram.png.asset.json";
 
-const RetainedLensFragmentsPage = () => (
-  <PageShell>
+const RetainedLensFragmentsPage = () => {
+  const aboutRef = useScrollAnimation();
+  const treatRef = useScrollAnimation();
+  return (
+    <PageShell>
     <Helmet>
       <title>Retained Lens Fragments — Cypress, TX | North Houston Retina</title>
       <meta
