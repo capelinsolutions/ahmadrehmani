@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight } from "lucide-react";
 import PageShell from "@/components/PageShell";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import denseCataractImg from "@/assets/services/dense-cataract-clinical.png.asset.json";
 
 const SECTIONS = [
@@ -52,13 +53,7 @@ const CataractComplicationsPage = () => {
       {/* Hero */}
       <section className="bg-gradient-deep border-b border-border py-12 lg:py-16 text-foreground">
         <div className="container mx-auto px-4">
-          <nav className="flex items-center gap-2 text-xs font-body text-muted-foreground mb-6">
-            <Link to="/" className="hover:text-accent">Home</Link>
-            <ChevronRight className="w-3 h-3" />
-            <Link to="/services" className="hover:text-accent">Services</Link>
-            <ChevronRight className="w-3 h-3" />
-            <span className="text-accent">Lens Complications</span>
-          </nav>
+          <Breadcrumbs />
 
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div className="space-y-5">
