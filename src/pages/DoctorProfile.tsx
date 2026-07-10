@@ -10,6 +10,17 @@ import drExam from "@/assets/dr-exam.jpg";
 import drStanding from "@/assets/dr-standing.jpg";
 import drPatient from "@/assets/dr-patient.jpg";
 import drSlitLamp from "@/assets/dr-slit-lamp.jpg";
+import eyleaLogo from "@/assets/services/meds/eylea.png";
+import vabysmoLogo from "@/assets/services/meds/vabysmo.png";
+import susvimoLogo from "@/assets/services/meds/susvimo.png";
+import rgx314Logo from "@/assets/services/meds/rgx-314.png";
+
+const trialDrugs = [
+  { name: "Eylea", logo: eyleaLogo },
+  { name: "Vabysmo", logo: vabysmoLogo },
+  { name: "Susvimo", logo: susvimoLogo },
+  { name: "RGX-314", logo: rgx314Logo },
+];
 
 const DoctorProfile = () => {
   return (
