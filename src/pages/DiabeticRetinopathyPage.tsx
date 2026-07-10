@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Activity } from "lucide-react";
 import PageShell from "@/components/PageShell";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import drNpdr from "@/assets/services/diabetic-retinopathy-fundus-npdr.jpg";
 import drAdvanced from "@/assets/services/diabetic-retinopathy-advanced.jpg";
@@ -39,13 +40,7 @@ const DiabeticRetinopathyPage = () => {
       {/* Hero */}
       <section className="bg-gradient-deep border-b border-border py-12 lg:py-16">
         <div className="container mx-auto px-4">
-          <nav className="flex items-center gap-2 text-xs font-body text-muted-foreground mb-6">
-            <Link to="/" className="hover:text-accent">Home</Link>
-            <ChevronRight className="w-3 h-3" />
-            <Link to="/services" className="hover:text-accent">Services</Link>
-            <ChevronRight className="w-3 h-3" />
-            <span className="text-accent">Diabetic Retinopathy & DME</span>
-          </nav>
+          <Breadcrumbs />
 
           <div className="max-w-4xl">
             <span className="font-body text-sm text-accent font-semibold uppercase tracking-wider">Conditions & Treatments</span>

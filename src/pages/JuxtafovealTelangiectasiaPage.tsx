@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Eye, Syringe, Sparkles } from "lucide-react";
 import PageShell from "@/components/PageShell";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import mactelOct from "@/assets/services/juxtafoveal-telangiectasia-oct.png.asset.json";
 
@@ -20,13 +21,7 @@ const JuxtafovealTelangiectasiaPage = () => {
 
     <section className="bg-gradient-deep border-b border-border py-12 lg:py-16 text-foreground">
       <div className="container mx-auto px-4">
-        <nav className="flex items-center gap-2 text-xs font-body text-muted-foreground mb-6">
-          <Link to="/" className="hover:text-accent">Home</Link>
-          <ChevronRight className="w-3 h-3" />
-          <Link to="/services" className="hover:text-accent">Services</Link>
-          <ChevronRight className="w-3 h-3" />
-          <span className="text-accent">Juxtafoveal Telangiectasia</span>
-        </nav>
+        <Breadcrumbs />
 
         <div className="max-w-4xl space-y-5">
           <span className="font-body text-sm text-accent font-semibold uppercase tracking-wider">
