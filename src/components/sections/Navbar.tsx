@@ -131,6 +131,7 @@ const navLinks = [
   { label: "Services", to: "/services", menu: SERVICES_MENU },
   { label: "Location", to: "/locations" },
   { label: "Contact", to: "/contact" },
+  { label: "Eye Anatomy", to: "/eye-anatomy" },
 ] as const;
 
 const MegaMenu = ({ columns }: { columns: MenuColumn[] }) => (
