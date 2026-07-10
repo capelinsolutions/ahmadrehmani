@@ -166,10 +166,9 @@ const DoctorProfile = () => {
                   Dr. Rehmani played an active role in cutting-edge retinal research as a sub-investigator on over 20 U.S. clinical trials. These trials focus on novel therapies for macular degeneration, diabetic eye disease, and other sight-threatening conditions — including studies for Eylea, Vabysmo, Susvimo, and RGX-314 gene therapy.
                 </p>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
-                  {["Eylea", "Vabysmo", "Susvimo", "RGX-314"].map(drug => (
-                    <div key={drug} className="bg-gray-50 border border-border rounded-lg px-4 py-3 text-center">
-                      <p className="font-body text-sm font-semibold text-foreground">{drug}</p>
-                      <p className="font-body text-xs text-muted-foreground">Clinical Trial</p>
+                  {trialDrugs.map(drug => (
+                    <div key={drug.name} className="bg-background border border-border rounded-lg px-4 py-4 flex items-center justify-center h-24 transition-shadow hover:shadow-md" title={`${drug.name} — Clinical Trial`}>
+                      <img src={drug.logo} alt={`${drug.name} clinical trial logo`} loading="lazy" className="max-h-12 max-w-full object-contain" />
                     </div>
                   ))}
                 </div>
