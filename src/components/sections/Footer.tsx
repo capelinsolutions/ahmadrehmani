@@ -17,6 +17,7 @@ const footerPractice: { label: string; to: string }[] = [
   { label: "Insurance Accepted", to: "/insurance" },
   { label: "Patient Reviews", to: "/reviews" },
   { label: "FAQ", to: "/faq" },
+  { label: "Eye Anatomy", to: "/eye-anatomy" },
   { label: "Book Appointment", to: "/contact" },
 ];
 const footerContact = [
