@@ -18,7 +18,7 @@ const AboutSection = ({ compact = false }: AboutSectionProps) => {
             <div className="relative aspect-[3/4] w-full rounded-2xl overflow-hidden border border-border/40 shadow-sm bg-muted">
               <img 
                 src={drRehmaniImg} 
-                alt="Dr. Ahmad Rehmani, D.O. — Vitreoretinal Specialist, North Houston Retina" 
+                alt="Dr. Ahmad Rehmani — Board-Certified Vitreoretinal Specialist, North Houston Retina" 
                 className="w-full h-full object-cover object-center" 
                 loading="lazy" 
               />
@@ -29,7 +29,7 @@ const AboutSection = ({ compact = false }: AboutSectionProps) => {
           <div className="lg:col-span-7 space-y-6 fade-up">
             <div className="space-y-3">
               <span className="font-body text-xs text-accent font-bold uppercase tracking-[0.2em] block">
-                Founding Surgeon
+                Board-Certified Founding Surgeon
               </span>
               <h2 className="font-display text-foreground text-3xl lg:text-4xl font-bold tracking-tight leading-tight">
                 Expertise in Vitreoretinal Care

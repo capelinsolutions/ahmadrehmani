@@ -26,8 +26,8 @@ const DoctorProfile = () => {
   return (
     <PageShell>
       <Helmet>
-        <title>Dr. Ahmad Rehmani, D.O. — Board-Certified Retina Specialist | Cypress, TX</title>
-        <meta name="description" content="Meet Dr. Ahmad Rehmani, D.O. — fellowship-trained vitreoretinal specialist and founder of North Houston Retina in Cypress, TX. Sub-investigator on 20+ U.S. clinical trials." />
+        <title>Dr. Ahmad Rehmani — Board-Certified Retina Specialist | Cypress, TX</title>
+        <meta name="description" content="Meet Dr. Ahmad Rehmani — fellowship-trained vitreoretinal specialist and founder of North Houston Retina in Cypress, TX. Sub-investigator on 20+ U.S. clinical trials." />
         <link rel="canonical" href="https://www.northhoustonretina.com/doctor/ahmad-rehmani" />
       </Helmet>
 
@@ -37,10 +37,10 @@ const DoctorProfile = () => {
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { value: "5.0", label: "Google Rating", sub: "44+ Reviews" },
+              { value: "5.0", label: "Google Rating", sub: "70+ Reviews" },
               { value: "20+", label: "Clinical Trials", sub: "U.S. Studies" },
               { value: "Vitreoretinal", label: "Fellowship", sub: "Houston, TX" },
-              { value: "D.O.", label: "Board Certified", sub: "Vitreoretinal Surgery" },
+              { value: "Board Certified", label: "Ophthalmologist", sub: "Vitreoretinal Surgery" },
             ].map(stat => (
               <div key={stat.label}>
                 <p className="font-display text-3xl lg:text-4xl font-bold text-accent">{stat.value}</p>
