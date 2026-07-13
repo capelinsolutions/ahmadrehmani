@@ -26,8 +26,8 @@ const DoctorProfile = () => {
   return (
     <PageShell>
       <Helmet>
-        <title>Dr. Ahmad Rehmani, D.O. — Board-Certified Retina Specialist | Cypress, TX</title>
-        <meta name="description" content="Meet Dr. Ahmad Rehmani, D.O. — fellowship-trained vitreoretinal specialist and founder of North Houston Retina in Cypress, TX. Sub-investigator on 20+ U.S. clinical trials." />
+        <title>Dr. Ahmad Rehmani — Board-Certified Retina Specialist | Cypress, TX</title>
+        <meta name="description" content="Meet Dr. Ahmad Rehmani — fellowship-trained vitreoretinal specialist and founder of North Houston Retina in Cypress, TX. Sub-investigator on 20+ U.S. clinical trials." />
         <link rel="canonical" href="https://www.northhoustonretina.com/doctor/ahmad-rehmani" />
       </Helmet>
 
@@ -37,10 +37,10 @@ const DoctorProfile = () => {
         <div className="container mx-auto px-4 py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {[
-              { value: "5.0", label: "Google Rating", sub: "44+ Reviews" },
+              { value: "5.0", label: "Google Rating", sub: "70+ Reviews" },
               { value: "20+", label: "Clinical Trials", sub: "U.S. Studies" },
               { value: "Vitreoretinal", label: "Fellowship", sub: "Houston, TX" },
-              { value: "D.O.", label: "Board Certified", sub: "Vitreoretinal Surgery" },
+              { value: "Board Certified", label: "Ophthalmologist", sub: "Vitreoretinal Surgery" },
             ].map(stat => (
               <div key={stat.label}>
                 <p className="font-display text-3xl lg:text-4xl font-bold text-accent">{stat.value}</p>
@@ -63,7 +63,7 @@ const DoctorProfile = () => {
                 <div className="rounded-2xl overflow-hidden border border-border/40 shadow-sm bg-muted aspect-[3/4] w-full">
                   <img
                     src={drRehmaniAsset.url}
-                    alt="Dr. Ahmad Rehmani, D.O. — Vitreoretinal Specialist"
+                    alt="Dr. Ahmad Rehmani — Board-Certified Vitreoretinal Specialist"
                     className="w-full h-full object-cover object-center"
                     loading="lazy"
                   />
@@ -183,12 +183,12 @@ const DoctorProfile = () => {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Physician",
-        "name": "Dr. Ahmad Rehmani, D.O.",
+        "name": "Dr. Ahmad Rehmani",
         "url": "https://www.northhoustonretina.com/doctor/ahmad-rehmani",
         "image": "",
         "telephone": "+13465870223",
         "medicalSpecialty": "Vitreoretinal Disease & Surgery",
-        "description": "Dr. Ahmad Rehmani is a fellowship-trained vitreoretinal specialist and founder of North Houston Retina in Cypress, TX. Sub-investigator on over 20 U.S. clinical trials.",
+        "description": "Dr. Ahmad Rehmani is a board-certified, fellowship-trained vitreoretinal specialist and founder of North Houston Retina in Cypress, TX. Sub-investigator on over 20 U.S. clinical trials.",
         "alumniOf": [
           { "@type": "CollegeOrUniversity", "name": "University of Texas Medical Branch (UTMB) — Vitreoretinal Surgical Fellowship" },
           { "@type": "CollegeOrUniversity", "name": "St. John's Episcopal Hospital — Ophthalmology Residency (Chief Resident)" },
@@ -198,7 +198,7 @@ const DoctorProfile = () => {
         "award": ["Percy Dutton Lifetime Achievement Prize", "Keidaean Senior Honor Society", "Chief Resident", "Magna Cum Laude"],
         "worksFor": { "@type": "MedicalOrganization", "name": "North Houston Retina, PLLC" },
         "address": { "@type": "PostalAddress", "streetAddress": "27700 Northwest Freeway, Suite 355", "addressLocality": "Cypress", "addressRegion": "TX", "postalCode": "77433", "addressCountry": "US" },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "44", "bestRating": "5" }
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "70", "bestRating": "5" }
       })}} />
     </PageShell>
   );

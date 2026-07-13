@@ -98,7 +98,7 @@ const ContactSection = () => {
             <div className="space-y-5">
               {[
                 { icon: Phone, label: "Phone", value: "(346) 587-0223", href: "tel:+13465870223", sub: "Mon–Fri · 8:00 AM – 5:00 PM" },
-                { icon: Mail, label: "Email", value: "ahmadsrehmani@gmail.com", href: "mailto:ahmadsrehmani@gmail.com" },
+                { icon: Mail, label: "Email", value: "admin@nhretina.com", href: "mailto:admin@nhretina.com" },
                 { icon: MapPin, label: "Office Address", value: "27700 Northwest Freeway, Suite 355, Cypress, TX 77433" },
                 { icon: Globe, label: "Practice", value: "North Houston Retina, PLLC" },
               ].map((item) => (
