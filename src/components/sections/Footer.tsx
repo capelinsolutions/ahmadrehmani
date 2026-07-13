@@ -22,7 +22,7 @@ const footerPractice: { label: string; to: string }[] = [
 ];
 const footerContact = [
   "(346) 587-0223",
-  "ahmadsrehmani@gmail.com",
+  "admin@nhretina.com",
   "27700 Northwest Freeway, Suite 355",
   "Cypress, TX 77433",
   "@retinadoctor on Instagram",
