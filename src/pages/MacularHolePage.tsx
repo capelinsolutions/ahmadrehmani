@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Phone, ChevronRight, Layers, Scissors, Film, Sparkles, Target } from "lucide-react";
+import { Phone, ChevronRight, Layers, Scissors, Sparkles, Target } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import macularHoleOct from "@/assets/services/macular-hole-oct.jpg";
+import macularHolePeelGif from "@/assets/services/macular-hole-membrane-peel.gif.asset.json";
 
 const MacularHolePage = () => {
   const aboutRef = useScrollAnimation();
@@ -119,19 +120,20 @@ const MacularHolePage = () => {
               </div>
             </div>
 
-            {/* Video placeholder */}
-            <figure className="rounded-2xl overflow-hidden border-2 border-dashed border-accent/40 bg-background shadow-sm">
-              <div className="relative aspect-video bg-gradient-deep flex flex-col items-center justify-center text-center p-6">
-                <div className="w-14 h-14 rounded-full bg-accent/15 border border-accent/30 flex items-center justify-center mb-3">
-                  <Film className="w-7 h-7 text-accent" />
-                </div>
-                <p className="font-display text-lg font-bold text-foreground">Surgical Video Coming Soon</p>
-                <p className="font-body text-xs text-muted-foreground mt-1 max-w-xs">
-                  Dr. Rehmani peeling the membrane to fix a macular hole — clip to be added.
-                </p>
+            {/* Surgical GIF */}
+            <figure className="rounded-2xl overflow-hidden border border-accent/20 bg-background shadow-sm">
+              <div className="relative aspect-video bg-gradient-deep">
+                <img
+                  src={macularHolePeelGif.url}
+                  alt="Surgical footage of Dr. Rehmani peeling the internal limiting membrane to repair a macular hole"
+                  loading="lazy"
+                  width={1024}
+                  height={576}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <figcaption className="font-body text-xs text-muted-foreground px-3 py-2 border-t border-border bg-background">
-                Video placeholder — surgical footage of macular hole membrane peel.
+                Surgical footage — membrane peel during macular hole repair.
               </figcaption>
             </figure>
           </div>
