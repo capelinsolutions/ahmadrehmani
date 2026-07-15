@@ -71,7 +71,7 @@ const PneumaticRetinopexyPage = () => (
                 />
               </div>
               <figcaption className="font-body text-xs text-muted-foreground text-center mt-3">
-                Pneumatic retinopexy — an intraocular gas bubble seals the retinal tear.
+                Wide-field fundus image of the retina used in planning retinal detachment repair.
               </figcaption>
             </figure>
           </div>
