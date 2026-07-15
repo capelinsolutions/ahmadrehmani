@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Wind, Compass, Zap, Clock } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import procedureImg from "@/assets/services/pneumatic-retinopexy.jpg";
+import bannerImg from "@/assets/services/pneumatic-retinopexy-banner.png.asset.json";
 import fundusImg from "@/assets/services/pneumatic-retinopexy-fundus.png.asset.json";
 
 const PneumaticRetinopexyPage = () => (
