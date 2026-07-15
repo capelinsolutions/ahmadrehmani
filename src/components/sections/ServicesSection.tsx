@@ -2,62 +2,50 @@ import SectionCTA from "@/components/SectionCTA";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import macularDiseasesImg from "@/assets/services/macular-diseases.jpg";
-import diabeticEyeDiseaseImg from "@/assets/services/diabetic-eye-disease.jpg";
-import retinalDetachmentTearsImg from "@/assets/services/retinal-detachment-tears.jpg";
-import macularDegenerationImg from "@/assets/services/dry-amd-fundus.jpg";
-import surgicalVitreoretinalImg from "@/assets/services/vitreous-surgical-conditions.jpg";
-import dislocatedLensImg from "@/assets/services/dense-cataract-clinical.png.asset.json";
+import {
+  MacularDiseasesIcon,
+  DiabeticIcon,
+  DetachmentIcon,
+  MacularDegenerationIcon,
+  SurgicalIcon,
+  DislocatedLensIcon,
+} from "@/components/ServiceIcons";
 
-interface ServiceItem {
-  name: string;
-  description: string;
-  image: string;
-  alt: string;
-  slug: string;
-}
-
-const services: ServiceItem[] = [
+const services = [
   {
     name: "Macular Diseases",
     description: "Conditions affecting the macula, the central retina responsible for sharp, detailed vision.",
-    image: macularDiseasesImg,
-    alt: "Clinical fundus photograph showing macular disease",
+    icon: MacularDiseasesIcon,
     slug: "macular-diseases",
   },
   {
     name: "Diabetic Eye Disease",
     description: "Retinal damage from diabetes, including leaking vessels, swelling, and bleeding.",
-    image: diabeticEyeDiseaseImg,
-    alt: "Fundus image of diabetic retinopathy",
+    icon: DiabeticIcon,
     slug: "diabetic-eye-disease",
   },
   {
     name: "Retinal Detachment & Tears",
     description: "The retina lifts or tears away from the back of the eye, a vision-threatening emergency.",
-    image: retinalDetachmentTearsImg,
-    alt: "Retinal detachment and tears fundus photograph",
+    icon: DetachmentIcon,
     slug: "retinal-detachment-tears",
   },
   {
     name: "Macular Degeneration",
     description: "Age-related breakdown of the macula causing loss of central vision over time.",
-    image: macularDegenerationImg,
-    alt: "Dry age-related macular degeneration fundus image",
+    icon: MacularDegenerationIcon,
     slug: "macular-diseases",
   },
   {
     name: "Surgical Vitreo-Retinal Conditions",
     description: "Advanced microsurgery for the vitreous and retina to repair complex eye problems.",
-    image: surgicalVitreoretinalImg,
-    alt: "Vitreo-retinal surgery clinical photograph",
+    icon: SurgicalIcon,
     slug: "vitreous-surgical-conditions",
   },
   {
     name: "Dislocated Lenses & Dense Cataract",
     description: "Displaced or severely clouded lenses requiring specialized retinal surgical care.",
-    image: dislocatedLensImg.url,
-    alt: "Dense cataract clinical photograph",
+    icon: DislocatedLensIcon,
     slug: "vitreous-surgical-conditions",
   },
 ];
@@ -95,14 +83,9 @@ const ServicesSection = () => {
               className="group relative flex flex-col items-center text-center bg-background px-8 py-10 rounded-2xl border border-border/60 hover:border-accent/40 hover:shadow-[0_12px_30px_-10px_rgba(0,0,0,0.10)] hover:-translate-y-1 transition-all duration-300 fade-up"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <div className="w-36 h-36 mb-6 rounded-full overflow-hidden border-4 border-background shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-500 relative">
-                <img
-                  src={svc.image}
-                  alt={svc.alt}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 ring-1 ring-inset ring-black/5 group-hover:ring-accent/20 transition-all duration-500" />
+              <div className="w-32 h-32 mb-6 flex items-center justify-center bg-accent-pale/50 group-hover:bg-accent-pale/80 text-primary group-hover:text-accent rounded-full p-4 transition-all duration-500 shadow-sm border border-accent/5 group-hover:shadow-md group-hover:scale-105 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-radial from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <svc.icon className="w-24 h-24 transition-transform duration-500 relative z-10" />
               </div>
 
               <h3 className="font-display text-lg font-bold text-foreground tracking-wide uppercase mb-3 group-hover:text-accent transition-colors">
