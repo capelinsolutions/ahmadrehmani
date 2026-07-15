@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Wind, Compass, Zap, Clock } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import procedureImg from "@/assets/services/pneumatic-retinopexy.jpg";
+import bannerImg from "@/assets/services/pneumatic-retinopexy-banner.png.asset.json";
 import fundusImg from "@/assets/services/pneumatic-retinopexy-fundus.png.asset.json";
 
 const PneumaticRetinopexyPage = () => (
@@ -63,15 +63,15 @@ const PneumaticRetinopexyPage = () => (
             <figure className="w-full max-w-md">
               <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-background">
                 <img
-                  src={procedureImg}
-                  alt="Medical illustration of pneumatic retinopexy: gas bubble inside the eye pressing against a retinal tear to reattach the retina"
+                  src={bannerImg.url}
+                  alt="Wide-field fundus photograph of the retina showing peripheral retinal pathology relevant to pneumatic retinopexy"
                   width={1024}
                   height={1024}
                   className="w-full h-auto object-cover"
                 />
               </div>
               <figcaption className="font-body text-xs text-muted-foreground text-center mt-3">
-                Pneumatic retinopexy — an intraocular gas bubble seals the retinal tear.
+                Wide-field fundus image of the retina used in planning retinal detachment repair.
               </figcaption>
             </figure>
           </div>
