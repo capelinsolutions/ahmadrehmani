@@ -83,9 +83,9 @@ const ServicesSection = () => {
               className="group relative flex flex-col items-center text-center bg-background px-8 py-10 rounded-2xl border border-border/60 hover:border-accent/40 hover:shadow-[0_12px_30px_-10px_rgba(0,0,0,0.10)] hover:-translate-y-1 transition-all duration-300 fade-up"
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <div className="w-32 h-32 mb-6 flex items-center justify-center bg-accent-pale/50 group-hover:bg-accent-pale/80 text-primary group-hover:text-accent rounded-full p-4 transition-all duration-500 shadow-sm border border-accent/5 group-hover:shadow-md group-hover:scale-105 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-radial from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <svc.icon className="w-24 h-24 transition-transform duration-500 relative z-10" />
+              <div className="w-36 h-36 mb-7 flex items-center justify-center bg-gradient-to-br from-accent-pale/80 via-white to-accent-pale/40 text-primary group-hover:text-accent rounded-full p-5 transition-all duration-500 shadow-md ring-4 ring-accent/10 border border-accent/10 group-hover:shadow-xl group-hover:ring-accent/30 group-hover:scale-105 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <svc.icon className="w-28 h-28 transition-transform duration-500 relative z-10 group-hover:scale-110 drop-shadow-sm" />
               </div>
 
               <h3 className="font-display text-lg font-bold text-foreground tracking-wide uppercase mb-3 group-hover:text-accent transition-colors">
