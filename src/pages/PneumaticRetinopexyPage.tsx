@@ -63,8 +63,8 @@ const PneumaticRetinopexyPage = () => (
             <figure className="w-full max-w-md">
               <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-background">
                 <img
-                  src={procedureImg}
-                  alt="Medical illustration of pneumatic retinopexy: gas bubble inside the eye pressing against a retinal tear to reattach the retina"
+                  src={bannerImg.url}
+                  alt="Wide-field fundus photograph of the retina showing peripheral retinal pathology relevant to pneumatic retinopexy"
                   width={1024}
                   height={1024}
                   className="w-full h-auto object-cover"
