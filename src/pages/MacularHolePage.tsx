@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Phone, ChevronRight, Layers, Scissors, Film, Sparkles, Target } from "lucide-react";
+import { Phone, ChevronRight, Layers, Scissors, Sparkles, Target } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import macularHoleOct from "@/assets/services/macular-hole-oct.jpg";
+import macularHolePeelGif from "@/assets/services/macular-hole-membrane-peel.gif.asset.json";
 
 const MacularHolePage = () => {
   const aboutRef = useScrollAnimation();
