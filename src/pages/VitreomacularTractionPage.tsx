@@ -19,7 +19,7 @@ const VitreomacularTractionPage = () => {
           name="description"
           content="Expert diagnosis and treatment of vitreomacular traction (VMT) in Cypress, TX — releasing pulling forces on the retina to restore sharp central vision."
         />
-        <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/vitreomacular-traction" />
+        <link rel="canonical" href="https://nhretina.com/services/vitreomacular-traction" />
       </Helmet>
 
       {/* Hero */}

@@ -16,7 +16,7 @@ const JuxtafovealTelangiectasiaPage = () => {
         name="description"
         content="Juxtafoveal telangiectasia (MacTel) is a rare macular vascular condition causing subtle central vision changes. Dr. Ahmad Rehmani provides expert diagnosis and treatment in Cypress, TX."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/juxtafoveal-telangiectasia" />
+      <link rel="canonical" href="https://nhretina.com/services/juxtafoveal-telangiectasia" />
     </Helmet>
 
     <section className="bg-gradient-deep border-b border-border py-12 lg:py-16 text-foreground">

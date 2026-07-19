@@ -62,7 +62,7 @@ const ServiceDetailPage = () => {
       <Helmet>
         <title>{`${service.name} — Cypress, TX | North Houston Retina`}</title>
         <meta name="description" content={service.shortDescription.slice(0, 155)} />
-        <link rel="canonical" href={`https://ahmadrehmani.lovable.app/services/${service.slug}`} />
+        <link rel="canonical" href={`https://nhretina.com/services/${service.slug}`} />
       </Helmet>
 
       {/* Hero */}

@@ -13,7 +13,7 @@ const UveitisPage = () => (
         name="description"
         content="Uveitis is inflammation inside the eye causing redness, pain, light sensitivity, and blurred vision. Dr. Ahmad Rehmani offers expert anti-inflammatory treatment in Cypress, TX."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/uveitis" />
+      <link rel="canonical" href="https://nhretina.com/services/uveitis" />
     </Helmet>
 
     {/* Hero */}

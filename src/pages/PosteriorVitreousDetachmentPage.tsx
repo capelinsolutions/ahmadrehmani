@@ -13,7 +13,7 @@ const PosteriorVitreousDetachmentPage = () => (
         name="description"
         content="Posterior vitreous detachment (PVD) is a common age-related change. Dr. Ahmad Rehmani evaluates flashes, floaters, and vision changes in Cypress, TX to protect retinal health."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/posterior-vitreous-detachment" />
+      <link rel="canonical" href="https://nhretina.com/services/posterior-vitreous-detachment" />
     </Helmet>
 
     {/* Hero */}

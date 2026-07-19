@@ -18,7 +18,7 @@ const CystoidMacularEdemaPage = () => {
           name="description"
           content="Expert diagnosis and treatment of Cystoid Macular Edema (CME) in Cypress, TX. Learn about anti-inflammatory drops, injections, and target treatments for central retinal swelling."
         />
-        <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/cystoid-macular-edema" />
+        <link rel="canonical" href="https://nhretina.com/services/cystoid-macular-edema" />
       </Helmet>
 
       {/* Hero */}

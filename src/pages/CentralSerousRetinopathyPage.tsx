@@ -18,7 +18,7 @@ const CentralSerousRetinopathyPage = () => {
           name="description"
           content="Expert diagnosis and treatment of Central Serous Chorioretinopathy (CSCR) in Cypress, TX — including advanced micropulse laser therapy shown to reverse chronic CSR."
         />
-        <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/central-serous-retinopathy" />
+        <link rel="canonical" href="https://nhretina.com/services/central-serous-retinopathy" />
       </Helmet>
 
       {/* Hero */}

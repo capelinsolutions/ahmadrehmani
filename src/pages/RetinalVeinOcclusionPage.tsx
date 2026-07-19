@@ -13,7 +13,7 @@ const RetinalVeinOcclusionPage = () => (
         name="description"
         content="Retinal vein occlusion causes bleeding, swelling, and vision changes. Dr. Ahmad Rehmani treats CRVO and BRVO with injections, laser, and vascular risk management in Cypress, TX."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/retinal-vein-occlusion" />
+      <link rel="canonical" href="https://nhretina.com/services/retinal-vein-occlusion" />
     </Helmet>
 
     {/* Hero */}

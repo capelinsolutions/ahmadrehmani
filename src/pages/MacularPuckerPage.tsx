@@ -19,7 +19,7 @@ const MacularPuckerPage = () => {
           name="description"
           content="Expert diagnosis and surgical treatment of macular pucker (epiretinal membrane / ERM) in Cypress, TX — restoring clear central vision with vitrectomy and membrane peeling."
         />
-        <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/macular-pucker" />
+        <link rel="canonical" href="https://nhretina.com/services/macular-pucker" />
       </Helmet>
 
       {/* Hero */}

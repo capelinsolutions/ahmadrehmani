@@ -18,7 +18,7 @@ const RetainedLensFragmentsPage = () => {
         name="description"
         content="Surgical management of retained lens fragments after complicated cataract surgery with Dr. Ahmad Rehmani in Cypress, TX — pars plana vitrectomy for optimal visual recovery."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/retained-lens-fragments" />
+      <link rel="canonical" href="https://nhretina.com/services/retained-lens-fragments" />
     </Helmet>
 
     <section className="bg-gradient-deep border-b border-border py-12 lg:py-16 text-foreground">

@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-const SITE = "https://ahmadrehmani.lovable.app";
+const SITE = "https://nhretina.com";
 const DEFAULT_OG = "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/d35ab3c0-f329-4fcf-b0bd-6072dc3927cf";
 
 type SEOProps = {

@@ -13,7 +13,7 @@ const EndophthalmitisPage = () => (
         name="description"
         content="Endophthalmitis is a serious intraocular infection requiring urgent care. Dr. Ahmad Rehmani offers prompt antibiotic injections and surgical management in Cypress, TX."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/endophthalmitis" />
+      <link rel="canonical" href="https://nhretina.com/services/endophthalmitis" />
     </Helmet>
 
     {/* Hero */}

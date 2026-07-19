@@ -13,7 +13,7 @@ const DislocatedIOLPage = () => (
         name="description"
         content="Surgical repositioning and secondary intraocular lens implantation for dislocated IOLs with Dr. Ahmad Rehmani in Cypress, TX."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/dislocated-intraocular-lens" />
+      <link rel="canonical" href="https://nhretina.com/services/dislocated-intraocular-lens" />
     </Helmet>
 
     <section className="bg-gradient-deep border-b border-border py-12 lg:py-16 text-foreground">

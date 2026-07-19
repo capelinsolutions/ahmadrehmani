@@ -30,7 +30,7 @@ const MacularDegenerationPage = () => {
       <Helmet>
         <title>Wet Macular Degeneration — Anti-VEGF Treatment | North Houston Retina</title>
         <meta name="description" content="Same-day anti-VEGF injections for wet AMD in Cypress, TX — including Vabysmo, Eylea HD, Eylea, Pavblu, Lucentis, and Avastin." />
-        <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/macular-degeneration" />
+        <link rel="canonical" href="https://nhretina.com/services/macular-degeneration" />
       </Helmet>
 
       {/* Hero */}

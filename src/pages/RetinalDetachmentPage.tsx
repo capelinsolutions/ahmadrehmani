@@ -19,7 +19,7 @@ const RetinalDetachmentPage = () => {
           name="description"
           content="Prompt evaluation and advanced repair of retinal tears and detachments in Cypress, TX — laser, pneumatic retinopexy, scleral buckle, and vitrectomy by Dr. Rehmani."
         />
-        <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/retinal-detachment-tears" />
+        <link rel="canonical" href="https://nhretina.com/services/retinal-detachment-tears" />
       </Helmet>
 
       {/* Hero */}

@@ -13,7 +13,7 @@ const VitreousFloatersPage = () => (
         name="description"
         content="Vitreous floaters and asteroid hyalosis evaluation and treatment in Cypress, TX. Dr. Ahmad Rehmani offers advanced pars plana vitrectomy (PPV) for persistent, vision-affecting floaters."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/vitreous-floaters" />
+      <link rel="canonical" href="https://nhretina.com/services/vitreous-floaters" />
     </Helmet>
 
     {/* Hero */}

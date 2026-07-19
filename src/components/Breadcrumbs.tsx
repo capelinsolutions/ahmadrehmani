@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 
-const SITE = "https://ahmadrehmani.lovable.app";
+const SITE = "https://nhretina.com";
 
 // Canonical breadcrumb trail per route.
 // First segment ("Conditions" or "Services") links back to /services.

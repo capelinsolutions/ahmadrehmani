@@ -34,7 +34,7 @@ const DiabeticRetinopathyPage = () => {
       <Helmet>
         <title>Diabetic Retinopathy & Diabetic Macular Edema | North Houston Retina</title>
         <meta name="description" content="State-of-the-art diabetic eye care in Cypress, TX — anti-VEGF and steroid injections, laser therapy, and 27-gauge vitrectomy surgery by Dr. Ahmad Rehmani." />
-        <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/diabetic-retinopathy" />
+        <link rel="canonical" href="https://nhretina.com/services/diabetic-retinopathy" />
       </Helmet>
 
       {/* Hero */}

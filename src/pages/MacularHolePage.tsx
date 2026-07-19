@@ -19,7 +19,7 @@ const MacularHolePage = () => {
           name="description"
           content="Expert surgical repair of macular holes in Cypress, TX. Undergo modern sutureless vitrectomy with membrane peeling to release traction and close the hole."
         />
-        <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/macular-hole" />
+        <link rel="canonical" href="https://nhretina.com/services/macular-hole" />
       </Helmet>
 
       {/* Hero */}

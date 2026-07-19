@@ -13,7 +13,7 @@ const RetinalArterialOcclusionPage = () => (
         name="description"
         content="Retinal arterial occlusion (eye stroke) causes sudden, painless vision loss. Dr. Ahmad Rehmani provides urgent evaluation and vascular risk management in Cypress, TX."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/retinal-arterial-occlusion" />
+      <link rel="canonical" href="https://nhretina.com/services/retinal-arterial-occlusion" />
     </Helmet>
 
     {/* Hero */}
