@@ -13,7 +13,7 @@ const MicropulseLaserPage = () => (
         name="description"
         content="Advanced retinal micropulse laser treatment with Dr. Ahmad Rehmani in Cypress, TX. A low-intensity, tissue-sparing therapy for diabetic macular edema and other causes of macular swelling."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/micropulse-laser" />
+      <link rel="canonical" href="https://nhretina.com/services/micropulse-laser" />
     </Helmet>
 
     {/* Hero */}

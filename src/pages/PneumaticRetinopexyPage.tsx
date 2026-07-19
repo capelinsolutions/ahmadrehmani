@@ -14,7 +14,7 @@ const PneumaticRetinopexyPage = () => (
         name="description"
         content="Pneumatic retinopexy with Dr. Ahmad Rehmani in Cypress, TX. Minimally invasive, in-office gas bubble repair for select retinal detachments."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/pneumatic-retinopexy" />
+      <link rel="canonical" href="https://nhretina.com/services/pneumatic-retinopexy" />
     </Helmet>
 
     {/* Hero */}

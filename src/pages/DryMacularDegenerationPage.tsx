@@ -19,7 +19,7 @@ const DryMacularDegenerationPage = () => {
       <Helmet>
         <title>Dry Macular Degeneration & Valeda Light Therapy | North Houston Retina</title>
         <meta name="description" content="Dry AMD evaluation, drusen monitoring, and Valeda photobiomodulation therapy in Cypress, TX — the first retina center in NW Houston to offer Valeda." />
-        <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/dry-macular-degeneration" />
+        <link rel="canonical" href="https://nhretina.com/services/dry-macular-degeneration" />
       </Helmet>
 
       {/* Hero */}

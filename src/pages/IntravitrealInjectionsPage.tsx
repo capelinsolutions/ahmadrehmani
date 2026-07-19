@@ -14,7 +14,7 @@ const IntravitrealInjectionsPage = () => (
         name="description"
         content="In-office intravitreal injections with Dr. Ahmad Rehmani in Cypress, TX — anti-VEGF and steroid therapy for wet AMD, diabetic retinopathy, vein occlusions, and macular edema."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/intravitreal-injections" />
+      <link rel="canonical" href="https://nhretina.com/services/intravitreal-injections" />
     </Helmet>
 
     <section className="bg-gradient-deep border-b border-border py-12 lg:py-16 text-foreground">

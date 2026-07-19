@@ -13,7 +13,7 @@ const ScleralBucklePage = () => (
         name="description"
         content="Scleral buckle surgery with Dr. Ahmad Rehmani in Cypress, TX. A silicone band placed around the eye to repair retinal detachments and support retinal reattachment."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/scleral-buckle" />
+      <link rel="canonical" href="https://nhretina.com/services/scleral-buckle" />
     </Helmet>
 
     {/* Hero */}

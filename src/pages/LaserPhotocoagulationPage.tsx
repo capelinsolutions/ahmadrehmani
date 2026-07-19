@@ -13,7 +13,7 @@ const LaserPhotocoagulationPage = () => (
         name="description"
         content="Retinal laser photocoagulation with Dr. Ahmad Rehmani in Cypress, TX. In-office treatment for retinal tears, diabetic retinopathy, and retinal vein occlusions."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/laser-photocoagulation" />
+      <link rel="canonical" href="https://nhretina.com/services/laser-photocoagulation" />
     </Helmet>
 
     {/* Hero */}

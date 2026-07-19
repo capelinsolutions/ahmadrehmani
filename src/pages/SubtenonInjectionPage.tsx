@@ -12,7 +12,7 @@ const SubtenonInjectionPage = () => (
         name="description"
         content="Sub-Tenon steroid injection with Dr. Ahmad Rehmani in Cypress, TX — targeted periocular therapy for uveitis and macular edema."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/subtenon-injection" />
+      <link rel="canonical" href="https://nhretina.com/services/subtenon-injection" />
     </Helmet>
 
     <section className="bg-gradient-deep border-b border-border py-12 lg:py-16 text-foreground">

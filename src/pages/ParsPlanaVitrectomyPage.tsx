@@ -13,7 +13,7 @@ const ParsPlanaVitrectomyPage = () => (
         name="description"
         content="Pars plana vitrectomy with Dr. Ahmad Rehmani in Cypress, TX. Advanced surgical repair of simple and complex retinal detachments with laser, gas, or silicone oil."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/pars-plana-vitrectomy" />
+      <link rel="canonical" href="https://nhretina.com/services/pars-plana-vitrectomy" />
     </Helmet>
 
     {/* Hero */}

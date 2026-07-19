@@ -47,7 +47,7 @@ const CataractComplicationsPage = () => {
           name="description"
           content="Expert surgical management of cataract complications with Dr. Ahmad Rehmani: dense cataracts, lens repositioning, retained lens fragments, and secondary intraocular lens implantation."
         />
-        <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/cataract-complications" />
+        <link rel="canonical" href="https://nhretina.com/services/cataract-complications" />
       </Helmet>
 
       {/* Hero */}

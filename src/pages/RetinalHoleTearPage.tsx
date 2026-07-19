@@ -13,7 +13,7 @@ const RetinalHoleTearPage = () => (
         name="description"
         content="A retinal hole or tear can lead to a retinal detachment. Dr. Ahmad Rehmani provides urgent evaluation and in-office laser retinopexy in Cypress, TX."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/retinal-hole-tear" />
+      <link rel="canonical" href="https://nhretina.com/services/retinal-hole-tear" />
     </Helmet>
 
     <section className="bg-gradient-deep border-b border-border py-12 lg:py-16 text-foreground">

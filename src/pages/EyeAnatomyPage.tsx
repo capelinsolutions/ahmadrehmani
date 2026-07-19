@@ -12,7 +12,7 @@ const EyeAnatomyPage = () => {
           name="description"
           content="Explore a clinically detailed, interactive 3D model of the human eye. Rotate, zoom, and reveal the cornea, lens, retina, macula, optic disc and more."
         />
-        <link rel="canonical" href="https://ahmadrehmani.lovable.app/eye-anatomy" />
+        <link rel="canonical" href="https://nhretina.com/eye-anatomy" />
       </Helmet>
 
       {/* HERO */}

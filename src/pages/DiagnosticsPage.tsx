@@ -57,7 +57,7 @@ const DiagnosticsPage = () => {
           name="description"
           content="Advanced retinal diagnostics with Dr. Ahmad Rehmani: Fundus Autofluorescence, Humphrey Visual Field, Ocular B-scan Ultrasound, SD-OCT, SD-OCTA, and Ultra-Widefield Imaging."
         />
-        <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/diagnostics" />
+        <link rel="canonical" href="https://nhretina.com/services/diagnostics" />
       </Helmet>
 
       {/* Hero */}

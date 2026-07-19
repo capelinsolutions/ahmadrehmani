@@ -13,7 +13,7 @@ const LatticeDegenerationPage = () => (
         name="description"
         content="Lattice degeneration is a thinning of the peripheral retina that can lead to retinal tears or detachment. Dr. Ahmad Rehmani provides expert evaluation and laser treatment in Cypress, TX."
       />
-      <link rel="canonical" href="https://ahmadrehmani.lovable.app/services/lattice-degeneration" />
+      <link rel="canonical" href="https://nhretina.com/services/lattice-degeneration" />
     </Helmet>
 
     {/* Hero */}
