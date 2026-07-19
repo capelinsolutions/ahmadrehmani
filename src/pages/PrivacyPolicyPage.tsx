@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import PageShell from "@/components/PageShell";
 import SEO from "@/components/SEO";
-import Breadcrumbs from "@/components/Breadcrumbs";
+
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <section className="mb-10">
@@ -18,7 +19,7 @@ const PrivacyPolicyPage = () => (
     />
     <div className="bg-gradient-deep border-b border-border">
       <div className="container mx-auto px-4 py-12 md:py-16">
-        <Breadcrumbs />
+        <Link to="/" className="font-body text-xs text-muted-foreground hover:text-accent">← Home</Link>
         <h1 className="font-display text-4xl md:text-5xl text-foreground mt-4">Privacy Policy</h1>
         <p className="font-body text-sm text-muted-foreground mt-3">Last updated: July 19, 2026</p>
       </div>
