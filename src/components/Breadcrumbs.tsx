@@ -1,5 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
+import { Helmet } from "react-helmet-async";
+
+const SITE = "https://ahmadrehmani.lovable.app";
 
 // Canonical breadcrumb trail per route.
 // First segment ("Conditions" or "Services") links back to /services.
@@ -51,7 +54,27 @@ const Breadcrumbs = ({ trail, className }: BreadcrumbsProps) => {
   const resolved = trail ?? TRAILS[pathname] ?? ["Services"];
   const last = resolved.length - 1;
 
+  const itemListElement = [
+    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+    ...resolved.map((segment, i) => ({
+      "@type": "ListItem",
+      position: i + 2,
+      name: segment,
+      ...(i === last ? { item: `${SITE}${pathname}` } : i === 0 ? { item: `${SITE}/services` } : {}),
+    })),
+  ];
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement,
+  };
+
   return (
+    <>
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+    </Helmet>
     <nav
       aria-label="Breadcrumb"
       className={
@@ -77,6 +100,7 @@ const Breadcrumbs = ({ trail, className }: BreadcrumbsProps) => {
         );
       })}
     </nav>
+    </>
   );
 };
 

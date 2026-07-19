@@ -1,0 +1,49 @@
+# North Houston Retina — Dr. Ahmad Rehmani, D.O.
+
+> Board-certified vitreoretinal specialist in Cypress, TX serving Bridgeland, Katy, Tomball, and Northwest Houston. Medical and surgical care for diseases of the retina and vitreous, including macular degeneration, diabetic retinopathy, retinal detachment, macular holes, uveitis, and vitreous floaters. 24/7 emergency line: (346) 587-0223.
+
+## Pages
+
+- [Home](/): Practice overview, services, locations, reviews, and FAQ.
+- [About Dr. Rehmani](/about): Board-certified vitreoretinal surgeon, UTMB fellowship, clinical trial sub-investigator.
+- [Locations](/locations): Cypress, TX office (27700 Northwest Freeway, Suite 355).
+- [Contact](/contact): Book an appointment, request a consultation, admin@nhretina.com.
+- [FAQ](/faq): Common questions on retinal care, insurance, emergencies, and second opinions.
+- [Insurance](/insurance): Accepted plans including Aetna, BCBS, Cigna, UnitedHealthcare.
+- [Reviews](/reviews): Patient testimonials.
+- [Eye Anatomy](/eye-anatomy): Interactive 3D eye model for patient education.
+
+## Conditions
+
+- [Wet Macular Degeneration](/services/macular-degeneration)
+- [Dry Macular Degeneration](/services/dry-macular-degeneration)
+- [Diabetic Retinopathy](/services/diabetic-retinopathy)
+- [Retinal Detachment & Tears](/services/retinal-detachment-tears)
+- [Retinal Hole / Tear](/services/retinal-hole-tear)
+- [Macular Hole](/services/macular-hole)
+- [Macular Pucker (Epiretinal Membrane)](/services/macular-pucker)
+- [Cystoid Macular Edema](/services/cystoid-macular-edema)
+- [Vitreomacular Traction](/services/vitreomacular-traction)
+- [Central Serous Retinopathy](/services/central-serous-retinopathy)
+- [Juxtafoveal Telangiectasia](/services/juxtafoveal-telangiectasia)
+- [Lattice Degeneration](/services/lattice-degeneration)
+- [Posterior Vitreous Detachment](/services/posterior-vitreous-detachment)
+- [Vitreous Floaters](/services/vitreous-floaters)
+- [Retinal Arterial Occlusion](/services/retinal-arterial-occlusion)
+- [Retinal Vein Occlusion](/services/retinal-vein-occlusion)
+- [Uveitis](/services/uveitis)
+- [Endophthalmitis](/services/endophthalmitis)
+- [Retained Lens Fragments](/services/retained-lens-fragments)
+- [Dislocated Intraocular Lens](/services/dislocated-intraocular-lens)
+
+## Procedures & Services
+
+- [Retinal Imaging & Diagnostics](/services/diagnostics)
+- [Intravitreal Injections](/services/intravitreal-injections)
+- [Sub-Tenon Injection](/services/subtenon-injection)
+- [Retinal Micropulse Laser](/services/micropulse-laser)
+- [Laser Photocoagulation](/services/laser-photocoagulation)
+- [Pars Plana Vitrectomy](/services/pars-plana-vitrectomy)
+- [Pneumatic Retinopexy](/services/pneumatic-retinopexy)
+- [Scleral Buckle](/services/scleral-buckle)
+- [Cataract & Lens Complications](/services/cataract-complications)
