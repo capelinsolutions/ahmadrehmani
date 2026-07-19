@@ -39,4 +39,7 @@
   <url><loc>https://ahmadrehmani.lovable.app/services/pneumatic-retinopexy</loc><priority>0.7</priority></url>
   <url><loc>https://ahmadrehmani.lovable.app/services/scleral-buckle</loc><priority>0.7</priority></url>
   <url><loc>https://ahmadrehmani.lovable.app/services/cataract-complications</loc><priority>0.7</priority></url>
+  <url><loc>https://ahmadrehmani.lovable.app/privacy-policy</loc><priority>0.3</priority></url>
+  <url><loc>https://ahmadrehmani.lovable.app/terms-of-use</loc><priority>0.3</priority></url>
+  <url><loc>https://ahmadrehmani.lovable.app/accessibility</loc><priority>0.3</priority></url>
 </urlset>
