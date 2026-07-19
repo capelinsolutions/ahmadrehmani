@@ -48,6 +48,9 @@ const RetainedLensFragmentsPage = lazy(() => import("./pages/RetainedLensFragmen
 const DislocatedIOLPage = lazy(() => import("./pages/DislocatedIOLPage.tsx"));
 const IntravitrealInjectionsPage = lazy(() => import("./pages/IntravitrealInjectionsPage.tsx"));
 const SubtenonInjectionPage = lazy(() => import("./pages/SubtenonInjectionPage.tsx"));
+const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage.tsx"));
+const TermsOfUsePage = lazy(() => import("./pages/TermsOfUsePage.tsx"));
+const AccessibilityPage = lazy(() => import("./pages/AccessibilityPage.tsx"));
 const NotFound = lazy(() => import("./pages/NotFound.tsx"));
 
 const queryClient = new QueryClient({
@@ -109,6 +112,9 @@ const App = () => (
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/doctor/ahmad-rehmani" element={<DoctorProfile />} />
               <Route path="/eye-anatomy" element={<EyeAnatomyPage />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+              <Route path="/terms-of-use" element={<TermsOfUsePage />} />
+              <Route path="/accessibility" element={<AccessibilityPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

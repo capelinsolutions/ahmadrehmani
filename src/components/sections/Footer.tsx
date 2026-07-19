@@ -87,7 +87,10 @@ const Footer = () => {
         {/* Bottom */}
         <div className="border-t border-border mt-12 pt-8 flex flex-col lg:flex-row items-center justify-between gap-4">
           <p className="font-body text-xs text-muted-foreground text-center lg:text-left">
-            © 2026 Dr. Ahmad Rehmani, D.O. — North Houston Retina, PLLC. All rights reserved. | Privacy Policy | Terms of Use | Accessibility
+            © 2026 Dr. Ahmad Rehmani, D.O. — North Houston Retina, PLLC. All rights reserved. |{" "}
+            <Link to="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link> |{" "}
+            <Link to="/terms-of-use" className="hover:text-foreground transition-colors">Terms of Use</Link> |{" "}
+            <Link to="/accessibility" className="hover:text-foreground transition-colors">Accessibility</Link>
           </p>
           <div className="flex items-center gap-4">
             <ThemeSwitcher />
