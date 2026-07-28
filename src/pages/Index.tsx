@@ -5,7 +5,6 @@ import AboutSection from "@/components/sections/AboutSection";
 import ServicesSection from "@/components/sections/ServicesSection";
 
 import ReviewsSection from "@/components/sections/ReviewsSection";
-import FAQSection from "@/components/sections/FAQSection";
 import ContactSection from "@/components/sections/ContactSection";
 import SocietiesSection from "@/components/sections/SocietiesSection";
 
@@ -22,7 +21,6 @@ const Index = () => (
     <SocietiesSection />
 
     <ReviewsSection />
-    <FAQSection />
     <ContactSection />
   </PageShell>
 );
