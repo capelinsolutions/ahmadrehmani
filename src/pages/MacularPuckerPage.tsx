@@ -116,10 +116,14 @@ const MacularPuckerPage = () => {
 
             {/* Surgical GIF */}
             <figure className="rounded-2xl overflow-hidden border border-border bg-background shadow-sm">
-              <img
+              <video
                 src={macularPuckerSurgeryGif}
-                alt="Surgical footage of macular pucker (epiretinal membrane) removal"
-                loading="lazy"
+                aria-label="Surgical footage of macular pucker (epiretinal membrane) removal"
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="none"
                 width={1024}
                 height={576}
                 className="w-full h-auto object-cover"

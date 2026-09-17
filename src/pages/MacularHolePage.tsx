@@ -123,10 +123,14 @@ const MacularHolePage = () => {
             {/* Surgical GIF */}
             <figure className="rounded-2xl overflow-hidden border border-accent/20 bg-background shadow-sm">
               <div className="relative aspect-video bg-gradient-deep">
-                <img
+                <video
                   src={macularHolePeelGif}
-                  alt="Surgical footage of Dr. Rehmani peeling the internal limiting membrane to repair a macular hole"
-                  loading="lazy"
+                  aria-label="Surgical footage of Dr. Rehmani peeling the internal limiting membrane to repair a macular hole"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="none"
                   width={1024}
                   height={576}
                   className="w-full h-full object-cover"
