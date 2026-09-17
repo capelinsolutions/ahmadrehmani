@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import heroImg from "@/assets/services/diagnostic-imaging.jpg.asset.json";
+import heroImg from "@/assets/services/diagnostic-imaging.jpg";
 
 const SECTIONS = [
   {
@@ -111,7 +111,7 @@ const DiagnosticsPage = () => {
               <figure className="w-full max-w-xl">
                 <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-background">
                   <img
-                    src={heroImg.url}
+                    src={heroImg}
                     alt="North Houston Retina diagnostic imaging suite with FAF, OCT, and ultra-widefield equipment"
                     className="w-full h-auto object-cover"
                   />

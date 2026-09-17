@@ -3,8 +3,8 @@ import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Wind, Compass, Zap, Clock } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import bannerImg from "@/assets/services/pneumatic-retinopexy-banner.png.asset.json";
-import fundusImg from "@/assets/services/pneumatic-retinopexy-fundus.png.asset.json";
+import bannerImg from "@/assets/services/pneumatic-retinopexy-banner.jpg";
+import fundusImg from "@/assets/services/pneumatic-retinopexy-fundus.jpg";
 
 const PneumaticRetinopexyPage = () => (
   <PageShell>
@@ -63,7 +63,7 @@ const PneumaticRetinopexyPage = () => (
             <figure className="w-full max-w-md">
               <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-background">
                 <img
-                  src={bannerImg.url}
+                  src={bannerImg}
                   alt="Wide-field fundus photograph of the retina showing peripheral retinal pathology relevant to pneumatic retinopexy"
                   width={1024}
                   height={1024}
@@ -85,7 +85,7 @@ const PneumaticRetinopexyPage = () => (
         <figure className="w-full">
           <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-black">
             <img
-              src={fundusImg.url}
+              src={fundusImg}
               alt="Fundus photograph showing an intraocular gas bubble after pneumatic retinopexy"
               width={1280}
               height={720}

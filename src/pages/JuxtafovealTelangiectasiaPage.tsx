@@ -4,7 +4,7 @@ import { Phone, ChevronRight, Eye, Syringe, Sparkles } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import mactelOct from "@/assets/services/juxtafoveal-telangiectasia-oct.png.asset.json";
+import mactelOct from "@/assets/services/juxtafoveal-telangiectasia-oct.jpg";
 
 const JuxtafovealTelangiectasiaPage = () => {
   const aboutRef = useScrollAnimation();
@@ -70,7 +70,7 @@ const JuxtafovealTelangiectasiaPage = () => {
 
           <figure className="rounded-2xl overflow-hidden shadow-md border border-border bg-background">
             <img
-              src={mactelOct.url}
+              src={mactelOct}
               alt="OCT scan showing foveal cavitation and telangiectatic vessels in juxtafoveal telangiectasia"
               loading="lazy"
               width={1024}

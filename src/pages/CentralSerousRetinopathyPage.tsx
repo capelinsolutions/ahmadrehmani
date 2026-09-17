@@ -4,7 +4,7 @@ import { Phone, ChevronRight, Droplet, Zap, Sparkles, Eye } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import cscrOct from "@/assets/services/cscr-oct.png.asset.json";
+import cscrOct from "@/assets/services/cscr-oct.jpg";
 
 const CentralSerousRetinopathyPage = () => {
   const aboutRef = useScrollAnimation();
@@ -70,7 +70,7 @@ const CentralSerousRetinopathyPage = () => {
 
             <figure className="rounded-2xl overflow-hidden shadow-md border border-border bg-background">
               <img
-                src={cscrOct.url}
+                src={cscrOct}
                 alt="OCT scan showing subretinal fluid characteristic of central serous chorioretinopathy"
                 loading="lazy"
                 width={1024}

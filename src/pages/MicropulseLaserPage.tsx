@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Zap, ShieldCheck, Droplet, Activity } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import laserImg from "@/assets/services/iridex-iq577-laser.png.asset.json";
+import laserImg from "@/assets/services/iridex-iq577-laser.jpg";
 
 const MicropulseLaserPage = () => (
   <PageShell>
@@ -59,7 +59,7 @@ const MicropulseLaserPage = () => (
             <figure className="w-full max-w-xl">
               <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-white">
                 <img
-                  src={laserImg.url}
+                  src={laserImg}
                   alt="Iridex IQ 577 micropulse retinal laser console with touchscreen and delivery system"
                   className="w-full h-auto object-contain"
                 />

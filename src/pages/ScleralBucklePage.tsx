@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, CircleDot, ShieldCheck, Layers, Activity } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import scleralBuckleImg from "@/assets/services/scleral-buckle-eye.jpg.asset.json";
+import scleralBuckleImg from "@/assets/services/scleral-buckle-eye.jpg";
 
 const ScleralBucklePage = () => (
   <PageShell>
@@ -61,7 +61,7 @@ const ScleralBucklePage = () => (
             <figure className="w-full max-w-md">
               <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-background">
                 <img
-                  src={scleralBuckleImg.url}
+                  src={scleralBuckleImg}
                   alt="Medical illustration of an eye with a silicone scleral buckle band placed around the outside of the eye"
                   width={1280}
                   height={960}

@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight, Scissors, Zap, Droplet, ShieldCheck } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import procedureImg from "@/assets/services/vitrectomy-surgery.png.asset.json";
+import procedureImg from "@/assets/services/vitrectomy-surgery.jpg";
 
 const ParsPlanaVitrectomyPage = () => (
   <PageShell>
@@ -61,7 +61,7 @@ const ParsPlanaVitrectomyPage = () => (
             <figure className="w-full max-w-md">
               <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-black">
                 <img
-                  src={procedureImg.url}
+                  src={procedureImg}
                   alt="Surgeon performing pars plana vitrectomy in the operating room using a surgical microscope"
                   width={1024}
                   height={1024}

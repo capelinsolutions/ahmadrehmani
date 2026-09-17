@@ -5,7 +5,7 @@ import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import macularHoleOct from "@/assets/services/macular-hole-oct.jpg";
-import macularHolePeelGif from "@/assets/services/macular-hole-membrane-peel.gif.asset.json";
+import macularHolePeelGif from "@/assets/services/macular-hole-membrane-peel.mp4";
 
 const MacularHolePage = () => {
   const aboutRef = useScrollAnimation();
@@ -124,7 +124,7 @@ const MacularHolePage = () => {
             <figure className="rounded-2xl overflow-hidden border border-accent/20 bg-background shadow-sm">
               <div className="relative aspect-video bg-gradient-deep">
                 <img
-                  src={macularHolePeelGif.url}
+                  src={macularHolePeelGif}
                   alt="Surgical footage of Dr. Rehmani peeling the internal limiting membrane to repair a macular hole"
                   loading="lazy"
                   width={1024}

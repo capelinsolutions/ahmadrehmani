@@ -5,7 +5,7 @@ import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import ermOct from "@/assets/services/erm-oct.jpg";
-import macularPuckerSurgeryGif from "@/assets/services/macular-pucker-surgery.gif.asset.json";
+import macularPuckerSurgeryGif from "@/assets/services/macular-pucker-surgery.mp4";
 
 const MacularPuckerPage = () => {
   const aboutRef = useScrollAnimation();
@@ -117,7 +117,7 @@ const MacularPuckerPage = () => {
             {/* Surgical GIF */}
             <figure className="rounded-2xl overflow-hidden border border-border bg-background shadow-sm">
               <img
-                src={macularPuckerSurgeryGif.url}
+                src={macularPuckerSurgeryGif}
                 alt="Surgical footage of macular pucker (epiretinal membrane) removal"
                 loading="lazy"
                 width={1024}
