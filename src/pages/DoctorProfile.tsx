@@ -4,7 +4,7 @@ import {
   Stethoscope, Users,
 } from "lucide-react";
 import PageShell from "@/components/PageShell";
-import drRehmaniAsset from "@/assets/dr-rehmani.jpg.asset.json";
+import drRehmaniAsset from "@/assets/dr-rehmani.jpg";
 
 import drExam from "@/assets/dr-exam.jpg";
 import drStanding from "@/assets/dr-standing.jpg";
@@ -62,7 +62,7 @@ const DoctorProfile = () => {
               <div className="grid md:grid-cols-[260px_1fr] gap-8 mt-6 items-start">
                 <div className="rounded-2xl overflow-hidden border border-border/40 shadow-sm bg-muted aspect-[3/4] w-full">
                   <img
-                    src={drRehmaniAsset.url}
+                    src={drRehmaniAsset}
                     alt="Dr. Ahmad Rehmani — Board-Certified Vitreoretinal Specialist"
                     className="w-full h-full object-cover object-center"
                     loading="lazy"

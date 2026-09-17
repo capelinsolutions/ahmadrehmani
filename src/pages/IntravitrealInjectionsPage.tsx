@@ -4,7 +4,7 @@ import { Phone, ChevronRight, Syringe, ShieldCheck, Clock, Sparkles } from "luci
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AntiVegfMarquee from "@/components/AntiVegfMarquee";
-import injectionImg from "@/assets/services/intravitreal-injection.jpg.asset.json";
+import injectionImg from "@/assets/services/intravitreal-injection.jpg";
 
 const IntravitrealInjectionsPage = () => (
   <PageShell>
@@ -50,7 +50,7 @@ const IntravitrealInjectionsPage = () => (
             <figure className="w-full max-w-xl">
               <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-background">
                 <img
-                  src={injectionImg.url}
+                  src={injectionImg}
                   alt="Sterile intravitreal injection syringe with fine-gauge needle held by a gloved retina specialist"
                   className="w-full h-auto object-cover"
                   loading="lazy"

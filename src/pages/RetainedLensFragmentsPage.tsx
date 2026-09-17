@@ -4,8 +4,8 @@ import { Phone, ChevronRight, Scissors, Eye, Sparkles } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import retainedLensFundus from "@/assets/services/retained-lens-fragments-fundus.png.asset.json";
-import retainedLensDiagram from "@/assets/services/retained-lens-fragments-diagram.png.asset.json";
+import retainedLensFundus from "@/assets/services/retained-lens-fragments-fundus.jpg";
+import retainedLensDiagram from "@/assets/services/retained-lens-fragments-diagram.jpg";
 
 const RetainedLensFragmentsPage = () => {
   const aboutRef = useScrollAnimation();
@@ -71,7 +71,7 @@ const RetainedLensFragmentsPage = () => {
 
           <figure className="rounded-2xl overflow-hidden shadow-md border border-border bg-background">
             <img
-              src={retainedLensFundus.url}
+              src={retainedLensFundus}
               alt="Fundus photograph showing retained lens fragments settled in the vitreous cavity"
               loading="lazy"
               width={1024}
@@ -116,7 +116,7 @@ const RetainedLensFragmentsPage = () => {
 
         <figure className="mt-10 rounded-2xl overflow-hidden shadow-md border border-border bg-background max-w-3xl mx-auto">
           <img
-            src={retainedLensDiagram.url}
+            src={retainedLensDiagram}
             alt="Diagram of retained lens fragments, lens capsule, and IOL inside the eye"
             loading="lazy"
             width={1024}

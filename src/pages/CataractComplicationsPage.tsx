@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { Phone, ChevronRight } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import denseCataractImg from "@/assets/services/dense-cataract-clinical.png.asset.json";
+import denseCataractImg from "@/assets/services/dense-cataract-clinical.jpg";
 
 const SECTIONS = [
   {
@@ -102,7 +102,7 @@ const CataractComplicationsPage = () => {
               <figure className="w-full max-w-md">
                 <div className="rounded-2xl overflow-hidden border border-accent/20 shadow-lg bg-background">
                   <img
-                    src={denseCataractImg.url}
+                    src={denseCataractImg}
                     alt="Close-up slit-lamp clinical photograph of a dense mature cataract with a cloudy white lens"
                     width={1024}
                     height={768}
