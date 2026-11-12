@@ -1,6 +1,7 @@
 import { Phone, Star, ChevronDown, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import clinicHero from "@/assets/dr-rehmani-exam.jpg";
+import ValedaAnnouncement from "@/components/sections/ValedaAnnouncement";
 
 const HeroSection = () => (
   <section
@@ -82,8 +83,10 @@ const HeroSection = () => (
     </div>
 
 
+    <ValedaAnnouncement />
+
     {/* Scroll indicator */}
-    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce-slow z-10">
+    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:flex flex-col items-center gap-2 animate-bounce-slow z-10">
       <span className="text-muted-foreground text-[10px] font-body uppercase tracking-[0.25em]">
         Scroll
       </span>

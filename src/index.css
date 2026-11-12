@@ -116,6 +116,22 @@
   }
 }
 
+/* Gentle float for the Valeda device card */
+@keyframes valeda-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.valeda-float {
+  animation: valeda-float 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .valeda-float {
+    animation: none;
+  }
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
