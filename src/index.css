@@ -117,8 +117,7 @@
 }
 
 /* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+html {  scroll-behavior: smooth;
 }
 
 /* Gradient utility classes */
