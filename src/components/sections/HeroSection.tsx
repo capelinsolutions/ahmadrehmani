@@ -1,6 +1,7 @@
 import { Phone, Star, ChevronDown, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import clinicHero from "@/assets/dr-rehmani-exam.jpg";
+import ValedaAnnouncement from "@/components/sections/ValedaAnnouncement";
 
 const HeroSection = () => (
   <section
