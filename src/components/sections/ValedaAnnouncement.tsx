@@ -33,7 +33,7 @@ const ValedaAnnouncement = () => {
       <div className="relative rounded-2xl border border-border border-t-[3px] border-t-accent bg-card shadow-lg overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500 fill-mode-both">
         <Link
           to="/services/dry-macular-degeneration"
-          className="group flex items-center gap-3 p-2.5 sm:p-3 sm:pr-9"
+          className="group flex items-center gap-3 p-2.5 pl-3 sm:p-3 sm:pr-9"
         >
           <span className="relative shrink-0 w-9 sm:w-24 self-center">
             <span
@@ -76,7 +76,7 @@ const ValedaAnnouncement = () => {
           type="button"
           onClick={dismiss}
           aria-label="Dismiss Valeda announcement"
-          className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 inline-flex h-6 w-6 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+          className="absolute top-0 right-0 inline-flex h-11 w-11 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground sm:top-1 sm:right-1 sm:h-6 sm:w-6"
         >
           <X className="w-3.5 h-3.5" />
         </button>
