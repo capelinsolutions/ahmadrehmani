@@ -30,9 +30,7 @@ const ValedaAnnouncement = () => {
       aria-label="Now offering Valeda Light Therapy"
       className="absolute z-20 left-1/2 -translate-x-1/2 bottom-20 sm:bottom-10 sm:left-auto sm:translate-x-0 sm:right-6 lg:right-10 w-[calc(100vw-2rem)] max-w-[340px]"
     >
-      <div className="relative rounded-2xl border border-border bg-card shadow-lg overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500 fill-mode-both">
-        <div className="absolute inset-x-0 top-0 h-[3px] bg-gradient-accent" aria-hidden="true" />
-
+      <div className="relative rounded-2xl border border-border border-t-[3px] border-t-accent bg-card shadow-lg overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500 fill-mode-both">
         <Link
           to="/services/dry-macular-degeneration"
           className="group flex items-center gap-3 p-2.5 sm:p-3 sm:pr-9"
